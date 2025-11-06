@@ -6,7 +6,7 @@
         <div class="tabs tabs-btn">
             <!-- Section Header -->
             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10 sm:mb-12 lg:mb-16 scroll-fade-in">
-                <div class="w-full flex flex-col gap-4">
+                <div class="w-full flex flex-col gap-4 lg:max-w-[55%] xl:max-w-[50%]">
                     <h2
                         class="font-semibold leading-tight text-[#a5834a] text-[28px] sm:text-[36px] lg:text-[48px] tracking-[-1.2px]">
                         Tất Cả Sản Phẩm
@@ -22,46 +22,6 @@
                         class="tab-menu active px-6 py-2.5 bg-[#ae873e] text-white rounded-full text-[14px] font-semibold hover:bg-[#c9a961] transition-all duration-300"
                         data-tab="all">
                         Tất Cả
-                    </button>
-                    <button
-                        class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
-                        data-tab="bestseller">
-                        Bán Chạy
-                    </button>
-                    <button
-                        class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
-                        data-tab="newest">
-                        Mới Nhất
-                    </button>
-                    <button
-                        class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
-                        data-tab="featured">
-                        Nổi Bật
-                    </button>
-                    <button
-                        class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
-                        data-tab="sale">
-                        Giảm Giá
-                    </button>
-                    <button
-                        class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
-                        data-tab="bestseller">
-                        Bán Chạy
-                    </button>
-                    <button
-                        class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
-                        data-tab="newest">
-                        Mới Nhất
-                    </button>
-                    <button
-                        class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
-                        data-tab="featured">
-                        Nổi Bật
-                    </button>
-                    <button
-                        class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
-                        data-tab="sale">
-                        Giảm Giá
                     </button>
                     <button
                         class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
@@ -114,9 +74,11 @@
                             <p class="product-card__title">
                                 Hot Trend Design Collection
                             </p>
-                            <p class="product-card__price">
-                                $27
-                            </p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $27
+                                </p>
+                            </div>
                             <button class="product-card__button">
                                 Thêm giỏ hàng
                             </button>
@@ -148,9 +110,11 @@
                             <p class="product-card__title">
                                 Winter Elegance Collection
                             </p>
-                            <p class="product-card__price">
-                                $32
-                            </p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $32
+                                </p>
+                            </div>
                             <button class="product-card__button">
                                 Thêm giỏ hàng
                             </button>
@@ -176,9 +140,11 @@
                             <p class="product-card__title">
                                 Party Glamour Set
                             </p>
-                            <p class="product-card__price">
-                                $29
-                            </p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $29
+                                </p>
+                            </div>
                             <button class="product-card__button">
                                 Thêm giỏ hàng
                             </button>
@@ -204,9 +170,11 @@
                             <p class="product-card__title">
                                 Classic Timeless Collection
                             </p>
-                            <p class="product-card__price">
-                                $25
-                            </p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $25
+                                </p>
+                            </div>
                             <button class="product-card__button">
                                 Thêm giỏ hàng
                             </button>
@@ -242,9 +210,6 @@
                                 <p class="product-card__price">
                                     $22
                                 </p>
-                                <p class="text-[13px] text-[#999999] line-through">
-                                    $27
-                                </p>
                             </div>
                             <button class="product-card__button">
                                 Thêm giỏ hàng
@@ -271,9 +236,11 @@
                             <p class="product-card__title">
                                 Winter Wonderland Set
                             </p>
-                            <p class="product-card__price">
-                                $35
-                            </p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $35
+                                </p>
+                            </div>
                             <button class="product-card__button">
                                 Thêm giỏ hàng
                             </button>
@@ -299,9 +266,11 @@
                             <p class="product-card__title">
                                 Celebration Party Pack
                             </p>
-                            <p class="product-card__price">
-                                $31
-                            </p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $31
+                                </p>
+                            </div>
                             <button class="product-card__button">
                                 Thêm giỏ hàng
                             </button>
@@ -327,9 +296,11 @@
                             <p class="product-card__title">
                                 Elegant Classic Bundle
                             </p>
-                            <p class="product-card__price">
-                                $28
-                            </p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $28
+                                </p>
+                            </div>
                             <button class="product-card__button">
                                 Thêm giỏ hàng
                             </button>
@@ -355,9 +326,11 @@
                             <p class="product-card__title">
                                 Trending Now Collection
                             </p>
-                            <p class="product-card__price">
-                                $26
-                            </p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $26
+                                </p>
+                            </div>
                             <button class="product-card__button">
                                 Thêm giỏ hàng
                             </button>
@@ -383,9 +356,11 @@
                             <p class="product-card__title">
                                 Cozy Winter Vibes
                             </p>
-                            <p class="product-card__price">
-                                $30
-                            </p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $30
+                                </p>
+                            </div>
                             <button class="product-card__button">
                                 Thêm giỏ hàng
                             </button>
@@ -427,7 +402,11 @@
                         </div>
                         <div class="product-card__body">
                             <p class="product-card__title">Hot Trend Design Collection</p>
-                            <p class="product-card__price">$27</p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $27
+                                </p>
+                            </div>
                             <button class="product-card__button">Thêm giỏ hàng</button>
                         </div>
                     </div>
@@ -456,7 +435,7 @@
                             <p class="product-card__title">Modern Trend Collection</p>
                             <div class="flex items-center gap-2 mb-3">
                                 <p class="product-card__price">$22</p>
-                                <p class="text-[13px] text-[#999999] line-through">$27</p>
+                                <!-- <p class="text-[13px] text-[#999999] line-through">$27</p> -->
                             </div>
                             <button class="product-card__button">Thêm giỏ hàng</button>
                         </div>
@@ -478,7 +457,11 @@
                         </div>
                         <div class="product-card__body">
                             <p class="product-card__title">Trending Now Collection</p>
-                            <p class="product-card__price">$26</p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $22
+                                </p>
+                            </div>
                             <button class="product-card__button">Thêm giỏ hàng</button>
                         </div>
                     </div>
@@ -571,7 +554,11 @@
                         </div>
                         <div class="product-card__body">
                             <p class="product-card__title">Winter Wonderland Set</p>
-                            <p class="product-card__price">$35</p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $35
+                                </p>
+                            </div>
                             <button class="product-card__button">Thêm giỏ hàng</button>
                         </div>
                     </div>
@@ -625,7 +612,11 @@
                         </div>
                         <div class="product-card__body">
                             <p class="product-card__title">Latest Design Collection</p>
-                            <p class="product-card__price">$28</p>
+                            <<div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $28
+                                </p>
+                            </div>
                             <button class="product-card__button">Thêm giỏ hàng</button>
                         </div>
                     </div>
@@ -664,7 +655,11 @@
                         </div>
                         <div class="product-card__body">
                             <p class="product-card__title">Party Glamour Set</p>
-                            <p class="product-card__price">$29</p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $29
+                                </p>
+                            </div>
                             <button class="product-card__button">Thêm giỏ hàng</button>
                         </div>
                     </div>
@@ -691,7 +686,11 @@
                         </div>
                         <div class="product-card__body">
                             <p class="product-card__title">Celebration Party Pack</p>
-                            <p class="product-card__price">$31</p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $31
+                                </p>
+                            </div>
                             <button class="product-card__button">Thêm giỏ hàng</button>
                         </div>
                     </div>
@@ -718,7 +717,11 @@
                         </div>
                         <div class="product-card__body">
                             <p class="product-card__title">Premium Featured Design</p>
-                            <p class="product-card__price">$36</p>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $36
+                                </p>
+                            </div>
                             <button class="product-card__button">Thêm giỏ hàng</button>
                         </div>
                     </div>
@@ -759,7 +762,7 @@
                             <p class="product-card__title">Classic Timeless Collection</p>
                             <div class="flex items-center gap-2 mb-3">
                                 <p class="product-card__price">$18</p>
-                                <p class="text-[13px] text-[#999999] line-through">$25</p>
+                                <!-- <p class="text-[13px] text-[#999999] line-through">$25</p> -->
                             </div>
                             <button class="product-card__button">Thêm giỏ hàng</button>
                         </div>
@@ -789,7 +792,7 @@
                             <p class="product-card__title">Elegant Classic Bundle</p>
                             <div class="flex items-center gap-2 mb-3">
                                 <p class="product-card__price">$21</p>
-                                <p class="text-[13px] text-[#999999] line-through">$28</p>
+                                <!-- <p class="text-[13px] text-[#999999] line-through">$28</p> -->
                             </div>
                             <button class="product-card__button">Thêm giỏ hàng</button>
                         </div>
@@ -819,7 +822,7 @@
                             <p class="product-card__title">Sale Special Design</p>
                             <div class="flex items-center gap-2 mb-3">
                                 <p class="product-card__price">$15</p>
-                                <p class="text-[13px] text-[#999999] line-through">$25</p>
+                                <!-- <p class="text-[13px] text-[#999999] line-through">$25</p> -->
                             </div>
                             <button class="product-card__button">Thêm giỏ hàng</button>
                         </div>

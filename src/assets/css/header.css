@@ -84,7 +84,7 @@
        NAVBAR GROUP: Navigation Bar Styles
        ======================================================================== */
     .header-navbar-desktop {
-        @apply hidden md:flex bg-[#f8f7f6] overflow-x-auto whitespace-nowrap items-center justify-center gap-6 sm:gap-10 md:gap-[90px] px-4 py-3 shadow-sm transition-all duration-300;
+        @apply hidden md:flex bg-[#f8f7f6] overflow-x-auto whitespace-nowrap items-center justify-center gap-6 sm:gap-10 md:gap-[30px] px-4 py-3 shadow-sm transition-all duration-300;
     }
 
     .header-navbar-mobile {
@@ -103,7 +103,10 @@
         /* Smooth scrolling on iOS */
     }
 
-    .nav-bg-blur .header-navbar-mobile-links * {
+    .nav-bg-blur .header-navbar-mobile-links *,
+    .nav-bg-blur .header-navbar-mobile-toggle,
+    .nav-bg-blur .header-icon-button
+    {
         color: #fff !important;
     }
 
@@ -112,18 +115,7 @@
         /* Chrome, Safari, Opera */
     }
 
-    .header-navbar-mobile-links::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 40px;
-        height: 100%;
-        background: linear-gradient(to right, rgba(248, 247, 246, 0), rgba(248, 247, 246, 1));
-        pointer-events: none;
-        z-index: 1;
-    }
-
+    
     .header-navbar-link {
         @apply text-[#333] text-[16px] hover:text-black transition flex-shrink-0;
     }
@@ -175,7 +167,7 @@
     }
 
     .header-mobile-drawer-content {
-        @apply absolute right-0 top-0 h-full w-[85vw] max-w-[400px] bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-out;
+        @apply absolute right-0 top-0 h-screen w-[85vw] max-w-[400px] bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-out;
     }
 
     .header-mobile-drawer.active .header-mobile-drawer-content {
