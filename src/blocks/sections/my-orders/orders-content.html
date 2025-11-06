@@ -1,0 +1,720 @@
+<!-- My Orders Content Section -->
+<section class="bg-white py-8 sm:py-12 lg:py-16 w-full" data-name="orders-content">
+  <div class="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+
+    <!-- Page Header -->
+    <div class="mb-8 scroll-fade-in">
+      <h1 class="text-[#090707] text-[28px] sm:text-[32px] lg:text-[36px] font-semibold mb-2">
+        Quản Lý Giao Dịch
+      </h1>
+      <p class="text-[#666666] text-[15px]">
+        Xem lịch sử giao dịch, sản phẩm đã mua và khóa học đã đăng ký
+      </p>
+    </div>
+
+    <!-- Tabs Container -->
+    <div class="tabs tabs-btn">
+      <!-- Tab Menu -->
+      <div class="tab-menu-wrapper mb-6 scroll-slide-up">
+        <button
+          class="tab-menu active px-5 py-2.5 bg-[#ae873e] text-white rounded-full text-[14px] font-semibold hover:bg-[#c9a961] transition-all duration-300"
+          data-tab="all">
+          Tất Cả
+        </button>
+        <button
+          class="tab-menu px-5 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
+          data-tab="pending">
+          Chờ Xử Lý
+        </button>
+        <button
+          class="tab-menu px-5 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
+          data-tab="shipping">
+          Đang Giao Hàng
+        </button>
+        <button
+          class="tab-menu px-5 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
+          data-tab="completed">
+          Hoàn Thành
+        </button>
+        <button
+          class="tab-menu px-5 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
+          data-tab="cancelled">
+          Đã Hủy
+        </button>
+      </div>
+
+      <!-- Tab Content: All Orders -->
+      <div class="tab-content active" data-tab-content="all">
+        <div class="orders-list space-y-4">
+
+          <!-- Order Card 1 -->
+          <div
+            class="order-card bg-white border border-[#ececf0] rounded-[16px] overflow-hidden hover:shadow-lg transition-all duration-300"
+            data-status="completed">
+            <!-- Order Header -->
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-b border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Mã đơn hàng</p>
+                    <p class="text-[#090707] text-[15px] sm:text-[16px] font-semibold">#ORD-2024-001</p>
+                  </div>
+                  <div class="hidden sm:block w-px h-8 bg-[#ececf0]"></div>
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Ngày đặt</p>
+                    <p class="text-[#090707] text-[14px] sm:text-[15px]">15/12/2024</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="px-4 py-1.5 bg-green-100 text-green-700 text-[12px] sm:text-[13px] font-semibold rounded-full whitespace-nowrap">
+                    Hoàn thành
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Items -->
+            <div class="px-4 sm:px-6 py-4">
+              <div class="space-y-4">
+                <!-- Item 1 -->
+                <div class="flex flex-col sm:flex-row gap-4 pb-4 border-b border-[#ececf0] last:border-0 last:pb-0">
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                    alt="Hot Trend Design Collection"
+                    class="w-full sm:w-24 h-24 sm:h-24 object-cover rounded-lg flex-shrink-0" />
+                  <div class="flex-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <div class="flex-1">
+                      <h3 class="text-[#090707] text-[15px] sm:text-[16px] font-semibold mb-1">
+                        Hot Trend Design Collection
+                      </h3>
+                      <p class="text-[#666666] text-[13px] sm:text-[14px] mb-2">Bộ nail hot trend</p>
+                      <div class="flex flex-wrap items-center gap-3 text-[13px] text-[#666666]">
+                        <span>Mẫu: <span class="font-medium">Mẫu 1</span></span>
+                        <span class="hidden sm:inline">•</span>
+                        <span>Số lượng: <span class="font-medium">2</span></span>
+                      </div>
+                    </div>
+                    <div class="flex flex-col sm:items-end gap-1">
+                      <div class="flex items-center gap-2">
+                        <span class="text-[#ae873e] text-[16px] sm:text-[18px] font-semibold">$54</span>
+                        <span class="text-[#999999] text-[13px] line-through">$70</span>
+                      </div>
+                      <p class="text-[#666666] text-[12px]">Thanh toán: Thẻ tín dụng</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Footer -->
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-t border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="package" class="w-4 h-4 text-[#666666]"></i>
+                  <span class="text-[#666666] text-[13px] sm:text-[14px]">Tổng tiền: <span
+                      class="text-[#ae873e] font-semibold text-[16px]">$54</span></span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <button
+                    class="order-action-btn px-4 py-2 bg-[#ae873e] text-white rounded-lg text-[13px] sm:text-[14px] font-semibold hover:bg-[#c9a961] transition-all duration-300">
+                    Mua Lại
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Card 2 -->
+          <div
+            class="order-card bg-white border border-[#ececf0] rounded-[16px] overflow-hidden hover:shadow-lg transition-all duration-300"
+            data-status="shipping">
+            <!-- Order Header -->
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-b border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Mã đơn hàng</p>
+                    <p class="text-[#090707] text-[15px] sm:text-[16px] font-semibold">#ORD-2024-003</p>
+                  </div>
+                  <div class="hidden sm:block w-px h-8 bg-[#ececf0]"></div>
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Ngày đặt</p>
+                    <p class="text-[#090707] text-[14px] sm:text-[15px]">20/12/2024</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="px-4 py-1.5 bg-blue-100 text-blue-700 text-[12px] sm:text-[13px] font-semibold rounded-full whitespace-nowrap">
+                    Đang giao hàng
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Items -->
+            <div class="px-4 sm:px-6 py-4">
+              <div class="space-y-4">
+                <!-- Item 1 -->
+                <div class="flex flex-col sm:flex-row gap-4 pb-4 border-b border-[#ececf0] last:border-0 last:pb-0">
+                  <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&auto=format&fit=crop"
+                    alt="Winter Collection" class="w-full sm:w-24 h-24 sm:h-24 object-cover rounded-lg flex-shrink-0" />
+                  <div class="flex-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <div class="flex-1">
+                      <h3 class="text-[#090707] text-[15px] sm:text-[16px] font-semibold mb-1">
+                        Winter Collection
+                      </h3>
+                      <p class="text-[#666666] text-[13px] sm:text-[14px] mb-2">Bộ nail mùa đông</p>
+                      <div class="flex flex-wrap items-center gap-3 text-[13px] text-[#666666]">
+                        <span>Mẫu: <span class="font-medium">Mẫu 2</span></span>
+                        <span class="hidden sm:inline">•</span>
+                        <span>Số lượng: <span class="font-medium">1</span></span>
+                      </div>
+                    </div>
+                    <div class="flex flex-col sm:items-end gap-1">
+                      <span class="text-[#ae873e] text-[16px] sm:text-[18px] font-semibold">$32</span>
+                      <p class="text-[#666666] text-[12px]">Thanh toán: COD</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Footer -->
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-t border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="truck" class="w-4 h-4 text-[#666666]"></i>
+                  <span class="text-[#666666] text-[13px] sm:text-[14px]">Đang vận chuyển đến bạn</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <button
+                    class="order-action-btn px-4 py-2 bg-[#ae873e] text-white rounded-lg text-[13px] sm:text-[14px] font-semibold hover:bg-[#c9a961] transition-all duration-300">
+                    Mua Lại
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Card 3 -->
+          <div
+            class="order-card bg-white border border-[#ececf0] rounded-[16px] overflow-hidden hover:shadow-lg transition-all duration-300"
+            data-status="completed">
+            <!-- Order Header -->
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-b border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Mã đơn hàng</p>
+                    <p class="text-[#090707] text-[15px] sm:text-[16px] font-semibold">#ORD-2024-005</p>
+                  </div>
+                  <div class="hidden sm:block w-px h-8 bg-[#ececf0]"></div>
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Ngày đặt</p>
+                    <p class="text-[#090707] text-[14px] sm:text-[15px]">18/12/2024</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="px-4 py-1.5 bg-green-100 text-green-700 text-[12px] sm:text-[13px] font-semibold rounded-full whitespace-nowrap">
+                    Hoàn thành
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Items -->
+            <div class="px-4 sm:px-6 py-4">
+              <div class="space-y-4">
+                <!-- Item 1 -->
+                <div class="flex flex-col sm:flex-row gap-4 pb-4 border-b border-[#ececf0] last:border-0 last:pb-0">
+                  <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=200&auto=format&fit=crop"
+                    alt="Party Collection" class="w-full sm:w-24 h-24 sm:h-24 object-cover rounded-lg flex-shrink-0" />
+                  <div class="flex-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <div class="flex-1">
+                      <h3 class="text-[#090707] text-[15px] sm:text-[16px] font-semibold mb-1">
+                        Party Collection
+                      </h3>
+                      <p class="text-[#666666] text-[13px] sm:text-[14px] mb-2">Bộ nail dự tiệc</p>
+                      <div class="flex flex-wrap items-center gap-3 text-[13px] text-[#666666]">
+                        <span>Mẫu: <span class="font-medium">Mẫu 3</span></span>
+                        <span class="hidden sm:inline">•</span>
+                        <span>Số lượng: <span class="font-medium">1</span></span>
+                      </div>
+                    </div>
+                    <div class="flex flex-col sm:items-end gap-1">
+                      <span class="text-[#ae873e] text-[16px] sm:text-[18px] font-semibold">$28</span>
+                      <p class="text-[#666666] text-[12px]">Thanh toán: Ví điện tử</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Footer -->
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-t border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="package" class="w-4 h-4 text-[#666666]"></i>
+                  <span class="text-[#666666] text-[13px] sm:text-[14px]">Tổng tiền: <span
+                      class="text-[#ae873e] font-semibold text-[16px]">$28</span></span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <button
+                    class="order-action-btn px-4 py-2 bg-[#ae873e] text-white rounded-lg text-[13px] sm:text-[14px] font-semibold hover:bg-[#c9a961] transition-all duration-300">
+                    Mua Lại
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="pagination-btn pagination-btn-prev" disabled>
+            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          </button>
+          <button class="pagination-btn pagination-btn-number pagination-btn-active">1</button>
+          <button class="pagination-btn pagination-btn-number">2</button>
+          <button class="pagination-btn pagination-btn-next">
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab Content: Pending Orders -->
+      <div class="tab-content" data-tab-content="pending">
+        <div class="orders-list space-y-4">
+          <!-- Order Card 1 -->
+          <div
+            class="order-card bg-white border border-[#ececf0] rounded-[16px] overflow-hidden hover:shadow-lg transition-all duration-300">
+            <!-- Order Header -->
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-b border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Mã đơn hàng</p>
+                    <p class="text-[#090707] text-[15px] sm:text-[16px] font-semibold">#ORD-2024-002</p>
+                  </div>
+                  <div class="hidden sm:block w-px h-8 bg-[#ececf0]"></div>
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Ngày đặt</p>
+                    <p class="text-[#090707] text-[14px] sm:text-[15px]">22/12/2024</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="px-4 py-1.5 bg-yellow-100 text-yellow-700 text-[12px] sm:text-[13px] font-semibold rounded-full whitespace-nowrap">
+                    Chờ xử lý
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Items -->
+            <div class="px-4 sm:px-6 py-4">
+              <div class="space-y-4">
+                <!-- Item 1 -->
+                <div class="flex flex-col sm:flex-row gap-4 pb-4 border-b border-[#ececf0] last:border-0 last:pb-0">
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                    alt="Hot Trend Design Collection"
+                    class="w-full sm:w-24 h-24 sm:h-24 object-cover rounded-lg flex-shrink-0" />
+                  <div class="flex-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <div class="flex-1">
+                      <h3 class="text-[#090707] text-[15px] sm:text-[16px] font-semibold mb-1">
+                        Hot Trend Design Collection
+                      </h3>
+                      <p class="text-[#666666] text-[13px] sm:text-[14px] mb-2">Bộ nail hot trend</p>
+                      <div class="flex flex-wrap items-center gap-3 text-[13px] text-[#666666]">
+                        <span>Mẫu: <span class="font-medium">Mẫu 1</span></span>
+                        <span class="hidden sm:inline">•</span>
+                        <span>Số lượng: <span class="font-medium">1</span></span>
+                      </div>
+                    </div>
+                    <div class="flex flex-col sm:items-end gap-1">
+                      <span class="text-[#ae873e] text-[16px] sm:text-[18px] font-semibold">$27</span>
+                      <p class="text-[#666666] text-[12px]">Thanh toán: Thẻ tín dụng</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Footer -->
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-t border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="clock" class="w-4 h-4 text-[#666666]"></i>
+                  <span class="text-[#666666] text-[13px] sm:text-[14px]">Đang chờ xử lý</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <button
+                    class="order-action-btn px-4 py-2 bg-[#ae873e] text-white rounded-lg text-[13px] sm:text-[14px] font-semibold hover:bg-[#c9a961] transition-all duration-300">
+                    Xem Chi Tiết
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="pagination-btn pagination-btn-prev" disabled>
+            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          </button>
+          <button class="pagination-btn pagination-btn-number pagination-btn-active">1</button>
+          <button class="pagination-btn pagination-btn-next" disabled>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab Content: Shipping Orders -->
+      <div class="tab-content" data-tab-content="shipping">
+        <div class="orders-list space-y-4">
+          <!-- Order Card 1 -->
+          <div
+            class="order-card bg-white border border-[#ececf0] rounded-[16px] overflow-hidden hover:shadow-lg transition-all duration-300">
+            <!-- Order Header -->
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-b border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Mã đơn hàng</p>
+                    <p class="text-[#090707] text-[15px] sm:text-[16px] font-semibold">#ORD-2024-003</p>
+                  </div>
+                  <div class="hidden sm:block w-px h-8 bg-[#ececf0]"></div>
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Ngày đặt</p>
+                    <p class="text-[#090707] text-[14px] sm:text-[15px]">20/12/2024</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="px-4 py-1.5 bg-blue-100 text-blue-700 text-[12px] sm:text-[13px] font-semibold rounded-full whitespace-nowrap">
+                    Đang giao hàng
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Items -->
+            <div class="px-4 sm:px-6 py-4">
+              <div class="space-y-4">
+                <!-- Item 1 -->
+                <div class="flex flex-col sm:flex-row gap-4 pb-4 border-b border-[#ececf0] last:border-0 last:pb-0">
+                  <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&auto=format&fit=crop"
+                    alt="Winter Collection" class="w-full sm:w-24 h-24 sm:h-24 object-cover rounded-lg flex-shrink-0" />
+                  <div class="flex-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <div class="flex-1">
+                      <h3 class="text-[#090707] text-[15px] sm:text-[16px] font-semibold mb-1">
+                        Winter Collection
+                      </h3>
+                      <p class="text-[#666666] text-[13px] sm:text-[14px] mb-2">Bộ nail mùa đông</p>
+                      <div class="flex flex-wrap items-center gap-3 text-[13px] text-[#666666]">
+                        <span>Mẫu: <span class="font-medium">Mẫu 2</span></span>
+                        <span class="hidden sm:inline">•</span>
+                        <span>Số lượng: <span class="font-medium">1</span></span>
+                      </div>
+                    </div>
+                    <div class="flex flex-col sm:items-end gap-1">
+                      <span class="text-[#ae873e] text-[16px] sm:text-[18px] font-semibold">$32</span>
+                      <p class="text-[#666666] text-[12px]">Thanh toán: COD</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Footer -->
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-t border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="truck" class="w-4 h-4 text-[#666666]"></i>
+                  <span class="text-[#666666] text-[13px] sm:text-[14px]">Đang vận chuyển đến bạn</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <button
+                    class="order-action-btn px-4 py-2 bg-[#ae873e] text-white rounded-lg text-[13px] sm:text-[14px] font-semibold hover:bg-[#c9a961] transition-all duration-300">
+                    Theo Dõi Đơn
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="pagination-btn pagination-btn-prev" disabled>
+            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          </button>
+          <button class="pagination-btn pagination-btn-number pagination-btn-active">1</button>
+          <button class="pagination-btn pagination-btn-next" disabled>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab Content: Completed Orders -->
+      <div class="tab-content" data-tab-content="completed">
+        <div class="orders-list space-y-4">
+          <!-- Order Card 1 -->
+          <div
+            class="order-card bg-white border border-[#ececf0] rounded-[16px] overflow-hidden hover:shadow-lg transition-all duration-300">
+            <!-- Order Header -->
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-b border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Mã đơn hàng</p>
+                    <p class="text-[#090707] text-[15px] sm:text-[16px] font-semibold">#ORD-2024-001</p>
+                  </div>
+                  <div class="hidden sm:block w-px h-8 bg-[#ececf0]"></div>
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Ngày đặt</p>
+                    <p class="text-[#090707] text-[14px] sm:text-[15px]">15/12/2024</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="px-4 py-1.5 bg-green-100 text-green-700 text-[12px] sm:text-[13px] font-semibold rounded-full whitespace-nowrap">
+                    Hoàn thành
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Items -->
+            <div class="px-4 sm:px-6 py-4">
+              <div class="space-y-4">
+                <!-- Item 1 -->
+                <div class="flex flex-col sm:flex-row gap-4 pb-4 border-b border-[#ececf0] last:border-0 last:pb-0">
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                    alt="Hot Trend Design Collection"
+                    class="w-full sm:w-24 h-24 sm:h-24 object-cover rounded-lg flex-shrink-0" />
+                  <div class="flex-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <div class="flex-1">
+                      <h3 class="text-[#090707] text-[15px] sm:text-[16px] font-semibold mb-1">
+                        Hot Trend Design Collection
+                      </h3>
+                      <p class="text-[#666666] text-[13px] sm:text-[14px] mb-2">Bộ nail hot trend</p>
+                      <div class="flex flex-wrap items-center gap-3 text-[13px] text-[#666666]">
+                        <span>Mẫu: <span class="font-medium">Mẫu 1</span></span>
+                        <span class="hidden sm:inline">•</span>
+                        <span>Số lượng: <span class="font-medium">2</span></span>
+                      </div>
+                    </div>
+                    <div class="flex flex-col sm:items-end gap-1">
+                      <div class="flex items-center gap-2">
+                        <span class="text-[#ae873e] text-[16px] sm:text-[18px] font-semibold">$54</span>
+                        <span class="text-[#999999] text-[13px] line-through">$70</span>
+                      </div>
+                      <p class="text-[#666666] text-[12px]">Thanh toán: Thẻ tín dụng</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Footer -->
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-t border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="package" class="w-4 h-4 text-[#666666]"></i>
+                  <span class="text-[#666666] text-[13px] sm:text-[14px]">Tổng tiền: <span
+                      class="text-[#ae873e] font-semibold text-[16px]">$54</span></span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <button
+                    class="order-action-btn px-4 py-2 bg-[#ae873e] text-white rounded-lg text-[13px] sm:text-[14px] font-semibold hover:bg-[#c9a961] transition-all duration-300">
+                    Mua Lại
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Card 2 -->
+          <div
+            class="order-card bg-white border border-[#ececf0] rounded-[16px] overflow-hidden hover:shadow-lg transition-all duration-300">
+            <!-- Order Header -->
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-b border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Mã đơn hàng</p>
+                    <p class="text-[#090707] text-[15px] sm:text-[16px] font-semibold">#ORD-2024-005</p>
+                  </div>
+                  <div class="hidden sm:block w-px h-8 bg-[#ececf0]"></div>
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Ngày đặt</p>
+                    <p class="text-[#090707] text-[14px] sm:text-[15px]">18/12/2024</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="px-4 py-1.5 bg-green-100 text-green-700 text-[12px] sm:text-[13px] font-semibold rounded-full whitespace-nowrap">
+                    Hoàn thành
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Items -->
+            <div class="px-4 sm:px-6 py-4">
+              <div class="space-y-4">
+                <!-- Item 1 -->
+                <div class="flex flex-col sm:flex-row gap-4 pb-4 border-b border-[#ececf0] last:border-0 last:pb-0">
+                  <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=200&auto=format&fit=crop"
+                    alt="Party Collection" class="w-full sm:w-24 h-24 sm:h-24 object-cover rounded-lg flex-shrink-0" />
+                  <div class="flex-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <div class="flex-1">
+                      <h3 class="text-[#090707] text-[15px] sm:text-[16px] font-semibold mb-1">
+                        Party Collection
+                      </h3>
+                      <p class="text-[#666666] text-[13px] sm:text-[14px] mb-2">Bộ nail dự tiệc</p>
+                      <div class="flex flex-wrap items-center gap-3 text-[13px] text-[#666666]">
+                        <span>Mẫu: <span class="font-medium">Mẫu 3</span></span>
+                        <span class="hidden sm:inline">•</span>
+                        <span>Số lượng: <span class="font-medium">1</span></span>
+                      </div>
+                    </div>
+                    <div class="flex flex-col sm:items-end gap-1">
+                      <span class="text-[#ae873e] text-[16px] sm:text-[18px] font-semibold">$28</span>
+                      <p class="text-[#666666] text-[12px]">Thanh toán: Ví điện tử</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Footer -->
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-t border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="package" class="w-4 h-4 text-[#666666]"></i>
+                  <span class="text-[#666666] text-[13px] sm:text-[14px]">Tổng tiền: <span
+                      class="text-[#ae873e] font-semibold text-[16px]">$28</span></span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <button
+                    class="order-action-btn px-4 py-2 bg-[#ae873e] text-white rounded-lg text-[13px] sm:text-[14px] font-semibold hover:bg-[#c9a961] transition-all duration-300">
+                    Mua Lại
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="pagination-btn pagination-btn-prev" disabled>
+            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          </button>
+          <button class="pagination-btn pagination-btn-number pagination-btn-active">1</button>
+          <button class="pagination-btn pagination-btn-number">2</button>
+          <button class="pagination-btn pagination-btn-next">
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab Content: Cancelled Orders -->
+      <div class="tab-content" data-tab-content="cancelled">
+        <div class="orders-list space-y-4">
+          <!-- Order Card 1 -->
+          <div
+            class="order-card bg-white border border-[#ececf0] rounded-[16px] overflow-hidden hover:shadow-lg transition-all duration-300">
+            <!-- Order Header -->
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-b border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Mã đơn hàng</p>
+                    <p class="text-[#090707] text-[15px] sm:text-[16px] font-semibold">#ORD-2024-004</p>
+                  </div>
+                  <div class="hidden sm:block w-px h-8 bg-[#ececf0]"></div>
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Ngày đặt</p>
+                    <p class="text-[#090707] text-[14px] sm:text-[15px]">17/12/2024</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="px-4 py-1.5 bg-red-100 text-red-700 text-[12px] sm:text-[13px] font-semibold rounded-full whitespace-nowrap">
+                    Đã hủy
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Items -->
+            <div class="px-4 sm:px-6 py-4">
+              <div class="space-y-4">
+                <!-- Item 1 -->
+                <div class="flex flex-col sm:flex-row gap-4 pb-4 border-b border-[#ececf0] last:border-0 last:pb-0">
+                  <img
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                    alt="Hot Trend Design Collection"
+                    class="w-full sm:w-24 h-24 sm:h-24 object-cover rounded-lg flex-shrink-0" />
+                  <div class="flex-1 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                    <div class="flex-1">
+                      <h3 class="text-[#090707] text-[15px] sm:text-[16px] font-semibold mb-1">
+                        Hot Trend Design Collection
+                      </h3>
+                      <p class="text-[#666666] text-[13px] sm:text-[14px] mb-2">Bộ nail hot trend</p>
+                      <div class="flex flex-wrap items-center gap-3 text-[13px] text-[#666666]">
+                        <span>Mẫu: <span class="font-medium">Mẫu 1</span></span>
+                        <span class="hidden sm:inline">•</span>
+                        <span>Số lượng: <span class="font-medium">1</span></span>
+                      </div>
+                    </div>
+                    <div class="flex flex-col sm:items-end gap-1">
+                      <span class="text-[#ae873e] text-[16px] sm:text-[18px] font-semibold">$27</span>
+                      <p class="text-[#666666] text-[12px]">Thanh toán: Thẻ tín dụng</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Order Footer -->
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-t border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="x-circle" class="w-4 h-4 text-[#666666]"></i>
+                  <span class="text-[#666666] text-[13px] sm:text-[14px]">Đơn hàng đã bị hủy</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <button
+                    class="order-action-btn px-4 py-2 bg-[#ae873e] text-white rounded-lg text-[13px] sm:text-[14px] font-semibold hover:bg-[#c9a961] transition-all duration-300">
+                    Mua Lại
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="pagination-btn pagination-btn-prev" disabled>
+            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          </button>
+          <button class="pagination-btn pagination-btn-number pagination-btn-active">1</button>
+          <button class="pagination-btn pagination-btn-next" disabled>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

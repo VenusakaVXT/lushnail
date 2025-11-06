@@ -1,0 +1,386 @@
+/* Product Page Specific Styles */
+
+/* Quantity Input - Hide native spinner but keep buttons visible */
+.quantity-input::-webkit-inner-spin-button,
+.quantity-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.quantity-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.quantity-btn,
+.modal-quantity-btn {
+  display: flex !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Snow Animation */
+@keyframes snowfall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.snowflake {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: snowfall linear infinite;
+  pointer-events: none;
+}
+
+.snowflake:nth-child(1) {
+  left: 10%;
+  animation-duration: 8s;
+  animation-delay: 0s;
+}
+
+.snowflake:nth-child(2) {
+  left: 20%;
+  animation-duration: 10s;
+  animation-delay: 1s;
+}
+
+.snowflake:nth-child(3) {
+  left: 30%;
+  animation-duration: 9s;
+  animation-delay: 0.5s;
+}
+
+.snowflake:nth-child(4) {
+  left: 40%;
+  animation-duration: 11s;
+  animation-delay: 1.5s;
+}
+
+.snowflake:nth-child(5) {
+  left: 50%;
+  animation-duration: 8s;
+  animation-delay: 0.2s;
+}
+
+.snowflake:nth-child(6) {
+  left: 60%;
+  animation-duration: 10s;
+  animation-delay: 1.2s;
+}
+
+.snowflake:nth-child(7) {
+  left: 70%;
+  animation-duration: 9s;
+  animation-delay: 0.8s;
+}
+
+.snowflake:nth-child(8) {
+  left: 80%;
+  animation-duration: 11s;
+  animation-delay: 1.8s;
+}
+
+.snowflake:nth-child(9) {
+  left: 90%;
+  animation-duration: 8s;
+  animation-delay: 0.3s;
+}
+
+.snowflake:nth-child(10) {
+  left: 15%;
+  animation-duration: 10s;
+  animation-delay: 0.7s;
+}
+
+.snowflake:nth-child(11) {
+  left: 25%;
+  animation-duration: 9s;
+  animation-delay: 1.3s;
+}
+
+.snowflake:nth-child(12) {
+  left: 35%;
+  animation-duration: 11s;
+  animation-delay: 0.6s;
+}
+
+.snowflake:nth-child(13) {
+  left: 45%;
+  animation-duration: 8s;
+  animation-delay: 1.4s;
+}
+
+.snowflake:nth-child(14) {
+  left: 55%;
+  animation-duration: 10s;
+  animation-delay: 0.4s;
+}
+
+.snowflake:nth-child(15) {
+  left: 65%;
+  animation-duration: 9s;
+  animation-delay: 1.1s;
+}
+
+/* Confetti Animation */
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(-100vh) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+.confetti {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(45deg, #a855f7, #ec4899);
+  border-radius: 2px;
+  opacity: 0.9;
+  animation: confetti-fall linear infinite;
+  pointer-events: none;
+}
+
+.confetti:nth-child(1) {
+  left: 10%;
+  animation-duration: 6s;
+  animation-delay: 0s;
+  background: #a855f7;
+}
+
+.confetti:nth-child(2) {
+  left: 25%;
+  animation-duration: 7s;
+  animation-delay: 0.5s;
+  background: #ec4899;
+}
+
+.confetti:nth-child(3) {
+  left: 40%;
+  animation-duration: 6.5s;
+  animation-delay: 1s;
+  background: #f472b6;
+}
+
+.confetti:nth-child(4) {
+  left: 55%;
+  animation-duration: 7.5s;
+  animation-delay: 0.3s;
+  background: #c084fc;
+}
+
+.confetti:nth-child(5) {
+  left: 70%;
+  animation-duration: 6s;
+  animation-delay: 0.8s;
+  background: #a855f7;
+}
+
+.confetti:nth-child(6) {
+  left: 85%;
+  animation-duration: 7s;
+  animation-delay: 1.2s;
+  background: #ec4899;
+}
+
+.confetti:nth-child(7) {
+  left: 15%;
+  animation-duration: 6.5s;
+  animation-delay: 0.2s;
+  background: #f472b6;
+}
+
+.confetti:nth-child(8) {
+  left: 45%;
+  animation-duration: 7s;
+  animation-delay: 0.7s;
+  background: #c084fc;
+}
+
+/* Slow spin animation for snowflake icon */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Products Transition Section Styles */
+[data-name="products-transition-section"] {
+  position: relative;
+  z-index: 10;
+  overflow: visible !important;
+}
+
+/* Glitter Particles */
+.glitter-particle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.4);
+  animation: glitter-float 8s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+.glitter-particle::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: glitter-sparkle 2s ease-in-out infinite;
+}
+
+@keyframes glitter-float {
+
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.7;
+  }
+
+  25% {
+    transform: translateY(-30px) translateX(20px) rotate(90deg);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-60px) translateX(-15px) rotate(180deg);
+    opacity: 0.8;
+  }
+
+  75% {
+    transform: translateY(-30px) translateX(10px) rotate(270deg);
+    opacity: 1;
+  }
+}
+
+@keyframes glitter-sparkle {
+
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+/* Nail Polish Bottles */
+.nail-bottle {
+  position: absolute;
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+  z-index: 30;
+  overflow: visible;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+[data-name="products-transition-section"] .nail-bottle {
+  pointer-events: auto;
+  isolation: isolate;
+}
+
+.bottle-image {
+  display: block;
+  object-fit: contain;
+  transition: transform 0.3s ease-out;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.bottle-svg {
+  display: block;
+  transition: transform 0.3s ease-out;
+  pointer-events: none;
+}
+
+.nail-bottle:hover .bottle-image,
+.nail-bottle:hover .bottle-svg {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Floating animation for bottles */
+.floating-bottle {
+  animation: float-gentle 6s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+@keyframes float-gentle {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--initial-rotate, 0deg));
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(calc(var(--initial-rotate, 0deg) + 5deg));
+  }
+}
+
+/* Parallax effect on scroll */
+.nail-bottle[data-speed] {
+  transition: transform 0.1s ease-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nail-bottle {
+    opacity: 0.8;
+  }
+
+  .nail-bottle .bottle-image {
+    width: 80px !important;
+  }
+
+  .glitter-particle {
+    width: 6px;
+    height: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nail-bottle .bottle-image {
+    width: 60px !important;
+  }
+
+  .glitter-particle {
+    width: 4px;
+    height: 4px;
+  }
+}

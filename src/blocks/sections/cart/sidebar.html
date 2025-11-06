@@ -1,0 +1,72 @@
+<div class="lg:col-span-1">
+  <div class="bg-[#FFF9F2] rounded-lg p-6 sticky top-4">
+    <h2 class="text-[#090707] text-[20px] font-semibold mb-6">
+      Tóm Tắt Đơn Hàng
+    </h2>
+
+    <!-- Order Summary -->
+    <div class="space-y-4 mb-6">
+      <div class="flex justify-between items-center text-[15px]">
+        <span class="text-[#666666]">Tạm tính:</span>
+        <span class="font-semibold text-[#090707]" id="subtotal">$87</span>
+      </div>
+      <div class="flex justify-between items-center text-[15px]">
+        <span class="text-[#666666]">Giảm giá:</span>
+        <span class="font-semibold text-[#22c55e]" id="discount">-$8</span>
+      </div>
+      <div class="flex justify-between items-center text-[15px]">
+        <span class="text-[#666666]">Phí vận chuyển:</span>
+        <span class="font-semibold text-[#090707]" id="shipping">Miễn phí</span>
+      </div>
+      <div class="border-t border-[#ececf0] pt-4">
+        <div class="flex justify-between items-center">
+          <span class="text-[#090707] text-[18px] font-semibold">Tổng
+            cộng:</span>
+          <span class="text-[#ae873e] text-[24px] font-semibold" id="total">$79</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Promo Code -->
+    <div class="mb-6">
+      <label class="block text-[#090707] text-[14px] font-semibold mb-2">Mã giảm giá</label>
+      <div class="flex gap-2">
+        <input type="text" placeholder="Nhập mã"
+          class="flex-1 px-4 py-2 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e]" />
+        <button
+          class="hidden sm:block md:block lg:block xl:block 2xl:block px-4 py-2 bg-[#ae873e] text-white rounded-lg text-[14px] font-semibold hover:bg-[#c9a961] transition-all duration-300">
+          Áp dụng
+        </button>
+      </div>
+    </div>
+
+    <!-- Checkout Button -->
+    <button
+      class="w-full bg-[#ae873e] text-white py-4 px-6 rounded-lg text-[16px] font-semibold hover:bg-[#c9a961] transition-all duration-300 shadow-lg hover:shadow-xl mb-4"
+      onclick="window.location.href='payment.html'">
+      Thanh Toán
+    </button>
+
+    <!-- Continue Shopping -->
+    <a href="products.html"
+      class="block text-center text-[#ae873e] text-[14px] font-medium hover:underline transition-all duration-300">
+      Tiếp tục mua sắm
+    </a>
+
+    <!-- Security Info -->
+    <div class="mt-6 pt-6 border-t border-[#ececf0]">
+      <div class="flex items-center gap-2 text-[12px] text-[#666666] mb-2">
+        <i data-lucide="shield-check" class="w-4 h-4 text-[#22c55e]"></i>
+        <span>Bảo mật thanh toán</span>
+      </div>
+      <div class="flex items-center gap-2 text-[12px] text-[#666666] mb-2">
+        <i data-lucide="truck" class="w-4 h-4 text-[#22c55e]"></i>
+        <span>Miễn phí vận chuyển đơn trên $50</span>
+      </div>
+      <div class="flex items-center gap-2 text-[12px] text-[#666666]">
+        <i data-lucide="rotate-ccw" class="w-4 h-4 text-[#22c55e]"></i>
+        <span>Đổi trả trong 7 ngày</span>
+      </div>
+    </div>
+  </div>
+</div>

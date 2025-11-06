@@ -1,0 +1,124 @@
+<!-- Add to Cart Modal -->
+<div id="add-to-cart-modal"
+    class="jmodal fixed inset-0 z-50 hidden items-center justify-center bg-black/50 backdrop-blur-sm"
+    data-modal="add-to-cart">
+    <div class="jmodal-content bg-white rounded-[24px] max-w-[600px] w-full mx-4 max-h-[90vh] overflow-y-auto">
+        <div
+            class="sticky top-0 bg-white border-b border-[#ececf0] px-6 py-4 flex items-center justify-between rounded-t-[24px]">
+            <h3 class="text-[20px] font-semibold text-[#090707]">
+                Thêm Vào Giỏ Hàng
+            </h3>
+            <button
+                class="w-8 h-8 rounded-full hover:bg-[#FFF9F2] transition-all duration-300 flex items-center justify-center"
+                data-jmodal-close>
+                <i data-lucide="x" class="w-5 h-5 text-[#666666]"></i>
+            </button>
+        </div>
+
+        <div class="p-6">
+            <!-- Product Info -->
+            <div class="flex gap-4 mb-6 pb-6 border-b border-[#ececf0]">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                    alt="Product" class="w-24 h-24 object-cover rounded-lg" />
+                <div class="flex-1">
+                    <h4 class="text-[16px] font-semibold text-[#090707] mb-2">
+                        Hot Trend Design Collection
+                    </h4>
+                    <p class="text-[#ae873e] text-[18px] font-semibold mb-1">
+                        $27
+                    </p>
+                    <p class="text-[#666666] text-[13px]">
+                        Mẫu đã chọn: <span id="selected-pattern-name" class="font-semibold text-[#090707]">Mẫu 1</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Select Design Pattern -->
+            <div class="mb-6">
+                <label class="block text-[#090707] text-[15px] font-semibold mb-3">
+                    Chọn Mẫu Nail
+                </label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="modal-design-patterns">
+                    <button
+                        class="modal-design-option active border-2 border-[#ae873e] rounded-lg p-3 bg-white hover:bg-[#FFF9F2] transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=150&auto=format&fit=crop"
+                            alt="Pattern 1" class="w-full aspect-square object-cover rounded mb-2" />
+                        <p class="text-[12px] text-[#333] font-medium text-center">Mẫu 1</p>
+                    </button>
+                    <button
+                        class="modal-design-option border-2 border-transparent hover:border-[#ae873e]/50 rounded-lg p-3 bg-white hover:bg-[#FFF9F2] transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=150&auto=format&fit=crop"
+                            alt="Pattern 2" class="w-full aspect-square object-cover rounded mb-2" />
+                        <p class="text-[12px] text-[#333] font-medium text-center">Mẫu 2</p>
+                    </button>
+                    <button
+                        class="modal-design-option border-2 border-transparent hover:border-[#ae873e]/50 rounded-lg p-3 bg-white hover:bg-[#FFF9F2] transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=150&auto=format&fit=crop"
+                            alt="Pattern 3" class="w-full aspect-square object-cover rounded mb-2" />
+                        <p class="text-[12px] text-[#333] font-medium text-center">Mẫu 3</p>
+                    </button>
+                    <button
+                        class="modal-design-option border-2 border-transparent hover:border-[#ae873e]/50 rounded-lg p-3 bg-white hover:bg-[#FFF9F2] transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=150&auto=format&fit=crop"
+                            alt="Pattern 4" class="w-full aspect-square object-cover rounded mb-2" />
+                        <p class="text-[12px] text-[#333] font-medium text-center">Mẫu 4</p>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quantity Selector -->
+            <div class="mb-6">
+                <label class="block text-[#090707] text-[15px] font-semibold mb-3">
+                    Số Lượng
+                </label>
+                <div class="flex items-center gap-3 w-fit">
+                    <button
+                        class="modal-quantity-btn decrease w-10 h-10 rounded-lg border-2 border-[#ae873e] text-[#ae873e] hover:bg-[#ae873e] hover:text-white transition-all duration-300 flex items-center justify-center font-semibold">
+                        <i data-lucide="minus" class="w-4 h-4"></i>
+                    </button>
+                    <input type="number" value="1" min="1" max="99"
+                        class="modal-quantity-input w-16 h-10 text-center border-2 border-[#ae873e] rounded-lg text-[16px] font-semibold focus:outline-none focus:ring-2 focus:ring-[#ae873e]" />
+                    <button
+                        class="modal-quantity-btn increase w-10 h-10 rounded-lg border-2 border-[#ae873e] text-[#ae873e] hover:bg-[#ae873e] hover:text-white transition-all duration-300 flex items-center justify-center font-semibold">
+                        <i data-lucide="plus" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Note to Store -->
+            <div class="mb-6">
+                <label class="block text-[#090707] text-[15px] font-semibold mb-3">
+                    Ghi Chú Đến Cửa Hàng <span class="text-[#999999] font-normal text-[13px]">(Tùy chọn)</span>
+                </label>
+                <textarea id="store-note" rows="4" placeholder="Nhập ghi chú của bạn..."
+                    class="w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:border-[#ae873e] focus:ring-2 focus:ring-[#ae873e]/20 resize-none"></textarea>
+            </div>
+
+            <!-- Total Price -->
+            <div class="mb-6 p-4 bg-[#FFF9F2] rounded-lg">
+                <div class="flex items-center justify-between mb-2">
+                    <span class="text-[#666666] text-[14px]">Tổng Cộng:</span>
+                    <span id="modal-total-price" class="text-[#ae873e] text-[24px] font-semibold">
+                        $27
+                    </span>
+                </div>
+                <p class="text-[#999999] text-[12px]">
+                    (Đã bao gồm VAT)
+                </p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button id="confirm-add-to-cart"
+                    class="flex-1 bg-[#ae873e] text-white py-3.5 px-6 rounded-full text-[15px] font-semibold hover:bg-[#c9a961] transition-all duration-300 shadow-lg">
+                    Xác Nhận Thêm Vào Giỏ
+                </button>
+                <button
+                    class="w-full sm:w-auto px-6 py-3.5 border-2 border-[#ae873e] text-[#ae873e] rounded-full text-[15px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300"
+                    data-jmodal-close>
+                    Hủy
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
