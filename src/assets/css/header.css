@@ -7,12 +7,13 @@
    ======================================================================== */
 /* When scroll down - background #f8f7f6 blur with transparency */
 .nav-bg-blur {
-   background-color: rgb(0 0 0 / 30%) !important;
+    background-color: rgb(0 0 0 / 30%) !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
     box-shadow: 0 2px 10px rgb(82 82 82) !important;
     transition: background-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
 }
+
 /* 
 #main-navbar.nav-bg-blur {
     background-color: rgb(0 0 0 / 30%) !important;
@@ -20,9 +21,10 @@
     box-shadow: 0 2px 10px rgb(82 82 82) !important;
 
 } */
-.header-navbar-desktop.nav-bg-blur *{
+.header-navbar-desktop.nav-bg-blur * {
     color: #fff !important;
 }
+
 /* Fixed navbar styles */
 #main-navbar.fixed,
 #mobile-navbar.fixed {
@@ -93,13 +95,21 @@
         @apply flex gap-4 items-center overflow-x-auto whitespace-nowrap relative;
         width: calc(100vw - 70px);
         max-width: calc(100vw - 70px);
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE and Edge */
-        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        -webkit-overflow-scrolling: touch;
+        /* Smooth scrolling on iOS */
+    }
+
+    .nav-bg-blur .header-navbar-mobile-links * {
+        color: #fff !important;
     }
 
     .header-navbar-mobile-links::-webkit-scrollbar {
-        display: none; /* Chrome, Safari, Opera */
+        display: none;
+        /* Chrome, Safari, Opera */
     }
 
     .header-navbar-mobile-links::after {
@@ -113,6 +123,7 @@
         pointer-events: none;
         z-index: 1;
     }
+
     .header-navbar-link {
         @apply text-[#333] text-[16px] hover:text-black transition flex-shrink-0;
     }
@@ -179,7 +190,7 @@
         @apply flex-1 flex items-center;
     }
 
-    .header-mobile-drawer-logo > div {
+    .header-mobile-drawer-logo>div {
         @apply mx-0;
     }
 
@@ -205,4 +216,3 @@
     }
 
 }
-   

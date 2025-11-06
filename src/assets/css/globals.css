@@ -95,7 +95,7 @@
         max-width: 100vw;
         font-family: 'BricolageGrotesque', sans-serif;
     }
- 
+
 }
 
 /* ========================================================================
@@ -144,12 +144,12 @@
     .btn-primary {
         @apply bg-gradient-to-r from-primary to-[#c9a961] border-transparent text-white hover:from-[#c9a961] hover:to-primary rounded-full transition-all duration-300 font-semibold shadow-[0_4px_20px_rgba(174,135,62,0.4)] hover:shadow-[0_6px_30px_rgba(174,135,62,0.6)] hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
     }
-    
+
     .btn-primary::before {
         content: '';
         @apply absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] transition-transform duration-700;
     }
-    
+
     .btn-primary:hover::before {
         @apply translate-x-[100%];
     }
@@ -396,12 +396,12 @@
     .course-card__button {
         @apply w-full bg-gradient-to-r from-[#ae873e] to-[#c9a961]  border-transparent text-white hover:from-[#c9a961] hover:to-[#ae873e] py-3.5 rounded-full transition-all duration-300 text-[15px] font-semibold shadow-[0_4px_20px_rgba(174,135,62,0.4)] hover:shadow-[0_6px_30px_rgba(174,135,62,0.6)] hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 relative overflow-hidden;
     }
-    
+
     .course-card__button::before {
         content: '';
         @apply absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] transition-transform duration-700;
     }
-    
+
     .course-card__button:hover::before {
         @apply translate-x-[100%];
     }
@@ -440,11 +440,11 @@
 
         pointer-events: none;
     }
- 
+
     /* ========================================================================
        SELECT STYLES: Các thuộc tính cho Select
        ======================================================================== */
-       select {
+    select.select-white {
         @apply flex h-12 w-full rounded-lg border border-gray-200 bg-transparent px-3 py-3 pr-12 text-sm transition-colors duration-150 text-gray-900;
         appearance: none;
         background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'%3E%3C/path%3E%3C/svg%3E");
@@ -454,13 +454,14 @@
         padding-right: 3rem;
     }
 
-    select:focus {
+    select.select-white:focus {
         @apply border-primary ring-primary;
     }
 
-    select:disabled {
+    select.select-white:disabled {
         @apply cursor-not-allowed opacity-50;
     }
+
     /* ========================================================================
         Tabs System Styles
     ======================================================================== */
@@ -491,7 +492,7 @@
     /* ========================================================================
         Tabs-btn System Styles (for products grid, orders, etc.)
     ======================================================================== */
-   
+
 
     .tabs-btn .tab-menu-wrapper {
         @apply flex flex-nowrap gap-3 overflow-x-auto overflow-y-hidden cursor-grab;
@@ -607,5 +608,5 @@
             opacity: 1;
         }
     }
-    
+
 }
