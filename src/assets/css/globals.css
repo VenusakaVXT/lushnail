@@ -34,7 +34,7 @@
         --muted-foreground: theme('colors.gray.500');
 
         /* Accent Colors */
-        --accent: theme('colors.gray.100');
+        --accent: #ae873e;
         --accent-foreground: theme('colors.gray.900');
 
         /* Status Colors */
@@ -136,13 +136,9 @@
         @apply cursor-not-allowed opacity-50;
     }
 
-    .btn-overflow {
-        @apply overflow-visible;
-    }
-
     /* Button Custom */
     .btn-primary {
-        @apply bg-black border-transparent text-white rounded-lg  transition-all duration-300 font-semibold shadow-[0_4px_20px_rgba(174,135,62,0.4)] hover:shadow-[0_6px_30px_rgba(174,135,62,0.6)] hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
+        @apply bg-black border-transparent text-white rounded-lg  transition-all duration-300 font-semibold   hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
     }
 
     .btn-primary::before {
@@ -155,41 +151,18 @@
     }
 
     .btn-secondary {
-        @apply bg-white border border-primary text-primary hover:bg-[#fff9f2];
+        @apply bg-accent border border-primary gap-2 text-white  px-6 sm:px-8 py-2.5 sm:py-3;
     }
 
     .btn-outline {
-        @apply inline-flex items-center gap-2 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 text-[14px] sm:text-[15px] font-semibold;
+        @apply inline-flex items-center gap-2 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 sm:px-8 py-2.5 sm:py-3  transition-all duration-300 ;
     }
 
     .btn-outline-white {
-        @apply border border-white text-white hover:bg-white hover:text-primary;
+        @apply inline-flex items-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-6 sm:px-8 py-2.5 sm:py-3  transition-all duration-300 ;
     }
 
-    .btn-ghost {
-        @apply border border-gray-300 text-gray-600 hover:text-primary hover:bg-transparent transition-colors;
-    }
-
-    .btn-light {
-        @apply bg-white text-primary hover:bg-gray-100;
-    }
-
-    .btn-light-outline {
-        @apply border border-white text-white hover:bg-white hover:text-primary;
-    }
-
-    .btn-dark {
-        @apply btn btn-ghost border-gray-700 hover:bg-gray-800 hover:border-gray-600;
-    }
-
-    .btn-danger {
-        @apply bg-red-500 hover:bg-red-600 text-white;
-    }
-
-    .btn-success {
-        @apply bg-green-500 hover:bg-green-600 text-white;
-    }
-
+    
     /* Button Sizes */
     .btn-sm {
         @apply px-3 py-1.5 h-8 text-sm;
@@ -262,9 +235,9 @@
     }
 
     .badge-primary {
-        @apply border border-emerald-200 bg-emerald-100 text-emerald-800;
+        @apply absolute top-4 right-4 z-10 bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] text-white px-4 py-1.5 rounded-full shadow-lg;
     }
-
+   
     .badge-title {
         @apply bg-emerald-100 backdrop-blur-sm text-emerald-700 text-xs sm:text-sm mb-4;
     }

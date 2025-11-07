@@ -227,6 +227,21 @@ document.addEventListener('DOMContentLoaded', function () {
     faqItems.forEach((item, index) => {
       item.addEventListener('click', function () {
         updateAnswer(this);
+        
+        // Scroll to answer section on mobile
+        const isMobile = window.innerWidth < 1024; // lg breakpoint
+        if (isMobile) {
+          const answerSection = document.getElementById('faq-answer-section');
+          if (answerSection) {
+            setTimeout(() => {
+              answerSection.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start',
+                inline: 'nearest'
+              });
+            }, 100);
+          }
+        }
       });
 
       // Show first answer by default
