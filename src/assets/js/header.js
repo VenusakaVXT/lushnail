@@ -43,15 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 "nav-bg-blur"
             );
         } else {
-            el.classList.remove(
-                "fixed",
-                "top-0",
-                "left-0",
-                "right-0",
-                "z-[100]",
-                "shadow-md",
-                "nav-bg-blur"
-            );
+            // Remove all classes
+            el.classList.remove("fixed");
+            el.classList.remove("top-0");
+            el.classList.remove("left-0");
+            el.classList.remove("right-0");
+            el.classList.remove("z-[100]");
+            el.classList.remove("shadow-md");
+            el.classList.remove("nav-bg-blur");
         }
     };
 
@@ -71,15 +70,14 @@ document.addEventListener("DOMContentLoaded", () => {
             );
             mobileNav.classList.remove("relative");
         } else {
-            mobileNav.classList.remove(
-                "fixed",
-                "top-0",
-                "left-0",
-                "right-0",
-                "z-[100]",
-                "shadow-md",
-                "nav-bg-blur"
-            );
+            // Remove all classes
+            mobileNav.classList.remove("fixed");
+            mobileNav.classList.remove("top-0");
+            mobileNav.classList.remove("left-0");
+            mobileNav.classList.remove("right-0");
+            mobileNav.classList.remove("z-[100]");
+            mobileNav.classList.remove("shadow-md");
+            mobileNav.classList.remove("nav-bg-blur");
             mobileNav.classList.add("relative");
         }
     };
@@ -172,6 +170,148 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.stopPropagation();
             });
         }
+    }
+
+    // Language Switcher Logic
+    const languageToggle = document.getElementById("language-toggle");
+    const languageDropdown = document.getElementById("language-dropdown");
+    const languageOptions = document.querySelectorAll(".language-option");
+    const languageContainer = languageToggle?.closest('.relative');
+
+    if (languageToggle && languageDropdown) {
+        // Function to position dropdown
+        const positionDropdown = () => {
+            if (!languageDropdown.classList.contains("hidden")) {
+                const toggleRect = languageToggle.getBoundingClientRect();
+                languageDropdown.style.top = `${toggleRect.bottom + window.scrollY + 8}px`;
+                languageDropdown.style.right = `${window.innerWidth - toggleRect.right}px`;
+            }
+        };
+
+        // Show dropdown on hover
+        if (languageContainer) {
+            let hoverTimeout;
+            
+            const showDropdown = () => {
+                clearTimeout(hoverTimeout);
+                languageDropdown.classList.remove("hidden");
+                positionDropdown();
+            };
+
+            const hideDropdown = () => {
+                hoverTimeout = setTimeout(() => {
+                    languageDropdown.classList.add("hidden");
+                }, 100);
+            };
+
+            languageContainer.addEventListener("mouseenter", showDropdown);
+            languageContainer.addEventListener("mouseleave", hideDropdown);
+            
+            // Keep dropdown open when hovering over it
+            languageDropdown.addEventListener("mouseenter", showDropdown);
+            languageDropdown.addEventListener("mouseleave", hideDropdown);
+        }
+        
+        // Reposition on scroll and resize
+        window.addEventListener("scroll", positionDropdown);
+        window.addEventListener("resize", positionDropdown);
+
+        // Handle language selection
+        languageOptions.forEach(option => {
+            option.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const selectedLang = option.getAttribute("data-lang");
+                
+                if (selectedLang) {
+                    localStorage.setItem("language", selectedLang);
+                    
+                    // Update active state
+                    languageOptions.forEach(opt => {
+                        opt.classList.remove("bg-[#FFF9F2]", "font-semibold");
+                    });
+                    option.classList.add("bg-[#FFF9F2]", "font-semibold");
+                    
+                    // Close dropdown
+                    languageDropdown.classList.add("hidden");
+                    
+                    // Reload page to apply language changes
+                    window.location.reload();
+                }
+            });
+        });
+
+        // Highlight current language on load
+        const currentLang = localStorage.getItem("language") || "vi";
+        languageOptions.forEach(option => {
+            if (option.getAttribute("data-lang") === currentLang) {
+                option.classList.add("bg-[#FFF9F2]", "font-semibold");
+            }
+        });
+    }
+
+    // Language Switcher Logic for Mobile
+    const languageToggleMobile = document.getElementById("language-toggle-mobile");
+    const languageDropdownMobile = document.getElementById("language-dropdown-mobile");
+    const languageOptionsMobile = languageDropdownMobile ? languageDropdownMobile.querySelectorAll(".language-option") : [];
+    const languageContainerMobile = languageToggleMobile?.closest('.relative');
+
+    if (languageToggleMobile && languageDropdownMobile) {
+        // Show dropdown on hover
+        if (languageContainerMobile) {
+            let hoverTimeoutMobile;
+            
+            const showDropdownMobile = () => {
+                clearTimeout(hoverTimeoutMobile);
+                languageDropdownMobile.style.display = "block";
+            };
+
+            const hideDropdownMobile = () => {
+                hoverTimeoutMobile = setTimeout(() => {
+                    languageDropdownMobile.style.display = "none";
+                }, 100);
+            };
+
+            languageContainerMobile.addEventListener("mouseenter", showDropdownMobile);
+            languageContainerMobile.addEventListener("mouseleave", hideDropdownMobile);
+            
+            // Keep dropdown open when hovering over it
+            languageDropdownMobile.addEventListener("mouseenter", showDropdownMobile);
+            languageDropdownMobile.addEventListener("mouseleave", hideDropdownMobile);
+        }
+
+        // Handle language selection for mobile
+        languageOptionsMobile.forEach(option => {
+            option.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const selectedLang = option.getAttribute("data-lang");
+                
+                if (selectedLang) {
+                    localStorage.setItem("language", selectedLang);
+                    
+                    // Update active state
+                    languageOptionsMobile.forEach(opt => {
+                        opt.classList.remove("bg-[#FFF9F2]", "font-semibold");
+                    });
+                    option.classList.add("bg-[#FFF9F2]", "font-semibold");
+                    
+                    // Close dropdown
+                    languageDropdownMobile.style.display = "none";
+                    
+                    // Reload page to apply language changes
+                    window.location.reload();
+                }
+            });
+        });
+
+        // Highlight current language on load for mobile
+        const currentLangMobile = localStorage.getItem("language") || "vi";
+        languageOptionsMobile.forEach(option => {
+            if (option.getAttribute("data-lang") === currentLangMobile) {
+                option.classList.add("bg-[#FFF9F2]", "font-semibold");
+            }
+        });
     }
 });
 
