@@ -1,0 +1,166 @@
+/* About Us Page Styles */
+
+/* Smooth Scroll Snap for Connected Sections */
+main {
+  scroll-snap-type: y proximity;
+  scroll-behavior: smooth;
+}
+
+/* Ensure sections are scroll-snap aligned */
+[data-name="what-we-do"],
+[data-name="about-transition-section"],
+[data-name="our-story"] {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* About Transition Section Styles */
+[data-name="about-transition-section"] {
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  height: 60vh;
+  min-height: 500px;
+}
+
+.transition-section-height {
+  height: 80vh;
+  min-height: 400px;
+}
+
+.bottle-collection-image {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  width: 750px;
+  max-height: 550px;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  position: relative;
+}
+
+.bottle-collection-image:not(:first-child) {
+  margin-left: -100px;
+  z-index: -1;
+}
+
+.bottle-collection-image:nth-child(2) {
+  z-index: -2;
+}
+
+.bottle-collection-image:nth-child(3) {
+  z-index: -3;
+}
+
+/* Glitter Images Styling */
+.glitter-streak {
+  position: absolute;
+  pointer-events: none;
+  will-change: transform;
+  filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.3));
+}
+
+.glitter-image {
+  width: auto;
+  height: 300px;
+  max-width: 600px;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+  animation: glitter-glow 3s ease-in-out infinite;
+}
+
+.glitter-center .glitter-image {
+  height: 250px;
+  max-width: 500px;
+  opacity: 0.4;
+}
+
+@keyframes glitter-glow {
+
+  0%,
+  100% {
+    filter: brightness(1) drop-shadow(0 4px 8px rgba(255, 215, 0, 0.3));
+  }
+
+  50% {
+    filter: brightness(1.2) drop-shadow(0 6px 12px rgba(255, 215, 0, 0.5));
+  }
+}
+
+/* Responsive adjustments for glitter */
+@media (max-width: 768px) {
+  .glitter-image {
+    height: 200px;
+    max-width: 400px;
+  }
+
+  .glitter-center .glitter-image {
+    height: 150px;
+    max-width: 300px;
+  }
+
+  .glitter-streak {
+    opacity: 0.5 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .glitter-image {
+    height: 150px;
+    max-width: 300px;
+  }
+
+  .glitter-center .glitter-image {
+    height: 120px;
+    max-width: 250px;
+  }
+
+  .glitter-streak {
+    opacity: 0.4 !important;
+  }
+}
+
+/* Parallax effect on scroll for transition section */
+@media (prefers-reduced-motion: no-preference) {
+  [data-name="about-transition-section"] {
+    will-change: transform;
+  }
+}
+
+/* Responsive adjustments for transition section */
+@media (max-width: 768px) {
+
+  [data-name="about-transition-section"],
+  .transition-section-height {
+    height: 50vh;
+    min-height: 400px;
+  }
+
+  .bottle-collection-image {
+    max-height: 45vh !important;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+
+  [data-name="about-transition-section"],
+  .transition-section-height {
+    height: 45vh;
+    min-height: 350px;
+  }
+
+  .bottle-collection-image {
+    max-height: 40vh !important;
+    max-width: 85%;
+  }
+}

@@ -1,0 +1,72 @@
+/* Cart Item Styles */
+.cart-item {
+  @apply bg-white border border-[#ececf0] rounded-lg p-4 hover:shadow-md transition-shadow duration-300;
+}
+
+.cart-item-container {
+  @apply flex flex-col sm:flex-row gap-4;
+}
+
+.cart-item-image-wrapper {
+  @apply flex-shrink-0;
+}
+
+.cart-item-image {
+  @apply w-full sm:w-24 h-24 object-cover rounded-lg;
+}
+
+.cart-item-content {
+  @apply flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-4;
+}
+
+.cart-item-info {
+  @apply flex-1;
+}
+
+.cart-item-title {
+  @apply text-[#090707] text-[16px] font-semibold mb-1;
+}
+
+.cart-item-subtitle {
+  @apply text-[#666666] text-[13px] mb-2;
+}
+
+.cart-item-price-wrapper {
+  @apply flex items-center gap-3;
+}
+
+.cart-item-price {
+  @apply text-[#ae873e] text-[18px] font-semibold;
+}
+
+.cart-item-price-old {
+  @apply text-[#999999] text-[14px] line-through;
+}
+
+.cart-item-actions {
+  @apply flex items-center gap-4;
+}
+
+.cart-item-quantity {
+  @apply flex items-center gap-2;
+}
+
+.cart-item-quantity-btn {
+  @apply w-8 h-8 rounded-lg border-2 border-[#ae873e] text-[#ae873e] hover:bg-[#ae873e] hover:text-white transition-all duration-300 flex items-center justify-center font-semibold;
+}
+
+.cart-item-quantity-input {
+  @apply w-12 h-8 text-center border-2 border-[#ae873e] rounded-lg text-[14px] font-semibold focus:outline-none focus:ring-2 focus:ring-[#ae873e];
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.cart-item-quantity-input::-webkit-inner-spin-button,
+.cart-item-quantity-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.cart-item-remove {
+  @apply text-[#dc2626] hover:text-[#b91c1c] transition-colors duration-300 p-2;
+}

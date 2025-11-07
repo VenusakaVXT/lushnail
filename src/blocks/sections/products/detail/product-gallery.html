@@ -1,0 +1,219 @@
+<!-- Product Gallery Section -->
+<section class="bg-white py-8 sm:py-12 lg:py-16 w-full" data-name="product-gallery">
+    <div class="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+
+            <!-- Left Column: Product Images -->
+            <div class="scroll-fade-in">
+                <!-- Main Image -->
+                <div class="relative mb-4 rounded-[16px] overflow-hidden bg-[#f8f7f6] aspect-square">
+                    <img id="main-product-image"
+                        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                        alt="Hot Trend Design Collection"
+                        class="w-full h-full object-cover cursor-zoom-in transition-transform duration-300 hover:scale-105" />
+                    <div class="absolute top-4 right-4 z-10">
+                        <span
+                            class="px-4 py-2 bg-[#ae873e] text-white text-[12px] font-semibold rounded-full shadow-lg">
+                            HOT TREND
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Thumbnail Gallery -->
+                <div class="grid grid-cols-4 sm:grid-cols-5 gap-3">
+                    <div
+                        class="thumbnail-item active cursor-pointer rounded-lg overflow-hidden border-2 border-[#ae873e] p-1 bg-white">
+                        <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                            alt="Thumbnail 1" class="w-full h-full object-cover aspect-square rounded"
+                            data-main-image="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png" />
+                    </div>
+                    <div
+                        class="thumbnail-item cursor-pointer rounded-lg overflow-hidden border-2 border-transparent hover:border-[#ae873e]/50 p-1 bg-white transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&auto=format&fit=crop"
+                            alt="Thumbnail 2" class="w-full h-full object-cover aspect-square rounded"
+                            data-main-image="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&auto=format&fit=crop" />
+                    </div>
+                    <div
+                        class="thumbnail-item cursor-pointer rounded-lg overflow-hidden border-2 border-transparent hover:border-[#ae873e]/50 p-1 bg-white transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=200&auto=format&fit=crop"
+                            alt="Thumbnail 3" class="w-full h-full object-cover aspect-square rounded"
+                            data-main-image="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=800&auto=format&fit=crop" />
+                    </div>
+                    <div
+                        class="thumbnail-item cursor-pointer rounded-lg overflow-hidden border-2 border-transparent hover:border-[#ae873e]/50 p-1 bg-white transition-all duration-300">
+                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=200&auto=format&fit=crop"
+                            alt="Thumbnail 4" class="w-full h-full object-cover aspect-square rounded"
+                            data-main-image="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop" />
+                    </div>
+                    <div
+                        class="thumbnail-item cursor-pointer rounded-lg overflow-hidden border-2 border-transparent hover:border-[#ae873e]/50 p-1 bg-white transition-all duration-300 hidden sm:block">
+                        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=200&auto=format&fit=crop"
+                            alt="Thumbnail 5" class="w-full h-full object-cover aspect-square rounded"
+                            data-main-image="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&auto=format&fit=crop" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Product Info -->
+            <div class="scroll-slide-up" style="animation-delay: 0.2s;">
+                <div class="flex flex-col gap-6">
+                    <!-- Product Title -->
+                    <div>
+                        <h1
+                            class="text-[#090707] text-[28px] sm:text-[32px] lg:text-[40px] font-semibold leading-tight mb-3">
+                            Hot Trend Design Collection
+                        </h1>
+                        <div class="flex items-center gap-3">
+                            <div class="flex items-center gap-1">
+                                <i data-lucide="star" class="w-5 h-5 text-[#fbbf24] fill-[#fbbf24]"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-[#fbbf24] fill-[#fbbf24]"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-[#fbbf24] fill-[#fbbf24]"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-[#fbbf24] fill-[#fbbf24]"></i>
+                                <i data-lucide="star" class="w-5 h-5 text-[#fbbf24] fill-[#fbbf24]"></i>
+                            </div>
+                            <span class="text-[#666666] text-[14px]">(4.8 - 128 đánh giá)</span>
+                        </div>
+                    </div>
+
+                    <!-- Price Section -->
+                    <div class="flex flex-col gap-2 pb-4 border-b border-[#ececf0]">
+                        <div class="flex items-baseline gap-4">
+                            <span class="text-[#ae873e] text-[32px] sm:text-[36px] lg:text-[42px] font-semibold">
+                                $27
+                            </span>
+                            <span class="text-[#999999] text-[20px] line-through">
+                                $35
+                            </span>
+                            <span class="px-3 py-1 bg-red-100 text-red-600 text-[13px] font-semibold rounded-full">
+                                -23%
+                            </span>
+                        </div>
+                        <p class="text-[#666666] text-[14px]">
+                            Đã bao gồm VAT
+                        </p>
+                    </div>
+
+                    <!-- Short Description -->
+                    <div>
+                        <p class="text-[#333333] text-[15px] sm:text-[16px] leading-[26px]">
+                            Bộ sưu tập nail hot trend đang thịnh hành trên TikTok, Instagram với thiết kế độc đáo, màu
+                            sắc bắt mắt. Phù hợp cho mọi dịp từ đi chơi, đi làm đến các sự kiện đặc biệt.
+                        </p>
+                    </div>
+
+                    <!-- Product Options -->
+                    <div class="flex flex-col gap-4">
+                        <!-- Select Design Pattern -->
+                        <div>
+                            <label class="block text-[#090707] text-[15px] font-semibold mb-2">
+                                Chọn Mẫu Nail
+                            </label>
+                            <div class="grid grid-cols-3 sm:grid-cols-4 gap-3" id="design-patterns">
+                                <button
+                                    class="design-option active border-2 border-[#ae873e] rounded-lg p-3 bg-white hover:bg-[#FFF9F2] transition-all duration-300">
+                                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=150&auto=format&fit=crop"
+                                        alt="Pattern 1" class="w-full aspect-square object-cover rounded mb-2" />
+                                    <p class="text-[12px] text-[#333] font-medium text-center">Mẫu 1</p>
+                                </button>
+                                <button
+                                    class="design-option border-2 border-transparent hover:border-[#ae873e]/50 rounded-lg p-3 bg-white hover:bg-[#FFF9F2] transition-all duration-300">
+                                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=150&auto=format&fit=crop"
+                                        alt="Pattern 2" class="w-full aspect-square object-cover rounded mb-2" />
+                                    <p class="text-[12px] text-[#333] font-medium text-center">Mẫu 2</p>
+                                </button>
+                                <button
+                                    class="design-option border-2 border-transparent hover:border-[#ae873e]/50 rounded-lg p-3 bg-white hover:bg-[#FFF9F2] transition-all duration-300">
+                                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=150&auto=format&fit=crop"
+                                        alt="Pattern 3" class="w-full aspect-square object-cover rounded mb-2" />
+                                    <p class="text-[12px] text-[#333] font-medium text-center">Mẫu 3</p>
+                                </button>
+                                <button
+                                    class="design-option border-2 border-transparent hover:border-[#ae873e]/50 rounded-lg p-3 bg-white hover:bg-[#FFF9F2] transition-all duration-300 hidden sm:block">
+                                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=150&auto=format&fit=crop"
+                                        alt="Pattern 4" class="w-full aspect-square object-cover rounded mb-2" />
+                                    <p class="text-[12px] text-[#333] font-medium text-center">Mẫu 4</p>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Quantity Selector -->
+                        <div>
+                            <label class="block text-[#090707] text-[15px] font-semibold mb-2">
+                                Số Lượng
+                            </label>
+                            <div class="flex items-center gap-3 w-fit">
+                                <button id="quantity-decrease"
+                                    class="quantity-btn decrease w-10 h-10 rounded-lg border-2 border-[#ae873e] text-[#ae873e] hover:bg-[#ae873e] hover:text-white transition-all duration-300 flex items-center justify-center font-semibold">
+                                    <i data-lucide="minus" class="w-4 h-4"></i>
+                                </button>
+                                <input type="number" id="quantity-input" value="1" min="1" max="99"
+                                    class="quantity-input w-16 h-10 text-center border-2 border-[#ae873e] rounded-lg text-[16px] font-semibold focus:outline-none focus:ring-2 focus:ring-[#ae873e] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none [-moz-appearance:textfield]" />
+                                <button id="quantity-increase"
+                                    class="quantity-btn increase w-10 h-10 rounded-lg border-2 border-[#ae873e] text-[#ae873e] hover:bg-[#ae873e] hover:text-white transition-all duration-300 flex items-center justify-center font-semibold">
+                                    <i data-lucide="plus" class="w-4 h-4"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <button id="add-to-cart-btn" data-jmodal-target="add-to-cart-modal"
+                            class="flex-1 bg-[#ae873e] text-white py-4 px-8 rounded-full text-[16px] font-semibold hover:bg-[#c9a961] transition-all duration-300 shadow-lg hover:shadow-xl flex items-center justify-center gap-2">
+                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                            Thêm Vào Giỏ Hàng
+                        </button>
+                        <button id="favorite-btn"
+                            class="w-full sm:w-auto px-8 py-4 border-2 border-[#ae873e] text-[#ae873e] rounded-full text-[16px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 flex items-center justify-center gap-2">
+                            <i data-lucide="heart" class="w-5 h-5"></i>
+                            Yêu Thích
+                        </button>
+                    </div>
+
+                    <!-- Product Features -->
+                    <div class="pt-4 border-t border-[#ececf0]">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-[#FFF9F2] flex items-center justify-center">
+                                    <i data-lucide="truck" class="w-5 h-5 text-[#ae873e]"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[14px] font-semibold text-[#090707]">Miễn Phí Vận Chuyển</p>
+                                    <p class="text-[12px] text-[#666666]">Đơn hàng trên $50</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-[#FFF9F2] flex items-center justify-center">
+                                    <i data-lucide="rotate-ccw" class="w-5 h-5 text-[#ae873e]"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[14px] font-semibold text-[#090707]">Đổi Trả Dễ Dàng</p>
+                                    <p class="text-[12px] text-[#666666]">Trong vòng 7 ngày</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-[#FFF9F2] flex items-center justify-center">
+                                    <i data-lucide="shield-check" class="w-5 h-5 text-[#ae873e]"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[14px] font-semibold text-[#090707]">Bảo Hành Chính Hãng</p>
+                                    <p class="text-[12px] text-[#666666]">1 năm</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-[#FFF9F2] flex items-center justify-center">
+                                    <i data-lucide="headphones" class="w-5 h-5 text-[#ae873e]"></i>
+                                </div>
+                                <div>
+                                    <p class="text-[14px] font-semibold text-[#090707]">Hỗ Trợ 24/7</p>
+                                    <p class="text-[12px] text-[#666666]">Hotline: 1900-xxxx</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,210 @@
+/* ========================================================================
+   HEADER.CSS - Header Component Styles
+   ======================================================================== */
+
+/* ========================================================================
+   Sticky Navigation Styles
+   ======================================================================== */
+/* When scroll down - background #f8f7f6 blur with transparency */
+.nav-bg-blur {
+    background-color: rgb(0 0 0 / 30%) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 2px 10px rgb(82 82 82) !important;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+}
+
+/* 
+#main-navbar.nav-bg-blur {
+    background-color: rgb(0 0 0 / 30%) !important;
+  
+    box-shadow: 0 2px 10px rgb(82 82 82) !important;
+
+} */
+.header-navbar-desktop.nav-bg-blur * {
+    color: #fff !important;
+}
+
+/* Fixed navbar styles */
+#main-navbar.fixed,
+#mobile-navbar.fixed {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 100 !important;
+    transition: all 0.3s ease;
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+    animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================================================
+   @LAYER COMPONENTS - Header Specific Components
+   ======================================================================== */
+@layer components {
+
+    /* ========================================================================
+       HEADER LAYOUT GROUP: Header Layout Properties
+       ======================================================================== */
+    .header-wrapper {
+        @apply bg-white flex flex-col w-full;
+    }
+
+    /* ========================================================================
+       TOPBAR GROUP: Topbar Banner Styles
+       ======================================================================== */
+    .header-topbar {
+        @apply bg-[#bbaa8e] flex flex-wrap items-center justify-center gap-3 sm:gap-6 px-4 py-2 w-full text-center;
+    }
+
+    .header-topbar-text {
+        @apply text-[#141414] text-[13px] sm:text-[14px] leading-snug line-clamp-1 sm:line-clamp-none;
+    }
+
+    .header-topbar-button {
+        @apply bg-[#080606] text-white text-[13px] sm:text-[14px] px-3 py-1.5 border border-black border-solid hover:bg-black transition;
+    }
+
+    /* ========================================================================
+       NAVBAR GROUP: Navigation Bar Styles
+       ======================================================================== */
+    .header-navbar-desktop {
+        @apply hidden md:flex bg-[#f8f7f6] overflow-x-auto whitespace-nowrap items-center justify-center gap-6 sm:gap-10 md:gap-[30px] px-4 py-3 shadow-sm transition-all duration-300;
+    }
+
+    .header-navbar-mobile {
+        @apply flex md:hidden bg-[#f8f7f6] items-center justify-between px-4 py-3 shadow-sm transition-all duration-300 relative;
+    }
+
+    .header-navbar-mobile-links {
+        @apply flex gap-4 items-center overflow-x-auto whitespace-nowrap relative;
+        width: calc(100vw - 70px);
+        max-width: calc(100vw - 70px);
+        scrollbar-width: none;
+        /* Firefox */
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        -webkit-overflow-scrolling: touch;
+        /* Smooth scrolling on iOS */
+    }
+
+    .nav-bg-blur .header-navbar-mobile-links *,
+    .nav-bg-blur .header-navbar-mobile-toggle,
+    .nav-bg-blur .header-icon-button
+    {
+        color: #fff !important;
+    }
+
+    .header-navbar-mobile-links::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari, Opera */
+    }
+
+    
+    .header-navbar-link {
+        @apply text-[#333] text-[16px] hover:text-black transition flex-shrink-0;
+    }
+
+    .header-navbar-mobile-toggle {
+        @apply text-black transition-colors;
+    }
+
+    .header-navbar-mobile-icon {
+        @apply w-6 h-6;
+    }
+
+    .header-navbar-mobile-menu {
+        @apply hidden absolute top-full left-0 w-full bg-[#f8f7f6] flex flex-col items-center gap-3 py-4 shadow-md z-50;
+    }
+
+    /* Header Icons */
+    .header-navbar-icons {
+        @apply flex items-center gap-4 ml-auto;
+    }
+
+    .header-navbar-mobile-icons {
+        @apply flex items-center gap-4 ml-auto flex-1 min-w-0;
+    }
+
+    .header-icon-button {
+        @apply p-2 text-[#333] hover:text-black transition-colors;
+    }
+
+    .header-icon {
+        @apply w-6 h-6;
+    }
+
+    /* Mobile Drawer */
+    .header-mobile-drawer {
+        @apply fixed inset-0 z-[9999] pointer-events-none;
+    }
+
+    .header-mobile-drawer.active {
+        @apply pointer-events-auto;
+    }
+
+    .header-mobile-drawer-overlay {
+        @apply absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300;
+    }
+
+    .header-mobile-drawer.active .header-mobile-drawer-overlay {
+        @apply opacity-100;
+    }
+
+    .header-mobile-drawer-content {
+        @apply absolute right-0 top-0 h-screen w-[85vw] max-w-[400px] bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-out;
+    }
+
+    .header-mobile-drawer.active .header-mobile-drawer-content {
+        @apply translate-x-0;
+    }
+
+    .header-mobile-drawer-header {
+        @apply flex items-center justify-between p-6 border-b border-gray-200;
+    }
+
+    .header-mobile-drawer-logo {
+        @apply flex-1 flex items-center;
+    }
+
+    .header-mobile-drawer-logo>div {
+        @apply mx-0;
+    }
+
+    .header-mobile-drawer-close {
+        @apply p-2 text-[#333] hover:text-black transition-colors;
+    }
+
+    .header-mobile-drawer-body {
+        @apply flex flex-col h-[calc(100%-120px)] overflow-y-auto;
+    }
+
+    .header-mobile-drawer-section {
+        @apply flex flex-col border-b border-gray-200 last:border-b-0;
+    }
+
+    .header-mobile-drawer-link {
+        @apply px-6 py-4 text-[#333] text-[16px] hover:bg-[#f8f7f6] hover:text-black transition-colors;
+    }
+
+    /* Social Media Icons */
+    .header-social-icon {
+        @apply p-2 text-[#333] hover:text-[#ae873e] transition-colors;
+    }
+
+}

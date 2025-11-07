@@ -1,0 +1,842 @@
+<!-- Products Grid Section -->
+<section class="bg-white relative w-full py-12 sm:py-16 lg:py-24" data-name="products-grid">
+    <div class="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+
+        <!-- Tabs Container -->
+        <div class="tabs tabs-btn">
+            <!-- Section Header -->
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10 sm:mb-12 lg:mb-16 scroll-fade-in">
+                <div class="w-full flex flex-col gap-4 lg:max-w-[55%] xl:max-w-[50%]">
+                    <h2
+                        class="font-semibold leading-tight text-[#a5834a] text-[28px] sm:text-[36px] lg:text-[48px] tracking-[-1.2px]">
+                        Tất Cả Sản Phẩm
+                    </h2>
+                    <p class="text-[#666666] text-[14px] sm:text-[15px] leading-[22px]">
+                        Khám phá toàn bộ bộ sưu tập sản phẩm nail của chúng tôi
+                    </p>
+                </div>
+
+                <!-- Tab Menu -->
+                <div class="tab-menu-wrapper flex flex-wrap gap-3 scroll-slide-up" style="animation-delay: 0.2s;">
+                    <button
+                        class="tab-menu active px-6 py-2.5 bg-[#ae873e] text-white rounded-full text-[14px] font-semibold hover:bg-[#c9a961] transition-all duration-300"
+                        data-tab="all">
+                        Tất Cả
+                    </button>
+                    <button
+                        class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
+                        data-tab="bestseller">
+                        Bán Chạy
+                    </button>
+                    <button
+                        class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
+                        data-tab="newest">
+                        Mới Nhất
+                    </button>
+                    <button
+                        class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
+                        data-tab="featured">
+                        Nổi Bật
+                    </button>
+                    <button
+                        class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
+                        data-tab="sale">
+                        Giảm Giá
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content: All Products -->
+            <div class="tab-content active" data-tab-content="all">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
+
+                    <!-- Product 1 -->
+                    <div class="product-card group scroll-slide-up" data-category="bestseller">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Hot Trend Nail Design 1"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 z-10">
+                                <span
+                                    class="px-3 py-1 bg-[#ae873e] text-white text-[11px] font-semibold rounded-full shadow-lg">
+                                    HOT
+                                </span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">
+                                Hot Trend Design Collection
+                            </a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $27
+                                </p>
+                            </div>
+                            <button class="product-card__button">
+                                Thêm giỏ hàng
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card group scroll-slide-up" data-category="newest"
+                        style="animation-delay: 0.05s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Winter Collection Nail Design"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 z-10">
+                                <span
+                                    class="px-3 py-1 bg-[#c9a961] text-white text-[11px] font-semibold rounded-full shadow-lg">
+                                    NEW
+                                </span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">
+                                Winter Elegance Collection
+                            </a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $32
+                                </p>
+                            </div>
+                            <button class="product-card__button">
+                                Thêm giỏ hàng
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card group scroll-slide-up" data-category="featured"
+                        style="animation-delay: 0.1s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Party Design Collection"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">
+                                Party Glamour Set
+                            </a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $29
+                                </p>
+                            </div>
+                            <button class="product-card__button">
+                                Thêm giỏ hàng
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card group scroll-slide-up" data-category="sale"
+                        style="animation-delay: 0.15s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Classic Elegant Design"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">
+                                Classic Timeless Collection
+                            </a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $25
+                                </p>
+                            </div>
+                            <button class="product-card__button">
+                                Thêm giỏ hàng
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="product-card group scroll-slide-up" data-category="bestseller"
+                        style="animation-delay: 0.2s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Trendy Nail Art"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span
+                                    class="px-3 py-1 bg-red-500 text-white text-[11px] font-semibold rounded-full shadow-lg">
+                                    -20%
+                                </span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">
+                                Modern Trend Collection
+                            </a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $22
+                                </p>
+                            </div>
+                            <button class="product-card__button">
+                                Thêm giỏ hàng
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="product-card group scroll-slide-up" data-category="newest"
+                        style="animation-delay: 0.25s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Winter Special Design"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">
+                                Winter Wonderland Set
+                            </a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $35
+                                </p>
+                            </div>
+                            <button class="product-card__button">
+                                Thêm giỏ hàng
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="product-card group scroll-slide-up" data-category="featured"
+                        style="animation-delay: 0.3s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Party Special Collection"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">
+                                Celebration Party Pack
+                            </a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $31
+                                </p>
+                            </div>
+                            <button class="product-card__button">
+                                Thêm giỏ hàng
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="product-card group scroll-slide-up" data-category="sale"
+                        style="animation-delay: 0.35s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Classic Design Set"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">
+                                Elegant Classic Bundle
+                            </a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $28
+                                </p>
+                            </div>
+                            <button class="product-card__button">
+                                Thêm giỏ hàng
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 9 -->
+                    <div class="product-card group scroll-slide-up" data-category="bestseller"
+                        style="animation-delay: 0.4s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Trending Design"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">
+                                Trending Now Collection
+                            </a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $26
+                                </p>
+                            </div>
+                            <button class="product-card__button">
+                                Thêm giỏ hàng
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Product 10 -->
+                    <div class="product-card group scroll-slide-up" data-category="newest"
+                        style="animation-delay: 0.45s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Winter Collection Special"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">
+                                Cozy Winter Vibes
+                            </a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $30
+                                </p>
+                            </div>
+                            <button class="product-card__button">
+                                Thêm giỏ hàng
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Load More Button -->
+                <div class="flex justify-center mt-12 lg:mt-16 scroll-fade-in" style="animation-delay: 0.5s;">
+                    <button class="section__button">
+                        Xem Thêm Sản Phẩm
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content: Bestseller Products -->
+            <div class="tab-content" data-tab-content="bestseller">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
+                    <!-- Bestseller Product 1 -->
+                    <div class="product-card group scroll-slide-up">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Hot Trend Nail Design"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 z-10">
+                                <span
+                                    class="px-3 py-1 bg-[#ae873e] text-white text-[11px] font-semibold rounded-full shadow-lg">
+                                    HOT
+                                </span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">Hot Trend Design Collection</a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $27
+                                </p>
+                            </div>
+                            <button class="product-card__button">Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+
+                    <!-- Bestseller Product 2 -->
+                    <div class="product-card group scroll-slide-up" style="animation-delay: 0.05s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Modern Trend Collection"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span
+                                    class="px-3 py-1 bg-red-500 text-white text-[11px] font-semibold rounded-full shadow-lg">
+                                    -20%
+                                </span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">Modern Trend Collection</a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">$22</p>
+                                <!-- <p class="text-[13px] text-[#999999] line-through">$27</p> -->
+                            </div>
+                            <button class="product-card__button">Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+
+                    <!-- Bestseller Product 3 -->
+                    <div class="product-card group scroll-slide-up" style="animation-delay: 0.1s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Trending Now Collection"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">Trending Now Collection</a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $22
+                                </p>
+                            </div>
+                            <button class="product-card__button">Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+
+                    <!-- Bestseller Product 4 -->
+                    <div class="product-card group scroll-slide-up" style="animation-delay: 0.15s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Premium Bestseller Set"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 z-10">
+                                <span
+                                    class="px-3 py-1 bg-[#ae873e] text-white text-[11px] font-semibold rounded-full shadow-lg">
+                                    BEST
+                                </span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">Premium Bestseller Set</a>
+                            <p class="product-card__price">$34</p>
+                            <button class="product-card__button">Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="flex justify-center mt-12 lg:mt-16 scroll-fade-in" style="animation-delay: 0.5s;">
+                    <button class="section__button">
+                        Xem Thêm Sản Phẩm
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content: Newest Products -->
+            <div class="tab-content" data-tab-content="newest">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
+                    <!-- Newest Product 1 -->
+                    <div class="product-card group scroll-slide-up">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Winter Collection Nail Design"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 z-10">
+                                <span
+                                    class="px-3 py-1 bg-[#c9a961] text-white text-[11px] font-semibold rounded-full shadow-lg">
+                                    NEW
+                                </span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">Winter Elegance Collection</a>
+                            <p class="product-card__price">$32</p>
+                            <button class="product-card__button">Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+
+                    <!-- Newest Product 2 -->
+                    <div class="product-card group scroll-slide-up" style="animation-delay: 0.05s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Winter Special Design"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 z-10">
+                                <span
+                                    class="px-3 py-1 bg-[#c9a961] text-white text-[11px] font-semibold rounded-full shadow-lg">
+                                    NEW
+                                </span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">Winter Wonderland Set</a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $35
+                                </p>
+                            </div>
+                            <button class="product-card__button">Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+
+                    <!-- Newest Product 3 -->
+                    <div class="product-card group scroll-slide-up" style="animation-delay: 0.1s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Winter Collection Special"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 z-10">
+                                <span
+                                    class="px-3 py-1 bg-[#c9a961] text-white text-[11px] font-semibold rounded-full shadow-lg">
+                                    NEW
+                                </span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">Cozy Winter Vibes</a>
+                            <p class="product-card__price">$30</p>
+                            <button class="product-card__button">Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+
+                    <!-- Newest Product 4 -->
+                    <div class="product-card group scroll-slide-up" style="animation-delay: 0.15s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Latest Design Collection"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 z-10">
+                                <span
+                                    class="px-3 py-1 bg-[#c9a961] text-white text-[11px] font-semibold rounded-full shadow-lg">
+                                    NEW
+                                </span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">Latest Design Collection</a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $28
+                                </p>
+                            </div>
+                            <button class="product-card__button">Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="flex justify-center mt-12 lg:mt-16 scroll-fade-in" style="animation-delay: 0.5s;">
+                    <button class="section__button">
+                        Xem Thêm Sản Phẩm
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content: Featured Products -->
+            <div class="tab-content" data-tab-content="featured">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
+                    <!-- Featured Product 1 -->
+                    <div class="product-card group scroll-slide-up">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Party Design Collection"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 z-10">
+                                <span
+                                    class="px-3 py-1 bg-purple-500 text-white text-[11px] font-semibold rounded-full shadow-lg">
+                                    FEATURED
+                                </span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">Party Glamour Set</a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $29
+                                </p>
+                            </div>
+                            <button class="product-card__button">Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 2 -->
+                    <div class="product-card group scroll-slide-up" style="animation-delay: 0.05s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Party Special Collection"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 z-10">
+                                <span
+                                    class="px-3 py-1 bg-purple-500 text-white text-[11px] font-semibold rounded-full shadow-lg">
+                                    FEATURED
+                                </span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">Celebration Party Pack</a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $31
+                                </p>
+                            </div>
+                            <button class="product-card__button">Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 3 -->
+                    <div class="product-card group scroll-slide-up" style="animation-delay: 0.1s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Premium Featured Design"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 z-10">
+                                <span
+                                    class="px-3 py-1 bg-purple-500 text-white text-[11px] font-semibold rounded-full shadow-lg">
+                                    FEATURED
+                                </span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">Premium Featured Design</a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">
+                                    $36
+                                </p>
+                            </div>
+                            <button class="product-card__button">Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="flex justify-center mt-12 lg:mt-16 scroll-fade-in" style="animation-delay: 0.5s;">
+                    <button class="section__button">
+                        Xem Thêm Sản Phẩm
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tab Content: Sale Products -->
+            <div class="tab-content" data-tab-content="sale">
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 sm:gap-6 lg:gap-8">
+                    <!-- Sale Product 1 -->
+                    <div class="product-card group scroll-slide-up">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Classic Elegant Design"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span
+                                    class="px-3 py-1 bg-red-500 text-white text-[11px] font-semibold rounded-full shadow-lg">
+                                    -30%
+                                </span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">Classic Timeless Collection</a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">$18</p>
+                                <!-- <p class="text-[13px] text-[#999999] line-through">$25</p> -->
+                            </div>
+                            <button class="product-card__button">Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+
+                    <!-- Sale Product 2 -->
+                    <div class="product-card group scroll-slide-up" style="animation-delay: 0.05s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Classic Design Set"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span
+                                    class="px-3 py-1 bg-red-500 text-white text-[11px] font-semibold rounded-full shadow-lg">
+                                    -25%
+                                </span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">Elegant Classic Bundle</a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">$21</p>
+                                <!-- <p class="text-[13px] text-[#999999] line-through">$28</p> -->
+                            </div>
+                            <button class="product-card__button">Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+
+                    <!-- Sale Product 3 -->
+                    <div class="product-card group scroll-slide-up" style="animation-delay: 0.1s;">
+                        <div class="product-card__image relative overflow-hidden">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                                alt="Sale Special Design"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-3 left-3 z-10">
+                                <span
+                                    class="px-3 py-1 bg-red-500 text-white text-[11px] font-semibold rounded-full shadow-lg">
+                                    -40%
+                                </span>
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                                <a href="single-product.html"
+                                    class="bg-white text-[#333] px-6 py-2 rounded-full text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                                    Xem Chi Tiết
+                                </a>
+                            </div>
+                        </div>
+                        <div class="product-card__body">
+                            <a href="single-product.html" class="product-card__title hover:text-[#ae873e] transition-colors">Sale Special Design</a>
+                            <div class="flex items-center gap-2 mb-3">
+                                <p class="product-card__price">$15</p>
+                                <!-- <p class="text-[13px] text-[#999999] line-through">$25</p> -->
+                            </div>
+                            <button class="product-card__button">Thêm giỏ hàng</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Load More Button -->
+                <div class="flex justify-center mt-12 lg:mt-16 scroll-fade-in" style="animation-delay: 0.5s;">
+                    <button class="section__button">
+                        Xem Thêm Sản Phẩm
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

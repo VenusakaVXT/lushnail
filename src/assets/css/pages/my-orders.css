@@ -1,0 +1,49 @@
+/* My Orders Page Styles */
+
+/* Order Cards */
+.order-card {
+  transition: all 0.3s ease-out;
+}
+
+.order-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Order Filter Tabs */
+.order-filter-tab {
+  transition: all 0.3s ease-out;
+}
+
+.order-filter-tab.active {
+  background-color: #ae873e;
+  color: white;
+  border: none;
+}
+
+/* Order Action Buttons */
+.order-action-btn {
+  transition: all 0.3s ease-out;
+  white-space: nowrap;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .order-card {
+    border-radius: 12px;
+  }
+
+  .order-action-btn {
+    flex: 1;
+    min-width: 120px;
+  }
+}
+
+/* Smooth transitions for order filtering */
+.orders-list {
+  transition: all 0.3s ease-out;
+}
+
+.order-card {
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+

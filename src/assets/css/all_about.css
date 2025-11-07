@@ -1,0 +1,15 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* Các thành phần dùng lại cho all trang ví dụ btn, tab, input, bg, color, text, card, badge, .v.v. */
+@import "./globals.css";
+/* Các thành phần cho Header */
+@import "./header.css";
+/* Các thành phần Blaze Slider */
+@import "./blaze-slider.css";
+/* Các thành phần cho About Us */
+@import "./pages/about-us.css";
+/* Các thành phần cho Footer */
+@import "./footer.css";
+
