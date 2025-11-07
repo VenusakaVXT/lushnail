@@ -1,7 +1,7 @@
-# Kế hoạch chuyển đổi UI Homepage từ nail-website sang BuilderLunasNail
+# Kế hoạch chuyển đổi UI Homepage từ nail-website sang BuilderLushNail
 
 ## Tổng quan
-Dự án: Bóc tách UI trang chủ từ `nail-website/index.html` (1605 dòng) sang dự án chuẩn `BuilderLunasNail` với cấu trúc modular.
+Dự án: Bóc tách UI trang chủ từ `nail-website/index.html` (1605 dòng) sang dự án chuẩn `BuilderLushNail` với cấu trúc modular.
 
 **Link UI gốc**: https://nail-website-navy.vercel.app/
 
@@ -11,7 +11,7 @@ Dự án: Bóc tách UI trang chủ từ `nail-website/index.html` (1605 dòng) 
 
 ### 1. Header Section
 - **Topbar**: Banner thông báo với nút "Tìm hiểu thêm" (màu #bbaa8e)
-- **Logo**: Logo Lunas Nail (SVG embedded, màu #bbaa8e)
+- **Logo**: Logo Lush Nail (SVG embedded, màu #bbaa8e)
 - **Navbar Desktop**: Menu ngang với các link (Trang chủ, Cửa hàng, Khoá học, Câu chuyện, Về chúng tôi)
 - **Navbar Mobile**: Menu thu gọn với dropdown
 - **JS Logic**: 
@@ -41,7 +41,7 @@ Dự án: Bóc tách UI trang chủ từ `nail-website/index.html` (1605 dòng) 
 - Mỗi course card có: image, badge discount, title, description, tags, price, CTA button
 
 ### 5. Partners Section
-- Text: "Đối tác của Lunas Nail"
+- Text: "Đối tác của Lush Nail"
 
 ### 6. Training Program Section
 - Title: "Làm chủ nghệ thuật Móng"
@@ -91,7 +91,7 @@ Dự án: Bóc tách UI trang chủ từ `nail-website/index.html` (1605 dòng) 
 
 ### 12. Footer Section
 - Background màu #423321
-- Logo Lunas Nail
+- Logo Lush Nail
 - Description text
 - Social icons (Facebook, Instagram, Twitter, YouTube, TikTok, Pinterest, ...)
 - Navigation links:
@@ -107,7 +107,7 @@ Dự án: Bóc tách UI trang chủ từ `nail-website/index.html` (1605 dòng) 
 ## Cấu trúc file mục tiêu
 
 ```
-BuilderLunasNail/
+BuilderLushNail/
 ├── src/
 │   ├── index.html (main file - include all sections)
 │   ├── blocks/
@@ -115,7 +115,7 @@ BuilderLunasNail/
 │   │   ├── footer.html (main footer)
 │   │   ├── headers/
 │   │   │   ├── topbar.html (banner notification)
-│   │   │   ├── logo.html (Lunas Nail logo)
+│   │   │   ├── logo.html (Lush Nail logo)
 │   │   │   ├── menu-pc.html (desktop navigation)
 │   │   │   ├── menu-mobi.html (mobile navigation + toggle)
 │   │   │   └── modals.html (nếu có modal nào)
@@ -157,7 +157,7 @@ BuilderLunasNail/
 
 #### 1.2. Logo
 - File: `blocks/headers/logo.html`
-- Nội dung: SVG logo Lunas Nail (giữ nguyên SVG code)
+- Nội dung: SVG logo Lush Nail (giữ nguyên SVG code)
 - CSS: Size, positioning
 
 #### 1.3. Menu Desktop
@@ -237,7 +237,7 @@ BuilderLunasNail/
 
 #### 4.1. Partners Section
 - File: `blocks/sections/home/partners.html`
-- Nội dung: Text "Đối tác của Lunas Nail"
+- Nội dung: Text "Đối tác của Lush Nail"
 - CSS: Simple center text
 
 #### 4.2. Training Program Section
