@@ -34,7 +34,7 @@
         --muted-foreground: theme('colors.gray.500');
 
         /* Accent Colors */
-        --accent: theme('colors.gray.100');
+        --accent: #ae873e;
         --accent-foreground: theme('colors.gray.900');
 
         /* Status Colors */
@@ -111,7 +111,7 @@
         Common Section Styles
     ======================================================================== */
     .section__button {
-        @apply inline-flex items-center gap-2 bg-transparent border-2 border-[#ae873e] text-[#ae873e] hover:bg-[#ae873e] hover:text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 text-[14px] sm:text-[15px] font-semibold;
+        @apply inline-flex items-center gap-2 bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 text-[14px] sm:text-[15px] font-semibold;
     }
 
     .title-section {
@@ -219,11 +219,19 @@
        INPUT GROUP: Các thuộc tính cho Input
        ======================================================================== */
     .input {
-        @apply flex h-10 w-full rounded-lg border border-gray-200 bg-transparent px-3 py-2 text-sm transition-colors duration-150 placeholder:text-gray-500 focus:border-primary focus:outline-none focus:ring-primary disabled:cursor-not-allowed disabled:opacity-50;
+        @apply w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e];
     }
 
     .input:focus::placeholder {
         @apply text-primary;
+    }
+
+    .light .input-outline {
+        @apply w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] text-[12px] pb-1 placeholder:text-[#999999] focus:border-[#ae873e] focus:placeholder:text-[#ae873e] transition-colors;
+    }
+
+    .dark .input-outline {
+
     }
 
     .input-lg {
@@ -249,28 +257,51 @@
     .input-icon input:focus+.icon {
         @apply text-primary;
     }
+    
+    input[type="checkbox"]:checked {
+        @apply accent-accent;
+        outline: none !important;
+        box-shadow: none !important;
+    }
+    
+    input[type="checkbox"]:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+
+    input[type="radio"] {
+        @apply accent-accent border-accent;
+    }
 
     /* ========================================================================
        BADGE STYLES: Các thuộc tính cho Badge
        ======================================================================== */
     .badge {
-        @apply inline-flex items-center rounded-full px-3 py-1 text-xs;
-    }
-
-    .badge-feature {
-        @apply inline-block px-3 py-1 text-xs font-medium bg-white/80 backdrop-blur rounded-full;
+        @apply absolute top-3 right-3 z-10 px-3 pt-1 text-[11px] font-semibold rounded-full shadow-lg;
     }
 
     .badge-primary {
-        @apply border border-emerald-200 bg-emerald-100 text-emerald-800;
+        @apply bg-[#ae873e] text-white;
     }
 
-    .badge-title {
-        @apply bg-emerald-100 backdrop-blur-sm text-emerald-700 text-xs sm:text-sm mb-4;
+    .badge-primary-gradient {
+        @apply bg-gradient-to-r from-[#ae873e] to-[#c9a961] text-white;
     }
 
     .badge-secondary {
-        @apply bg-gray-50 text-gray-700 border border-gray-200;
+        @apply bg-[#c9a961] text-white;
+    }
+
+    .badge-classic {
+        @apply bg-[#d4a574] text-white;
+    }
+
+    .badge-feature {
+        @apply bg-purple-500 text-white;
+    }
+
+    .badge-hot {
+        @apply bg-red-500 text-white;
     }
 
     .badge-success {
@@ -289,20 +320,11 @@
         @apply bg-emerald-50 text-emerald-700 border border-emerald-200;
     }
 
-    .badge-hot {
-        @apply bg-gradient-to-r from-red-500 to-pink-500 text-white border-0 shadow-sm;
-    }
-
-    .badge-new {
-        @apply bg-gradient-to-r from-emerald-500 to-green-500 text-white border-0 shadow-sm;
-    }
-
-
     /* ========================================================================
         Product Card Styles
     ======================================================================== */
     .product-card {
-        @apply bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all duration-300;
+        @apply border border-[#ececf0] bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all duration-300;
     }
 
     .product-card__image {
@@ -386,7 +408,7 @@
     }
 
     .course-card__price {
-        @apply text-[26px] font-bold text-[#ae873e] tracking-[-0.52px];
+        @apply text-[26px] font-bold text-accent tracking-[-0.52px];
     }
 
     .course-card__price-old {
@@ -394,7 +416,7 @@
     }
 
     .course-card__button {
-        @apply w-full bg-gradient-to-r from-[#ae873e] to-[#c9a961]  border-transparent text-white hover:from-[#c9a961] hover:to-[#ae873e] py-3.5 rounded-full transition-all duration-300 text-[15px] font-semibold shadow-[0_4px_20px_rgba(174,135,62,0.4)] hover:shadow-[0_6px_30px_rgba(174,135,62,0.6)] hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 relative overflow-hidden;
+        @apply w-full bg-gradient-to-r from-accent to-[#c9a961] border-transparent text-white hover:from-[#c9a961] hover:to-accent py-3.5 rounded-full transition-all duration-300 text-[15px] font-semibold shadow-[0_4px_20px_rgba(174,135,62,0.4)] hover:shadow-[0_6px_30px_rgba(174,135,62,0.6)] hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 relative overflow-hidden;
     }
 
     .course-card__button::before {
@@ -463,6 +485,18 @@
     }
 
     /* ========================================================================
+        Scrollbar Hide Styles
+    ======================================================================== */
+    /* Ẩn scrollbar trên các trình duyệt phổ biến */
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+    .scrollbar-hide {
+        -ms-overflow-style: none;  /* IE và Edge */
+        scrollbar-width: none;     /* Firefox */
+    }
+
+    /* ========================================================================
         Tabs System Styles
     ======================================================================== */
     .tabs {
@@ -470,7 +504,7 @@
     }
 
     .tabs .tab-menu-wrapper {
-        @apply flex flex-wrap gap-2 border-b border-[#ececf0] mb-8;
+        @apply flex border-b border-[#ececf0] mb-8 overflow-x-auto whitespace-nowrap scrollbar-hide;
     }
 
     .tabs .tab-menu {

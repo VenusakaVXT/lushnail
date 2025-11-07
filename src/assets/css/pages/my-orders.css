@@ -47,3 +47,48 @@
   transition: opacity 0.3s ease-out, transform 0.3s ease-out, box-shadow 0.3s ease-out;
 }
 
+/* Order Items Container */
+.order-items-container {
+  position: relative;
+}
+
+/* Order Items */
+.order-item {
+  transition: all 0.3s ease-out;
+}
+
+/* Hidden Order Items */
+.order-item-hidden {
+  display: none;
+}
+
+/* Show More Button Wrapper */
+.order-show-more-wrapper {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.order-show-more-wrapper.hidden {
+  display: none;
+}
+
+/* Show More Button */
+.order-show-more-btn {
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+}
+
+.order-show-more-btn:hover {
+  color: #c9a961;
+  text-decoration: underline;
+}
+
+.order-show-more-btn:active {
+  color: #ae873e;
+}
+
+.order-show-more-btn i {
+  transition: transform 0.3s ease-out;
+}

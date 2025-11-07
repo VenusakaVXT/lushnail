@@ -1,0 +1,57 @@
+<!-- Sticky Bar - Fixed at bottom when scrolling (Shopee style) -->
+<div id="cart-sticky-bar" class="cart-sticky-bar">
+  <div class="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+    <div
+      class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2 sm:gap-3 lg:gap-4 py-2.5 sm:py-3 lg:py-4">
+      <!-- Left: Actions -->
+      <div class="flex flex-wrap items-center gap-2 sm:gap-3 lg:gap-4 min-w-0 flex-1">
+        <!-- Select All Checkbox -->
+        <label class="flex items-center gap-1.5 sm:gap-2 cursor-pointer flex-shrink-0">
+          <input type="checkbox" id="sticky-select-all"
+            class="w-4 h-4 border-2 border-[#ececf0] rounded text-[#ae873e] focus:ring-[#ae873e] focus:ring-2 flex-shrink-0">
+          <span
+            class="text-[#666666] text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] font-medium whitespace-nowrap"
+            id="sticky-select-all-text">Chọn Tất Cả
+            (<span id="sticky-total-items">0</span>)</span>
+        </label>
+
+        <!-- Action Buttons -->
+        <div class="flex items-center gap-2 sm:gap-3 lg:gap-4 flex-wrap">
+          <button
+            class="text-[#666666] text-[12px] sm:text-[13px] md:text-[14px] hover:text-[#ae873e] transition-colors duration-300 whitespace-nowrap flex-shrink-0"
+            id="sticky-delete-btn">
+            Xóa
+          </button>
+          <button
+            class="text-[#666666] text-[12px] sm:text-[13px] md:text-[14px] hover:text-[#ae873e] transition-colors duration-300 hidden md:block whitespace-nowrap flex-shrink-0"
+            id="sticky-remove-inactive-btn">
+            Bỏ sản phẩm không hoạt động
+          </button>
+          <button
+            class="text-[#ae873e] text-[12px] sm:text-[13px] md:text-[14px] hover:text-[#c9a961] transition-colors duration-300 font-medium whitespace-nowrap flex-shrink-0"
+            id="sticky-save-favorites-btn">
+            Lưu vào mục Đã thích
+          </button>
+        </div>
+      </div>
+
+      <!-- Right: Total Summary & Checkout -->
+      <div
+        class="flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-2 sm:gap-3 lg:gap-4 flex-shrink-0">
+        <div class="flex items-center gap-1.5 sm:gap-2 flex-wrap justify-end sm:justify-start">
+          <span class="text-[#666666] text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] whitespace-nowrap">Tổng
+            cộng</span>
+          <span class="text-[#666666] text-[12px] sm:text-[13px] md:text-[14px] lg:text-[15px] whitespace-nowrap"
+            id="sticky-product-count">(0 sản phẩm):</span>
+          <span
+            class="text-[#ae873e] text-[16px] sm:text-[17px] md:text-[18px] lg:text-[20px] font-semibold underline whitespace-nowrap"
+            id="sticky-total">$0</span>
+        </div>
+        <button id="sticky-checkout-btn"
+          class="bg-[#ae873e] text-white py-2 sm:py-2.5 lg:py-3 px-4 sm:px-6 lg:px-10 rounded-lg text-[13px] sm:text-[14px] lg:text-[16px] font-semibold hover:bg-[#c9a961] transition-all duration-300 shadow-md hover:shadow-lg whitespace-nowrap w-full sm:w-auto flex-shrink-0">
+          Thanh Toán
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

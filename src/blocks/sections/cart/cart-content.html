@@ -1,132 +1,891 @@
-<div class="lg:col-span-2">
-  <!-- Tab Content: Products -->
-  <div id="tab-products" class="tab-content active">
-    <!-- Products List -->
-    <div class="space-y-4">
-      <!-- Product Item 1 -->
-      <div class="cart-item">
-        <div class="cart-item-container">
-          <div class="cart-item-image-wrapper">
-            <img
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
-              alt="Hot Trend Design Collection" class="cart-item-image" />
-          </div>
-          <div class="cart-item-content">
-            <div class="cart-item-info">
-              <h3 class="cart-item-title">
-                Hot Trend Design Collection
-              </h3>
-              <p class="cart-item-subtitle">Mẫu: Mẫu 1</p>
-              <div class="cart-item-price-wrapper">
-                <span class="cart-item-price">
-                  $27
-                </span>
-                <span class="cart-item-price-old">
-                  $35
-                </span>
+<section class="bg-white py-8 sm:py-12 lg:py-16 w-full pb-8 sm:pb-16" data-name="cart-content">
+  <div class="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+    <!-- Tab Content: Products -->
+    <div id="tab-products" class="tab-content active">
+      <!-- Products List -->
+      <div id="cart-items-list" class="space-y-4">
+        <!-- Product Item 1 -->
+        <div class="cart-item">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                alt="Hot Trend Design Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Hot Trend Design Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 1</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $27
+                  </span>
+                  <span class="cart-item-price-old">
+                    $35
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <!-- Quantity Selector -->
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <!-- Remove Button -->
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
               </div>
             </div>
-            <div class="cart-item-actions">
-              <!-- Quantity Selector -->
-              <div class="cart-item-quantity">
-                <button class="cart-item-quantity-btn decrease">
-                  <i data-lucide="minus" class="w-4 h-4"></i>
-                </button>
-                <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
-                <button class="cart-item-quantity-btn increase">
-                  <i data-lucide="plus" class="w-4 h-4"></i>
+          </div>
+        </div>
+
+        <!-- Product Item 2 -->
+        <div class="cart-item">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&auto=format&fit=crop"
+                alt="Winter Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Winter Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 2</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $32
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <!-- Quantity Selector -->
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="2" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <!-- Remove Button -->
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
                 </button>
               </div>
-              <!-- Remove Button -->
-              <button class="cart-item-remove">
-                <i data-lucide="trash-2" class="w-5 h-5"></i>
-              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 3 -->
+        <div class="cart-item">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=200&auto=format&fit=crop"
+                alt="Party Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Party Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 3</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $28
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <!-- Quantity Selector -->
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <!-- Remove Button -->
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 4 -->
+        <div class="cart-item">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&auto=format&fit=crop"
+                alt="Spring Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Spring Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 4</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $30
+                  </span>
+                  <span class="cart-item-price-old">
+                    $38
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 5 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=200&auto=format&fit=crop"
+                alt="Summer Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Summer Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 5</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $25
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="2" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 6 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&auto=format&fit=crop"
+                alt="Autumn Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Autumn Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 6</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $28
+                  </span>
+                  <span class="cart-item-price-old">
+                    $35
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 7 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=200&auto=format&fit=crop"
+                alt="Festival Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Festival Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 7</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $33
+                  </span>
+                  <span class="cart-item-price-old">
+                    $40
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 8 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&auto=format&fit=crop"
+                alt="Holiday Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Holiday Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 8</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $31
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 9 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=200&auto=format&fit=crop"
+                alt="Luxury Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Luxury Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 9</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $35
+                  </span>
+                  <span class="cart-item-price-old">
+                    $45
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="2" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 10 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&auto=format&fit=crop"
+                alt="Premium Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Premium Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 10</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $29
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 11 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=200&auto=format&fit=crop"
+                alt="Classic Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Classic Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 11</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $26
+                  </span>
+                  <span class="cart-item-price-old">
+                    $32
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 12 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&auto=format&fit=crop"
+                alt="Modern Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Modern Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 12</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $34
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 13 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=200&auto=format&fit=crop"
+                alt="Elegant Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Elegant Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 13</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $36
+                  </span>
+                  <span class="cart-item-price-old">
+                    $42
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 14 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&auto=format&fit=crop"
+                alt="Vintage Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Vintage Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 14</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $27
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="2" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 15 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=200&auto=format&fit=crop"
+                alt="Glamour Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Glamour Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 15</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $38
+                  </span>
+                  <span class="cart-item-price-old">
+                    $45
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 16 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&auto=format&fit=crop"
+                alt="Boho Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Boho Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 16</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $24
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 17 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=200&auto=format&fit=crop"
+                alt="Minimalist Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Minimalist Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 17</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $29
+                  </span>
+                  <span class="cart-item-price-old">
+                    $35
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 18 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&auto=format&fit=crop"
+                alt="Artistic Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Artistic Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 18</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $32
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="2" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 19 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=200&auto=format&fit=crop"
+                alt="Chic Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Chic Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 19</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $30
+                  </span>
+                  <span class="cart-item-price-old">
+                    $38
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 20 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&auto=format&fit=crop"
+                alt="Bold Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Bold Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 20</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $33
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 21 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=200&auto=format&fit=crop"
+                alt="Deluxe Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Deluxe Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 21</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $40
+                  </span>
+                  <span class="cart-item-price-old">
+                    $50
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Item 22 - Hidden initially -->
+        <div class="cart-item ">
+          <div class="cart-item-container">
+            <input type="checkbox" class="cart-item-checkbox" />
+            <div class="cart-item-image-wrapper">
+              <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&auto=format&fit=crop"
+                alt="Exclusive Collection" class="cart-item-image" />
+            </div>
+            <div class="cart-item-content">
+              <div class="cart-item-info">
+                <h3 class="cart-item-title">
+                  Exclusive Collection
+                </h3>
+                <p class="cart-item-subtitle">Mẫu: Mẫu 22</p>
+                <div class="cart-item-price-wrapper">
+                  <span class="cart-item-price">
+                    $37
+                  </span>
+                  <span class="cart-item-price-old">
+                    $44
+                  </span>
+                </div>
+              </div>
+              <div class="cart-item-actions">
+                <div class="cart-item-quantity">
+                  <button class="cart-item-quantity-btn decrease">
+                    <i data-lucide="minus" class="w-4 h-4"></i>
+                  </button>
+                  <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
+                  <button class="cart-item-quantity-btn increase">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                  </button>
+                </div>
+                <button class="cart-item-remove">
+                  <i data-lucide="trash-2" class="w-5 h-5"></i>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Product Item 2 -->
-      <div class="cart-item">
-        <div class="cart-item-container">
-          <div class="cart-item-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&auto=format&fit=crop"
-              alt="Winter Collection" class="cart-item-image" />
-          </div>
-          <div class="cart-item-content">
-            <div class="cart-item-info">
-              <h3 class="cart-item-title">
-                Winter Collection
-              </h3>
-              <p class="cart-item-subtitle">Mẫu: Mẫu 2</p>
-              <div class="cart-item-price-wrapper">
-                <span class="cart-item-price">
-                  $32
-                </span>
-              </div>
-            </div>
-            <div class="cart-item-actions">
-              <!-- Quantity Selector -->
-              <div class="cart-item-quantity">
-                <button class="cart-item-quantity-btn decrease">
-                  <i data-lucide="minus" class="w-4 h-4"></i>
-                </button>
-                <input type="number" value="2" min="1" max="99" class="cart-item-quantity-input" />
-                <button class="cart-item-quantity-btn increase">
-                  <i data-lucide="plus" class="w-4 h-4"></i>
-                </button>
-              </div>
-              <!-- Remove Button -->
-              <button class="cart-item-remove">
-                <i data-lucide="trash-2" class="w-5 h-5"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Product Item 3 -->
-      <div class="cart-item">
-        <div class="cart-item-container">
-          <div class="cart-item-image-wrapper">
-            <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=200&auto=format&fit=crop"
-              alt="Party Collection" class="cart-item-image" />
-          </div>
-          <div class="cart-item-content">
-            <div class="cart-item-info">
-              <h3 class="cart-item-title">
-                Party Collection
-              </h3>
-              <p class="cart-item-subtitle">Mẫu: Mẫu 3</p>
-              <div class="cart-item-price-wrapper">
-                <span class="cart-item-price">
-                  $28
-                </span>
-              </div>
-            </div>
-            <div class="cart-item-actions">
-              <!-- Quantity Selector -->
-              <div class="cart-item-quantity">
-                <button class="cart-item-quantity-btn decrease">
-                  <i data-lucide="minus" class="w-4 h-4"></i>
-                </button>
-                <input type="number" value="1" min="1" max="99" class="cart-item-quantity-input" />
-                <button class="cart-item-quantity-btn increase">
-                  <i data-lucide="plus" class="w-4 h-4"></i>
-                </button>
-              </div>
-              <!-- Remove Button -->
-              <button class="cart-item-remove">
-                <i data-lucide="trash-2" class="w-5 h-5"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Pagination for Products -->
-    <!-- <div class="mt-8 flex justify-center">
+      <!-- Pagination for Products -->
+      <!-- <div class="mt-8 flex justify-center">
       <nav class="flex items-center gap-2">
         <button
           class="pagination-btn px-4 py-2 border border-[#ececf0] rounded-lg text-[14px] font-medium text-[#666666] hover:bg-[#FFF9F2] hover:border-[#ae873e] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
@@ -145,5 +904,7 @@
         </button>
       </nav>
     </div> -->
+    </div>
   </div>
-</div>
+  </div>
+</section>
