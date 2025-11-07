@@ -142,7 +142,7 @@
 
     /* Button Custom */
     .btn-primary {
-        @apply bg-gradient-to-r from-primary to-[#c9a961] border-transparent text-white hover:from-[#c9a961] hover:to-primary rounded-full transition-all duration-300 font-semibold shadow-[0_4px_20px_rgba(174,135,62,0.4)] hover:shadow-[0_6px_30px_rgba(174,135,62,0.6)] hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
+        @apply bg-black border-transparent text-white rounded-lg  transition-all duration-300 font-semibold shadow-[0_4px_20px_rgba(174,135,62,0.4)] hover:shadow-[0_6px_30px_rgba(174,135,62,0.6)] hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
     }
 
     .btn-primary::before {
