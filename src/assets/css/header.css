@@ -21,8 +21,15 @@
     box-shadow: 0 2px 10px rgb(82 82 82) !important;
 
 } */
-.header-navbar-desktop.nav-bg-blur * {
+ .header-navbar-desktop.nav-bg-blur a,
+.header-navbar-desktop.nav-bg-blur svg,
+.header-navbar-desktop.nav-bg-blur button {
     color: #fff !important;
+}
+#language-dropdown.nav-bg-blur a,
+#language-dropdown.nav-bg-blur svg,
+#language-dropdown.nav-bg-blur button {
+    color: #000 !important;
 }
 
 /* Fixed navbar styles */
@@ -84,7 +91,15 @@
        NAVBAR GROUP: Navigation Bar Styles
        ======================================================================== */
     .header-navbar-desktop {
-        @apply hidden md:flex bg-[#f8f7f6] overflow-x-auto whitespace-nowrap items-center justify-center gap-6 sm:gap-10 md:gap-[30px] px-4 py-3 shadow-sm transition-all duration-300;
+        @apply hidden md:flex bg-[#f8f7f6] whitespace-nowrap items-center justify-center gap-6 sm:gap-10 md:gap-[30px] px-4 py-3 shadow-sm transition-all duration-300;
+        position: relative;
+        /* overflow-x: auto; */
+        /* overflow-y: visible; */
+    }
+    
+    /* Ensure language dropdown container doesn't get clipped */
+    .header-navbar-desktop > .header-navbar-link:has(.relative) {
+        overflow: visible !important;
     }
 
     .header-navbar-mobile {
@@ -103,7 +118,9 @@
         /* Smooth scrolling on iOS */
     }
 
-    .nav-bg-blur .header-navbar-mobile-links *,
+    .nav-bg-blur .header-navbar-mobile-links a,
+    .nav-bg-blur .header-navbar-mobile-links svg,
+    .nav-bg-blur .header-navbar-mobile-links ,
     .nav-bg-blur .header-navbar-mobile-toggle,
     .nav-bg-blur .header-icon-button
     {
@@ -118,6 +135,8 @@
     
     .header-navbar-link {
         @apply text-[#333] text-[16px] hover:text-black transition flex-shrink-0;
+        position: relative !important;
+        overflow: visible !important;
     }
 
     .header-navbar-mobile-toggle {
@@ -147,6 +166,31 @@
 
     .header-icon {
         @apply w-6 h-6;
+    }
+
+    /* Language Dropdown */
+    #language-dropdown {
+        position: absolute !important;
+        z-index: 9999 !important;
+        top: 100% !important;
+        right: 0 !important;
+        display: none !important;
+        *{
+            color: #333 !important;
+        }
+    }
+    
+    /* Show dropdown on hover */
+    .header-navbar-link:hover #language-dropdown,
+    .header-navbar-link > div:hover #language-dropdown,
+    #language-toggle:hover ~ #language-dropdown {
+        display: block !important;
+    }
+    
+    /* Ensure language dropdown container doesn't clip */
+    .header-navbar-link > div {
+        position: relative !important;
+        overflow: visible !important;
     }
 
     /* Mobile Drawer */

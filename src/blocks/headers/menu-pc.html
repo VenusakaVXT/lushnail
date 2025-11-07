@@ -5,12 +5,35 @@
   <a href="/courses.html" class="header-navbar-link">Khoá học</a>
   <a href="/products.html" class="header-navbar-link">Sản phẩm</a>
   <a href="/contact.html" class="header-navbar-link">Liên hệ</a>
-  <div href="" class="header-navbar-link">
-    <button class="header-icon-button" aria-label="Shopping Cart">
-      <a href="/cart.html" class="hover:text-[#ae873e] transition-colors">
-        <i data-lucide="shopping-cart" class="header-icon"></i>
-      </a>
-    </button>
+  <div class="header-navbar-link flex items-center gap-4 ">
+    <div class="relative">
+      <button id="language-toggle" class="header-icon-button hover:text-[#ae873e] transition-colors" aria-label="Change Language">
+        <i data-lucide="languages" class="header-icon"></i>
+      </button>
+      <!-- Language Dropdown -->
+      <div id="language-dropdown" class="absolute right-0 top-0  bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[150px] z-[9999]">
+        <button class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2" data-lang="vi">
+          <span class="text-sm">🇻🇳</span>
+          <span class="text-sm">Tiếng Việt</span>
+        </button>
+        <button class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2" data-lang="en">
+          <span class="text-sm">🇺🇸</span>
+          <span class="text-sm">English</span>
+        </button>
+        <button class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2" data-lang="ja">
+          <span class="text-sm">🇯🇵</span>
+          <span class="text-sm">日本語</span>
+        </button>
+        <button class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2" data-lang="ko">
+          <span class="text-sm">🇰🇷</span>
+          <span class="text-sm">한국어</span>
+        </button>
+        <button class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2" data-lang="zh">
+          <span class="text-sm">🇨🇳</span>
+          <span class="text-sm">中文</span>
+        </button>
+      </div>
+    </div>
     <button class="header-icon-button hover:text-[#ae873e] transition-colors" aria-label="User Profile">
       <i data-lucide="user" class="header-icon"></i>
     </button>

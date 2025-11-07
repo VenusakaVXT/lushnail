@@ -1,5 +1,6 @@
 shopping-cart
 user
+languages
 menu
 x
 facebook
