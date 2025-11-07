@@ -110,24 +110,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const coursesToLoad = additionalCourses.slice(loadedCourses, loadedCourses + coursesPerPage);
         
         if (coursesToLoad.length > 0) {
-          coursesToLoad.forEach((course, index) => {
+          coursesToLoad.forEach((course) => {
             const courseCardHTML = createCourseCard(course);
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = courseCardHTML.trim();
             const courseCardElement = tempDiv.firstChild;
             
-            // Add fade-in animation class
-            courseCardElement.style.opacity = '0';
-            courseCardElement.style.transform = 'translateY(20px)';
-            courseCardElement.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
-            
             courseCardsGrid.appendChild(courseCardElement);
-            
-            // Trigger animation
-            setTimeout(() => {
-              courseCardElement.style.opacity = '1';
-              courseCardElement.style.transform = 'translateY(0)';
-            }, index * 100);
           });
 
           loadedCourses += coursesToLoad.length;
@@ -135,10 +124,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
           // Check if all courses are loaded
           if (loadedCourses >= totalCourses) {
-            // Hide button after animation
-            setTimeout(() => {
-              loadMoreBtn.style.display = 'none';
-            }, 500);
+            loadMoreBtn.style.display = 'none';
           } else {
             // Reset button state
             loadMoreBtn.disabled = false;
@@ -156,26 +142,6 @@ document.addEventListener('DOMContentLoaded', function () {
     loadMoreBtn.addEventListener('click', loadMoreCourses);
   }
 
-  // Scroll Animation Observer
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-  };
-
-  const observer = new IntersectionObserver(function (entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animated');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  // Observe all elements with scroll animation classes
-  const animatedElements = document.querySelectorAll('.scroll-fade-in, .scroll-slide-up, .scroll-slide-left, .scroll-slide-right');
-  animatedElements.forEach(el => {
-    observer.observe(el);
-  });
 
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -196,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const faqAnswer = document.querySelector('.faq-answer-content');
 
   if (faqItems.length > 0 && faqAnswer) {
-    // Function to update answer with animation
+    // Function to update answer
     function updateAnswer(item) {
       // Remove active from all items
       faqItems.forEach(i => i.classList.remove('active'));
@@ -208,20 +174,9 @@ document.addEventListener('DOMContentLoaded', function () {
       const answerText = item.getAttribute('data-answer');
       const answerTitle = item.querySelector('.faq-item-title').textContent;
 
-      // Remove show class for animation
-      faqAnswer.classList.remove('show-answer');
-
-      // Wait for fade out
-      setTimeout(() => {
-        // Update content
-        faqAnswer.querySelector('.faq-answer-title').textContent = answerTitle;
-        faqAnswer.querySelector('.faq-answer-text').textContent = answerText;
-
-        // Trigger animation
-        setTimeout(() => {
-          faqAnswer.classList.add('show-answer');
-        }, 50);
-      }, 300);
+      // Update content immediately
+      faqAnswer.querySelector('.faq-answer-title').textContent = answerTitle;
+      faqAnswer.querySelector('.faq-answer-text').textContent = answerText;
     }
 
     faqItems.forEach((item, index) => {
@@ -233,13 +188,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (isMobile) {
           const answerSection = document.getElementById('faq-answer-section');
           if (answerSection) {
-            setTimeout(() => {
-              answerSection.scrollIntoView({ 
-                behavior: 'smooth', 
-                block: 'start',
-                inline: 'nearest'
-              });
-            }, 100);
+            answerSection.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'start',
+              inline: 'nearest'
+            });
           }
         }
       });
@@ -251,11 +204,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const answerTitle = item.querySelector('.faq-item-title').textContent;
         faqAnswer.querySelector('.faq-answer-title').textContent = answerTitle;
         faqAnswer.querySelector('.faq-answer-text').textContent = answerText;
-
-        // Trigger initial animation
-        setTimeout(() => {
-          faqAnswer.classList.add('show-answer');
-        }, 500);
       }
     });
   }
@@ -383,65 +331,16 @@ document.addEventListener('DOMContentLoaded', function () {
   }, 1000);
 });
 
-// Add CSS animations via style tag
+// Add CSS styles via style tag
 const style = document.createElement('style');
 style.textContent = `
-    /* Fade in animation */
-    .scroll-fade-in {
-        opacity: 0;
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    
-    .scroll-fade-in.animated {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Slide up animation */
-    .scroll-slide-up {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    
-    .scroll-slide-up.animated {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    /* Slide left animation */
-    .scroll-slide-left {
-        opacity: 0;
-        transform: translateX(-50px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    
-    .scroll-slide-left.animated {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    /* Slide right animation */
-    .scroll-slide-right {
-        opacity: 0;
-        transform: translateX(50px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    
-    .scroll-slide-right.animated {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
     /* FAQ Item Styles */
     .faq-item {
         cursor: pointer;
-        transition: all 0.3s ease;
         position: relative;
     }
 
     .faq-item:hover {
-        transform: translateX(8px);
         background: #FFF9F2;
     }
 
@@ -457,147 +356,6 @@ style.textContent = `
     .faq-item.active .faq-icon-wrapper {
         background: linear-gradient(to bottom right, #FFF9F2, #a5834a/20);
         border: 2px solid #a5834a/30;
-    }
-
-    /* FAQ Answer Styles */
-    .faq-answer-content {
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        opacity: 0;
-        transform: translateY(30px) scale(0.95);
-        position: relative;
-    }
-    
-    .faq-answer-content.show-answer {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
-    
-    /* Animated border for FAQ Answer */
-    .faq-answer-content::before {
-        content: '';
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        border-radius: 24px;
-        background: linear-gradient(90deg, #a5834a 0%, #a5834a 100%);
-        z-index: -1;
-        opacity: 0.1;
-    }
-    
-    .faq-answer-content::after {
-        content: '';
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        border-radius: 24px;
-        background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
-        background-size: 200% 100%;
-        z-index: 1;
-        pointer-events: none;
-        animation: borderShimmer 3s linear infinite;
-        opacity: 0;
-        transition: opacity 0.3s;
-    }
-    
-    .faq-answer-content.show-answer::after {
-        opacity: 1;
-    }
-    
-    @keyframes borderShimmer {
-        0% {
-            background-position: -200% 0;
-        }
-        100% {
-            background-position: 200% 0;
-        }
-    }
-    
-    /* FAQ Decorative Line Animation */
-    .faq-decorative-line {
-        position: relative;
-        overflow: visible;
-    }
-    
-    .faq-decorative-line::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.9) 50%, transparent 100%);
-        animation: lineShimmer 2s linear infinite;
-    }
-    
-    .faq-decorative-line::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 100%;
-        background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.6) 70%, transparent 100%);
-        animation: lineGlow 3s ease-in-out infinite;
-    }
-    
-    @keyframes lineShimmer {
-        0% {
-            left: -100%;
-        }
-        100% {
-            left: 100%;
-        }
-    }
-    
-    @keyframes lineGlow {
-        0%, 100% {
-            opacity: 0;
-            transform: scaleX(0);
-        }
-        50% {
-            opacity: 1;
-            transform: scaleX(1);
-        }
-    }
-    
-    /* FAQ Answer Animation for text */
-    .faq-answer-content.show-answer .faq-answer-text {
-        animation: fadeInUp 0.6s ease-out 0.3s both;
-    }
-    
-    .faq-answer-content.show-answer .faq-answer-title {
-        animation: fadeInUp 0.5s ease-out 0.1s both;
-    }
-    
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(15px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    /* Decorative pulse for active FAQ */
-    .faq-item.active .faq-icon-wrapper {
-        animation: pulseIcon 2s ease-in-out infinite;
-    }
-    
-    @keyframes pulseIcon {
-        0%, 100% {
-            transform: scale(1);
-            box-shadow: 0 0 0 0 rgba(165, 131, 74, 0.4);
-        }
-        50% {
-            transform: scale(1.05);
-            box-shadow: 0 0 0 8px rgba(165, 131, 74, 0);
-        }
     }
 `;
 document.head.appendChild(style);

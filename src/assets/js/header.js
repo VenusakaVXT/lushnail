@@ -249,5 +249,69 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // Language Switcher Logic for Mobile
+    const languageToggleMobile = document.getElementById("language-toggle-mobile");
+    const languageDropdownMobile = document.getElementById("language-dropdown-mobile");
+    const languageOptionsMobile = languageDropdownMobile ? languageDropdownMobile.querySelectorAll(".language-option") : [];
+    const languageContainerMobile = languageToggleMobile?.closest('.relative');
+
+    if (languageToggleMobile && languageDropdownMobile) {
+        // Show dropdown on hover
+        if (languageContainerMobile) {
+            let hoverTimeoutMobile;
+            
+            const showDropdownMobile = () => {
+                clearTimeout(hoverTimeoutMobile);
+                languageDropdownMobile.style.display = "block";
+            };
+
+            const hideDropdownMobile = () => {
+                hoverTimeoutMobile = setTimeout(() => {
+                    languageDropdownMobile.style.display = "none";
+                }, 100);
+            };
+
+            languageContainerMobile.addEventListener("mouseenter", showDropdownMobile);
+            languageContainerMobile.addEventListener("mouseleave", hideDropdownMobile);
+            
+            // Keep dropdown open when hovering over it
+            languageDropdownMobile.addEventListener("mouseenter", showDropdownMobile);
+            languageDropdownMobile.addEventListener("mouseleave", hideDropdownMobile);
+        }
+
+        // Handle language selection for mobile
+        languageOptionsMobile.forEach(option => {
+            option.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const selectedLang = option.getAttribute("data-lang");
+                
+                if (selectedLang) {
+                    localStorage.setItem("language", selectedLang);
+                    
+                    // Update active state
+                    languageOptionsMobile.forEach(opt => {
+                        opt.classList.remove("bg-[#FFF9F2]", "font-semibold");
+                    });
+                    option.classList.add("bg-[#FFF9F2]", "font-semibold");
+                    
+                    // Close dropdown
+                    languageDropdownMobile.style.display = "none";
+                    
+                    // Reload page to apply language changes
+                    window.location.reload();
+                }
+            });
+        });
+
+        // Highlight current language on load for mobile
+        const currentLangMobile = localStorage.getItem("language") || "vi";
+        languageOptionsMobile.forEach(option => {
+            if (option.getAttribute("data-lang") === currentLangMobile) {
+                option.classList.add("bg-[#FFF9F2]", "font-semibold");
+            }
+        });
+    }
 });
 

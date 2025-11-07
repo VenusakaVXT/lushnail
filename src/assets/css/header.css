@@ -26,11 +26,6 @@
 .header-navbar-desktop.nav-bg-blur button {
     color: #fff !important;
 }
-#language-dropdown.nav-bg-blur a,
-#language-dropdown.nav-bg-blur svg,
-#language-dropdown.nav-bg-blur button {
-    color: #000 !important;
-}
 
 /* Fixed navbar styles */
 #main-navbar.fixed,
@@ -107,9 +102,11 @@
     }
 
     .header-navbar-mobile-links {
-        @apply flex gap-4 items-center overflow-x-auto whitespace-nowrap relative;
+        @apply flex gap-4 items-center whitespace-nowrap relative;
         width: calc(100vw - 70px);
         max-width: calc(100vw - 70px);
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
         scrollbar-width: none;
         /* Firefox */
         -ms-overflow-style: none;
@@ -175,9 +172,18 @@
         top: 100% !important;
         right: 0 !important;
         display: none !important;
-        *{
-            color: #333 !important;
-        }
+    }
+    
+    /* Ensure dropdown text is always dark */
+    #language-dropdown *,
+    #language-dropdown-mobile * {
+        color: #333 !important;
+    }
+    
+    /* Override nav-bg-blur for dropdown */
+    .nav-bg-blur #language-dropdown *,
+    .nav-bg-blur #language-dropdown-mobile * {
+        color: #333 !important;
     }
     
     /* Show dropdown on hover */
@@ -187,10 +193,49 @@
         display: block !important;
     }
     
+    /* Language Dropdown Mobile */
+    #language-dropdown-mobile {
+        position: absolute !important;
+        z-index: 9999 !important;
+        top: 100% !important;
+        right: 0 !important;
+        display: none !important;
+    }
+    
+    /* Show mobile dropdown on hover */
+    .header-navbar-mobile-icons > .relative:hover #language-dropdown-mobile,
+    #language-toggle-mobile:hover ~ #language-dropdown-mobile {
+        display: block !important;
+    }
+    
     /* Ensure language dropdown container doesn't clip */
     .header-navbar-link > div {
         position: relative !important;
         overflow: visible !important;
+    }
+    
+    /* Ensure mobile language dropdown container doesn't clip */
+    .header-navbar-mobile-icons > .relative {
+        position: relative !important;
+        overflow: visible !important;
+    }
+    
+    /* Ensure mobile links container can scroll */
+    .header-navbar-mobile-icons {
+        overflow-x: visible !important;
+        overflow-y: visible !important;
+    }
+    
+    .header-navbar-mobile-links {
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+    }
+    
+    .header-navbar-mobile-links::-webkit-scrollbar {
+        display: none !important;
     }
 
     /* Mobile Drawer */
