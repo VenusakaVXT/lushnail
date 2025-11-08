@@ -49,8 +49,8 @@
         /* Border Radius */
         --radius: theme('spacing.2');
     }
+    
     /* Base Element Styles */
-
 
     @font-face {
         font-family: 'BricolageGrotesque';
@@ -124,7 +124,7 @@
     /* ========================================================================
        BUTTON STYLES: Các thuộc tính cho Button
        ======================================================================== */
-       .btn {
+    .btn {
         @apply inline-flex items-center justify-center text-sm px-4 py-2 h-10 rounded-md transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap overflow-hidden text-ellipsis;
     }
 
@@ -164,6 +164,10 @@
 
     
     /* Button Sizes */
+    .btn-ssm {
+        @apply px-2 py-1 h-6 text-xs;
+    }
+
     .btn-sm {
         @apply px-3 py-1.5 h-8 text-sm;
     }
@@ -229,7 +233,7 @@
     }
 
     .dark .input-outline {
-
+        @apply w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] pb-2 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254,255,229,0.3)];
     }
 
     .input-lg {
@@ -269,6 +273,21 @@
 
     input[type="radio"] {
         @apply accent-accent border-accent;
+    }
+
+    /* ========================================================================
+       TEXTAREA GROUP: Các thuộc tính cho Textarea
+       ======================================================================== */
+    .textarea {
+        @apply w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:border-[#ae873e] focus:ring-2 focus:ring-[#ae873e]/20 resize-none;
+    }
+    
+    .textarea-outline {
+        @apply w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] text-[12px] pb-1 placeholder:text-[#999999] resize-none focus:border-[#ae873e] transition-colors;
+    }
+
+    .dark .textarea-outline {
+        @apply w-full h-[148px] bg-transparent border-[#646464] border-[1.5px] border-solid rounded-[30px] text-white text-[18px] p-4 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254,255,229,0.6)] resize-none;
     }
 
     /* ========================================================================
@@ -345,9 +364,9 @@
         @apply text-[16px] font-semibold text-[#090707] mb-3;
     }
 
-    .product-card__button {
+    /* .product-card__button {
         @apply w-full bg-[#090707] text-white py-2 px-4 rounded-lg text-[13px] font-semibold hover:bg-[#1a1816]  transition-all duration-300;
-    }
+    } */
 
 
     /* ========================================================================
@@ -413,18 +432,16 @@
         @apply text-[15px] text-[#999999] line-through;
     }
 
-    .course-card__button {
+    /* .course-card__button {
         @apply w-full bg-gradient-to-r from-accent to-[#c9a961] border-transparent text-white hover:from-[#c9a961] hover:to-accent py-3.5 rounded-full transition-all duration-300 text-[15px] font-semibold shadow-[0_4px_20px_rgba(174,135,62,0.4)] hover:shadow-[0_6px_30px_rgba(174,135,62,0.6)] hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 relative overflow-hidden;
     }
 
     .course-card__button::before {
         content: '';
         @apply absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] transition-transform duration-700;
-    }
+    } */
 
-    .course-card__button:hover::before {
-        @apply translate-x-[100%];
-    }
+               
 
     /* ========================================================================
         Noise Overlay Effect
@@ -480,6 +497,18 @@
 
     select.select-white:disabled {
         @apply cursor-not-allowed opacity-50;
+    }
+
+    .select-outline {
+        @apply pb-2 w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] text-[12px] pb-1 appearance-none cursor-pointer pr-6 focus:border-[#ae873e] transition-colors;
+    }
+
+    .dark .select-outline {
+        @apply w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] pb-2 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254,255,229,0.3)];
+    }
+
+    .dark .select-outline option {
+        @apply bg-[#090707] text-white;
     }
 
     /* ========================================================================
@@ -607,6 +636,7 @@
     .pagination-btn-number {
         @apply min-w-[40px] text-center;
     }
+
     /* ========================================================================
         Modal Styles (jModal)
     ======================================================================== */
