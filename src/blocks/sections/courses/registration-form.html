@@ -1,6 +1,6 @@
 <!-- Registration Form Section -->
 <section class="bg-[#090707] noise-overlay min-h-[800px] sm:min-h-[900px] md:h-auto overflow-clip relative shrink-0 w-full pb-[160px] sm:pb-12 md:pb-24" data-name="registration-form">
-    <p class="absolute    emibold leading-[1.2] left-1/2 text-[24px] sm:text-[28px] md:text-[36px] lg:text-[48px] text-center text-white top-[72px] tracking-[-1.92px] translate-x-[-50%] px-4 whitespace-nowrap sm:whitespace-normal md:whitespace-pre" >Đăng ký khóa học</p>
+    <h2 class="title-section absolute    emibold leading-[1.2] left-1/2  text-center text-white top-[72px] tracking-[-1.92px] translate-x-[-50%] px-4 whitespace-nowrap sm:whitespace-normal md:whitespace-pre" >Đăng ký khóa học</h2>
     
     <!-- Registration Form -->
     <form class="relative content-stretch flex flex-col gap-[15px] items-start w-full px-4 sm:px-6 lg:px-0 mt-40 sm:mt-44 lg:mt-0 lg:absolute lg:items-end lg:left-[calc(50%+0.5px)] lg:top-[213px] lg:translate-x-[-50%] lg:w-[625px]" method="POST" action="#">
@@ -8,36 +8,36 @@
             <!-- Group 1: Họ tên + SĐT -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-[24px] w-full">
                 <div class="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-                    <label for="fullname" class="flex flex-col   ormal justify-center leading-[0] relative shrink-0 text-[18px] text-[rgba(254,255,229,0.7)] w-full" >
+                    <label for="fullname" class="flex flex-col font-['Bricolage_Grotesque:Regular',_sans-serif]  ormal justify-center leading-[0] relative shrink-0 text-[18px] text-[rgba(254,255,229,0.7)] w-full" style="font-variation-settings:'opsz' 14, 'wdth' 100">
                         <p class="leading-[normal]">Họ tên <span class="text-[#ae873e]">*</span></p>
                     </label>
-                    <input type="text" id="fullname" name="fullname" required class="w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px]  pb-2 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254,255,229,0.3)]" placeholder="" >
+                    <input type="text" id="fullname" name="fullname" required class="w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] font-['Bricolage_Grotesque:Regular',_sans-serif] pb-2 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254,255,229,0.3)]" placeholder="" style="font-variation-settings:'opsz' 14, 'wdth' 100">
                 </div>
                 <div class="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-                    <label for="phone" class="flex flex-col   ormal justify-center leading-[0] relative shrink-0 text-[18px] text-[rgba(254,255,229,0.6)] w-full" >
+                    <label for="phone" class="flex flex-col font-['Bricolage_Grotesque:Regular',_sans-serif]  ormal justify-center leading-[0] relative shrink-0 text-[18px] text-[rgba(254,255,229,0.6)] w-full" style="font-variation-settings:'opsz' 14, 'wdth' 100">
                         <p class="leading-[normal]">SĐT (Zalo) <span class="text-[#ae873e]">*</span></p>
                     </label>
-                    <input type="tel" id="phone" name="phone" required class="w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px]  pb-2 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254,255,229,0.3)]" placeholder="" >
+                    <input type="tel" id="phone" name="phone" required class="w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] font-['Bricolage_Grotesque:Regular',_sans-serif] pb-2 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254,255,229,0.3)]" placeholder="" style="font-variation-settings:'opsz' 14, 'wdth' 100">
                 </div>
             </div>
 
             <!-- Group 2: Hình thức + Khung giờ -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-[24px] w-full">
                 <div class="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-                    <label for="format" class="flex flex-col   ormal justify-center leading-[0] relative shrink-0 text-[18px] text-[rgba(254,255,229,0.6)] w-full" >
+                    <label for="format" class="flex flex-col font-['Bricolage_Grotesque:Regular',_sans-serif]  ormal justify-center leading-[0] relative shrink-0 text-[18px] text-[rgba(254,255,229,0.6)] w-full" style="font-variation-settings:'opsz' 14, 'wdth' 100">
                         <p class="leading-[normal]">Hình thức</p>
                     </label>
-                    <select id="format" name="format" class="w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px]  pb-2 focus:outline-none focus:border-[#ae873e] appearance-none cursor-pointer" >
+                    <select id="format" name="format" class="w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] font-['Bricolage_Grotesque:Regular',_sans-serif] pb-2 focus:outline-none focus:border-[#ae873e] appearance-none cursor-pointer" style="font-variation-settings:'opsz' 14, 'wdth' 100">
                         <option value="" class="bg-[#090707] text-white">Chọn hình thức</option>
                         <option value="offline" class="bg-[#090707] text-white">Offline</option>
                         <option value="online" class="bg-[#090707] text-white">Online</option>
                     </select>
                 </div>
                 <div class="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-                    <label for="timeslot" class="flex flex-col   ormal justify-center leading-[0] relative shrink-0 text-[18px] text-[rgba(254,255,229,0.6)] w-full" >
+                    <label for="timeslot" class="flex flex-col font-['Bricolage_Grotesque:Regular',_sans-serif]  ormal justify-center leading-[0] relative shrink-0 text-[18px] text-[rgba(254,255,229,0.6)] w-full" style="font-variation-settings:'opsz' 14, 'wdth' 100">
                         <p class="leading-[normal]">Khung giờ</p>
                     </label>
-                    <select id="timeslot" name="timeslot" class="w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px]  pb-2 focus:outline-none focus:border-[#ae873e] appearance-none cursor-pointer" >
+                    <select id="timeslot" name="timeslot" class="w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] font-['Bricolage_Grotesque:Regular',_sans-serif] pb-2 focus:outline-none focus:border-[#ae873e] appearance-none cursor-pointer" style="font-variation-settings:'opsz' 14, 'wdth' 100">
                         <option value="" class="bg-[#090707] text-white">Chọn khung giờ</option>
                         <option value="morning" class="bg-[#090707] text-white">Sáng</option>
                         <option value="afternoon" class="bg-[#090707] text-white">Chiều</option>
@@ -50,10 +50,10 @@
             <!-- Group 3: Mục tiêu + Gói quan tâm -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-[24px] w-full">
                 <div class="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-                    <label for="objective" class="flex flex-col   ormal justify-center leading-[0] relative shrink-0 text-[18px] text-[rgba(254,255,229,0.6)] w-full" >
+                    <label for="objective" class="flex flex-col font-['Bricolage_Grotesque:Regular',_sans-serif]  ormal justify-center leading-[0] relative shrink-0 text-[18px] text-[rgba(254,255,229,0.6)] w-full" style="font-variation-settings:'opsz' 14, 'wdth' 100">
                         <p class="leading-[normal]">Mục tiêu học</p>
                     </label>
-                    <select id="objective" name="objective" class="w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px]  pb-2 focus:outline-none focus:border-[#ae873e] appearance-none cursor-pointer" >
+                    <select id="objective" name="objective" class="w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] font-['Bricolage_Grotesque:Regular',_sans-serif] pb-2 focus:outline-none focus:border-[#ae873e] appearance-none cursor-pointer" style="font-variation-settings:'opsz' 14, 'wdth' 100">
                         <option value="" class="bg-[#090707] text-white">Chọn mục tiêu</option>
                         <option value="work" class="bg-[#090707] text-white">Đi làm</option>
                         <option value="shop" class="bg-[#090707] text-white">Mở tiệm</option>
@@ -61,10 +61,10 @@
                     </select>
                 </div>
                 <div class="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 w-full">
-                    <label for="package" class="flex flex-col   ormal justify-center leading-[0] relative shrink-0 text-[18px] text-[rgba(254,255,229,0.6)] w-full" >
+                    <label for="package" class="flex flex-col font-['Bricolage_Grotesque:Regular',_sans-serif]  ormal justify-center leading-[0] relative shrink-0 text-[18px] text-[rgba(254,255,229,0.6)] w-full" style="font-variation-settings:'opsz' 14, 'wdth' 100">
                         <p class="leading-[normal]">Gói quan tâm</p>
                     </label>
-                    <select id="package" name="package" class="w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px]  pb-2 focus:outline-none focus:border-[#ae873e] appearance-none cursor-pointer" >
+                    <select id="package" name="package" class="w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] font-['Bricolage_Grotesque:Regular',_sans-serif] pb-2 focus:outline-none focus:border-[#ae873e] appearance-none cursor-pointer" style="font-variation-settings:'opsz' 14, 'wdth' 100">
                         <option value="" class="bg-[#090707] text-white">Chọn gói</option>
                         <option value="basic" class="bg-[#090707] text-white">Basic</option>
                         <option value="pro" class="bg-[#090707] text-white">Pro</option>
@@ -75,15 +75,15 @@
 
             <!-- Message textarea -->
         <div class="h-[148px] relative rounded-[30px] shrink-0 w-full mt-6">
-            <label for="notes" class="flex flex-col   ormal justify-center leading-[0] relative shrink-0 text-[18px] text-[rgba(254,255,229,0.6)] w-full">
+            <label for="notes" class="flex flex-col font-['Bricolage_Grotesque:Regular',_sans-serif]  ormal justify-center leading-[0] relative shrink-0 text-[18px] text-[rgba(254,255,229,0.6)] w-full">
                 <p class="leading-[normal]">Ghi chú</p>
             </label>
-            <textarea id="notes" name="notes" rows="5" class="w-full h-[148px] bg-transparent border-[#646464] border-[1.5px] border-solid rounded-[30px] text-white text-[18px]  p-4 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254,255,229,0.6)] resize-none" placeholder="Nhập ghi chú của bạn..." ></textarea>
+            <textarea id="notes" name="notes" rows="5" class="w-full h-[148px] bg-transparent border-[#646464] border-[1.5px] border-solid rounded-[30px] text-white text-[18px] font-['Bricolage_Grotesque:Regular',_sans-serif] p-4 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254,255,229,0.6)] resize-none" placeholder="Nhập ghi chú của bạn..." style="font-variation-settings:'opsz' 14, 'wdth' 100"></textarea>
         </div>
         
         <!-- Submit button -->
         <button type="submit" class="box-border content-stretch flex gap-[10px] h-[36px] items-center justify-center px-[10px] py-[4px] relative rounded-[8px] shrink-0 w-[101px] mt-6 self-center lg:self-end border-[#646464] border-[1.5px] border-solid bg-transparent hover:bg-[#ae873e] hover:border-[#ae873e] transition-all cursor-pointer" data-name="button">
-            <div class="flex flex-col   ormal justify-center leading-[0] relative shrink-0 text-[18px] text-[rgba(254,255,229,0.7)] text-nowrap" >
+            <div class="flex flex-col font-['Bricolage_Grotesque:Regular',_sans-serif]  ormal justify-center leading-[0] relative shrink-0 text-[18px] text-[rgba(254,255,229,0.7)] text-nowrap" style="font-variation-settings:'opsz' 14, 'wdth' 100">
                 <p class="leading-[normal] whitespace-pre">Gửi</p>
             </div>
         </button>
