@@ -44,28 +44,20 @@
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label class="block text-[#090707] text-[14px] font-semibold mb-2">Họ *</label>
-                <input type="text" required
-                  class="input"
-                  placeholder="Nhập họ của bạn" />
+                <label class="label">Họ *</label>
+                <input type="text" required class="input" placeholder="Nhập họ của bạn" />
               </div>
               <div>
-                <label class="block text-[#090707] text-[14px] font-semibold mb-2">Tên *</label>
-                <input type="text" required
-                  class="w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e]"
-                  placeholder="Nhập tên của bạn" />
+                <label class="label">Tên *</label>
+                <input type="text" required class="input" placeholder="Nhập tên của bạn" />
               </div>
               <div class="sm:col-span-2">
-                <label class="block text-[#090707] text-[14px] font-semibold mb-2">Email *</label>
-                <input type="email" required
-                  class="w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e]"
-                  placeholder="example@email.com" />
+                <label class="label">Email *</label>
+                <input type="email" required class="input" placeholder="example@email.com" />
               </div>
               <div class="sm:col-span-2">
-                <label class="block text-[#090707] text-[14px] font-semibold mb-2">Số Điện Thoại *</label>
-                <input type="tel" required
-                  class="w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e]"
-                  placeholder="0123 456 789" />
+                <label class="label">Số Điện Thoại *</label>
+                <input type="tel" required class="input" placeholder="0123 456 789" />
               </div>
             </div>
           </div>
@@ -77,16 +69,14 @@
             </h2>
             <div class="space-y-4">
               <div>
-                <label class="block text-[#090707] text-[14px] font-semibold mb-2">Địa Chỉ *</label>
-                <input type="text" required
-                  class="w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e]"
-                  placeholder="Số nhà, tên đường" />
+                <label class="label">Địa Chỉ *</label>
+                <input type="text" required class="input" placeholder="Số nhà, tên đường" />
               </div>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label class="block text-[#090707] text-[14px] font-semibold mb-2">Tỉnh/Thành Phố *</label>
+                  <label class="label">Tỉnh/Thành Phố *</label>
                   <select required
-                    class="select-white w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e]">
+                    class="select-white">
                     <option value="">Chọn tỉnh/thành phố</option>
                     <option value="hcm">Hồ Chí Minh</option>
                     <option value="hn">Hà Nội</option>
@@ -95,9 +85,9 @@
                   </select>
                 </div>
                 <div>
-                  <label class="block text-[#090707] text-[14px] font-semibold mb-2">Quận/Huyện *</label>
+                  <label class="label">Quận/Huyện *</label>
                   <select required
-                    class="select-white w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e]">
+                    class="select-white">
                     <option value="">Chọn quận/huyện</option>
                     <option value="q1">Quận 1</option>
                     <option value="q2">Quận 2</option>
@@ -106,9 +96,8 @@
                 </div>
               </div>
               <div>
-                <label class="block text-[#090707] text-[14px] font-semibold mb-2">Phường/Xã *</label>
-                <select required
-                  class="select-white w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e]">
+                <label class="label">Phường/Xã *</label>
+                <select required class="select-white">
                   <option value="">Chọn phường/xã</option>
                   <option value="p1">Phường 1</option>
                   <option value="p2">Phường 2</option>
@@ -116,10 +105,8 @@
                 </select>
               </div>
               <div>
-                <label class="block text-[#090707] text-[14px] font-semibold mb-2">Ghi Chú (Tùy chọn)</label>
-                <textarea rows="3"
-                  class="w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e] resize-none"
-                  placeholder="Ghi chú cho người giao hàng..."></textarea>
+                <label class="label">Ghi Chú (Tùy chọn)</label>
+                <textarea rows="3" class="textarea" placeholder="Ghi chú cho người giao hàng..."></textarea>
               </div>
             </div>
           </div>
@@ -144,29 +131,22 @@
               <!-- Card Details (shown when credit card selected) -->
               <div id="card-details" class="hidden mt-4 space-y-4 pl-8 border-l-2 border-[#ececf0]">
                 <div>
-                  <label class="block text-[#090707] text-[14px] font-semibold mb-2">Số Thẻ *</label>
-                  <input type="text" maxlength="19"
-                    class="w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e]"
-                    placeholder="1234 5678 9012 3456" />
+                  <label class="label">Số Thẻ *</label>
+                  <input type="text" maxlength="19" class="input" placeholder="1234 5678 9012 3456" />
                 </div>
                 <div class="grid grid-cols-2 gap-4">
                   <div>
-                    <label class="block text-[#090707] text-[14px] font-semibold mb-2">Ngày Hết Hạn *</label>
-                    <input type="text" maxlength="5" placeholder="MM/YY"
-                      class="w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e]" />
+                    <label class="label">Ngày Hết Hạn *</label>
+                    <input type="text" maxlength="5" class="input" placeholder="MM/YY" />
                   </div>
                   <div>
-                    <label class="block text-[#090707] text-[14px] font-semibold mb-2">CVV *</label>
-                    <input type="text" maxlength="4"
-                      class="w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e]"
-                      placeholder="123" />
+                    <label class="label">CVV *</label>
+                    <input type="text" maxlength="4" class="input" placeholder="123" />
                   </div>
                 </div>
                 <div>
-                  <label class="block text-[#090707] text-[14px] font-semibold mb-2">Tên Chủ Thẻ *</label>
-                  <input type="text"
-                    class="w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e]"
-                    placeholder="NGUYEN VAN A" />
+                  <label class="label">Tên Chủ Thẻ *</label>
+                  <input type="text" class="input" placeholder="NGUYEN VAN A" />
                 </div>
               </div>
 
