@@ -124,7 +124,7 @@
     /* ========================================================================
        BUTTON STYLES: Các thuộc tính cho Button
        ======================================================================== */
-    .btn {
+       .btn {
         @apply inline-flex items-center justify-center text-sm px-4 py-2 h-10 rounded-md transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap overflow-hidden text-ellipsis;
     }
 
@@ -136,13 +136,9 @@
         @apply cursor-not-allowed opacity-50;
     }
 
-    .btn-overflow {
-        @apply overflow-visible;
-    }
-
     /* Button Custom */
     .btn-primary {
-        @apply bg-gradient-to-r from-primary to-[#c9a961] border-transparent text-white hover:from-[#c9a961] hover:to-primary rounded-full transition-all duration-300 font-semibold shadow-[0_4px_20px_rgba(174,135,62,0.4)] hover:shadow-[0_6px_30px_rgba(174,135,62,0.6)] hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
+        @apply bg-black border-transparent text-white rounded-lg  transition-all duration-300 font-semibold   hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
     }
 
     .btn-primary::before {
@@ -155,39 +151,41 @@
     }
 
     .btn-secondary {
-        @apply bg-white border border-primary text-primary hover:bg-[#fff9f2];
+        @apply bg-accent border border-primary gap-2 text-white  px-6 sm:px-8 py-2.5 sm:py-3;
     }
 
     .btn-outline {
-        @apply inline-flex items-center gap-2 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 text-[14px] sm:text-[15px] font-semibold;
+        @apply inline-flex items-center gap-2 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 sm:px-8 py-2.5 sm:py-3  transition-all duration-300 ;
     }
 
     .btn-outline-white {
-        @apply border border-white text-white hover:bg-white hover:text-primary;
+        @apply inline-flex items-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-6 sm:px-8 py-2.5 sm:py-3  transition-all duration-300 ;
     }
 
-    .btn-ghost {
-        @apply border border-gray-300 text-gray-600 hover:text-primary hover:bg-transparent transition-colors;
+    
+    /* Button Sizes */
+    .btn-sm {
+        @apply px-3 py-1.5 h-8 text-sm;
     }
 
-    .btn-light {
-        @apply bg-white text-primary hover:bg-gray-100;
+    .btn-md {
+        @apply px-4 py-2 h-10 text-sm;
     }
 
-    .btn-light-outline {
-        @apply border border-white text-white hover:bg-white hover:text-primary;
+    .btn-lg {
+        @apply px-6 py-3 h-12 text-base;
     }
 
-    .btn-dark {
-        @apply btn btn-ghost border-gray-700 hover:bg-gray-800 hover:border-gray-600;
+    .btn-xl {
+        @apply px-8 py-4 h-14 text-lg;
     }
 
-    .btn-danger {
-        @apply bg-red-500 hover:bg-red-600 text-white;
+    .btn-single {
+        @apply px-2 py-1 h-6 text-xs;
     }
 
-    .btn-success {
-        @apply bg-green-500 hover:bg-green-600 text-white;
+    .btn-simple {
+        @apply text-primary hover:text-primary focus:border-0 bg-transparent border-0 p-0 m-0;
     }
 
     /* Button Sizes */

@@ -1,5 +1,6 @@
 shopping-cart
 user
+languages
 menu
 x
 facebook
@@ -32,6 +33,10 @@ trash-2
 chevron-left
 mail
 help-circle
+arrow-right
+flask-conical
+check-circle
+user-check
 chevron-down
 truck
 x-circle
@@ -39,11 +44,9 @@ credit-card
 wallet
 shield-check
 rotate-ccw
-arrow-right
 palette
 gem
 settings
-check-circle
 send
 gift
 heart
