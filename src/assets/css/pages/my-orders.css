@@ -36,6 +36,29 @@
     flex: 1;
     min-width: 120px;
   }
+
+  /* Order Header - Mã đơn hàng, Ngày đặt, Trạng thái mỗi hàng riêng */
+  .order-card>div:first-child>div {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  .order-card>div:first-child>div>div:first-child {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+    width: 100%;
+  }
+
+  /* Ẩn divider */
+  .order-card>div:first-child .hidden.sm\:block {
+    display: none !important;
+  }
+
+  /* Badge trạng thái xuống hàng riêng */
+  .order-card>div:first-child>div>div:last-child {
+    width: 100%;
+    align-self: flex-start;
+  }
 }
 
 /* Smooth transitions for order filtering */
@@ -55,6 +78,83 @@
 /* Order Items */
 .order-item {
   transition: all 0.3s ease-out;
+}
+
+/* Order Item - Mobile Responsive */
+@media (max-width: 640px) {
+  .order-item {
+    flex-direction: row !important;
+    gap: 0.75rem !important;
+    align-items: flex-start !important;
+  }
+
+  .order-item img {
+    width: 4rem !important;
+    height: 4rem !important;
+    min-width: 4rem;
+    flex-shrink: 0;
+  }
+
+  /* Layout dọc: không chia 2 cột */
+  .order-item>.flex-1 {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Hàng 1: Tên sản phẩm, bộ sưu tập, mẫu + số lượng */
+  .order-item>.flex-1>.flex-1 {
+    width: 100%;
+  }
+
+  .order-item h3 {
+    font-size: 13px !important;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .order-item>.flex-1>.flex-1 p {
+    font-size: 11px !important;
+    margin-bottom: 0.25rem !important;
+  }
+
+  .order-item>.flex-1>.flex-1>div {
+    font-size: 11px !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Hàng 2: Giá tiền và phương thức thanh toán - xuống hàng */
+  .order-item>.flex-1>div:last-child {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100%;
+    gap: 0.25rem !important;
+    margin-top: 0.25rem;
+  }
+
+  .order-item>.flex-1>div:last-child>div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .order-item span[class*="text-[#ae873e]"] {
+    font-size: 14px !important;
+  }
+
+  .order-item span[class*="text-[#999999]"] {
+    font-size: 11px !important;
+  }
+
+  .order-item>.flex-1>div:last-child p {
+    font-size: 10px !important;
+    margin: 0 !important;
+  }
 }
 
 /* Hidden Order Items */

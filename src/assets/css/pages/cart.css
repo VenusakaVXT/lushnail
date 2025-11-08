@@ -1,10 +1,10 @@
 /* Cart Item Styles */
 .cart-item {
-  @apply bg-white border border-[#ececf0] rounded-lg p-4 hover:shadow-md transition-shadow duration-300;
+  @apply bg-white border border-[#ececf0] rounded-lg p-2 sm:p-4 hover:shadow-md transition-shadow duration-300;
 }
 
 .cart-item-container {
-  @apply flex flex-col sm:flex-row gap-4 items-center;
+  @apply flex flex-row gap-2 sm:gap-4 items-center;
 }
 
 .cart-item-checkbox {
@@ -17,51 +17,51 @@
 }
 
 .cart-item-image {
-  @apply w-full sm:w-24 h-24 object-cover rounded-lg;
+  @apply w-16 h-16 sm:w-24 sm:h-24 object-cover rounded-lg;
 }
 
 .cart-item-content {
-  @apply flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-4;
+  @apply flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-4;
 }
 
 .cart-item-info {
-  @apply flex-1;
+  @apply flex-1 min-w-0 w-full sm:w-auto;
 }
 
 .cart-item-title {
-  @apply text-[#090707] text-[16px] font-semibold mb-1;
+  @apply text-[#090707] text-[13px] sm:text-[16px] font-semibold mb-1 line-clamp-2;
 }
 
 .cart-item-subtitle {
-  @apply text-[#666666] text-[13px] mb-2;
+  @apply text-[#666666] text-[11px] sm:text-[13px] mb-2;
 }
 
 .cart-item-price-wrapper {
-  @apply flex items-center gap-3;
+  @apply flex items-center gap-2 sm:gap-3;
 }
 
 .cart-item-price {
-  @apply text-[#ae873e] text-[18px] font-semibold;
+  @apply text-[#ae873e] text-[14px] sm:text-[18px] font-semibold;
 }
 
 .cart-item-price-old {
-  @apply text-[#999999] text-[14px] line-through;
+  @apply text-[#999999] text-[11px] sm:text-[14px] line-through;
 }
 
 .cart-item-actions {
-  @apply flex items-center gap-4;
+  @apply flex items-center gap-2 sm:gap-4 flex-shrink-0 w-full sm:w-auto justify-end;
 }
 
 .cart-item-quantity {
-  @apply flex items-center gap-2;
+  @apply flex items-center gap-1 sm:gap-2;
 }
 
 .cart-item-quantity-btn {
-  @apply w-8 h-8 rounded-lg border-2 border-[#ae873e] text-[#ae873e] hover:bg-[#ae873e] hover:text-white transition-all duration-300 flex items-center justify-center font-semibold;
+  @apply w-6 h-6 sm:w-8 sm:h-8 rounded-lg border-2 border-[#ae873e] text-[#ae873e] hover:bg-[#ae873e] hover:text-white transition-all duration-300 flex items-center justify-center font-semibold;
 }
 
 .cart-item-quantity-input {
-  @apply w-12 h-8 text-center border-2 border-[#ae873e] rounded-lg text-[14px] font-semibold focus:outline-none focus:ring-2 focus:ring-[#ae873e];
+  @apply w-10 h-6 sm:w-12 sm:h-8 text-center border-2 border-[#ae873e] rounded-lg text-[12px] sm:text-[14px] font-semibold focus:outline-none focus:ring-2 focus:ring-[#ae873e];
   -webkit-appearance: none;
   -moz-appearance: textfield;
 }
@@ -73,7 +73,11 @@
 }
 
 .cart-item-remove {
-  @apply text-[#dc2626] hover:text-[#b91c1c] transition-colors duration-300 p-2;
+  @apply text-[#dc2626] hover:text-[#b91c1c] transition-colors duration-300 p-1 sm:p-2;
+}
+
+.cart-item-remove i {
+  @apply w-4 h-4 sm:w-5 sm:h-5;
 }
 
 /* Sticky Bar */
