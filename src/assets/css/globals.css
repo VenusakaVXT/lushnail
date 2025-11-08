@@ -5,51 +5,51 @@
 /* ========================================================================
    @LAYER BASE - CSS Variables & Base Styles
    ======================================================================== */
-   @layer base {
+@layer base {
 
     /* CSS Variables */
-    :root {
-        /* Background Colors */
-        --background: theme('colors.amber.500');
-        --foreground: theme('colors.gray.900');
-        --card: theme('colors.white');
-        --card-foreground: theme('colors.gray.900');
-        --popover: theme('colors.white');
-        --popover-foreground: theme('colors.gray.900');
+        :root {
+            /* Background Colors */
+            --background: theme('colors.amber.500');
+            --foreground: theme('colors.gray.900');
+            --card: theme('colors.white');
+            --card-foreground: theme('colors.gray.900');
+            --popover: theme('colors.white');
+            --popover-foreground: theme('colors.gray.900');
 
-        /* Primary Colors */
-        --primary: #a5834a;
-        --primary-foreground: theme('colors.white');
+            /* Primary Colors */
+            --primary: #a5834a;
+            --primary-foreground: theme('colors.white');
 
-        /* Title Colors */
-        --title: theme('colors.amber.500');
-        --title-foreground: theme('colors.white');
+            /* Title Colors */
+            --title: theme('colors.amber.500');
+            --title-foreground: theme('colors.white');
 
-        /* Secondary Colors */
-        --secondary: #d4a574;
-        --secondary-foreground: theme('colors.gray.900');
+            /* Secondary Colors */
+            --secondary: #d4a574;
+            --secondary-foreground: theme('colors.gray.900');
 
-        /* Muted Colors */
-        --muted: theme('colors.gray.100');
-        --muted-foreground: theme('colors.gray.500');
+            /* Muted Colors */
+            --muted: theme('colors.gray.100');
+            --muted-foreground: theme('colors.gray.500');
 
-        /* Accent Colors */
-        --accent: #ae873e;
-        --accent-foreground: theme('colors.gray.900');
+            /* Accent Colors */
+            --accent: #ae873e;
+            --accent-foreground: theme('colors.gray.900');
 
-        /* Status Colors */
-        --destructive: theme('colors.red.500');
-        --destructive-foreground: theme('colors.white');
+            /* Status Colors */
+            --destructive: theme('colors.red.500');
+            --destructive-foreground: theme('colors.white');
 
-        /* Border & Input Colors */
-        --border: theme('colors.gray.200');
-        --input: theme('colors.gray.200');
-        --ring: theme('colors.amber.500');
+            /* Border & Input Colors */
+            --border: theme('colors.gray.200');
+            --input: theme('colors.gray.200');
+            --ring: theme('colors.amber.500');
 
-        /* Border Radius */
-        --radius: theme('spacing.2');
-    }
-    
+            /* Border Radius */
+            --radius: theme('spacing.2');
+        }
+
     /* Base Element Styles */
 
     @font-face {
@@ -59,6 +59,7 @@
         font-style: normal;
         font-display: swap;
     }
+
     @font-face {
         font-family: 'BricolageGrotesque';
         src: url('../fonts/BricolageGrotesque/BricolageGrotesque-Medium.ttf') format('truetype');
@@ -66,6 +67,7 @@
         font-style: normal;
         font-display: swap;
     }
+
     @font-face {
         font-family: 'BricolageGrotesque';
         src: url('../fonts/BricolageGrotesque/BricolageGrotesque-SemiBold.ttf') format('truetype');
@@ -73,6 +75,7 @@
         font-style: normal;
         font-display: swap;
     }
+
     @font-face {
         font-family: 'BricolageGrotesque';
         src: url('../fonts/BricolageGrotesque/BricolageGrotesque-Bold.ttf') format('truetype');
@@ -80,6 +83,7 @@
         font-style: normal;
         font-display: swap;
     }
+
     @font-face {
         font-family: 'BricolageGrotesque';
         src: url('../fonts/BricolageGrotesque/BricolageGrotesque-ExtraBold.ttf') format('truetype');
@@ -88,7 +92,7 @@
         font-display: swap;
     }
 
- 
+
     body {
         @apply bg-white text-gray-900 font-sans;
         overflow-x: hidden;
@@ -117,6 +121,7 @@
     .title-section {
         @apply text-primary text-[#a5834a] font-semibold leading-tight text-2xl sm:text-4xl lg:text-5xl tracking-[-1px] relative;
     }
+
     .dark .title-section {
         @apply text-white font-semibold leading-tight text-2xl sm:text-4xl lg:text-5xl tracking-[-1px] relative;
     }
@@ -125,7 +130,7 @@
        BUTTON STYLES: Các thuộc tính cho Button
        ======================================================================== */
     .btn {
-        @apply inline-flex items-center justify-center text-sm px-4 py-2 h-10 rounded-md transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap overflow-hidden text-ellipsis;
+        @apply inline-flex items-center justify-center text-sm px-4 py-2 h-10 rounded-lg transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap overflow-hidden text-ellipsis;
     }
 
     .btn:focus {
@@ -138,7 +143,7 @@
 
     /* Button Custom */
     .btn-primary {
-        @apply bg-black border-transparent text-white rounded-lg  transition-all duration-300 font-semibold   hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
+        @apply bg-black border-transparent text-white rounded-lg transition-all duration-300 font-semibold hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
     }
 
     .btn-primary::before {
@@ -150,19 +155,35 @@
         @apply translate-x-[100%];
     }
 
+    .btn-primary-gradient {
+        @apply bg-gradient-to-r from-[#ae873e] to-[#c9a961] text-white py-2 px-4 rounded-lg text-[13px] font-semibold hover:from-[#a5834a] hover:to-[#ae873e] transition-all duration-300;
+    }
+
     .btn-secondary {
-        @apply bg-accent border border-primary gap-2 text-white  px-6 sm:px-8 py-2.5 sm:py-3;
+        @apply bg-accent border border-primary gap-2 text-white px-6 sm:px-8 py-2.5 sm:py-3;
+    }
+
+    .btn-third {
+        @apply bg-[#d4a574] text-white py-2 px-4 rounded-lg text-[13px] font-semibold hover:bg-[#c9a961] transition-all duration-300;
     }
 
     .btn-outline {
-        @apply inline-flex items-center gap-2 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 sm:px-8 py-2.5 sm:py-3  transition-all duration-300 ;
+        @apply inline-flex items-center gap-2 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 sm:px-8 py-2.5 sm:py-3 transition-all duration-300;
     }
 
     .btn-outline-white {
-        @apply inline-flex items-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-6 sm:px-8 py-2.5 sm:py-3  transition-all duration-300 ;
+        @apply inline-flex items-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-6 sm:px-8 py-2.5 sm:py-3 transition-all duration-300;
     }
 
-    
+    .btn-outline-muted {
+        @apply w-full sm:w-auto px-8 py-4 border-2 border-[#ae873e] text-[#ae873e] text-[16px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 flex items-center justify-center gap-2;
+    }
+
+    .btn-detail {
+        @apply bg-white text-[#333] px-6 py-2 text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
+    }
+
+
     /* Button Sizes */
     .btn-ssm {
         @apply px-2 py-1 h-6 text-xs;
@@ -192,29 +213,11 @@
         @apply text-primary hover:text-primary focus:border-0 bg-transparent border-0 p-0 m-0;
     }
 
-    /* Button Sizes */
-    .btn-sm {
-        @apply px-3 py-1.5 h-8 text-sm;
-    }
-
-    .btn-md {
-        @apply px-4 py-2 h-10 text-sm;
-    }
-
-    .btn-lg {
-        @apply px-6 py-3 h-12 text-base;
-    }
-
-    .btn-xl {
-        @apply px-8 py-4 h-14 text-lg;
-    }
-
-    .btn-single {
-        @apply px-2 py-1 h-6 text-xs;
-    }
-
-    .btn-simple {
-        @apply text-primary hover:text-primary focus:border-0 bg-transparent border-0 p-0 m-0;
+    /* ========================================================================
+       LABEL GROUP: Các thuộc tính cho Label
+       ======================================================================== */
+    .label {
+        @apply block text-[#090707] text-[14px] font-semibold mb-2;
     }
 
     /* ========================================================================
@@ -233,7 +236,7 @@
     }
 
     .dark .input-outline {
-        @apply w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] pb-2 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254,255,229,0.3)];
+        @apply w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] pb-2 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254, 255, 229, 0.3)];
     }
 
     .input-lg {
@@ -259,13 +262,13 @@
     .input-icon input:focus+.icon {
         @apply text-primary;
     }
-    
+
     input[type="checkbox"]:checked {
         @apply accent-accent;
         outline: none !important;
         box-shadow: none !important;
     }
-    
+
     input[type="checkbox"]:focus {
         outline: none !important;
         box-shadow: none !important;
@@ -281,20 +284,20 @@
     .textarea {
         @apply w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:border-[#ae873e] focus:ring-2 focus:ring-[#ae873e]/20 resize-none;
     }
-    
+
     .textarea-outline {
         @apply w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] text-[12px] pb-1 placeholder:text-[#999999] resize-none focus:border-[#ae873e] transition-colors;
     }
 
     .dark .textarea-outline {
-        @apply w-full h-[148px] bg-transparent border-[#646464] border-[1.5px] border-solid rounded-[30px] text-white text-[18px] p-4 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254,255,229,0.6)] resize-none;
+        @apply w-full h-[148px] bg-transparent border-[#646464] border-[1.5px] border-solid rounded-[30px] text-white text-[18px] p-4 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254, 255, 229, 0.6)] resize-none;
     }
 
     /* ========================================================================
        BADGE STYLES: Các thuộc tính cho Badge
        ======================================================================== */
     .badge {
-        @apply absolute top-3 right-3 z-10 px-3 pt-1 text-[11px] font-semibold rounded-full shadow-lg;
+        @apply absolute top-3 right-3 z-10 px-3 pt-[0.15rem] text-[11px] font-semibold rounded-full shadow-lg whitespace-nowrap flex items-center justify-center;
     }
 
     .badge-primary {
@@ -441,7 +444,7 @@
         @apply absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] transition-transform duration-700;
     } */
 
-               
+
 
     /* ========================================================================
         Noise Overlay Effect
@@ -482,7 +485,7 @@
        SELECT STYLES: Các thuộc tính cho Select
        ======================================================================== */
     select.select-white {
-        @apply flex h-12 w-full rounded-lg border border-gray-200 bg-transparent px-3 py-3 pr-12 text-sm transition-colors duration-150 text-gray-900;
+        @apply flex h-12 w-full rounded-lg bg-transparent px-3 py-3 pr-12 text-sm transition-colors duration-150 text-gray-900 border-2 border-[#ececf0] text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e];
         appearance: none;
         background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'%3E%3C/path%3E%3C/svg%3E");
         background-size: 16px 16px;
@@ -504,7 +507,7 @@
     }
 
     .dark .select-outline {
-        @apply w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] pb-2 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254,255,229,0.3)];
+        @apply w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] pb-2 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254, 255, 229, 0.3)];
     }
 
     .dark .select-outline option {
@@ -518,9 +521,12 @@
     .scrollbar-hide::-webkit-scrollbar {
         display: none;
     }
+
     .scrollbar-hide {
-        -ms-overflow-style: none;  /* IE và Edge */
-        scrollbar-width: none;     /* Firefox */
+        -ms-overflow-style: none;
+        /* IE và Edge */
+        scrollbar-width: none;
+        /* Firefox */
     }
 
     /* ========================================================================
@@ -601,8 +607,7 @@
     }
 
     .tabs.tabs-btn .tab-menu-wrapper {
-
-        border-bottom:0 !important;
+        border-bottom: 0 !important;
     }
 
     /* ========================================================================

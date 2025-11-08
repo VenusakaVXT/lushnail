@@ -19,8 +19,7 @@
                     <span class="text-[#666666] text-[15px]">4.8/5 (128 đánh giá)</span>
                 </div>
             </div>
-            <button id="write-review-btn"
-                class="bg-[#ae873e] text-white px-6 py-3 rounded-full text-[14px] font-semibold hover:bg-[#c9a961] transition-all duration-300">
+            <button id="write-review-btn" class="btn btn-secondary">
                 Viết Đánh Giá
             </button>
         </div>
@@ -74,7 +73,7 @@
                         </label>
                         <textarea id="review-text" name="review" rows="5" required
                             placeholder="Chia sẻ trải nghiệm của bạn về sản phẩm..."
-                            class="w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:border-[#ae873e] focus:ring-2 focus:ring-[#ae873e]/20 resize-none"></textarea>
+                            class="textarea"></textarea>
                     </div>
 
                     <!-- Image Upload -->
@@ -97,12 +96,11 @@
 
                     <!-- Submit Button -->
                     <div class="flex gap-3">
-                        <button type="submit"
-                            class="bg-[#ae873e] text-white px-8 py-3 rounded-full text-[15px] font-semibold hover:bg-[#c9a961] transition-all duration-300">
+                        <button type="submit" class="btn btn-secondary">
                             Gửi Đánh Giá
                         </button>
                         <button type="button" id="cancel-review-btn"
-                            class="px-8 py-3 border-2 border-[#ae873e] text-[#ae873e] rounded-full text-[15px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300">
+                            class="btn btn-outline-muted">
                             Hủy
                         </button>
                     </div>
@@ -214,7 +212,7 @@
 
         <!-- Load More Reviews -->
         <div class="flex justify-center mt-8 scroll-fade-in" style="animation-delay: 0.3s;">
-            <button class="section__button">
+            <button class="btn btn-outline-muted">
                 Xem Thêm Đánh Giá
             </button>
         </div>
