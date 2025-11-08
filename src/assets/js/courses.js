@@ -72,27 +72,27 @@ document.addEventListener('DOMContentLoaded', function () {
       return `
         <div class="course-card group">
           <div class="course-card__badge">
-            <p class="  text-[13px]  emibold" style="font-variation-settings:'opsz' 14, 'wdth' 100">${course.discount}</p>
+            <p class="  text-[13px]  emibold" >${course.discount}</p>
           </div>
           <div class="course-card__image-container">
             <img src="${course.image}" alt="${course.title}" class="course-card__image" loading="lazy">
             <div class="course-card__overlay">
-              <a href="single-course.html" class="course-card__detail-button  " style="font-variation-settings:'opsz' 14, 'wdth' 100">CHI TIẾT</a>
+              <a href="single-course.html" class="course-card__detail-button  " >CHI TIẾT</a>
             </div>
           </div>
           <div class="course-card__body">
             <div class="course-card__title-section">
-              <a href="single-course.html"><h3 class="course-card__title   hover:text-[#ae873e] transition-colors cursor-pointer" style="font-variation-settings:'opsz' 14, 'wdth' 100">${course.title}</h3></a>
-              <p class="course-card__description font-['Bricolage_Grotesque:Regular',_sans-serif]" style="font-variation-settings:'opsz' 14, 'wdth' 100">${course.description}</p>
+              <a href="single-course.html"><h3 class="course-card__title   hover:text-[#ae873e] transition-colors cursor-pointer" >${course.title}</h3></a>
+              <p class="course-card__description font-['Bricolage_Grotesque:Regular',_sans-serif]" >${course.description}</p>
             </div>
             <div class="course-card__tags">
-              ${course.tags.map(tag => `<span class="course-card__tag font-['Bricolage_Grotesque:Medium',_sans-serif]" style="font-variation-settings:'opsz' 14, 'wdth' 100">${tag}</span>`).join('')}
+              ${course.tags.map(tag => `<span class="course-card__tag font-['Bricolage_Grotesque:Medium',_sans-serif]" >${tag}</span>`).join('')}
             </div>
             <div class="course-card__price-section">
-              <p class="course-card__price  " style="font-variation-settings:'opsz' 14, 'wdth' 100">${course.price}</p>
-              <p class="course-card__price-old font-['Bricolage_Grotesque:Regular',_sans-serif]" style="font-variation-settings:'opsz' 14, 'wdth' 100">${course.priceOld}</p>
+              <p class="course-card__price  " >${course.price}</p>
+              <p class="course-card__price-old font-['Bricolage_Grotesque:Regular',_sans-serif]" >${course.priceOld}</p>
             </div>
-            <a href="single-course.html" class="course-card__button  " style="font-variation-settings:'opsz' 14, 'wdth' 100">ĐĂNG KÝ NGAY</a>
+            <a href="single-course.html" class="course-card__button  " >ĐĂNG KÝ NGAY</a>
           </div>
         </div>
       `;
