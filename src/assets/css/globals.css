@@ -8,47 +8,47 @@
 @layer base {
 
     /* CSS Variables */
-        :root {
-            /* Background Colors */
-            --background: theme('colors.amber.500');
-            --foreground: theme('colors.gray.900');
-            --card: theme('colors.white');
-            --card-foreground: theme('colors.gray.900');
-            --popover: theme('colors.white');
-            --popover-foreground: theme('colors.gray.900');
+    :root {
+        /* Background Colors */
+        --background: theme('colors.amber.500');
+        --foreground: theme('colors.gray.900');
+        --card: theme('colors.white');
+        --card-foreground: theme('colors.gray.900');
+        --popover: theme('colors.white');
+        --popover-foreground: theme('colors.gray.900');
 
-            /* Primary Colors */
-            --primary: #a5834a;
-            --primary-foreground: theme('colors.white');
+        /* Primary Colors */
+        --primary: #a5834a;
+        --primary-foreground: theme('colors.white');
 
-            /* Title Colors */
-            --title: theme('colors.amber.500');
-            --title-foreground: theme('colors.white');
+        /* Title Colors */
+        --title: theme('colors.amber.500');
+        --title-foreground: theme('colors.white');
 
-            /* Secondary Colors */
-            --secondary: #d4a574;
-            --secondary-foreground: theme('colors.gray.900');
+        /* Secondary Colors */
+        --secondary: #d4a574;
+        --secondary-foreground: theme('colors.gray.900');
 
-            /* Muted Colors */
-            --muted: theme('colors.gray.100');
-            --muted-foreground: theme('colors.gray.500');
+        /* Muted Colors */
+        --muted: theme('colors.gray.100');
+        --muted-foreground: theme('colors.gray.500');
 
-            /* Accent Colors */
-            --accent: #ae873e;
-            --accent-foreground: theme('colors.gray.900');
+        /* Accent Colors */
+        --accent: #ae873e;
+        --accent-foreground: theme('colors.gray.900');
 
-            /* Status Colors */
-            --destructive: theme('colors.red.500');
-            --destructive-foreground: theme('colors.white');
+        /* Status Colors */
+        --destructive: theme('colors.red.500');
+        --destructive-foreground: theme('colors.white');
 
-            /* Border & Input Colors */
-            --border: theme('colors.gray.200');
-            --input: theme('colors.gray.200');
-            --ring: theme('colors.amber.500');
+        /* Border & Input Colors */
+        --border: theme('colors.gray.200');
+        --input: theme('colors.gray.200');
+        --ring: theme('colors.amber.500');
 
-            /* Border Radius */
-            --radius: theme('spacing.2');
-        }
+        /* Border Radius */
+        --radius: theme('spacing.2');
+    }
 
     /* Base Element Styles */
 
@@ -722,5 +722,17 @@
         @apply p-2 relative bg-white rounded-[20px] overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0px_12px_40px_rgba(174,135,62,0.25)] transition-all duration-500 hover:-translate-y-1;
     }
 
+    .map-iframe {
+        transition: opacity 0.4s ease-in-out;
+        opacity: 1;
+    }
+
+    .map-iframe.fade-out {
+        opacity: 0;
+    }
+
+    .location-card.active {
+        @apply border-primary;
+    }
 
 }
