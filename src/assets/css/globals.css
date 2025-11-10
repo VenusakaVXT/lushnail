@@ -232,11 +232,11 @@
     }
 
     .light .input-outline {
-        @apply w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] text-[12px] pb-1 placeholder:text-[#999999] focus:border-[#ae873e] focus:placeholder:text-[#ae873e] transition-colors;
+        @apply w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] text-[12px] pb-1 transition-colors;
     }
 
     .dark .input-outline {
-        @apply w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] pb-2 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254, 255, 229, 0.3)];
+        @apply w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] pb-2;
     }
 
     .input-lg {

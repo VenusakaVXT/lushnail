@@ -79,7 +79,7 @@
     }
 
     .header-topbar-button {
-        @apply bg-[#080606] text-white text-[13px] sm:text-[14px] px-3 py-1.5 border border-black border-solid hover:bg-black transition;
+        @apply bg-[#080606] text-white text-[13px] sm:text-[14px] px-3 py-1.5 border border-black border-solid transition;
     }
 
     /* ========================================================================
