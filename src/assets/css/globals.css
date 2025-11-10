@@ -286,15 +286,15 @@
        TEXTAREA GROUP: Các thuộc tính cho Textarea
        ======================================================================== */
     .textarea {
-        @apply w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:border-[#ae873e] focus:ring-2 focus:ring-[#ae873e]/20 resize-none;
+        @apply w-full px-4 py-3 border-2 outline-accent rounded-lg text-[14px] resize-none;
     }
 
     .textarea-outline {
-        @apply w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] text-[12px] pb-1 placeholder:text-[#999999] resize-none focus:border-[#ae873e] transition-colors;
+        @apply w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] text-[12px] pb-1 transition-colors;
     }
 
     .textarea-outline-dark {
-        @apply w-full h-[148px] bg-transparent border-[#646464] border-[1.5px] border-solid rounded-[30px] text-white text-[18px] p-4 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254, 255, 229, 0.6)] resize-none;
+        @apply w-full h-[148px] bg-transparent border-[#646464] border-[1.5px] border-solid rounded-[30px] text-white text-[18px] p-4 resize-none;
     }
 
     /* ========================================================================
@@ -549,7 +549,7 @@
     }
 
     .select-outline-dark {
-        @apply w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] pb-2 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254, 255, 229, 0.3)];
+        @apply w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] pb-2 appearance-none cursor-pointer;
     }
 
     .select-outline-dark option {

@@ -37,85 +37,63 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Quantity Selector - Main Product Page
-  const quantityInput = document.getElementById('quantity-input');
-  const quantityDecrease = document.getElementById('quantity-decrease');
-  const quantityIncrease = document.getElementById('quantity-increase');
+  // Universal Quantity Selector - Works for all quantity inputs
+  function initQuantitySelector(container) {
+    const decreaseBtn = container.querySelector('.quantity-btn.decrease, .modal-quantity-btn.decrease');
+    const increaseBtn = container.querySelector('.quantity-btn.increase, .modal-quantity-btn.increase');
+    const quantityInput = container.querySelector('input[type="number"].quantity-input, input[type="number"].modal-quantity-input');
 
-  if (quantityDecrease && quantityInput) {
-    quantityDecrease.addEventListener('click', function () {
-      let currentValue = parseInt(quantityInput.value) || 1;
-      if (currentValue > 1) {
-        quantityInput.value = currentValue - 1;
+    if (!quantityInput) return;
+
+    const min = parseInt(quantityInput.getAttribute('min')) || 1;
+    const max = parseInt(quantityInput.getAttribute('max')) || 99;
+
+    function updateQuantity(value) {
+      let newValue = parseInt(value) || min;
+      if (newValue < min) newValue = min;
+      if (newValue > max) newValue = max;
+      quantityInput.value = newValue;
+
+      // Update modal total price if it's a modal quantity input
+      if (quantityInput.classList.contains('modal-quantity-input')) {
+        updateModalTotalPrice();
       }
-    });
-  }
+    }
 
-  if (quantityIncrease && quantityInput) {
-    quantityIncrease.addEventListener('click', function () {
-      let currentValue = parseInt(quantityInput.value) || 1;
-      if (currentValue < 99) {
-        quantityInput.value = currentValue + 1;
-      }
-    });
-  }
-
-  if (quantityInput) {
-    quantityInput.addEventListener('change', function () {
-      let value = parseInt(this.value) || 1;
-      if (value < 1) value = 1;
-      if (value > 99) value = 99;
-      this.value = value;
-    });
-  }
-
-  // Quantity Selector - Modal
-  const quantityInputs = document.querySelectorAll('.modal-quantity-input');
-  const quantityBtns = document.querySelectorAll('.modal-quantity-btn');
-
-  quantityBtns.forEach(btn => {
-    btn.addEventListener('click', function () {
-      const isIncrease = this.classList.contains('increase');
-      const isDecrease = this.classList.contains('decrease');
-      const input = this.closest('.flex').querySelector('input[type="number"]');
-
-      if (input) {
-        let currentValue = parseInt(input.value) || 1;
-
-        if (isIncrease && currentValue < 99) {
-          input.value = currentValue + 1;
-        } else if (isDecrease && currentValue > 1) {
-          input.value = currentValue - 1;
+    if (decreaseBtn) {
+      decreaseBtn.addEventListener('click', function () {
+        let currentValue = parseInt(quantityInput.value) || min;
+        if (currentValue > min) {
+          updateQuantity(currentValue - 1);
         }
+      });
+    }
 
-        // Update modal total price
-        updateModalTotalPrice();
-      }
-    });
-  });
+    if (increaseBtn) {
+      increaseBtn.addEventListener('click', function () {
+        let currentValue = parseInt(quantityInput.value) || min;
+        if (currentValue < max) {
+          updateQuantity(currentValue + 1);
+        }
+      });
+    }
 
-  quantityInputs.forEach(input => {
-    input.addEventListener('change', function () {
-      let value = parseInt(this.value) || 1;
-      if (value < 1) value = 1;
-      if (value > 99) value = 99;
-      this.value = value;
-
-      if (this.classList.contains('modal-quantity-input')) {
-        updateModalTotalPrice();
-      }
+    quantityInput.addEventListener('change', function () {
+      updateQuantity(this.value);
     });
 
-    input.addEventListener('input', function () {
-      let value = parseInt(this.value) || 1;
-      if (value < 1) value = 1;
-      if (value > 99) value = 99;
-      this.value = value;
-
-      if (this.classList.contains('modal-quantity-input')) {
-        updateModalTotalPrice();
-      }
+    quantityInput.addEventListener('input', function () {
+      updateQuantity(this.value);
     });
+  }
+
+  // Initialize quantity selectors for all containers
+  const quantityContainers = document.querySelectorAll('.flex.items-center.gap-3');
+  quantityContainers.forEach(container => {
+    const hasQuantityInput = container.querySelector('input[type="number"].quantity-input, input[type="number"].modal-quantity-input');
+    if (hasQuantityInput) {
+      initQuantitySelector(container);
+    }
   });
 
   // Design Pattern Selection
