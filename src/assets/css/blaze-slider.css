@@ -83,7 +83,7 @@
     height: 40px;
     border-radius: 50%;
     border: none;
-    background-color: var(--secondary);
+    background-color: var(--primary);
     color: #fff;
     cursor: pointer;
     display: flex;
@@ -353,3 +353,15 @@
     margin-right: 0;
 }
  
+
+.section_testimonials .blaze-next,
+.section_testimonials .blaze-prev{
+    @apply hidden sm:flex;
+}
+
+.section_testimonials .blaze-prev{
+    left: -60px;
+}
+.section_testimonials .blaze-next{
+    right: -60px;
+}

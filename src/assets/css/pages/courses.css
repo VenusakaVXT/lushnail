@@ -6,3 +6,10 @@
 .section_testimonials .blaze-prev{
     @apply hidden sm:flex;
 }
+
+.section_testimonials .blaze-prev{
+    left: -60px;
+}
+.section_testimonials .blaze-next{
+    right: -60px;
+}
