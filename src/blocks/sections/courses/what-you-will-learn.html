@@ -8,7 +8,7 @@ class="bg-cover bg-center noise-overlay relative rounded-[40px] sm:rounded-[60px
 
             <!-- Header -->
             <div class="flex flex-col items-center text-center gap-4 sm:gap-6 max-w-[800px] w-full">
-                <h2 class="title-section text-white">
+                <h2 class="title-section-dark text-white">
                     Bạn sẽ làm được gì sau khóa học?
                 </h2>
                 <p class="text-white/80 text-[15px] sm:text-[16px] leading-[24px]">
@@ -141,14 +141,13 @@ class="bg-cover bg-center noise-overlay relative rounded-[40px] sm:rounded-[60px
             </div>
 
             <!-- Testimonials Section -->
-              <!-- testimonials section -->
-              <div class="section_testimonials flex flex-col items-center w-full">
+            <div class="section_testimonials flex flex-col items-center w-full">
                 <div
                     class="container flex flex-col items-center gap-10 sm:gap-14 lg:gap-16  w-full max-w-[1400px] mx-auto">
 
                     <!-- Title Section -->
                     <div class="text-center space-y-4 max-w-[800px]">
-                        <h2 class=" title-section text-white">
+                        <h2 class=" title-section-dark text-white">
                             Cảm nhận học viên
                         </h2>
                         <p class=" text-white/70 text-[15px] sm:text-[16px] leading-[24px] sm:leading-[26px]">
@@ -179,37 +178,42 @@ class="bg-cover bg-center noise-overlay relative rounded-[40px] sm:rounded-[60px
                                     <!-- Testimonial 1 -->
                                     <div class="blaze-slide">
                                         <div
-                                            class="group relative bg-gradient-to-br from-[#2a2a2a] to-[#1f1f1f] rounded-[16px] p-6 sm:p-8 shadow-lg border border-[#3a3a3a]/50 hover:border-[#ae873e]/50 transition-all duration-300 h-full">
-                                            <div class="relative z-10">
+                                            class="group review__card">
+                                            <div class="review__card-body">
+                                                <!-- Quote mark -->
+                                                <span class="review__card-quote-mark">"</span>
+
                                                 <!-- Stars -->
-                                                <div class="flex items-center gap-1 mb-4">
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                <div class="review__card-ratings">
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
                                                 </div>
 
                                                 <!-- Quote -->
-                                                <p
-                                                    class="text-white text-[15px] sm:text-[16px] leading-[24px] mb-4 relative">
-                                                    <span
-                                                        class="absolute -top-1 -left-1 text-[#ae873e]/30 text-4xl font-serif">"</span>
-                                                    <span class="relative z-10">Mới học 3 tuần đã nhận khách quen. Cô
-                                                        kèm kỹ và sửa lỗi rất kỹ.</span>
+                                                <p class="review__card-quote">
+                                                    Mới học 3 tuần đã nhận khách quen. Cô
+                                                    kèm kỹ và sửa lỗi rất kỹ.
                                                 </p>
 
                                                 <!-- Author -->
-                                                <div class="flex items-center gap-3 pt-3 border-t border-[#3a3a3a]/50">
+                                                <div class="review__card-author">
                                                     <div
                                                         class="w-10 h-10 rounded-full bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] flex items-center justify-center text-white font-semibold text-sm">
                                                         T
                                                     </div>
                                                     <div>
-                                                        <p class="font-semibold text-white text-[14px]">
+                                                        <p class="review__card-author-name">
                                                             [Tên]
                                                         </p>
-                                                        <p class="text-[#999] text-[13px]">
+                                                        <p class="review__card-author-location">
                                                             Q.1, TP.HCM
                                                         </p>
                                                     </div>
@@ -221,37 +225,42 @@ class="bg-cover bg-center noise-overlay relative rounded-[40px] sm:rounded-[60px
                                     <!-- Testimonial 2 -->
                                     <div class="blaze-slide">
                                         <div
-                                            class="group relative bg-gradient-to-br from-[#2a2a2a] to-[#1f1f1f] rounded-[16px] p-6 sm:p-8 shadow-lg border border-[#3a3a3a]/50 hover:border-[#ae873e]/50 transition-all duration-300 h-full">
-                                            <div class="relative z-10">
+                                            class="group review__card">
+                                            <div class="review__card-body">
+
+                                                <!-- Quote mark -->
+                                                <span class="review__card-quote-mark">"</span>
+
                                                 <!-- Stars -->
-                                                <div class="flex items-center gap-1 mb-4">
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                <div class="review__card-ratings">
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
                                                 </div>
 
                                                 <!-- Quote -->
-                                                <p
-                                                    class="text-white text-[15px] sm:text-[16px] leading-[24px] mb-4 relative">
-                                                    <span
-                                                        class="absolute -top-1 -left-1 text-[#ae873e]/30 text-4xl font-serif">"</span>
-                                                    <span class="relative z-10">Học xong mình vào làm ngay tại salon,
-                                                        lương + tip ổn.</span>
+                                                <p class="review__card-quote">
+                                                    Học xong mình vào làm ngay tại salon, lương + tip ổn.
                                                 </p>
 
                                                 <!-- Author -->
-                                                <div class="flex items-center gap-3 pt-3 border-t border-[#3a3a3a]/50">
+                                                <div class="review__card-author">
                                                     <div
                                                         class="w-10 h-10 rounded-full bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] flex items-center justify-center text-white font-semibold text-sm">
                                                         T
                                                     </div>
                                                     <div>
-                                                        <p class="font-semibold text-white text-[14px]">
+                                                        <p class="review__card-author-name">
                                                             [Tên]
                                                         </p>
-                                                        <p class="text-[#999] text-[13px]">
+                                                        <p class="review__card-author-location">
                                                             Thủ Đức, TP.HCM
                                                         </p>
                                                     </div>
@@ -263,37 +272,43 @@ class="bg-cover bg-center noise-overlay relative rounded-[40px] sm:rounded-[60px
                                     <!-- Testimonial 3 -->
                                     <div class="blaze-slide">
                                         <div
-                                            class="group relative bg-gradient-to-br from-[#2a2a2a] to-[#1f1f1f] rounded-[16px] p-6 sm:p-8 shadow-lg border border-[#3a3a3a]/50 hover:border-[#ae873e]/50 transition-all duration-300 h-full">
-                                            <div class="relative z-10">
+                                            class="group review__card">
+                                            <div class="review__card-body">
+
+                                                <!-- Quote mark -->
+                                                <span class="review__card-quote-mark">"</span>
+
                                                 <!-- Stars -->
-                                                <div class="flex items-center gap-1 mb-4">
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                <div class="review__card-ratings">
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
                                                 </div>
 
                                                 <!-- Quote -->
                                                 <p
-                                                    class="text-white text-[15px] sm:text-[16px] leading-[24px] mb-4 relative">
-                                                    <span
-                                                        class="absolute -top-1 -left-1 text-[#ae873e]/30 text-4xl font-serif">"</span>
-                                                    <span class="relative z-10">Giáo trình thực tế, có dạy cách chụp ảnh
-                                                        sản phẩm đẹp để đăng bán.</span>
+                                                    class="review__card-quote">
+                                                    Giáo trình thực tế, có dạy cách chụp ảnh sản phẩm đẹp để đăng bán.
                                                 </p>
 
                                                 <!-- Author -->
-                                                <div class="flex items-center gap-3 pt-3 border-t border-[#3a3a3a]/50">
+                                                <div class="review__card-author">
                                                     <div
                                                         class="w-10 h-10 rounded-full bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] flex items-center justify-center text-white font-semibold text-sm">
                                                         T
                                                     </div>
                                                     <div>
-                                                        <p class="font-semibold text-white text-[14px]">
+                                                        <p class="review__card-author-name">
                                                             [Tên]
                                                         </p>
-                                                        <p class="text-[#999] text-[13px]">
+                                                        <p class="review__card-author-location">
                                                             Bình Thạnh, TP.HCM
                                                         </p>
                                                     </div>
@@ -304,37 +319,43 @@ class="bg-cover bg-center noise-overlay relative rounded-[40px] sm:rounded-[60px
                                     <!-- Testimonial 1 -->
                                     <div class="blaze-slide">
                                         <div
-                                            class="group relative bg-gradient-to-br from-[#2a2a2a] to-[#1f1f1f] rounded-[16px] p-6 sm:p-8 shadow-lg border border-[#3a3a3a]/50 hover:border-[#ae873e]/50 transition-all duration-300 h-full">
-                                            <div class="relative z-10">
+                                            class="group review__card">
+                                            <div class="review__card-body">
+
+                                                <!-- Quote mark -->
+                                                <span class="review__card-quote-mark">"</span>
+
                                                 <!-- Stars -->
-                                                <div class="flex items-center gap-1 mb-4">
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                <div class="review__card-ratings">
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
                                                 </div>
 
                                                 <!-- Quote -->
                                                 <p
-                                                    class="text-white text-[15px] sm:text-[16px] leading-[24px] mb-4 relative">
-                                                    <span
-                                                        class="absolute -top-1 -left-1 text-[#ae873e]/30 text-4xl font-serif">"</span>
-                                                    <span class="relative z-10">Mới học 3 tuần đã nhận khách quen. Cô
-                                                        kèm kỹ và sửa lỗi rất kỹ.</span>
+                                                    class="review__card-quote relative">
+                                                    Mới học 3 tuần đã nhận khách quen. Cô kèm kỹ và sửa lỗi rất kỹ.
                                                 </p>
 
                                                 <!-- Author -->
-                                                <div class="flex items-center gap-3 pt-3 border-t border-[#3a3a3a]/50">
+                                                <div class="review__card-author">
                                                     <div
                                                         class="w-10 h-10 rounded-full bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] flex items-center justify-center text-white font-semibold text-sm">
                                                         T
                                                     </div>
                                                     <div>
-                                                        <p class="font-semibold text-white text-[14px]">
+                                                        <p class="review__card-author-name">
                                                             [Tên]
                                                         </p>
-                                                        <p class="text-[#999] text-[13px]">
+                                                        <p class="review__card-author-location">
                                                             Q.1, TP.HCM
                                                         </p>
                                                     </div>
@@ -346,37 +367,42 @@ class="bg-cover bg-center noise-overlay relative rounded-[40px] sm:rounded-[60px
                                     <!-- Testimonial 2 -->
                                     <div class="blaze-slide">
                                         <div
-                                            class="group relative bg-gradient-to-br from-[#2a2a2a] to-[#1f1f1f] rounded-[16px] p-6 sm:p-8 shadow-lg border border-[#3a3a3a]/50 hover:border-[#ae873e]/50 transition-all duration-300 h-full">
-                                            <div class="relative z-10">
+                                            class="group review__card">
+                                            <div class="review__card-body">
+                                                <!-- Quote mark -->
+                                                <span class="review__card-quote-mark">"</span>
+
                                                 <!-- Stars -->
-                                                <div class="flex items-center gap-1 mb-4">
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                <div class="review__card-ratings">
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
                                                 </div>
 
                                                 <!-- Quote -->
                                                 <p
-                                                    class="text-white text-[15px] sm:text-[16px] leading-[24px] mb-4 relative">
-                                                    <span
-                                                        class="absolute -top-1 -left-1 text-[#ae873e]/30 text-4xl font-serif">"</span>
-                                                    <span class="relative z-10">Học xong mình vào làm ngay tại salon,
-                                                        lương + tip ổn.</span>
+                                                    class="review__card-quote relative">
+                                                    Học xong mình vào làm ngay tại salon, lương + tip ổn.
                                                 </p>
 
                                                 <!-- Author -->
-                                                <div class="flex items-center gap-3 pt-3 border-t border-[#3a3a3a]/50">
+                                                <div class="review__card-author">
                                                     <div
                                                         class="w-10 h-10 rounded-full bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] flex items-center justify-center text-white font-semibold text-sm">
                                                         T
                                                     </div>
                                                     <div>
-                                                        <p class="font-semibold text-white text-[14px]">
+                                                        <p class="review__card-author-name">
                                                             [Tên]
                                                         </p>
-                                                        <p class="text-[#999] text-[13px]">
+                                                        <p class="review__card-author-location">
                                                             Thủ Đức, TP.HCM
                                                         </p>
                                                     </div>
@@ -388,37 +414,42 @@ class="bg-cover bg-center noise-overlay relative rounded-[40px] sm:rounded-[60px
                                     <!-- Testimonial 3 -->
                                     <div class="blaze-slide">
                                         <div
-                                            class="group relative bg-gradient-to-br from-[#2a2a2a] to-[#1f1f1f] rounded-[16px] p-6 sm:p-8 shadow-lg border border-[#3a3a3a]/50 hover:border-[#ae873e]/50 transition-all duration-300 h-full">
-                                            <div class="relative z-10">
+                                            class="group review__card">
+                                            <div class="review__card-body">
+                                                <!-- Quote mark -->
+                                                <span class="review__card-quote-mark">"</span>
+
                                                 <!-- Stars -->
-                                                <div class="flex items-center gap-1 mb-4">
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
-                                                    <i data-lucide="star" class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                <div class="review__card-ratings">
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
+                                                    <i data-lucide="star"
+                                                        class="w-5 h-5 text-[#ae873e] fill-[#ae873e]"></i>
                                                 </div>
 
                                                 <!-- Quote -->
                                                 <p
-                                                    class="text-white text-[15px] sm:text-[16px] leading-[24px] mb-4 relative">
-                                                    <span
-                                                        class="absolute -top-1 -left-1 text-[#ae873e]/30 text-4xl font-serif">"</span>
-                                                    <span class="relative z-10">Giáo trình thực tế, có dạy cách chụp ảnh
-                                                        sản phẩm đẹp để đăng bán.</span>
+                                                    class="review__card-quote relative">
+                                                    Giáo trình thực tế, có dạy cách chụp ảnh sản phẩm đẹp để đăng bán.
                                                 </p>
 
                                                 <!-- Author -->
-                                                <div class="flex items-center gap-3 pt-3 border-t border-[#3a3a3a]/50">
+                                                <div class="review__card-author">
                                                     <div
                                                         class="w-10 h-10 rounded-full bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] flex items-center justify-center text-white font-semibold text-sm">
                                                         T
                                                     </div>
                                                     <div>
-                                                        <p class="font-semibold text-white text-[14px]">
+                                                        <p class="review__card-author-name">
                                                             [Tên]
                                                         </p>
-                                                        <p class="text-[#999] text-[13px]">
+                                                        <p class="review__card-author-location">
                                                             Bình Thạnh, TP.HCM
                                                         </p>
                                                     </div>
@@ -441,7 +472,7 @@ class="bg-cover bg-center noise-overlay relative rounded-[40px] sm:rounded-[60px
             <!-- CTA Section -->
             <div class="container mx-auto px-0 sm:px-6 lg:px-8 relative z-10 w-full">
                 <div class="max-w-[800px] mx-auto text-center space-y-6 sm:space-y-8">
-                    <h2 class="title-section leading-[1.2] text-[#bbaa8e] tracking-[-1px]">
+                    <h2 class="title-section-dark text-white leading-[1.2] text-[#bbaa8e] tracking-[-1px]">
                         Sẵn sàng bắt đầu hành trình làm đẹp của bạn?
                     </h2>
                     <p class="text-white/70 text-[16px] sm:text-[18px] leading-[26px] sm:leading-[28px]">

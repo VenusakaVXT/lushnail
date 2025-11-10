@@ -122,15 +122,15 @@
         @apply text-primary text-[#a5834a] font-semibold leading-tight text-2xl sm:text-4xl lg:text-5xl tracking-[-1px] relative;
     }
 
-    .dark .title-section {
-        @apply text-white font-semibold leading-tight text-2xl sm:text-4xl lg:text-5xl tracking-[-1px] relative;
+    .title-section-dark {
+        @apply text-[#bbaa8e] font-semibold leading-tight text-2xl sm:text-4xl lg:text-5xl tracking-[-1px] relative;
     }
 
     /* ========================================================================
        BUTTON STYLES: Các thuộc tính cho Button
        ======================================================================== */
     .btn {
-        @apply inline-flex items-center justify-center text-sm px-4 py-2 h-10 rounded-lg transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap overflow-hidden text-ellipsis;
+        @apply inline-flex items-center justify-center text-sm px-4 py-2 h-10 rounded-lg transition-all duration-200 cursor-pointer focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap overflow-hidden text-ellipsis;
     }
 
     .btn:focus {
@@ -173,6 +173,10 @@
 
     .btn-outline-white {
         @apply inline-flex items-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white hover:text-primary px-6 sm:px-8 py-2.5 sm:py-3 transition-all duration-300;
+    }
+
+    .btn-outline-dark {
+        @apply inline-flex items-center gap-2 bg-transparent border-2 border-[#333] text-[#333] hover:bg-primary hover:text-white hover:border-white px-6 sm:px-8 py-2.5 sm:py-3 transition-all duration-300;
     }
 
     .btn-outline-muted {
@@ -231,11 +235,11 @@
         @apply text-primary;
     }
 
-    .light .input-outline {
+    .input-outline {
         @apply w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] text-[12px] pb-1 transition-colors;
     }
 
-    .dark .input-outline {
+    .input-outline-dark {
         @apply w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] pb-2;
     }
 
@@ -289,7 +293,7 @@
         @apply w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] text-[12px] pb-1 placeholder:text-[#999999] resize-none focus:border-[#ae873e] transition-colors;
     }
 
-    .dark .textarea-outline {
+    .textarea-outline-dark {
         @apply w-full h-[148px] bg-transparent border-[#646464] border-[1.5px] border-solid rounded-[30px] text-white text-[18px] p-4 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254, 255, 229, 0.6)] resize-none;
     }
 
@@ -301,27 +305,27 @@
     }
 
     .badge-primary {
-        @apply bg-[#ae873e] text-white;
+        @apply bg-[#ae873e] text-[#333];
     }
 
     .badge-primary-gradient {
-        @apply bg-gradient-to-r from-[#ae873e] to-[#c9a961] text-white;
+        @apply bg-gradient-to-r from-[#ae873e] to-[#c9a961] text-[#333];
     }
 
     .badge-secondary {
-        @apply bg-[#c9a961] text-white;
+        @apply bg-[#c9a961] text-[#333];
     }
 
     .badge-classic {
-        @apply bg-[#d4a574] text-white;
+        @apply bg-[#d4a574] text-[#333];
     }
 
     .badge-feature {
-        @apply bg-purple-500 text-white;
+        @apply bg-purple-500 text-[#333];
     }
 
     .badge-hot {
-        @apply bg-red-500 text-white;
+        @apply bg-red-500 text-[#333];
     }
 
     .badge-success {
@@ -380,7 +384,7 @@
     }
 
     .course-card__badge {
-        @apply absolute top-4 right-4 z-10 bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] text-white px-4 py-1.5 rounded-full shadow-lg;
+        @apply absolute top-4 right-4 z-10 bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] text-[#333] px-4 py-1.5 rounded-full shadow-lg;
     }
 
     .course-card__image-container {
@@ -420,7 +424,7 @@
     }
 
     .course-card__tag {
-        @apply px-3 py-1.5 bg-[#fff9f2] text-[#ae873e] rounded-full text-[12px] font-medium border border-[#ae873e]/10 group-hover:bg-[#ae873e] group-hover:text-white transition-all duration-300;
+        @apply px-3 py-1.5 bg-[#fff9f2] text-[#333] rounded-full text-[12px] font-medium border border-[#333] group-hover:bg-[#ae873e] group-hover:text-white transition-all duration-300;
     }
 
     .course-card__price-section {
@@ -428,7 +432,7 @@
     }
 
     .course-card__price {
-        @apply text-[26px] font-bold text-accent tracking-[-0.52px];
+        @apply text-[26px] font-bold text-[#333] tracking-[-0.52px];
     }
 
     .course-card__price-old {
@@ -445,6 +449,44 @@
     } */
 
 
+    /* ========================================================================
+        Review Card Styles
+    ======================================================================== */
+    .review__card {
+        @apply relative bg-gradient-to-br from-[#2a2a2a] to-[#1f1f1f] rounded-[16px] p-6 sm:p-8 shadow-lg border border-[#3a3a3a]/50 hover:border-[#ae873e]/50 transition-all duration-300 h-full;
+    }
+
+    .review__card-body {
+        @apply relative z-10;
+    }
+
+    .review__card-ratings {
+        @apply flex items-center gap-1 mb-4;
+    }
+
+    .review__card-quote-mark {
+        @apply absolute -top-1 -right-1 text-[#ae873e]/30 text-4xl font-serif;
+    }
+
+    .review__card-quote {
+        @apply text-white text-[15px] sm:text-[16px] leading-[24px] mb-4;
+    }
+
+    .review__card-author {
+        @apply flex items-center gap-3 pt-3 border-t border-[#3a3a3a]/50;
+    }
+
+    .review__card-author-avatar {
+        @apply w-10 h-10 rounded-full bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] flex items-center justify-center text-white font-semibold text-sm;
+    }
+
+    .review__card-author-name {
+        @apply font-semibold text-white text-[14px];
+    }
+
+    .review__card-author-location {
+        @apply text-[#999] text-[13px];
+    }
 
     /* ========================================================================
         Noise Overlay Effect
@@ -506,11 +548,11 @@
         @apply pb-2 w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] text-[12px] pb-1 appearance-none cursor-pointer pr-6 focus:border-[#ae873e] transition-colors;
     }
 
-    .dark .select-outline {
+    .select-outline-dark {
         @apply w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] pb-2 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254, 255, 229, 0.3)];
     }
 
-    .dark .select-outline option {
+    .select-outline-dark option {
         @apply bg-[#090707] text-white;
     }
 
