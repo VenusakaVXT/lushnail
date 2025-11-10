@@ -301,65 +301,65 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Scroll Animation Observer
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-  };
+  // const observerOptions = {
+  //   threshold: 0.1,
+  //   rootMargin: '0px 0px -100px 0px'
+  // };
 
-  const observer = new IntersectionObserver(function (entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animated');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+  // const observer = new IntersectionObserver(function (entries) {
+  //   entries.forEach(entry => {
+  //     if (entry.isIntersecting) {
+  //       entry.target.classList.add('animated');
+  //       observer.unobserve(entry.target);
+  //     }
+  //   });
+  // }, observerOptions);
 
-  const animatedElements = document.querySelectorAll('.scroll-fade-in, .scroll-slide-up');
-  animatedElements.forEach(el => {
-    observer.observe(el);
-  });
+  // const animatedElements = document.querySelectorAll('.scroll-fade-in, .scroll-slide-up');
+  // animatedElements.forEach(el => {
+  //   observer.observe(el);
+  // });
 });
 
 // Add CSS animations via style tag
-const style = document.createElement('style');
-style.textContent = `
-    .scroll-fade-in {
-        opacity: 0;
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    
-    .scroll-fade-in.animated {
-        opacity: 1;
-        transform: translateY(0);
-    }
+// const style = document.createElement('style');
+// style.textContent = `
+//     .scroll-fade-in {
+//         opacity: 0;
+//         transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+//     }
+//     
+//     .scroll-fade-in.animated {
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
 
-    .scroll-slide-up {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    
-    .scroll-slide-up.animated {
-        opacity: 1;
-        transform: translateY(0);
-    }
+//     .scroll-slide-up {
+//         opacity: 0;
+//         transform: translateY(30px);
+//         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+//     }
+//     
+//     .scroll-slide-up.animated {
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
 
-    .thumbnail-item.active {
-        border-color: #ae873e !important;
-    }
+//     .thumbnail-item.active {
+//         border-color: #ae873e !important;
+//     }
 
-    .design-option.active,
-    .modal-design-option.active {
-        border-color: #ae873e !important;
-        background-color: #FFF9F2;
-    }
+//     .design-option.active,
+//     .modal-design-option.active {
+//         border-color: #ae873e !important;
+//         background-color: #FFF9F2;
+//     }
 
-    .tab-content.active {
-        display: block;
-    }
+//     .tab-content.active {
+//         display: block;
+//     }
 
-`;
+// `;
 
-document.head.appendChild(style);
+// document.head.appendChild(style);
 

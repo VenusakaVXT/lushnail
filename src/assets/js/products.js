@@ -16,25 +16,25 @@ document.addEventListener('DOMContentLoaded', function () {
   initIcons();
 
   // Scroll Animation Observer
-  const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-  };
+  // const observerOptions = {
+  //   threshold: 0.1,
+  //   rootMargin: '0px 0px -100px 0px'
+  // };
 
-  const observer = new IntersectionObserver(function (entries) {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('animated');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
+  // const observer = new IntersectionObserver(function (entries) {
+  //   entries.forEach(entry => {
+  //     if (entry.isIntersecting) {
+  //       entry.target.classList.add('animated');
+  //       observer.unobserve(entry.target);
+  //     }
+  //   });
+  // }, observerOptions);
 
   // Observe all elements with scroll animation classes
-  const animatedElements = document.querySelectorAll('.scroll-fade-in, .scroll-slide-up, .scroll-slide-left, .scroll-slide-right');
-  animatedElements.forEach(el => {
-    observer.observe(el);
-  });
+  // const animatedElements = document.querySelectorAll('.scroll-fade-in, .scroll-slide-up, .scroll-slide-left, .scroll-slide-right');
+  // animatedElements.forEach(el => {
+  //   observer.observe(el);
+  // });
 
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -175,54 +175,54 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Add CSS animations via style tag
-const style = document.createElement('style');
-style.textContent = `
-    /* Fade in animation */
-    .scroll-fade-in {
-        opacity: 0;
-        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    
-    .scroll-fade-in.animated {
-        opacity: 1;
-        transform: translateY(0);
-    }
+// const style = document.createElement('style');
+// style.textContent = `
+//     /* Fade in animation */
+//     .scroll-fade-in {
+//         opacity: 0;
+//         transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+//     }
+//     
+//     .scroll-fade-in.animated {
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
 
-    /* Slide up animation */
-    .scroll-slide-up {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    
-    .scroll-slide-up.animated {
-        opacity: 1;
-        transform: translateY(0);
-    }
+//     /* Slide up animation */
+//     .scroll-slide-up {
+//         opacity: 0;
+//         transform: translateY(30px);
+//         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+//     }
+//     
+//     .scroll-slide-up.animated {
+//         opacity: 1;
+//         transform: translateY(0);
+//     }
 
-    /* Slide left animation */
-    .scroll-slide-left {
-        opacity: 0;
-        transform: translateX(-50px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    
-    .scroll-slide-left.animated {
-        opacity: 1;
-        transform: translateX(0);
-    }
+//     /* Slide left animation */
+//     .scroll-slide-left {
+//         opacity: 0;
+//         transform: translateX(-50px);
+//         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+//     }
+//     
+//     .scroll-slide-left.animated {
+//         opacity: 1;
+//         transform: translateX(0);
+//     }
 
-    /* Slide right animation */
-    .scroll-slide-right {
-        opacity: 0;
-        transform: translateX(50px);
-        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-    }
-    
-    .scroll-slide-right.animated {
-        opacity: 1;
-        transform: translateX(0);
-    }
-`;
-document.head.appendChild(style);
+//     /* Slide right animation */
+//     .scroll-slide-right {
+//         opacity: 0;
+//         transform: translateX(50px);
+//         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+//     }
+//     
+//     .scroll-slide-right.animated {
+//         opacity: 1;
+//         transform: translateX(0);
+//     }
+// `;
+// document.head.appendChild(style);
 
