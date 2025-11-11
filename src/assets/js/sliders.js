@@ -107,6 +107,24 @@ document.addEventListener('DOMContentLoaded', function () {
             slideGap: '10px',
         }
     });
+
+    // Hero slider - Full width banner with autoplay
+    initSlider('.bslider-hero', {
+        all: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            transitionDuration: 600,
+            transitionTimingFunction: 'ease-in-out',
+            loop: true,
+            loopRepeats: -1,
+            slideGap: '0px',
+            enablePagination: true,
+            enableAutoplay: true,
+            autoplayInterval: 5000,
+            stopAutoplayOnInteraction: true,
+            draggable: true,
+        }
+    });
 });
 
 // Setup image pagination functionality

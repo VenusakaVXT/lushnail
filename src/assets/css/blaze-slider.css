@@ -365,3 +365,12 @@
 .section_testimonials .blaze-next{
     right: -60px;
 }
+
+/* Hero slider navigation buttons */
+.blaze-slider.bslider-hero .blaze-prev {
+    left: 20px;
+}
+
+.blaze-slider.bslider-hero .blaze-next {
+    right: 20px;
+}
