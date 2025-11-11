@@ -75,6 +75,55 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Location Cards Interactive Map
+  const ourLocationsSection = document.querySelector('[data-name="our-locations"]');
+  if (ourLocationsSection) {
+    const mapIframe = ourLocationsSection.querySelector('iframe');
+    const locationCards = ourLocationsSection.querySelectorAll('.location-card');
+
+    if (mapIframe && locationCards.length > 0) {
+      // Function to update map and active state with smooth transition
+      function updateLocation(card) {
+        const mapUrl = card.getAttribute('data-map-url');
+        if (!mapUrl) return;
+
+        // Remove active from all cards
+        locationCards.forEach(c => {
+          c.classList.remove('active');
+          c.classList.remove('border-primary');
+          c.classList.add('border-[#2a2a2a]');
+        });
+
+        // Add active to clicked card
+        card.classList.add('active');
+        card.classList.add('border-primary');
+        card.classList.remove('border-[#2a2a2a]');
+
+        // Update iframe src directly without fade effect
+        mapIframe.src = mapUrl;
+      }
+
+      // Add click event to each location card
+      locationCards.forEach(card => {
+        card.addEventListener('click', function () {
+          updateLocation(this);
+        });
+      });
+
+      // Set first location as active by default
+      if (locationCards.length > 0) {
+        const firstCard = locationCards[0];
+        const firstMapUrl = firstCard.getAttribute('data-map-url');
+        if (firstMapUrl) {
+          mapIframe.src = firstMapUrl;
+        }
+        firstCard.classList.add('active');
+        firstCard.classList.add('border-primary');
+        firstCard.classList.remove('border-[#2a2a2a]');
+      }
+    }
+  }
+
   // About Transition Section Parallax Animation
   const transitionSection = document.querySelector('[data-name="about-transition-section"]');
   if (transitionSection) {
@@ -161,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //         opacity: 0;
 //         transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 //     }
-//     
+//
 //     .scroll-fade-in.animated {
 //         opacity: 1;
 //         transform: translateY(0);
@@ -173,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //         transform: translateY(30px);
 //         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 //     }
-//     
+//
 //     .scroll-slide-up.animated {
 //         opacity: 1;
 //         transform: translateY(0);
@@ -185,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //         transform: translateX(-50px);
 //         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 //     }
-//     
+//
 //     .scroll-slide-left.animated {
 //         opacity: 1;
 //         transform: translateX(0);
@@ -197,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //         transform: translateX(50px);
 //         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 //     }
-//     
+//
 //     .scroll-slide-right.animated {
 //         opacity: 1;
 //         transform: translateX(0);
