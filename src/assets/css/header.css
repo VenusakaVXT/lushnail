@@ -7,7 +7,7 @@
    ======================================================================== */
 /* When scroll down - background #f8f7f6 blur with transparency */
 .nav-bg-blur {
-    background-color: rgb(0 0 0 / 30%) !important;
+    background-color: rgb(0 0 0 / 15%) !important;
     backdrop-filter: blur(12px) !important;
     -webkit-backdrop-filter: blur(12px) !important;
     box-shadow: 0 2px 10px rgb(82 82 82) !important;

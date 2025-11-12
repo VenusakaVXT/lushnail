@@ -1,0 +1,137 @@
+<!-- Registration Form Section with Logo and Brown Hand Background -->
+<div id="register-course-form"
+  class="relative w-full overflow-visible -mt-[200px] sm:-mt-[250px] md:-mt-[300px] lg:-mt-[350px] z-30"
+  data-name="registration form">
+  <!-- Form Container with rounded corners and brown hand background -->
+  <!-- TODO: Replace background-image URL with actual brown hand nail polish image -->
+  <div
+    class="relative mx-auto max-w-[1248px] px-4 sm:px-6 md:mx-8 md:px-6 lg:mx-auto lg:px-0 rounded-[16px] sm:rounded-[20px] md:rounded-[24px] lg:rounded-[28px] overflow-hidden"
+    style="background-image: url('../../assets/images/bg-main.jpg'); background-size: cover; background-position: center; background-color: #8B4513;">
+    <!-- <div class="absolute inset-0 bg-black/60"></div> -->
+
+    <!-- Content Container -->
+    <div
+      class="overlay-light relative z-10 flex flex-col md:flex-row items-stretch w-full min-h-[300px] sm:min-h-[350px] md:min-h-[380px] lg:min-h-[450px]">
+
+      <!-- Left Side: Logo + Title -->
+      <div
+        class="flex flex-col items-center justify-center gap-3 sm:gap-4 md:gap-5 w-full md:w-[45%] lg:w-[40%] px-3 sm:px-4 md:px-6 lg:px-10 py-6 sm:py-8 md:py-10">
+        <!-- Logo -->
+        <div class="relative w-[60px] h-[55px] sm:w-[70px] sm:h-[64px] md:w-[75px] md:h-[68px] lg:w-[90px] lg:h-[82px]">
+          <img src="assets/images/logo.svg" alt="Lust Nail Logo" class="w-full h-full object-contain">
+        </div>
+
+        <!-- Title -->
+        <h2
+          class="text-white text-center text-[20px] sm:text-[24px] md:text-[26px] lg:text-[32px] font-semibold leading-tight whitespace-nowrap">
+          Đăng Ký Khóa Học
+        </h2>
+      </div>
+
+      <!-- Right Side: Form Fields -->
+      <div
+        class="flex flex-col justify-center w-full md:w-[55%] lg:w-[60%] px-3 sm:px-4 md:px-6 lg:px-10 py-5 sm:py-6 md:py-8">
+        <form method="POST" action="#" class="flex flex-col gap-2.5 sm:gap-3 md:gap-4 w-full">
+
+          <!-- Row 1: Họ tên + SĐT (2x1) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <div class="flex flex-col gap-2">
+              <label for="fullname" class="text-white text-[14px] sm:text-[16px]">
+                Họ tên <span class="text-[#ae873e]">*</span>
+              </label>
+              <input type="text" id="fullname" name="fullname" required
+                class="input-outline-dark focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254,255,229,0.3)]"
+                placeholder="">
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="phone" class="text-white text-[14px] sm:text-[16px]">
+                SĐT (Zalo) <span class="text-[#ae873e]">*</span>
+              </label>
+              <input type="tel" id="phone" name="phone" required
+                class="input-outline-dark focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254,255,229,0.3)]"
+                placeholder="">
+            </div>
+          </div>
+
+          <!-- Row 2: Hình thức + Khung giờ (2x1) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <div class="flex flex-col gap-2">
+              <label for="format" class="text-white text-[14px] sm:text-[16px]">
+                Hình thức
+              </label>
+              <select id="format" name="format" class="select-outline-dark focus:outline-none focus:border-[#ae873e]">
+                <option value="">Chọn hình thức</option>
+                <option value="offline">Offline</option>
+                <option value="online">Online</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="timeslot" class="text-white text-[14px] sm:text-[16px]">
+                Khung giờ
+              </label>
+              <select id="timeslot" name="timeslot"
+                class="select-outline-dark focus:outline-none focus:border-[#ae873e]">
+                <option value="">Chọn khung giờ</option>
+                <option value="morning">Sáng</option>
+                <option value="afternoon">Chiều</option>
+                <option value="evening">Tối</option>
+                <option value="weekend">Cuối tuần</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Row 3: Mục tiêu học + Gói quan tâm (2x1) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+            <div class="flex flex-col gap-2">
+              <label for="objective" class="text-white text-[14px] sm:text-[16px]">
+                Mục tiêu học
+              </label>
+              <select id="objective" name="objective"
+                class="select-outline-dark focus:outline-none focus:border-[#ae873e]">
+                <option value="">Chọn mục tiêu</option>
+                <option value="work">Đi làm</option>
+                <option value="shop">Mở tiệm</option>
+                <option value="upgrade">Nâng tay nghề</option>
+              </select>
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="package" class="text-white text-[14px] sm:text-[16px]">
+                Gói quan tâm
+              </label>
+              <select id="package" name="package" class="select-outline-dark focus:outline-none focus:border-[#ae873e]">
+                <option value="">Chọn gói</option>
+                <option value="basic">Basic</option>
+                <option value="pro">Pro</option>
+                <option value="master">Master</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Row 4: Ghi chú (1x1) -->
+          <div class="flex flex-col gap-2">
+            <label for="notes" class="text-white text-[14px] sm:text-[16px]">
+              Ghi chú
+            </label>
+            <textarea id="notes" name="notes"
+              class="w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] pb-2 focus:outline-none focus:border-[#ae873e] placeholder:text-[rgba(254,255,229,0.6)] h-[40px] sm:h-[44px] resize-none"
+              placeholder="Nhập ghi chú của bạn..."></textarea>
+          </div>
+
+          <!-- Contact Link and Submit Button - Same Row -->
+          <div
+            class="flex flex-col sm:flex-row items-center sm:items-end justify-center sm:justify-end md:justify-end gap-3 sm:gap-4 mt-2">
+            <!-- <a href="contact.html"
+              class="text-white text-[13px] sm:text-[14px] md:text-[15px] underline hover:text-[#ae873e] transition-colors text-center sm:text-left">
+              Xem địa chỉ & hotline trực tiếp tại đây
+            </a> -->
+            <button type="submit"
+              class="box-border flex gap-[10px] h-[40px] sm:h-[44px] items-center justify-center px-6 py-2 relative rounded-[8px] shrink-0 w-[101px] border-[#646464] border-[1.5px] border-solid bg-transparent hover:bg-[#ae873e] hover:border-[#ae873e] transition-all cursor-pointer"
+              data-name="button">
+              <span class="text-white text-[16px] sm:text-[18px] font-normal">Gửi</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
