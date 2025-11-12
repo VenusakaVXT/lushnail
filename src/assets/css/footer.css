@@ -70,7 +70,7 @@
     }
 
     .footer-bottom {
-        @apply content-stretch flex flex-col md:flex-col items-center md:justify-between gap-4 md:gap-4 lg:gap-6 relative shrink-0 w-full;
+        @apply content-stretch flex flex-col md:flex-row items-center md:justify-between gap-4 md:gap-4 lg:gap-6 relative shrink-0 w-full;
     }
 
     .footer-copyright {
