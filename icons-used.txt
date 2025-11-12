@@ -1,6 +1,7 @@
 shopping-cart
 user
 languages
+log-out
 menu
 x
 facebook
@@ -40,6 +41,7 @@ user-check
 chevron-down
 truck
 x-circle
+eye
 credit-card
 wallet
 shield-check
@@ -49,6 +51,7 @@ gem
 settings
 send
 gift
+link
 heart
 headphones
 image-plus
