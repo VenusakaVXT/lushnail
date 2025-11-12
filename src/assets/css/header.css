@@ -21,7 +21,7 @@
     box-shadow: 0 2px 10px rgb(82 82 82) !important;
 
 } */
- .header-navbar-desktop.nav-bg-blur a,
+.header-navbar-desktop.nav-bg-blur a,
 .header-navbar-desktop.nav-bg-blur svg,
 .header-navbar-desktop.nav-bg-blur button {
     color: #fff !important;
@@ -91,9 +91,9 @@
         /* overflow-x: auto; */
         /* overflow-y: visible; */
     }
-    
+
     /* Ensure language dropdown container doesn't get clipped */
-    .header-navbar-desktop > .header-navbar-link:has(.relative) {
+    .header-navbar-desktop>.header-navbar-link:has(.relative) {
         overflow: visible !important;
     }
 
@@ -117,10 +117,9 @@
 
     .nav-bg-blur .header-navbar-mobile-links a,
     .nav-bg-blur .header-navbar-mobile-links svg,
-    .nav-bg-blur .header-navbar-mobile-links ,
+    .nav-bg-blur .header-navbar-mobile-links,
     .nav-bg-blur .header-navbar-mobile-toggle,
-    .nav-bg-blur .header-icon-button
-    {
+    .nav-bg-blur .header-icon-button {
         color: #fff !important;
     }
 
@@ -129,7 +128,7 @@
         /* Chrome, Safari, Opera */
     }
 
-    
+
     .header-navbar-link {
         @apply text-[#333] text-[16px] hover:text-black transition flex-shrink-0;
         position: relative !important;
@@ -173,26 +172,60 @@
         right: 0 !important;
         display: none !important;
     }
-    
+
     /* Ensure dropdown text is always dark */
     #language-dropdown *,
     #language-dropdown-mobile * {
         color: #333 !important;
     }
-    
+
     /* Override nav-bg-blur for dropdown */
     .nav-bg-blur #language-dropdown *,
     .nav-bg-blur #language-dropdown-mobile * {
         color: #333 !important;
     }
-    
-    /* Show dropdown on hover */
-    .header-navbar-link:hover #language-dropdown,
-    .header-navbar-link > div:hover #language-dropdown,
-    #language-toggle:hover ~ #language-dropdown {
+
+    /* Show language dropdown on hover - only for language container */
+    .header-navbar-link>.relative:first-child:hover #language-dropdown,
+    #language-toggle:hover~#language-dropdown {
         display: block !important;
     }
-    
+
+    /* Keep language dropdown visible when hovering over it */
+    #language-dropdown:hover {
+        display: block !important;
+    }
+
+    /* User Dropdown */
+    #user-dropdown {
+        position: absolute !important;
+        z-index: 9999 !important;
+        top: 100% !important;
+        right: 0 !important;
+        display: none !important;
+    }
+
+    /* Ensure user dropdown text is always dark */
+    #user-dropdown * {
+        color: #333 !important;
+    }
+
+    /* Override nav-bg-blur for user dropdown */
+    .nav-bg-blur #user-dropdown * {
+        color: #333 !important;
+    }
+
+    /* Show user dropdown on hover - only for user container */
+    .header-navbar-link>.relative:last-child:hover #user-dropdown,
+    #user-toggle:hover~#user-dropdown {
+        display: block !important;
+    }
+
+    /* Keep user dropdown visible when hovering over it */
+    #user-dropdown:hover {
+        display: block !important;
+    }
+
     /* Language Dropdown Mobile */
     #language-dropdown-mobile {
         position: absolute !important;
@@ -201,31 +234,31 @@
         right: 0 !important;
         display: none !important;
     }
-    
+
     /* Show mobile dropdown on hover */
-    .header-navbar-mobile-icons > .relative:hover #language-dropdown-mobile,
-    #language-toggle-mobile:hover ~ #language-dropdown-mobile {
+    .header-navbar-mobile-icons>.relative:hover #language-dropdown-mobile,
+    #language-toggle-mobile:hover~#language-dropdown-mobile {
         display: block !important;
     }
-    
+
     /* Ensure language dropdown container doesn't clip */
-    .header-navbar-link > div {
+    .header-navbar-link>div {
         position: relative !important;
         overflow: visible !important;
     }
-    
+
     /* Ensure mobile language dropdown container doesn't clip */
-    .header-navbar-mobile-icons > .relative {
+    .header-navbar-mobile-icons>.relative {
         position: relative !important;
         overflow: visible !important;
     }
-    
+
     /* Ensure mobile links container can scroll */
     .header-navbar-mobile-icons {
         overflow-x: visible !important;
         overflow-y: visible !important;
     }
-    
+
     .header-navbar-mobile-links {
         overflow-x: auto !important;
         overflow-y: hidden !important;
@@ -233,7 +266,7 @@
         scrollbar-width: none !important;
         -ms-overflow-style: none !important;
     }
-    
+
     .header-navbar-mobile-links::-webkit-scrollbar {
         display: none !important;
     }
