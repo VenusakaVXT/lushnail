@@ -123,8 +123,16 @@
         @apply absolute border border-[#7d7d7d] border-solid inset-0 pointer-events-none;
     }
 
-    .footer-currency-text {
-        @apply leading-[20px] md:leading-[18px] lg:leading-[20px] not-italic relative shrink-0 text-[14px] md:text-[12px] lg:text-[14px] text-nowrap text-white whitespace-pre;
+    .footer-currency-select {
+        @apply leading-[20px] md:leading-[18px] lg:leading-[20px] not-italic relative shrink-0 text-[14px] md:text-[12px] lg:text-[14px] text-nowrap bg-transparent text-white whitespace-pre;
+    }
+
+    .footer-currency-select option {
+        @apply bg-white text-black;
+    }
+    .footer-currency-select option:hover,
+    .footer-currency-select option:focus {
+        @apply !bg-primary !text-white;
     }
 
     .footer-currency-arrow {
