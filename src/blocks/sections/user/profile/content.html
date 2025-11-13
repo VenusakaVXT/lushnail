@@ -1,0 +1,615 @@
+<!-- Profile Content Section -->
+<section class="bg-white w-full py-8 sm:py-12 lg:py-16" data-name="profile-content">
+  <div class="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+
+    <!-- Tabs Container -->
+    <div class="tabs tabs-btn">
+      <!-- Tab Menu -->
+      <div class="tab-menu-wrapper mb-8 scroll-slide-up">
+        <button
+          class="tab-menu active px-6 py-2.5 bg-[#ae873e] text-white rounded-full text-[14px] font-semibold hover:bg-[#c9a961] transition-all duration-300"
+          data-tab="personal">
+          Thông Tin Cá Nhân
+        </button>
+        <button
+          class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
+          data-tab="orders">
+          Đơn Hàng
+        </button>
+        <button
+          class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
+          data-tab="courses">
+          Khóa Học
+        </button>
+        <button
+          class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
+          data-tab="addresses">
+          Địa Chỉ
+        </button>
+        <button
+          class="tab-menu px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300"
+          data-tab="password">
+          Đổi Mật Khẩu
+        </button>
+      </div>
+
+      <!-- Tab Content: Personal Information -->
+      <div class="tab-content active" data-tab-content="personal">
+        <div class="bg-white border border-[#ececf0] rounded-[20px] p-6 sm:p-8 lg:p-10">
+          <h2 class="text-[#090707] text-[20px] sm:text-[24px] font-semibold mb-6">
+            Thông Tin Cá Nhân
+          </h2>
+
+          <form id="profile-form" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Full Name -->
+              <div>
+                <label class="label">Họ và Tên</label>
+                <input type="text" id="profile-fullname" class="input profile-input" value="Nguyễn Văn A"
+                  placeholder="Nhập họ và tên" disabled>
+              </div>
+
+              <!-- Email -->
+              <div>
+                <label class="label">Email</label>
+                <input type="email" id="profile-email" class="input profile-input" value="nguyenvana@example.com"
+                  placeholder="Nhập email" disabled>
+              </div>
+
+              <!-- Phone -->
+              <div>
+                <label class="label">Số Điện Thoại</label>
+                <input type="tel" id="profile-phone" class="input profile-input" value="0901234567"
+                  placeholder="Nhập số điện thoại" disabled>
+              </div>
+
+              <!-- Date of Birth -->
+              <div>
+                <label class="label">Ngày Sinh</label>
+                <input type="date" id="profile-birthday" class="input profile-input" value="1990-01-15" disabled>
+              </div>
+
+              <!-- Gender -->
+              <div>
+                <label class="label">Giới Tính</label>
+                <select id="profile-gender" class="select-white profile-input" disabled>
+                  <option value="male">Nam</option>
+                  <option value="female">Nữ</option>
+                  <option value="other">Khác</option>
+                </select>
+              </div>
+
+              <!-- Join Date (Read-only) -->
+              <div>
+                <label class="label">Ngày Tham Gia</label>
+                <input type="text" class="input" value="15/12/2024" disabled>
+              </div>
+            </div>
+
+            <!-- Bio -->
+            <div>
+              <label class="label">Giới Thiệu</label>
+              <textarea id="profile-bio" class="textarea profile-input" rows="4"
+                placeholder="Nhập giới thiệu về bản thân"
+                disabled>Tôi là một người đam mê nail art và luôn tìm kiếm những xu hướng mới nhất.</textarea>
+            </div>
+
+            <!-- Submit Button -->
+            <div id="profile-form-actions" class="flex justify-end gap-3 pt-4 hidden">
+              <button type="button" id="profile-cancel-btn" class="btn btn-outline">
+                Hủy
+              </button>
+              <button type="submit" id="profile-save-btn" class="btn btn-primary">
+                Lưu Thay Đổi
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Tab Content: Orders -->
+      <div class="tab-content" data-tab-content="orders">
+        <div class="space-y-4">
+          <!-- Order Card 1 -->
+          <div
+            class="bg-white border border-[#ececf0] rounded-[16px] overflow-hidden hover:shadow-lg transition-all duration-300">
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-b border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Mã đơn hàng</p>
+                    <p class="text-[#090707] text-[15px] sm:text-[16px] font-semibold">#ORD-2024-001</p>
+                  </div>
+                  <div class="hidden sm:block w-px h-8 bg-[#ececf0]"></div>
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Ngày đặt</p>
+                    <p class="text-[#090707] text-[14px] sm:text-[15px]">15/12/2024</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="px-4 py-1.5 bg-green-100 text-green-700 text-[12px] sm:text-[13px] font-semibold rounded-full whitespace-nowrap">
+                    Hoàn thành
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-4 sm:px-6 py-4">
+              <div class="flex flex-col sm:flex-row gap-4 mb-4">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
+                  alt="Product" class="w-full sm:w-24 h-24 object-cover rounded-lg flex-shrink-0">
+                <div class="flex-1">
+                  <h3 class="text-[#090707] text-[15px] sm:text-[16px] font-semibold mb-1">
+                    Hot Trend Design Collection
+                  </h3>
+                  <p class="text-[#666666] text-[13px] sm:text-[14px] mb-2">Bộ nail hot trend</p>
+                  <div class="flex items-center gap-2">
+                    <span class="text-[#ae873e] text-[16px] sm:text-[18px] font-semibold">$54</span>
+                    <span class="text-[#999999] text-[13px] line-through">$70</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-t border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="package" class="w-4 h-4 text-[#666666]"></i>
+                  <span class="text-[#666666] text-[13px] sm:text-[14px]">Tổng tiền: <span
+                      class="text-[#ae873e] font-semibold text-[16px]">$54</span></span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <button class="btn btn-primary btn-sm">
+                    Mua Lại
+                  </button>
+                  <a href="my-orders.html" class="btn btn-outline btn-sm">
+                    Xem Chi Tiết
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order Card 2 -->
+          <div
+            class="bg-white border border-[#ececf0] rounded-[16px] overflow-hidden hover:shadow-lg transition-all duration-300">
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-b border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Mã đơn hàng</p>
+                    <p class="text-[#090707] text-[15px] sm:text-[16px] font-semibold">#ORD-2024-003</p>
+                  </div>
+                  <div class="hidden sm:block w-px h-8 bg-[#ececf0]"></div>
+                  <div>
+                    <p class="text-[#666666] text-[12px] sm:text-[13px] mb-1">Ngày đặt</p>
+                    <p class="text-[#090707] text-[14px] sm:text-[15px]">20/12/2024</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-3">
+                  <span
+                    class="px-4 py-1.5 bg-blue-100 text-blue-700 text-[12px] sm:text-[13px] font-semibold rounded-full whitespace-nowrap">
+                    Đang giao hàng
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-4 sm:px-6 py-4">
+              <div class="flex flex-col sm:flex-row gap-4 mb-4">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&auto=format&fit=crop"
+                  alt="Product" class="w-full sm:w-24 h-24 object-cover rounded-lg flex-shrink-0">
+                <div class="flex-1">
+                  <h3 class="text-[#090707] text-[15px] sm:text-[16px] font-semibold mb-1">
+                    Winter Collection
+                  </h3>
+                  <p class="text-[#666666] text-[13px] sm:text-[14px] mb-2">Bộ nail mùa đông</p>
+                  <div class="flex items-center gap-2">
+                    <span class="text-[#ae873e] text-[16px] sm:text-[18px] font-semibold">$32</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-[#FFF9F2] px-4 sm:px-6 py-4 border-t border-[#ececf0]">
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                <div class="flex items-center gap-2">
+                  <i data-lucide="truck" class="w-4 h-4 text-[#666666]"></i>
+                  <span class="text-[#666666] text-[13px] sm:text-[14px]">Đang vận chuyển đến bạn</span>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                  <button class="btn btn-primary btn-sm">
+                    Theo Dõi Đơn
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- View All Orders Button -->
+          <div class="flex justify-center pt-4">
+            <a href="my-orders.html" class="btn btn-outline">
+              Xem Tất Cả Đơn Hàng
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Content: Courses -->
+      <div class="tab-content" data-tab-content="courses">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Course Card 1: Nail Cơ Bản -->
+          <div class="course-card group">
+            <div class="badge badge-primary">Đang Học</div>
+            <div class="course-card__image-container">
+              <img
+                src="https://images.unsplash.com/photo-1599316329891-19df7fa9580d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYWlsJTIwYXJ0JTIwbWFuaWN1cmUlMjBlZWxlZ2FudHxlbnwxfHx8MTc2MTAzNDQ4OHww&ixlib=rb-4.1.0&q=80&w=1080"
+                alt="Nail Cơ Bản" class="course-card__image">
+              <div class="course-card__overlay">
+                <a href="single-course.html" class="btn btn-outline">CHI TIẾT</a>
+              </div>
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__title-section">
+                <h3 class="course-card__title">
+                  <a href="single-course.html" class="cursor-pointer hover:text-[#ae873e] transition-colors">Nail Cơ
+                    Bản</a>
+                </h3>
+                <p class="course-card__description">
+                  Khóa học nền tảng cho người mới
+                  bắt đầu</p>
+              </div>
+              <div class="course-card__tags">
+                <span class="btn btn-outline-dark btn-ssm">15 bài
+                  học</span>
+                <span class="btn btn-outline-dark btn-ssm">Chứng
+                  chỉ hoàn thành</span>
+                <span class="btn btn-outline-dark btn-ssm">Hỗ trợ
+                  trọn đời</span>
+              </div>
+              <div class="course-card__price-section">
+                <p class="course-card__price">
+                  2,500,000đ</p>
+                <p class="course-card__price-old">
+                  5,000,000đ</p>
+              </div>
+              <div class="flex flex-col justify-center">
+                <a href="single-course.html" class="btn btn-primary">TIẾP TỤC HỌC</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course Card 2: Nail Nâng Cao -->
+          <div class="course-card group">
+            <div class="badge badge-secondary">Hoàn Thành</div>
+            <div class="course-card__image-container">
+              <img
+                src="https://images.unsplash.com/photo-1731644139982-b75487df663e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBuYWlsJTIwc2Fsb24lMjBsdXh1cnl8ZW58MXx8fHwxNzYxMDM0NDg5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                alt="Nail Nâng Cao" class="course-card__image">
+              <div class="course-card__overlay">
+                <a href="single-course.html" class="btn btn-outline">CHI TIẾT</a>
+              </div>
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__title-section">
+                <h3 class="course-card__title">
+                  <a href="single-course.html" class="cursor-pointer hover:text-[#ae873e] transition-colors">Nail
+                    Nâng Cao</a>
+                </h3>
+                <p class="course-card__description">
+                  Nâng cao kỹ năng với các kỹ thuật
+                  chuyên sâu</p>
+              </div>
+              <div class="course-card__tags">
+                <span class="btn btn-outline-dark btn-ssm">25 bài
+                  học</span>
+                <span class="btn btn-outline-dark btn-ssm">Thực
+                  hành thực tế</span>
+                <span class="btn btn-outline-dark btn-ssm">Mentor
+                  1-1</span>
+              </div>
+              <div class="course-card__price-section">
+                <p class="course-card__price">
+                  4,000,000đ</p>
+                <p class="course-card__price-old">
+                  8,000,000đ</p>
+              </div>
+              <div class="flex flex-col justify-center">
+                <a href="single-course.html" class="btn btn-primary">XEM LẠI KHÓA HỌC</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course Card 3: Nail Định Cư -->
+          <div class="course-card group">
+            <div class="badge badge-classic">Đã Đăng Ký</div>
+            <div class="course-card__image-container">
+              <img
+                src="https://images.unsplash.com/photo-1661267571825-45b3036a1aed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYWlsJTIwcG9saXNoJTIwYmVhdXR5JTIwaGFuZHN8ZW58MXx8fHwxNzYxMDM0NDg5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                alt="Nail Định Cư" class="course-card__image">
+              <div class="course-card__overlay">
+                <a href="single-course.html" class="btn btn-outline">CHI TIẾT</a>
+              </div>
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__title-section">
+                <h3 class="course-card__title">
+                  <a href="single-course.html" class="cursor-pointer hover:text-[#ae873e] transition-colors">Nail
+                    Định Cư</a>
+                </h3>
+                <p class="course-card__description">
+                  Chuẩn bị kỹ năng cho thị trường
+                  quốc tế</p>
+              </div>
+              <div class="course-card__tags">
+                <span class="btn btn-outline-dark btn-ssm">Tiêu
+                  chuẩn quốc tế</span>
+                <span class="btn btn-outline-dark btn-ssm">Hỗ trợ
+                  visa</span>
+                <span class="btn btn-outline-dark btn-ssm">Job
+                  placement</span>
+              </div>
+              <div class="course-card__price-section">
+                <p class="course-card__price">
+                  6,000,000đ</p>
+                <p class="course-card__price-old">
+                  12,000,000đ</p>
+              </div>
+              <div class="flex flex-col justify-center">
+                <a href="single-course.html" class="btn btn-primary">BẮT ĐẦU HỌC</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course Card 4: Nail Cửa Hàng -->
+          <div class="course-card group">
+            <div class="badge badge-feature">Đã Hoàn Thành</div>
+            <div class="course-card__image-container">
+              <img
+                src="https://images.unsplash.com/photo-1526907279934-3c9d2e53170f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuYWlsJTIwZGVzaWduJTIwcHJvZmVzc2lvbmFsJTIwY291cnNlfGVufDF8fHx8MTc2MTAzNDQ4OXww&ixlib=rb-4.1.0&q=80&w=1080"
+                alt="Nail Cửa Hàng" class="course-card__image">
+              <div class="course-card__overlay">
+                <a href="single-course.html" class="btn btn-outline">CHI TIẾT</a>
+              </div>
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__title-section">
+                <h3 class="course-card__title">
+                  <a href="single-course.html" class="cursor-pointer hover:text-[#ae873e] transition-colors">Nail
+                    Cửa Hàng</a>
+                </h3>
+                <p class="course-card__description">
+                  Kinh doanh và quản lý salon chuyên
+                  nghiệp</p>
+              </div>
+              <div class="course-card__tags">
+                <span class="btn btn-outline-dark btn-ssm">Quản lý
+                  kinh doanh</span>
+                <span class="btn btn-outline-dark btn-ssm">Marketing</span>
+                <span class="btn btn-outline-dark btn-ssm">Tư vấn
+                  trọn đời</span>
+              </div>
+              <div class="course-card__price-section">
+                <p class="course-card__price">
+                  7,500,000đ</p>
+                <p class="course-card__price-old">
+                  15,000,000đ</p>
+              </div>
+              <div class="flex flex-col justify-center">
+                <a href="single-course.html" class="btn btn-primary">XEM LẠI KHÓA HỌC</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Content: Addresses -->
+      <div class="tab-content" data-tab-content="addresses">
+        <div class="space-y-4">
+          <!-- Address Card 1 -->
+          <div class="bg-white border-2 border-[#ae873e] rounded-[16px] p-6 relative">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <h3 class="text-[#090707] text-[18px] font-semibold mb-2">Địa Chỉ Mặc Định</h3>
+                <p class="text-[#666666] text-[14px] mb-1">Nguyễn Văn A</p>
+                <p class="text-[#666666] text-[14px] mb-1">0901234567</p>
+                <p class="text-[#666666] text-[14px]">
+                  123 Đường ABC, Phường XYZ, Quận 1, TP. Hồ Chí Minh
+                </p>
+              </div>
+              <div class="flex flex-col gap-2">
+                <button class="btn btn-outline btn-sm">
+                  <i data-lucide="edit" class="w-4 h-4"></i>
+                  Sửa
+                </button>
+                <button class="btn btn-outline btn-sm text-red-600 border-red-600 hover:bg-red-50">
+                  <i data-lucide="trash-2" class="w-4 h-4"></i>
+                  Xóa
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Address Card 2 -->
+          <div
+            class="bg-white border border-[#ececf0] rounded-[16px] p-6 relative hover:border-[#ae873e] transition-all duration-300">
+            <div class="flex items-start justify-between mb-4">
+              <div>
+                <h3 class="text-[#090707] text-[18px] font-semibold mb-2">Địa Chỉ Nhà</h3>
+                <p class="text-[#666666] text-[14px] mb-1">Nguyễn Văn A</p>
+                <p class="text-[#666666] text-[14px] mb-1">0901234567</p>
+                <p class="text-[#666666] text-[14px]">
+                  456 Đường DEF, Phường UVW, Quận 2, TP. Hồ Chí Minh
+                </p>
+              </div>
+              <div class="flex flex-col gap-2">
+                <button class="btn btn-outline btn-sm">
+                  Đặt Mặc Định
+                </button>
+                <button class="btn btn-outline btn-sm">
+                  <i data-lucide="edit" class="w-4 h-4"></i>
+                  Sửa
+                </button>
+                <button class="btn btn-outline btn-sm text-red-600 border-red-600 hover:bg-red-50">
+                  <i data-lucide="trash-2" class="w-4 h-4"></i>
+                  Xóa
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Add New Address Button -->
+          <button
+            class="w-full border-2 border-dashed border-[#ececf0] rounded-[16px] p-6 hover:border-[#ae873e] transition-all duration-300 flex flex-col items-center justify-center gap-2">
+            <i data-lucide="plus" class="w-8 h-8 text-[#ae873e]"></i>
+            <span class="text-[#ae873e] text-[15px] font-semibold">Thêm Địa Chỉ Mới</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab Content: Change Password -->
+      <div class="tab-content" data-tab-content="password">
+        <div class="bg-white border border-[#ececf0] rounded-[20px] p-6 sm:p-8 lg:p-10 max-w-2xl mx-auto">
+          <h2 class="text-[#090707] text-[20px] sm:text-[24px] font-semibold mb-6 text-center">
+            Đổi Mật Khẩu
+          </h2>
+
+          <form class="space-y-6">
+            <!-- Current Password -->
+            <div>
+              <label class="label">Mật Khẩu Hiện Tại</label>
+              <div class="relative">
+                <input type="password" class="input pr-10" placeholder="Nhập mật khẩu hiện tại">
+                <i data-lucide="eye"
+                  class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 cursor-pointer"></i>
+              </div>
+            </div>
+
+            <!-- New Password -->
+            <div>
+              <label class="label">Mật Khẩu Mới</label>
+              <div class="relative">
+                <input type="password" class="input pr-10" placeholder="Nhập mật khẩu mới">
+                <i data-lucide="eye"
+                  class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 cursor-pointer"></i>
+              </div>
+              <p class="text-[#666666] text-[12px] mt-1">Mật khẩu phải có ít nhất 8 ký tự</p>
+            </div>
+
+            <!-- Confirm New Password -->
+            <div>
+              <label class="label">Xác Nhận Mật Khẩu Mới</label>
+              <div class="relative">
+                <input type="password" class="input pr-10" placeholder="Nhập lại mật khẩu mới">
+                <i data-lucide="eye"
+                  class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 cursor-pointer"></i>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="flex justify-center gap-3 pt-4">
+              <button type="button" class="btn btn-outline">
+                Hủy
+              </button>
+              <button type="submit" class="btn btn-primary">
+                Đổi Mật Khẩu
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const editBtn = document.getElementById('profile-edit-btn');
+    const cancelBtn = document.getElementById('profile-cancel-btn');
+    const saveBtn = document.getElementById('profile-save-btn');
+    const formActions = document.getElementById('profile-form-actions');
+    const profileInputs = document.querySelectorAll('.profile-input');
+    const profileForm = document.getElementById('profile-form');
+
+    let originalValues = {};
+
+    if (!editBtn || !cancelBtn || !saveBtn || !formActions || !profileForm) {
+      return;
+    }
+
+    function saveOriginalValues() {
+      profileInputs.forEach(input => {
+        if (input.tagName === 'SELECT') {
+          originalValues[input.id] = input.value;
+        } else {
+          originalValues[input.id] = input.value;
+        }
+      });
+    }
+
+    function restoreOriginalValues() {
+      profileInputs.forEach(input => {
+        if (originalValues[input.id] !== undefined) {
+          input.value = originalValues[input.id];
+        }
+      });
+    }
+
+    function enableEditing() {
+      profileInputs.forEach(input => {
+        input.disabled = false;
+      });
+      formActions.classList.remove('hidden');
+      editBtn.style.display = 'none';
+    }
+
+    function disableEditing() {
+      profileInputs.forEach(input => {
+        input.disabled = true;
+      });
+      formActions.classList.add('hidden');
+      editBtn.style.display = 'inline-flex';
+    }
+
+    editBtn.addEventListener('click', function () {
+      const personalTab = document.querySelector('[data-tab="personal"]');
+      const personalContent = document.querySelector('[data-tab-content="personal"]');
+
+      if (personalTab && personalContent && window.tabManager) {
+        const tabsContainer = personalTab.closest('.tabs');
+        if (tabsContainer) {
+          window.tabManager.switchTabInContainer(tabsContainer, 'personal');
+        }
+      }
+
+      setTimeout(function () {
+        saveOriginalValues();
+        enableEditing();
+      }, 100);
+    });
+
+    cancelBtn.addEventListener('click', function () {
+      restoreOriginalValues();
+      disableEditing();
+    });
+
+    profileForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(profileForm);
+
+      console.log('Saving profile data...');
+
+      setTimeout(function () {
+        if (window.fastNotice) {
+          window.fastNotice.success('Cập nhật thông tin thành công!');
+        }
+        saveOriginalValues();
+        disableEditing();
+      }, 500);
+    });
+  });
+</script>

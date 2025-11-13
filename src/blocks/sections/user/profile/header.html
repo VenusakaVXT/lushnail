@@ -1,0 +1,67 @@
+<!-- Profile Header Section -->
+<section class="bg-white w-full py-8 sm:py-12 lg:py-16" data-name="profile-header">
+    <div class="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-8">
+            <!-- Avatar -->
+            <div class="relative flex-shrink-0">
+                <div
+                    class="w-24 h-24 sm:w-32 sm:h-32 rounded-full bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] flex items-center justify-center text-white text-3xl sm:text-4xl font-bold shadow-lg">
+                    <span>NV</span>
+                </div>
+                <button
+                    class="absolute bottom-0 right-0 w-8 h-8 sm:w-10 sm:h-10 bg-[#ae873e] rounded-full flex items-center justify-center text-white shadow-lg hover:bg-[#c9a961] transition-all duration-300">
+                    <i data-lucide="camera" class="w-4 h-4 sm:w-5 sm:h-5"></i>
+                </button>
+            </div>
+
+            <!-- User Info -->
+            <div class="flex-1">
+                <h1 class="text-[#090707] text-[24px] sm:text-[28px] lg:text-[32px] font-semibold mb-2">
+                    Nguyễn Văn A
+                </h1>
+                <p class="text-[#666666] text-[14px] sm:text-[15px] mb-4">
+                    Thành viên từ tháng 12/2024
+                </p>
+
+                <!-- Stats -->
+                <div class="flex flex-wrap gap-4 sm:gap-6">
+                    <div class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-[#FFF9F2] rounded-lg flex items-center justify-center">
+                            <i data-lucide="package" class="w-5 h-5 text-[#ae873e]"></i>
+                        </div>
+                        <div>
+                            <p class="text-[#666666] text-[12px] sm:text-[13px]">Đơn hàng</p>
+                            <p class="text-[#090707] text-[16px] sm:text-[18px] font-semibold">12</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-[#FFF9F2] rounded-lg flex items-center justify-center">
+                            <i data-lucide="book-open" class="w-5 h-5 text-[#ae873e]"></i>
+                        </div>
+                        <div>
+                            <p class="text-[#666666] text-[12px] sm:text-[13px]">Khóa học</p>
+                            <p class="text-[#090707] text-[16px] sm:text-[18px] font-semibold">5</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-[#FFF9F2] rounded-lg flex items-center justify-center">
+                            <i data-lucide="star" class="w-5 h-5 text-[#ae873e]"></i>
+                        </div>
+                        <div>
+                            <p class="text-[#666666] text-[12px] sm:text-[13px]">Đánh giá</p>
+                            <p class="text-[#090707] text-[16px] sm:text-[18px] font-semibold">4.8</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Button -->
+            <div class="flex-shrink-0">
+                <button id="profile-edit-btn" class="btn btn-outline">
+                    <i data-lucide="edit" class="w-4 h-4"></i>
+                    Chỉnh Sửa
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
