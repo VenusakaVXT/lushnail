@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lush Nail</title>
+  <meta name="description" content="Lush Nail là cửa hàng bán sản phẩm nail chất lượng cao với giá tốt nhất.">
+
+  <!-- all css -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <!-- 1. CAC THU VIEN CAN SU DUNG -->
+  <!-- Notification Library -->
+  <script src="assets/js/libs/notification.js" defer></script>
+  <!-- Initialize FastNotice -->
+  <script>
+    // Khởi tạo FastNotice với cấu hình tùy chỉnh sau khi DOM sẵn sàng
+    document.addEventListener('DOMContentLoaded', function () {
+      window.fastNotice = new FastNotice({
+        position: 'top-center',    // Vị trí mặc định
+        duration: 3000,              // Thời gian hiển thị (ms)
+        maxNotifications: 3          // Số notification tối đa
+      });
+    });
+  </script>
+  <!-- Lucide Icons - Custom Build -->
+  <script src="assets/js/lucide-custom.min.js" defer></script>
+  <!-- jModal manager -->
+  <script src="assets/js/libs/jmodal.1.1.0.js" defer></script>
+  <!-- Load BlazeSlider Library -->
+  <script src="assets/js/libs/blaze-slider.js" defer></script>
+  <!-- Libs Tabs JS Thuần -->
+  <script src="assets/js/libs/tabs.js" defer></script>
+  <!-- Image Fallback Utility -->
+  <script src="assets/js/libs/image-fallback.js" defer></script>
+
+
+  <!-- 2. CAC CODE JS TU VIET. -->
+
+  <!-- Header Component JS. Vi no goi Cart nen nam sau Cart -->
+  <script src="assets/js/header.js" defer></script>
+  <!-- Homepage Component JS -->
+  <script src="assets/js/home.js" defer></script>
+  <!-- Footer Component JS -->
+  <script src="assets/js/footer.js" defer></script>
+  <!-- Run BlazeSlider -->
+  <script src="assets/js/sliders.js" defer></script>
+
+  <!-- Alpine.js CDN. Nam duoi cung vi chay Defer va vi no AutoRun nen can load sau cung truoc -->
+  <script src="assets/js/libs/alpinejs.3.15.0.js" defer></script>
+
+
+</head>
+
+<body class="w-full min-h-screen">
+  <!-- header -->
+  <!-- include:blocks/header.html -->
+
+  <!-- Main Content Area -->
+  <main class="bg-white content-stretch flex flex-col items-start">
+    <!-- 404 Error Section -->
+    <section class="bg-white w-full min-h-[80vh] flex items-center justify-center py-8 sm:py-12" data-name="404-error">
+      <div class="container flex flex-col items-center justify-center px-4 gap-8">
+        <img src="assets/images/404.png" alt="404 Not Found"
+          class="w-full max-w-[500px] sm:max-w-[600px] lg:max-w-[800px] h-auto object-contain"
+          style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
+        <a href="index.html" class="btn btn-primary">
+          <i data-lucide="home" class="w-4 h-4 mr-2"></i>
+          Quay về Trang chủ
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <!-- include:blocks/footer2.html -->
+</body>
+
+</html>
