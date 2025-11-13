@@ -130,12 +130,9 @@
     .footer-currency-select option {
         @apply bg-white text-black;
     }
-    .footer-currency-select option:hover,
-    .footer-currency-select option:focus {
-        @apply !bg-primary !text-white;
-    }
 
     .footer-currency-arrow {
         @apply h-[4px] relative shrink-0 w-[8px];
     }
 }
+    

@@ -108,14 +108,14 @@ document.addEventListener('DOMContentLoaded', function () {
       // Simulate API call delay
       setTimeout(() => {
         const coursesToLoad = additionalCourses.slice(loadedCourses, loadedCourses + coursesPerPage);
-        
+
         if (coursesToLoad.length > 0) {
           coursesToLoad.forEach((course) => {
             const courseCardHTML = createCourseCard(course);
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = courseCardHTML.trim();
             const courseCardElement = tempDiv.firstChild;
-            
+
             courseCardsGrid.appendChild(courseCardElement);
           });
 
@@ -177,19 +177,22 @@ document.addEventListener('DOMContentLoaded', function () {
       // Update content immediately
       faqAnswer.querySelector('.faq-answer-title').textContent = answerTitle;
       faqAnswer.querySelector('.faq-answer-text').textContent = answerText;
+
+      // Ensure answer is visible
+      faqAnswer.classList.add('show-answer');
     }
 
     faqItems.forEach((item, index) => {
       item.addEventListener('click', function () {
         updateAnswer(this);
-        
+
         // Scroll to answer section on mobile
         const isMobile = window.innerWidth < 1024; // lg breakpoint
         if (isMobile) {
           const answerSection = document.getElementById('faq-answer-section');
           if (answerSection) {
-            answerSection.scrollIntoView({ 
-              behavior: 'smooth', 
+            answerSection.scrollIntoView({
+              behavior: 'smooth',
               block: 'start',
               inline: 'nearest'
             });
@@ -204,6 +207,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const answerTitle = item.querySelector('.faq-item-title').textContent;
         faqAnswer.querySelector('.faq-answer-title').textContent = answerTitle;
         faqAnswer.querySelector('.faq-answer-text').textContent = answerText;
+
+        // Trigger initial animation
+        setTimeout(() => {
+          faqAnswer.classList.add('show-answer');
+        }, 500);
       }
     });
   }
@@ -226,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         if (!blazeInstance) {
           // Retry after a bit longer delay
-          setTimeout(function() {
+          setTimeout(function () {
             blazeInstance = slider.blazeSlider;
             if (blazeInstance) {
               initSliderPagination(slider, blazeInstance, paginationItems);
@@ -252,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
         item.classList.remove('active');
         item.classList.remove('ring-1', 'ring-blue-500', 'ring-[#a5834a]', 'ring-[#ae873e]');
         item.classList.remove('border-[#ae873e]', 'border-[#a5834a]');
-        
+
         // Add active state to current item
         if (index === currentStateIndex) {
           item.classList.add('active');
@@ -263,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Listen for slide changes using BlazeSlider's onSlide callback
     if (blazeInstance.onSlide) {
-      blazeInstance.onSlide(function(stateIndex, firstSlideIndex, lastSlideIndex) {
+      blazeInstance.onSlide(function (stateIndex, firstSlideIndex, lastSlideIndex) {
         updateActivePagination();
       });
     }
@@ -272,7 +280,7 @@ document.addEventListener('DOMContentLoaded', function () {
     paginationItems.forEach(function (item, index) {
       item.addEventListener('click', function (e) {
         e.preventDefault();
-        
+
         if (!blazeInstance || blazeInstance.isTransitioning) {
           return;
         }
@@ -282,7 +290,7 @@ document.addEventListener('DOMContentLoaded', function () {
           const targetIndex = index;
           const loop = blazeInstance.config.loop;
           const totalStates = blazeInstance.states ? blazeInstance.states.length : paginationItems.length;
-          
+
           // Calculate the difference
           const diff = Math.abs(targetIndex - currentStateIndex);
           const inverseDiff = totalStates - diff;
@@ -326,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function () {
   setupImageSliderPagination();
 
   // Also setup after a delay to ensure BlazeSlider is fully initialized
-  setTimeout(function() {
+  setTimeout(function () {
     setupImageSliderPagination();
   }, 1000);
 });
@@ -337,10 +345,12 @@ style.textContent = `
     /* FAQ Item Styles */
     .faq-item {
         cursor: pointer;
+        transition: all 0.3s ease;
         position: relative;
     }
 
     .faq-item:hover {
+        transform: translateX(8px);
         background: #FFF9F2;
     }
 
@@ -356,6 +366,147 @@ style.textContent = `
     .faq-item.active .faq-icon-wrapper {
         background: linear-gradient(to bottom right, #FFF9F2, #a5834a/20);
         border: 2px solid #a5834a/30;
+    }
+
+    /* FAQ Answer Styles */
+    .faq-answer-content {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+        position: relative;
+    }
+
+    .faq-answer-content.show-answer {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    /* Animated border for FAQ Answer */
+    .faq-answer-content::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border-radius: 24px;
+        background: linear-gradient(90deg, #a5834a 0%, #a5834a 100%);
+        z-index: -1;
+        opacity: 0.1;
+    }
+
+    .faq-answer-content::after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        border-radius: 24px;
+        background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 50%, transparent 100%);
+        background-size: 200% 100%;
+        z-index: 1;
+        pointer-events: none;
+        animation: borderShimmer 3s linear infinite;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    .faq-answer-content.show-answer::after {
+        opacity: 1;
+    }
+
+    @keyframes borderShimmer {
+        0% {
+            background-position: -200% 0;
+        }
+        100% {
+            background-position: 200% 0;
+        }
+    }
+
+    /* FAQ Decorative Line Animation */
+    .faq-decorative-line {
+        position: relative;
+        overflow: visible;
+    }
+
+    .faq-decorative-line::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.9) 50%, transparent 100%);
+        animation: lineShimmer 2s linear infinite;
+    }
+
+    .faq-decorative-line::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.6) 30%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.6) 70%, transparent 100%);
+        animation: lineGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes lineShimmer {
+        0% {
+            left: -100%;
+        }
+        100% {
+            left: 100%;
+        }
+    }
+
+    @keyframes lineGlow {
+        0%, 100% {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        50% {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+    }
+
+    /* FAQ Answer Animation for text */
+    .faq-answer-content.show-answer .faq-answer-text {
+        animation: fadeInUp 0.6s ease-out 0.3s both;
+    }
+
+    .faq-answer-content.show-answer .faq-answer-title {
+        animation: fadeInUp 0.5s ease-out 0.1s both;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(15px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Decorative pulse for active FAQ */
+    .faq-item.active .faq-icon-wrapper {
+        animation: pulseIcon 2s ease-in-out infinite;
+    }
+
+    @keyframes pulseIcon {
+        0%, 100% {
+            transform: scale(1);
+            box-shadow: 0 0 0 0 rgba(165, 131, 74, 0.4);
+        }
+        50% {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 8px rgba(165, 131, 74, 0);
+        }
     }
 `;
 document.head.appendChild(style);

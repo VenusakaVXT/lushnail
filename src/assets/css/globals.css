@@ -191,6 +191,17 @@
     }
 
     /* ========================================================================
+       BACKGROUND SECTION: Các thuộc tính cho Background Section
+       ======================================================================== */
+    .bg-section-white-yellow {
+        background: linear-gradient(174deg, #ffffff, #fff9f2);
+    }
+
+    .bg-section-yellow-white {
+        background: linear-gradient(174deg, #fff9f2, #ffffff);
+    }
+
+    /* ========================================================================
        BUTTON STYLES: Các thuộc tính cho Button
        ======================================================================== */
     .btn {
@@ -597,9 +608,15 @@
     /* ========================================================================
        SELECT STYLES: Các thuộc tính cho Select
        ======================================================================== */
-    select option {
-        background-color: #ae873e;
-        color: white;
+    /* Option đã được chọn */
+    select option:checked,
+    select option[selected]
+    /* Option khi hover (chưa được chọn) */
+    select option:hover,
+    select option:focus,
+    select option:active {
+        background-color: var(--primary) !important;
+        color: #fff !important;
     }
 
     select.select-white {
