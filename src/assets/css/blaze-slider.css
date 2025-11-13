@@ -1,6 +1,6 @@
 .blaze-slider {
     --slides-to-show: 5;
-    --slide-gap: 16px;
+    --slide-gap: 30px;
     direction: ltr;
     position: relative;
 }

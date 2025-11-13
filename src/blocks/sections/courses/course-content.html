@@ -1,8 +1,13 @@
 <!-- Course Content Section -->
-<section class="bg-white py-12 sm:py-16 lg:py-20 w-full" data-name="course-content">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
+<section class="relative bg-gradient-to-b from-white to-[#f8f7f6] py-12 sm:py-16 lg:py-20 w-full overflow-hidden" data-name="course-content">
+    <!-- Decorative Background -->
+    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-gradient-to-bl from-[#ae873e]/5 to-transparent rounded-full blur-3xl opacity-50"></div>
+    <div class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-tr from-[#ae873e]/5 to-transparent rounded-full blur-3xl opacity-50"></div>
+    
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px] relative z-10">
         <!-- Header -->
-        <div class="text-center mb-10 sm:mb-12 lg:mb-16">
+        <div class="text-center mb-10 sm:mb-12 lg:mb-16 scroll-slide-up">
+          
             <h2 class="title-section mb-4">
                 Nội dung khóa học
             </h2>
@@ -13,7 +18,7 @@
 
         <!-- Content with Read More -->
         <div class="max-w-[900px] mx-auto">
-            <div class="course-content-wrapper">
+            <div class="course-content-wrapper bg-white rounded-[24px] p-8 sm:p-10 lg:p-12 shadow-[0px_8px_40px_rgba(0,0,0,0.08)] border border-[#f0f0f0] scroll-slide-up" style="animation-delay: 0.1s;">
                 <!-- Short Content (Visible by default) -->
                 <div class="course-content-short text-[#333] text-[15px] sm:text-[16px] leading-[26px] sm:leading-[28px] space-y-4">
                     <p>
