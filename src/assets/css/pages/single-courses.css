@@ -13,3 +13,167 @@
 .section_testimonials .blaze-next{
     right: -60px;
 }
+
+/* Custom Scrollbar for Course Content */
+.course-content-wrapper .overflow-y-auto,
+.course-content-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #ae873e transparent;
+}
+
+.course-content-wrapper .overflow-y-auto::-webkit-scrollbar,
+.course-content-scroll::-webkit-scrollbar {
+    width: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.course-content-wrapper .overflow-y-auto::-webkit-scrollbar:vertical,
+.course-content-scroll::-webkit-scrollbar:vertical {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.course-content-wrapper .overflow-y-auto::-webkit-scrollbar-button {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    background: transparent !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+.course-content-wrapper .overflow-y-auto::-webkit-scrollbar-button:start:decrement,
+.course-content-wrapper .overflow-y-auto::-webkit-scrollbar-button:end:increment {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+.course-content-wrapper .overflow-y-auto::-webkit-scrollbar-button:single-button {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+.course-content-wrapper .overflow-y-auto::-webkit-scrollbar-button:vertical:start:decrement,
+.course-content-wrapper .overflow-y-auto::-webkit-scrollbar-button:vertical:end:increment {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+.course-content-wrapper .overflow-y-auto::-webkit-scrollbar-corner {
+    display: none !important;
+    background: transparent !important;
+}
+
+.course-content-wrapper .overflow-y-auto::-webkit-scrollbar-track,
+.course-content-scroll::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+.course-content-wrapper .overflow-y-auto::-webkit-scrollbar-thumb,
+.course-content-scroll::-webkit-scrollbar-thumb {
+    background: #ae873e;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.course-content-wrapper .overflow-y-auto::-webkit-scrollbar-thumb:hover,
+.course-content-scroll::-webkit-scrollbar-thumb:hover {
+    background: #8b6b2f;
+}
+
+/* Custom Scrollbar for Learning Path */
+[data-name="learning-path"] .overflow-y-auto,
+.learning-path-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #ae873e transparent;
+}
+
+[data-name="learning-path"] .overflow-y-auto::-webkit-scrollbar,
+.learning-path-scroll::-webkit-scrollbar {
+    width: 6px;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+[data-name="learning-path"] .overflow-y-auto::-webkit-scrollbar:vertical,
+.learning-path-scroll::-webkit-scrollbar:vertical {
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+[data-name="learning-path"] .overflow-y-auto::-webkit-scrollbar-button {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    background: transparent !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+[data-name="learning-path"] .overflow-y-auto::-webkit-scrollbar-button:start:decrement,
+[data-name="learning-path"] .overflow-y-auto::-webkit-scrollbar-button:end:increment {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+[data-name="learning-path"] .overflow-y-auto::-webkit-scrollbar-button:single-button {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+[data-name="learning-path"] .overflow-y-auto::-webkit-scrollbar-button:vertical:start:decrement,
+[data-name="learning-path"] .overflow-y-auto::-webkit-scrollbar-button:vertical:end:increment {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+[data-name="learning-path"] .overflow-y-auto::-webkit-scrollbar-corner {
+    display: none !important;
+    background: transparent !important;
+}
+
+[data-name="learning-path"] .overflow-y-auto::-webkit-scrollbar-track,
+.learning-path-scroll::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+[data-name="learning-path"] .overflow-y-auto::-webkit-scrollbar-thumb,
+.learning-path-scroll::-webkit-scrollbar-thumb {
+    background: #ae873e;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+[data-name="learning-path"] .overflow-y-auto::-webkit-scrollbar-thumb:hover,
+.learning-path-scroll::-webkit-scrollbar-thumb:hover {
+    background: #8b6b2f;
+}

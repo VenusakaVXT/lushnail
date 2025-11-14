@@ -4,6 +4,44 @@
  */
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Hide scrollbar arrows
+    function hideScrollbarArrows() {
+        const style = document.createElement('style');
+        style.textContent = `
+            .course-content-scroll::-webkit-scrollbar-button,
+            .course-content-scroll::-webkit-scrollbar-button:start:decrement,
+            .course-content-scroll::-webkit-scrollbar-button:end:increment,
+            .course-content-scroll::-webkit-scrollbar-button:vertical:start:decrement,
+            .course-content-scroll::-webkit-scrollbar-button:vertical:end:increment,
+            .course-content-scroll::-webkit-scrollbar-button:single-button,
+            .course-content-scroll::-webkit-scrollbar-button:double-button:start:decrement,
+            .course-content-scroll::-webkit-scrollbar-button:double-button:end:increment,
+            .learning-path-scroll::-webkit-scrollbar-button,
+            .learning-path-scroll::-webkit-scrollbar-button:start:decrement,
+            .learning-path-scroll::-webkit-scrollbar-button:end:increment,
+            .learning-path-scroll::-webkit-scrollbar-button:vertical:start:decrement,
+            .learning-path-scroll::-webkit-scrollbar-button:vertical:end:increment,
+            .learning-path-scroll::-webkit-scrollbar-button:single-button,
+            .learning-path-scroll::-webkit-scrollbar-button:double-button:start:decrement,
+            .learning-path-scroll::-webkit-scrollbar-button:double-button:end:increment {
+                display: none !important;
+                height: 0px !important;
+                width: 0px !important;
+                background: transparent !important;
+                -webkit-appearance: none !important;
+                appearance: none !important;
+                opacity: 0 !important;
+                visibility: hidden !important;
+                pointer-events: none !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border: none !important;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    hideScrollbarArrows();
+
     // Initialize Lucide icons after they're loaded
     function initIcons() {
         if (typeof lucide !== 'undefined') {
