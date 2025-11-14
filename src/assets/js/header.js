@@ -228,9 +228,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     
                     // Update active state
                     languageOptions.forEach(opt => {
-                        opt.classList.remove("bg-[#FFF9F2]", "font-semibold");
+                        opt.classList.remove("bg-[#FFF9F2]");
                     });
-                    option.classList.add("bg-[#FFF9F2]", "font-semibold");
+                    option.classList.add("bg-[#FFF9F2]");
                     
                     // Close dropdown
                     languageDropdown.classList.add("hidden");
@@ -245,7 +245,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const currentLang = localStorage.getItem("language") || "vi";
         languageOptions.forEach(option => {
             if (option.getAttribute("data-lang") === currentLang) {
-                option.classList.add("bg-[#FFF9F2]", "font-semibold");
+                option.classList.add("bg-[#FFF9F2]");
             }
         });
     }
@@ -292,9 +292,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     
                     // Update active state
                     languageOptionsMobile.forEach(opt => {
-                        opt.classList.remove("bg-[#FFF9F2]", "font-semibold");
+                        opt.classList.remove("bg-[#FFF9F2]");
                     });
-                    option.classList.add("bg-[#FFF9F2]", "font-semibold");
+                    option.classList.add("bg-[#FFF9F2]");
                     
                     // Close dropdown
                     languageDropdownMobile.style.display = "none";
@@ -309,7 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const currentLangMobile = localStorage.getItem("language") || "vi";
         languageOptionsMobile.forEach(option => {
             if (option.getAttribute("data-lang") === currentLangMobile) {
-                option.classList.add("bg-[#FFF9F2]", "font-semibold");
+                option.classList.add("bg-[#FFF9F2]");
             }
         });
     }

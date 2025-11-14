@@ -43,11 +43,11 @@
     }
 
     .footer-title {
-        @apply font-semibold leading-[32px] md:leading-[24px] lg:leading-[32px] relative shrink-0 text-[20px] md:text-[16px] lg:text-[20px] text-nowrap text-white uppercase whitespace-pre;
+        @apply leading-[32px] md:leading-[24px] lg:leading-[32px] relative shrink-0 text-[20px] md:text-[16px] lg:text-[20px] text-nowrap text-white uppercase whitespace-pre;
     }
 
     .footer-title-full {
-        @apply font-semibold leading-[32px] md:leading-[24px] lg:leading-[32px] relative shrink-0 text-[20px] md:text-[16px] lg:text-[20px] text-white uppercase w-full;
+        @apply leading-[32px] md:leading-[24px] lg:leading-[32px] relative shrink-0 text-[20px] md:text-[16px] lg:text-[20px] text-white uppercase w-full;
     }
 
     .footer-social-icons {

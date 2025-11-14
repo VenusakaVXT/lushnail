@@ -236,7 +236,7 @@
 
     /* Button Custom */
     .btn-primary {
-        @apply bg-black border-transparent text-white rounded-lg transition-all duration-300 font-semibold hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
+        @apply bg-black border-transparent text-white rounded-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
     }
 
     .btn-primary::before {
@@ -249,7 +249,7 @@
     }
 
     .btn-primary-gradient {
-        @apply bg-gradient-to-r from-[#ae873e] to-[#c9a961] text-white py-2 px-4 rounded-lg text-[13px] font-semibold hover:from-[#a5834a] hover:to-[#ae873e] transition-all duration-300;
+        @apply bg-gradient-to-r from-[#ae873e] to-[#c9a961] text-white py-2 px-4 rounded-lg text-[13px] hover:from-[#a5834a] hover:to-[#ae873e] transition-all duration-300;
     }
 
     .btn-secondary {
@@ -257,7 +257,7 @@
     }
 
     .btn-third {
-        @apply bg-[#d4a574] text-white py-2 px-4 rounded-lg text-[13px] font-semibold hover:bg-[#c9a961] transition-all duration-300;
+        @apply bg-[#d4a574] text-white py-2 px-4 rounded-lg text-[13px] hover:bg-[#c9a961] transition-all duration-300;
     }
 
     .btn-outline {
@@ -273,11 +273,11 @@
     }
 
     .btn-outline-muted {
-        @apply w-full sm:w-auto px-8 py-4 border-2 border-[#ae873e] text-[#ae873e] text-[16px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 flex items-center justify-center gap-2;
+        @apply w-full sm:w-auto px-8 py-4 border-2 border-[#ae873e] text-[#ae873e] text-[16px] hover:bg-[#FFF9F2] transition-all duration-300 flex items-center justify-center gap-2;
     }
 
     .btn-detail {
-        @apply bg-white text-[#333] px-6 py-2 text-[13px] font-semibold hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
+        @apply bg-white text-[#333] px-6 py-2 text-[13px] hover:bg-[#FFF9F2] transition-all duration-300 transform translate-y-2 group-hover:translate-y-0
     }
 
 
@@ -314,7 +314,7 @@
        LABEL GROUP: Các thuộc tính cho Label
        ======================================================================== */
     .label {
-        @apply block text-[#090707] text-[14px] font-semibold mb-2;
+        @apply block text-[#090707] text-[14px] mb-2;
     }
 
     /* ========================================================================
@@ -394,7 +394,7 @@
        BADGE STYLES: Các thuộc tính cho Badge
        ======================================================================== */
     .badge {
-        @apply text-white absolute top-3 right-3 z-10 px-3 pt-[0.15rem] text-[11px] font-semibold rounded-full shadow-lg whitespace-nowrap flex items-center justify-center;
+        @apply text-white absolute top-3 right-3 z-10 px-3 pt-[0.15rem] text-[11px] rounded-full shadow-lg whitespace-nowrap flex items-center justify-center;
     }
 
     .badge-primary {
@@ -445,11 +445,11 @@
     }
 
     .product-card__price {
-        @apply text-[16px] font-semibold text-[#090707] mb-3;
+        @apply text-[16px] text-[#090707] mb-3;
     }
 
     /* .product-card__button {
-        @apply w-full bg-[#090707] text-white py-2 px-4 rounded-lg text-[13px] font-semibold hover:bg-[#1a1816]  transition-all duration-300;
+        @apply w-full bg-[#090707] text-white py-2 px-4 rounded-lg text-[13px] hover:bg-[#1a1816]  transition-all duration-300;
     } */
 
 
@@ -477,7 +477,7 @@
     }
 
     .course-card__detail-button {
-        @apply bg-[#c9a961] text-[#090707] px-8 py-3 rounded-full text-[15px] font-semibold shadow-lg hover:shadow-xl hover:bg-[#ae873e] hover:scale-105 transition-all duration-300 translate-y-4 group-hover:translate-y-0;
+        @apply bg-[#c9a961] text-[#090707] px-8 py-3 rounded-full text-[15px] shadow-lg hover:shadow-xl hover:bg-[#ae873e] hover:scale-105 transition-all duration-300 translate-y-4 group-hover:translate-y-0;
     }
 
     .course-card__body {
@@ -489,7 +489,7 @@
     }
 
     .course-card__title {
-        @apply text-[22px] font-semibold text-[#030213] tracking-[-0.44px] leading-tight group-hover:text-[#ae873e] transition-colors duration-300;
+        @apply text-[22px] text-[#030213] tracking-[-0.44px] leading-tight group-hover:text-[#ae873e] transition-colors duration-300;
     }
 
     .course-card__description {
@@ -517,7 +517,7 @@
     }
 
     /* .course-card__button {
-        @apply w-full bg-gradient-to-r from-accent to-[#c9a961] border-transparent text-white hover:from-[#c9a961] hover:to-accent py-3.5 rounded-full transition-all duration-300 text-[15px] font-semibold shadow-[0_4px_20px_rgba(174,135,62,0.4)] hover:shadow-[0_6px_30px_rgba(174,135,62,0.6)] hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 relative overflow-hidden;
+        @apply w-full bg-gradient-to-r from-accent to-[#c9a961] border-transparent text-white hover:from-[#c9a961] hover:to-accent py-3.5 rounded-full transition-all duration-300 text-[15px] shadow-[0_4px_20px_rgba(174,135,62,0.4)] hover:shadow-[0_6px_30px_rgba(174,135,62,0.6)] hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 relative overflow-hidden;
     }
 
     .course-card__button::before {
@@ -554,11 +554,11 @@
     }
 
     .review__card-author-avatar {
-        @apply w-10 h-10 rounded-full bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] flex items-center justify-center text-white font-semibold text-sm;
+        @apply w-10 h-10 rounded-full bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] flex items-center justify-center text-white text-sm;
     }
 
     .review__card-author-name {
-        @apply font-semibold text-white text-[14px];
+        @apply text-white text-[14px];
     }
 
     .review__card-author-location {
@@ -694,7 +694,7 @@
     }
 
     .tabs .tab-menu {
-        @apply px-6 py-3 text-[15px] font-semibold border-b-2 border-transparent text-[#666666] hover:text-[#ae873e] transition-all duration-300 cursor-pointer;
+        @apply px-6 py-3 text-[15px] border-b-2 border-transparent text-[#666666] hover:text-[#ae873e] transition-all duration-300 cursor-pointer;
     }
 
     .tabs .tab-menu.active {
@@ -740,7 +740,7 @@
     }
 
     .tabs-btn .tab-menu {
-        @apply px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] font-semibold hover:bg-[#ae873e] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap flex-shrink-0;
+        @apply px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] hover:bg-[#ae873e] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap flex-shrink-0;
     }
 
     .tabs-btn .tab-menu.active {
@@ -779,7 +779,7 @@
     }
 
     .pagination-btn-active {
-        @apply bg-[#ae873e] text-white border-[#ae873e] font-semibold;
+        @apply bg-[#ae873e] text-white border-[#ae873e];
     }
 
     .pagination-btn-active:hover {
