@@ -5,8 +5,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     initContactForm();
-    initRegisterCourseScroll();
-    initCourseCardRegisterButtons();
 });
 
 function initContactForm() {
@@ -37,40 +35,6 @@ function initContactForm() {
         }).catch(error => {
             console.error('Error:', error);
             alert('Có lỗi xảy ra. Vui lòng thử lại sau.');
-        });
-    });
-}
-
-function initRegisterCourseScroll() {
-    const registerBtn = document.getElementById('register-course-btn');
-    const registerFormSection = document.getElementById('register-course-form');
-
-    if (!registerBtn || !registerFormSection) return;
-
-    registerBtn.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        registerFormSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-    });
-}
-
-function initCourseCardRegisterButtons() {
-    const courseRegisterButtons = document.querySelectorAll('.course-register-btn');
-    const registerFormSection = document.getElementById('register-course-form');
-
-    if (!courseRegisterButtons.length || !registerFormSection) return;
-
-    courseRegisterButtons.forEach(function (button) {
-        button.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            registerFormSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
         });
     });
 }

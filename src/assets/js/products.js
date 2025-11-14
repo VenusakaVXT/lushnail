@@ -50,28 +50,28 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Hero Section Scroll Buttons
-  const heroScrollButtons = document.querySelectorAll('.hero-scroll-btn[data-scroll-to]');
-  heroScrollButtons.forEach(button => {
-    button.addEventListener('click', function (e) {
-      e.preventDefault();
-      const targetSectionName = this.getAttribute('data-scroll-to');
-      const targetSection = document.querySelector(`section[data-name="${targetSectionName}"], [data-name="${targetSectionName}"]`);
-
-      if (targetSection) {
-        const offset = 80; // Offset for fixed header if any
-        const elementPosition = targetSection.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      } else {
-        console.warn(`Section with data-name="${targetSectionName}" not found`);
-      }
-    });
-  });
+  // Commented: Hero Section Scroll Buttons - Now using anchor links with CSS scroll-margin-top
+  // const heroScrollButtons = document.querySelectorAll('.hero-scroll-btn[data-scroll-to]');
+  // heroScrollButtons.forEach(button => {
+  //   button.addEventListener('click', function (e) {
+  //     e.preventDefault();
+  //     const targetSectionName = this.getAttribute('data-scroll-to');
+  //     const targetSection = document.querySelector(`section[data-name="${targetSectionName}"], [data-name="${targetSectionName}"]`);
+  //
+  //     if (targetSection) {
+  //       const offset = 80; // Offset for fixed header if any
+  //       const elementPosition = targetSection.getBoundingClientRect().top;
+  //       const offsetPosition = elementPosition + window.pageYOffset - offset;
+  //
+  //       window.scrollTo({
+  //         top: offsetPosition,
+  //         behavior: 'smooth'
+  //       });
+  //     } else {
+  //       console.warn(`Section with data-name="${targetSectionName}" not found`);
+  //     }
+  //   });
+  // });
 
   // Products Transition Section Parallax Animation
   const transitionSection = document.querySelector('[data-name="products-transition-section"]');
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //         opacity: 0;
 //         transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 //     }
-//     
+//
 //     .scroll-fade-in.animated {
 //         opacity: 1;
 //         transform: translateY(0);
@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //         transform: translateY(30px);
 //         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 //     }
-//     
+//
 //     .scroll-slide-up.animated {
 //         opacity: 1;
 //         transform: translateY(0);
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //         transform: translateX(-50px);
 //         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 //     }
-//     
+//
 //     .scroll-slide-left.animated {
 //         opacity: 1;
 //         transform: translateX(0);
@@ -218,7 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
 //         transform: translateX(50px);
 //         transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 //     }
-//     
+//
 //     .scroll-slide-right.animated {
 //         opacity: 1;
 //         transform: translateX(0);
