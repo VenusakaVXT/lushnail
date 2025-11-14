@@ -108,6 +108,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // Setup autoplay resume for testimonials slider after drag ends
+    setupAutoplayResume('.bslider-testimonials');
+
     // Hero slider - Full width banner with autoplay
     initSlider('.bslider-hero', {
         all: {
@@ -125,7 +128,58 @@ document.addEventListener('DOMContentLoaded', function () {
             draggable: true,
         }
     });
+
+    // Setup autoplay resume for hero slider after drag ends
+    setupAutoplayResume('.bslider-hero');
 });
+
+// Setup autoplay resume after drag ends for sliders with autoplay enabled
+function setupAutoplayResume(selector) {
+    setTimeout(function () {
+        const sliders = document.querySelectorAll(selector);
+
+        sliders.forEach(function (sliderEl) {
+            const blazeInstance = sliderEl.blazeSlider;
+            if (!blazeInstance) return;
+
+            const config = blazeInstance.config;
+            if (!config.enableAutoplay || !config.stopAutoplayOnInteraction) return;
+
+            const track = blazeInstance.track;
+            if (!track) return;
+
+            let autoplayStopped = false;
+
+            function resumeAutoplay() {
+                if (!autoplayStopped) return;
+                if (!config.enableAutoplay) return;
+
+                const dir = config.autoplayDirection === 'to left' ? 'next' : 'prev';
+                blazeInstance.autoplayTimer = setInterval(function () {
+                    blazeInstance[dir]();
+                }, config.autoplayInterval);
+
+                autoplayStopped = false;
+            }
+
+            function stopAutoplay() {
+                if (blazeInstance.autoplayTimer) {
+                    clearInterval(blazeInstance.autoplayTimer);
+                    autoplayStopped = true;
+                }
+            }
+
+            const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+            const startEvent = isTouchDevice ? 'touchstart' : 'mousedown';
+            const endEvent = isTouchDevice ? 'touchend' : 'pointerup';
+
+            track.addEventListener(startEvent, stopAutoplay);
+            track.addEventListener(endEvent, function () {
+                setTimeout(resumeAutoplay, 100);
+            });
+        });
+    }, 300);
+}
 
 // Setup image pagination functionality
 function setupImagePagination(selector) {
@@ -158,7 +212,7 @@ function setupImagePagination(selector) {
                     item.classList.remove('active');
                     item.classList.remove('ring-2', 'ring-blue-500');
                     item.classList.remove('border-[#ae873e]');
-                    
+
                     // Add active state to current item
                     if (index === currentStateIndex) {
                         item.classList.add('active');
@@ -170,7 +224,7 @@ function setupImagePagination(selector) {
 
             // Listen for slide changes using BlazeSlider's onSlide callback
             if (blazeInstance.onSlide) {
-                blazeInstance.onSlide(function(stateIndex, firstSlideIndex, lastSlideIndex) {
+                blazeInstance.onSlide(function (stateIndex, firstSlideIndex, lastSlideIndex) {
                     updateActivePagination();
                 });
             }
@@ -179,7 +233,7 @@ function setupImagePagination(selector) {
             paginationItems.forEach(function (item, index) {
                 item.addEventListener('click', function (e) {
                     e.preventDefault();
-                    
+
                     if (!blazeInstance || blazeInstance.isTransitioning) {
                         return;
                     }
@@ -189,7 +243,7 @@ function setupImagePagination(selector) {
                         const targetIndex = index;
                         const loop = blazeInstance.config.loop;
                         const totalStates = blazeInstance.states ? blazeInstance.states.length : paginationItems.length;
-                        
+
                         // Calculate the difference
                         const diff = Math.abs(targetIndex - currentStateIndex);
                         const inverseDiff = totalStates - diff;
