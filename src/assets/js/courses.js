@@ -21,126 +21,126 @@ document.addEventListener('DOMContentLoaded', function () {
   const loadMoreLoading = document.getElementById('load-more-loading');
   const courseCardsGrid = document.getElementById('course-cards-grid');
 
-  if (loadMoreBtn && courseCardsGrid) {
-    // Sample additional courses data
-    const additionalCourses = [
-      {
-        title: 'Nail Chuyên Nghiệp',
-        description: 'Khóa học dành cho thợ nail chuyên nghiệp',
-        image: 'https://m.media-amazon.com/images/I/51YC56BJ0WL._SL1024_.jpg',
-        tags: ['30 bài học', 'Chứng chỉ quốc tế', 'Hỗ trợ việc làm'],
-        price: '8,500,000đ',
-        priceOld: '17,000,000đ',
-        discount: '-50%'
-      },
-      {
-        title: 'Nail Nghệ Thuật',
-        description: 'Kỹ thuật nail art và thiết kế sáng tạo',
-        image: 'https://m.media-amazon.com/images/I/7159sUj7TNL._SL1500_.jpg',
-        tags: ['20 bài học', 'Nghệ thuật sáng tạo', 'Portfolio review'],
-        price: '5,500,000đ',
-        priceOld: '11,000,000đ',
-        discount: '-50%'
-      },
-      {
-        title: 'Nail Kỹ Thuật Số',
-        description: 'Ứng dụng công nghệ trong nail',
-        image: 'https://m.media-amazon.com/images/I/71vPZFCTi8L._SL1500_.jpg',
-        tags: ['15 bài học', 'Công nghệ hiện đại', 'Tài liệu số'],
-        price: '6,500,000đ',
-        priceOld: '13,000,000đ',
-        discount: '-50%'
-      },
-      {
-        title: 'Nail Thương Mại',
-        description: 'Quản trị và phát triển doanh nghiệp nail',
-        image: 'https://m.media-amazon.com/images/I/71jqxWepZvL._SL1500_.jpg',
-        tags: ['25 bài học', 'Quản trị doanh nghiệp', 'Tư vấn kinh doanh'],
-        price: '9,000,000đ',
-        priceOld: '18,000,000đ',
-        discount: '-50%'
-      }
-    ];
+  // if (loadMoreBtn && courseCardsGrid) {
+  //   // Sample additional courses data
+  //   const additionalCourses = [
+  //     {
+  //       title: 'Nail Chuyên Nghiệp',
+  //       description: 'Khóa học dành cho thợ nail chuyên nghiệp',
+  //       image: 'https://m.media-amazon.com/images/I/51YC56BJ0WL._SL1024_.jpg',
+  //       tags: ['30 bài học', 'Chứng chỉ quốc tế', 'Hỗ trợ việc làm'],
+  //       price: '8,500,000đ',
+  //       priceOld: '17,000,000đ',
+  //       discount: '-50%'
+  //     },
+  //     {
+  //       title: 'Nail Nghệ Thuật',
+  //       description: 'Kỹ thuật nail art và thiết kế sáng tạo',
+  //       image: 'https://m.media-amazon.com/images/I/7159sUj7TNL._SL1500_.jpg',
+  //       tags: ['20 bài học', 'Nghệ thuật sáng tạo', 'Portfolio review'],
+  //       price: '5,500,000đ',
+  //       priceOld: '11,000,000đ',
+  //       discount: '-50%'
+  //     },
+  //     {
+  //       title: 'Nail Kỹ Thuật Số',
+  //       description: 'Ứng dụng công nghệ trong nail',
+  //       image: 'https://m.media-amazon.com/images/I/71vPZFCTi8L._SL1500_.jpg',
+  //       tags: ['15 bài học', 'Công nghệ hiện đại', 'Tài liệu số'],
+  //       price: '6,500,000đ',
+  //       priceOld: '13,000,000đ',
+  //       discount: '-50%'
+  //     },
+  //     {
+  //       title: 'Nail Thương Mại',
+  //       description: 'Quản trị và phát triển doanh nghiệp nail',
+  //       image: 'https://m.media-amazon.com/images/I/71jqxWepZvL._SL1500_.jpg',
+  //       tags: ['25 bài học', 'Quản trị doanh nghiệp', 'Tư vấn kinh doanh'],
+  //       price: '9,000,000đ',
+  //       priceOld: '18,000,000đ',
+  //       discount: '-50%'
+  //     }
+  //   ];
 
-    let currentPage = 1;
-    const coursesPerPage = 4;
-    const totalCourses = additionalCourses.length;
-    let loadedCourses = 0;
+  //   let currentPage = 1;
+  //   const coursesPerPage = 4;
+  //   const totalCourses = additionalCourses.length;
+  //   let loadedCourses = 0;
 
-    // Function to create course card HTML
-    function createCourseCard(course) {
-      return `
-        <div class="course-card group">
-          <div class="course-card__badge">
-            <p class="  text-[13px]  emibold" >${course.discount}</p>
-          </div>
-          <div class="course-card__image-container">
-            <img src="${course.image}" alt="${course.title}" class="course-card__image" loading="lazy">
-            <div class="course-card__overlay">
-              <a href="single-course.html" class="course-card__detail-button  " >CHI TIẾT</a>
-            </div>
-          </div>
-          <div class="course-card__body">
-            <div class="course-card__title-section">
-              <a href="single-course.html"><h3 class="course-card__title   hover:text-[#ae873e] transition-colors cursor-pointer" >${course.title}</h3></a>
-              <p class="course-card__description font-['Bricolage_Grotesque:Regular',_sans-serif]" >${course.description}</p>
-            </div>
-            <div class="course-card__tags">
-              ${course.tags.map(tag => `<span class="course-card__tag font-['Bricolage_Grotesque:Medium',_sans-serif]" >${tag}</span>`).join('')}
-            </div>
-            <div class="course-card__price-section">
-              <p class="course-card__price  " >${course.price}</p>
-              <p class="course-card__price-old font-['Bricolage_Grotesque:Regular',_sans-serif]" >${course.priceOld}</p>
-            </div>
-            <a href="single-course.html" class="course-card__button  " >ĐĂNG KÝ NGAY</a>
-          </div>
-        </div>
-      `;
-    }
+  //   // Function to create course card HTML
+  //   function createCourseCard(course) {
+  //     return `
+  //       <div class="course-card group">
+  //         <div class="course-card__badge">
+  //           <p class="  text-[13px]  emibold" >${course.discount}</p>
+  //         </div>
+  //         <div class="course-card__image-container">
+  //           <img src="${course.image}" alt="${course.title}" class="course-card__image" loading="lazy">
+  //           <div class="course-card__overlay">
+  //             <a href="single-course.html" class="course-card__detail-button  " >CHI TIẾT</a>
+  //           </div>
+  //         </div>
+  //         <div class="course-card__body">
+  //           <div class="course-card__title-section">
+  //             <a href="single-course.html"><h3 class="course-card__title   hover:text-[#ae873e] transition-colors cursor-pointer" >${course.title}</h3></a>
+  //             <p class="course-card__description font-['Bricolage_Grotesque:Regular',_sans-serif]" >${course.description}</p>
+  //           </div>
+  //           <div class="course-card__tags">
+  //             ${course.tags.map(tag => `<span class="course-card__tag font-['Bricolage_Grotesque:Medium',_sans-serif]" >${tag}</span>`).join('')}
+  //           </div>
+  //           <div class="course-card__price-section">
+  //             <p class="course-card__price  " >${course.price}</p>
+  //             <p class="course-card__price-old font-['Bricolage_Grotesque:Regular',_sans-serif]" >${course.priceOld}</p>
+  //           </div>
+  //           <a href="single-course.html" class="course-card__button  " >ĐĂNG KÝ NGAY</a>
+  //         </div>
+  //       </div>
+  //     `;
+  //   }
 
-    // Function to load more courses
-    function loadMoreCourses() {
-      // Show loading state
-      loadMoreBtn.disabled = true;
-      loadMoreText.classList.add('hidden');
-      loadMoreLoading.classList.remove('hidden');
+  //   // Function to load more courses
+  //   function loadMoreCourses() {
+  //     // Show loading state
+  //     loadMoreBtn.disabled = true;
+  //     loadMoreText.classList.add('hidden');
+  //     loadMoreLoading.classList.remove('hidden');
 
-      // Simulate API call delay
-      setTimeout(() => {
-        const coursesToLoad = additionalCourses.slice(loadedCourses, loadedCourses + coursesPerPage);
+  //     // Simulate API call delay
+  //     setTimeout(() => {
+  //       const coursesToLoad = additionalCourses.slice(loadedCourses, loadedCourses + coursesPerPage);
 
-        if (coursesToLoad.length > 0) {
-          coursesToLoad.forEach((course) => {
-            const courseCardHTML = createCourseCard(course);
-            const tempDiv = document.createElement('div');
-            tempDiv.innerHTML = courseCardHTML.trim();
-            const courseCardElement = tempDiv.firstChild;
+  //       if (coursesToLoad.length > 0) {
+  //         coursesToLoad.forEach((course) => {
+  //           const courseCardHTML = createCourseCard(course);
+  //           const tempDiv = document.createElement('div');
+  //           tempDiv.innerHTML = courseCardHTML.trim();
+  //           const courseCardElement = tempDiv.firstChild;
 
-            courseCardsGrid.appendChild(courseCardElement);
-          });
+  //           courseCardsGrid.appendChild(courseCardElement);
+  //         });
 
-          loadedCourses += coursesToLoad.length;
-          currentPage++;
+  //         loadedCourses += coursesToLoad.length;
+  //         currentPage++;
 
-          // Check if all courses are loaded
-          if (loadedCourses >= totalCourses) {
-            loadMoreBtn.style.display = 'none';
-          } else {
-            // Reset button state
-            loadMoreBtn.disabled = false;
-            loadMoreText.classList.remove('hidden');
-            loadMoreLoading.classList.add('hidden');
-          }
-        } else {
-          // No more courses to load
-          loadMoreBtn.style.display = 'none';
-        }
-      }, 800); // Simulate loading delay
-    }
+  //         // Check if all courses are loaded
+  //         if (loadedCourses >= totalCourses) {
+  //           loadMoreBtn.style.display = 'none';
+  //         } else {
+  //           // Reset button state
+  //           loadMoreBtn.disabled = false;
+  //           loadMoreText.classList.remove('hidden');
+  //           loadMoreLoading.classList.add('hidden');
+  //         }
+  //       } else {
+  //         // No more courses to load
+  //         loadMoreBtn.style.display = 'none';
+  //       }
+  //     }, 800); // Simulate loading delay
+  //   }
 
-    // Add click event listener
-    loadMoreBtn.addEventListener('click', loadMoreCourses);
-  }
+  //   // Add click event listener
+  //   loadMoreBtn.addEventListener('click', loadMoreCourses);
+  // }
 
 
   // Smooth scroll for anchor links

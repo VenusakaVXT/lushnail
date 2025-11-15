@@ -489,16 +489,22 @@
     }
 
     .course-card__title {
-        @apply text-[22px] text-[#030213] tracking-[-0.44px] leading-tight group-hover:text-[#ae873e] transition-colors duration-300;
+        @apply text-[20px] h-[56px] text-[#030213]  group-hover:text-[#ae873e] transition-colors duration-300 line-clamp-2;
     }
 
     .course-card__description {
         @apply h-[45px] text-[15px] text-[#666666] leading-[22px];
     }
 
+    /* 
+        Nếu muốn dạng scroll ngang (nội dung tràn sẽ cuộn theo chiều ngang), dùng như sau: 
+    */
     .course-card__tags {
-        @apply flex flex-wrap gap-2;
+        @apply gap-2 flex flex-wrap;
+     
     }
+    
+  
 
     .course-card__tag {
         @apply px-3 py-1.5 bg-[#fff9f2] text-[#333] rounded-full text-[12px] font-medium border border-[#333] group-hover:bg-[#ae873e] group-hover:text-white transition-all duration-300;
@@ -509,7 +515,7 @@
     }
 
     .course-card__price {
-        @apply text-[26px] font-bold text-[#333] tracking-[-0.52px];
+        @apply text-[26px]  text-[#333];
     }
 
     .course-card__price-old {

@@ -281,10 +281,12 @@
 
 /* Image pagination styles */
 .blaze-pagination-image {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 8px;
+    display: flex;
+    gap: 12px;
     margin-top: 16px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 .blaze-pagination-item {
@@ -294,6 +296,9 @@
     cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid transparent;
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
 }
 
 .blaze-pagination-item:hover {
@@ -308,7 +313,7 @@
 
 .blaze-pagination-item img {
     width: 100%;
-    height: 64px;
+    height: 100%;
     object-fit: cover;
     transition: opacity 0.3s ease;
 }
@@ -319,19 +324,16 @@
 
 /* Responsive image pagination */
 @media (max-width: 640px) {
-    .blaze-pagination-image {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 4px;
-    }
-
-    .blaze-pagination-item img {
-        height: 48px;
+    .blaze-pagination-item {
+        width: 60px;
+        height: 60px;
     }
 }
 
 @media (min-width: 641px) and (max-width: 768px) {
-    .blaze-pagination-image {
-        grid-template-columns: repeat(4, 1fr);
+    .blaze-pagination-item {
+        width: 70px;
+        height: 70px;
     }
 }
 
