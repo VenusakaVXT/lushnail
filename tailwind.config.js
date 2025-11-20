@@ -30,6 +30,57 @@ const config = {
   prefix: "",
 
   // ========================================================================
+  // SAFELIST CONFIGURATION
+  // ========================================================================
+  // Danh sách các class luôn được giữ lại trong CSS output
+  // Ngay cả khi không tìm thấy trong file HTML đang scan
+  // Đảm bảo các component class luôn có sẵn
+  safelist: [
+    // Badge classes (badge, badge-primary, badge-secondary, badge-primary-gradient, badge-classic, badge-feature, badge-hot)
+    { pattern: /^badge(-[a-z0-9-]+)*$/ },
+    // Button classes (btn, btn-primary, btn-secondary, btn-outline, btn-primary-gradient, etc.)
+    { pattern: /^btn(-[a-z0-9-]+)*$/ },
+    // Product card classes (product-card, product-card__image, product-card__body, product-card__title, product-card__price, product-card__price-original)
+    { pattern: /^product-card(__[a-z0-9-]+)?$/ },
+    // Course card classes (course-card, course-card__image, course-card__body, course-card__title, etc.)
+    { pattern: /^course-card(__[a-z0-9-]+)?$/ },
+    // Review card classes (review__card, review__card-body, review__card-ratings, review__card-quote, etc.)
+    { pattern: /^review__(card|[a-z0-9-]+)?$/ },
+    // Tabs classes (tabs, tabs-btn, tab-menu, tab-content, tab-menu-wrapper)
+    { pattern: /^tabs(-[a-z0-9-]+)*$/ },
+    { pattern: /^tab(-[a-z0-9-]+)*$/ },
+    // Pagination classes (pagination, pagination-btn, pagination-btn-active, pagination-btn-prev, pagination-btn-next, pagination-btn-number)
+    { pattern: /^pagination(-[a-z0-9-]+)*$/ },
+    // Modal classes (jmodal, jmodal-content)
+    { pattern: /^jmodal(-[a-z0-9-]+)*$/ },
+    // Input classes (input, input-outline, input-outline-dark, input-lg, input-sm, input-icon)
+    { pattern: /^input(-[a-z0-9-]+)*$/ },
+    // Textarea classes (textarea, textarea-outline, textarea-outline-dark)
+    { pattern: /^textarea(-[a-z0-9-]+)*$/ },
+    // Select classes (select-white, select-outline, select-outline-dark)
+    { pattern: /^select(-[a-z0-9-]+)*$/ },
+    // Label classes
+    { pattern: /^label(-[a-z0-9-]+)*$/ },
+    // Section classes (section__button, title-section, title-section-dark, bg-section-white-yellow, bg-section-yellow-white)
+    { pattern: /^section__(.+)?$/ },
+    { pattern: /^title-section(-[a-z0-9-]+)*$/ },
+    { pattern: /^bg-section(-[a-z0-9-]+)*$/ },
+    // Overlay classes (overlay-dark, overlay-light, noise-overlay)
+    { pattern: /^overlay(-[a-z0-9-]+)*$/ },
+    { pattern: /^noise-overlay$/ },
+    // FAQ classes (faq-item)
+    { pattern: /^faq(-[a-z0-9-]+)*$/ },
+    // Map classes (map-iframe)
+    { pattern: /^map-([a-z0-9-]+)?$/ },
+    // Location classes (location-card)
+    { pattern: /^location-card(-[a-z0-9-]+)*$/ },
+    // Scrollbar classes (scrollbar-hide)
+    { pattern: /^scrollbar-hide$/ },
+    // Container class
+    { pattern: /^container$/ },
+  ],
+
+  // ========================================================================
   // THEME CONFIGURATION
   // ========================================================================
   theme: {

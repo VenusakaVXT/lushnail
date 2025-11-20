@@ -477,6 +477,10 @@
         @apply text-[16px] text-[#090707] mb-3;
     }
 
+    .product-card__price-original {
+        @apply text-[13px] text-[#999999] line-through mb-3;
+    }
+
     /* .product-card__button {
         @apply w-full bg-[#090707] text-white py-2 px-4 rounded-lg text-[13px] hover:bg-[#1a1816]  transition-all duration-300;
     } */
