@@ -74,6 +74,7 @@ help-circle
 arrow-right
 flask-conical
 user-check
+twitter
 truck
 eye
 credit-card
