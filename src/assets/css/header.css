@@ -71,7 +71,7 @@
        TOPBAR GROUP: Topbar Banner Styles
        ======================================================================== */
     .header-topbar {
-        @apply bg-[#bbaa8e] flex items-center justify-between gap-3 sm:gap-6 px-4 py-2 w-full;
+        @apply bg-gradient-to-b from-[#F4DB89] to-[#DDB657] flex items-center justify-between gap-3 sm:gap-6 px-4 py-2 w-full;
     }
 
     .header-topbar-text {
@@ -254,6 +254,25 @@
     /* Keep language dropdown visible when hovering over it */
     #language-dropdown:hover {
         display: block !important;
+    }
+
+    /* Search Dropdown */
+    #search-dropdown {
+        position: absolute !important;
+        z-index: 9999 !important;
+        top: 100% !important;
+        right: 0 !important;
+        display: none !important;
+    }
+
+    /* Ensure search dropdown text is always dark */
+    #search-dropdown * {
+        color: #333 !important;
+    }
+
+    /* Override nav-bg-blur for search dropdown */
+    .nav-bg-blur #search-dropdown * {
+        color: #333 !important;
     }
 
     /* User Dropdown */

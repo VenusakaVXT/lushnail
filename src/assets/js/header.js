@@ -380,5 +380,52 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // Search Dropdown Logic
+    const searchToggle = document.getElementById("search-toggle");
+    const searchDropdown = document.getElementById("search-dropdown");
+    const searchInput = document.getElementById("search-input");
+    const searchContainer = searchToggle?.closest('.relative');
+
+    if (searchToggle && searchDropdown) {
+        // Toggle dropdown on click
+        searchToggle.addEventListener("click", (e) => {
+            e.stopPropagation();
+            if (searchDropdown.style.display === "block") {
+                searchDropdown.style.display = "none";
+            } else {
+                searchDropdown.style.display = "block";
+                // Focus input when dropdown opens
+                if (searchInput) {
+                    setTimeout(() => searchInput.focus(), 100);
+                }
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", (e) => {
+            if (searchContainer && !searchContainer.contains(e.target)) {
+                searchDropdown.style.display = "none";
+            }
+        });
+
+        // Prevent dropdown from closing when clicking inside it
+        searchDropdown.addEventListener("click", (e) => {
+            e.stopPropagation();
+        });
+
+        // Handle search input enter key
+        if (searchInput) {
+            searchInput.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") {
+                    const query = searchInput.value.trim();
+                    if (query) {
+                        // Redirect to search page or perform search
+                        window.location.href = `/products.html?search=${encodeURIComponent(query)}`;
+                    }
+                }
+            });
+        }
+    }
 });
 

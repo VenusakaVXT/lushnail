@@ -115,7 +115,7 @@
 
 /* Category Item Styles */
 .category-card {
-    @apply relative w-full h-[300px] sm:h-[400px] lg:h-[500px] overflow-hidden block;
+    @apply relative w-full h-[200px] sm:h-40 lg:h-40 overflow-hidden block rounded-2xl;
     transition: transform 0.3s ease;
 }
 
@@ -131,13 +131,24 @@
     @apply w-full h-full object-cover;
 }
 
-.category-card-overlay {
-    @apply absolute top-6 left-6 z-10;
+/* Dark overlay at the top for title */
+.category-card-overlay-top {
+    @apply absolute top-0 left-0 right-0 z-10 p-6;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
 }
 
-.category-card-label {
-    @apply bg-black text-white px-6 py-3 rounded-[20px] text-[14px] sm:text-[15px] lg:text-[16px] font-medium;
-    display: inline-block;
+.category-card-title {
+    @apply text-primary text-2xl sm:text-3xl lg:text-4xl text-center;
+}
+
+/* Button overlay at the bottom */
+.category-card-overlay-bottom {
+    @apply absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10;
+}
+
+.category-card-button {
+    @apply bg-[#ae873e] text-black px-6 py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-[#d4a85a] transition-colors;
+    white-space: nowrap;
 }
 
 .category-header-divider {
@@ -226,5 +237,54 @@ ease; */
     background-color: #4B5563;
     border: 2px solid #4B5563;
     z-index: -2;
+}
+
+/* ========================================================================
+   Most Popular Nail Section Styles
+   ======================================================================== */
+.most-popular-nail-gallery {
+    @apply flex items-stretch gap-2 sm:gap-3 lg:gap-4;
+    width: 100%;
+}
+
+.nail-image-item {
+    @apply relative overflow-hidden rounded-lg cursor-pointer;
+    flex: 1 1 0;
+    min-width: 0;
+    height: 400px;
+    transition: flex-grow 0.5s cubic-bezier(0.4, 0, 0.2, 1), flex-basis 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 639px) {
+    .nail-image-item {
+        height: 300px;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+    .nail-image-item {
+        height: 350px;
+    }
+}
+
+.nail-image {
+    @apply w-full h-full object-cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover effect: Keep hovered item same size, decrease others */
+.most-popular-nail-gallery:hover .nail-image-item:not(:hover) {
+    flex: 0.4 1 0;
+    opacity: 0.8;
+}
+
+.nail-image-item:hover {
+    flex: 1 1 0;
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.nail-image-item:hover .nail-image {
+    transform: scale(1.05);
 }
 
