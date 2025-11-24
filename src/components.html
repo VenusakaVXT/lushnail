@@ -1,0 +1,3009 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LushNail Components</title>
+    <meta name="description"
+        content="Cổng thông tin tổng hợp về tỉnh Bình Dương, cung cấp tin tức, bất động sản, việc làm và các tiện ích thiết yếu.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind CSS Globals -->
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <style type="text/tailwindcss">
+
+        @layer base {
+        :root {
+            --background: #fff;
+            --foreground: #000;
+            --card: #fff;
+            --card-foreground: #000;
+            --popover: #fff;
+            --popover-foreground: #000;
+            --primary: #B29441;
+            --primary-foreground: #fff;
+            --secondary: #BBAA8E;
+            --secondary-foreground: #000;
+            --muted: #D9D9D9;
+            --muted-foreground: #808080;
+            --accent: #c0c0c0;
+            --accent-foreground: #000;
+            --destructive: #dc2626;
+            --destructive-foreground: #fff;
+            --border: #D9D9D9;
+            --input: #D9D9D9;
+            --ring: #B29441;
+            --radius: 0.75rem;
+            --black: #000;
+            --black-light: #121212;
+            --white: #fff;
+            --gray: #D9D9D9;
+            --gray-light: #c0c0c0;
+            --gray-dark: #808080;
+            --gradient-start: #F4DB89;
+            --gradient-end: #DDB657;
+        }
+
+    * {
+        border-color: var(--border);
+    }
+
+    body {
+        background-color: var(--background);
+        color: var(--foreground);
+        font-family: 'Poppins', 'Jost', sans-serif;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        line-height: 1.2;
+        color: var(--primary);
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+    }
+
+    h2 {
+        font-size: 2rem;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+    }
+
+    h3 {
+        font-size: 1.75rem;
+        line-height: 1.3;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+        line-height: 1.4;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+        line-height: 1.5;
+    }
+
+    h6 {
+        font-size: 1.125rem;
+        line-height: 1.5;
+    }
+    }
+
+    @layer components {
+    /* Container */
+    .container {
+        @apply mx-auto px-4;
+    }
+
+    @media (min-width: 640px) {
+        .container {
+        max-width: 640px;
+        }
+    }
+
+    @media (min-width: 768px) {
+        .container {
+        max-width: 768px;
+        @apply px-6;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        .container {
+        max-width: 1240px;
+        @apply px-8;
+        }
+    }
+
+    @media (min-width: 1280px) {
+        .container {
+        max-width: 1280px;
+        }
+    }
+
+    @media (min-width: 1536px) {
+        .container {
+        max-width: 1536px;
+        }
+    }
+
+    /* Button Styles */
+    .btn {
+        @apply inline-flex items-center justify-center text-sm px-4 py-2 h-10 rounded-lg transition-all duration-200 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap overflow-hidden text-ellipsis;
+        font-family: 'Poppins', 'Jost', sans-serif;
+    }
+
+    .btn-primary {
+        background: linear-gradient(to bottom, var(--gradient-start) 0%, var(--gradient-end) 100%);
+        color: var(--white);
+        border: 1px solid transparent;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-primary:hover {
+        background: linear-gradient(to bottom, var(--gradient-start) 0%, var(--gradient-end) 100%);
+        filter: brightness(0.95);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary:focus {
+        outline: 2px solid var(--primary);
+        outline-offset: 2px;
+    }
+
+    .btn-secondary {
+        background-color: var(--white);
+        border: 1px solid var(--secondary);
+        color: var(--secondary);
+    }
+
+    .btn-secondary:hover {
+        background-color: rgba(187, 170, 142, 0.1);
+    }
+
+    .btn-secondary:focus {
+        outline: 2px solid var(--secondary);
+        outline-offset: 2px;
+    }
+
+    .btn-outline {
+        border: 1px solid var(--gray);
+        color: var(--gray-dark);
+        background-color: transparent;
+    }
+
+    .btn-outline:hover {
+        background-color: rgba(217, 217, 217, 0.1);
+        border-color: var(--gray-dark);
+    }
+
+    .btn-outline:focus {
+        outline: 2px solid var(--gray-dark);
+        outline-offset: 2px;
+    }
+
+    .btn-ghost {
+        border: 1px solid var(--gray);
+        color: var(--gray-dark);
+        background-color: transparent;
+    }
+
+    .btn-ghost:hover {
+        color: var(--primary);
+        border-color: var(--primary);
+    }
+
+    .btn-danger {
+        background-color: var(--destructive);
+        color: var(--white);
+        border: 1px solid transparent;
+    }
+
+    .btn-danger:hover {
+        background-color: var(--destructive);
+    }
+
+    .btn-success {
+        background-color: #22c55e;
+        color: var(--white);
+        border: 1px solid transparent;
+    }
+
+    .btn-success:hover {
+        background-color: #16a34a;
+    }
+
+    /* Button Sizes */
+    .btn-sm {
+        @apply px-3 py-1.5 h-8 text-sm;
+    }
+
+    .btn-md {
+        @apply px-4 py-2 h-10 text-sm;
+    }
+
+    .btn-lg {
+        @apply px-6 py-3 h-12 text-base;
+    }
+
+    .btn-xl {
+        @apply px-8 py-4 h-14 text-lg;
+    }
+
+    /* Input Styles */
+    .input {
+        @apply flex h-10 w-full rounded-lg px-3 py-2 text-sm disabled:cursor-not-allowed disabled:opacity-50 transition-all;
+        border: 1px solid var(--gray);
+        background-color: rgba(217, 217, 217, 0.1);
+        color: var(--foreground);
+        font-family: 'Poppins', 'Jost', sans-serif;
+    }
+
+    .input::placeholder {
+        color: var(--gray-dark);
+    }
+
+    .input:focus {
+        outline: 2px solid var(--primary);
+        outline-offset: 0;
+        border-color: var(--primary);
+    }
+
+    .input:focus::placeholder {
+        color: var(--primary);
+    }
+
+    .input-lg {
+        @apply h-12 px-4 py-3 text-sm;
+    }
+
+    .input-sm {
+        @apply h-8 px-2 py-1 text-sm;
+    }
+            
+            /* Custom input with icon styles */
+    .input-icon {
+                position: relative;
+            }
+            
+        .input-icon input {
+            padding-left: 2rem;
+            }
+            
+        .input-icon .icon {
+                position: absolute;
+            left: 0.5rem;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 1.25rem;
+                height: 1.25rem;
+                color: var(--gray-dark);
+                pointer-events: none;
+            }
+            
+        .input-icon input:focus + .icon {
+                color: var(--primary);
+            }
+            
+    /* Card Styles */
+    .card {
+        @apply rounded-xl shadow-sm;
+        border: 1px solid var(--gray);
+        background-color: var(--white);
+    }
+
+    .card-header {
+        @apply flex flex-col space-y-1.5 p-6 pb-4;
+    }
+
+    .card-title {
+        @apply text-2xl leading-none tracking-tight;
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: var(--foreground);
+    }
+
+    .card-description {
+        @apply text-sm;
+        color: var(--gray-dark);
+        font-family: 'Poppins', 'Jost', sans-serif;
+    }
+
+    .card-content {
+        @apply p-6;
+    }
+
+    .card-content-no-header {
+        @apply p-6;
+    }
+
+    .card-footer {
+        @apply flex items-center p-6 pt-4;
+    }
+
+    /* Badge Styles */
+    .badge {
+        @apply inline-flex items-center px-2.5 py-0.5 text-xs font-semibold rounded-md border;
+        font-family: 'Poppins', 'Jost', sans-serif;
+    }
+
+    .badge-primary {
+        background-color: rgba(178, 148, 65, 0.1);
+        color: var(--primary);
+        border-color: rgba(178, 148, 65, 0.3);
+    }
+
+    .badge-secondary {
+        background-color: rgba(187, 170, 142, 0.1);
+        color: var(--secondary);
+        border-color: rgba(187, 170, 142, 0.3);
+    }
+
+    .badge-success {
+        background-color: rgba(34, 197, 94, 0.1);
+        color: rgb(22, 163, 74);
+        border-color: rgba(34, 197, 94, 0.3);
+    }
+
+    .badge-warning {
+        background-color: rgba(245, 158, 11, 0.1);
+        color: rgb(217, 119, 6);
+        border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .badge-danger {
+        background-color: rgba(220, 38, 38, 0.1);
+        color: var(--destructive);
+        border-color: rgba(220, 38, 38, 0.3);
+    }
+
+    .badge-info {
+        background-color: rgba(178, 148, 65, 0.1);
+        color: var(--primary);
+        border-color: rgba(178, 148, 65, 0.3);
+    }
+
+    .badge-hot {
+        background: linear-gradient(to bottom, var(--gradient-start) 0%, var(--gradient-end) 100%);
+        color: var(--white);
+        border: 0;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .badge-new {
+        background: linear-gradient(to right, #34d399 0%, #10b981 100%);
+        color: var(--white);
+        border: 0;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .badge-trending {
+        background: linear-gradient(to bottom, var(--gradient-start) 0%, var(--gradient-end) 100%);
+        color: var(--white);
+        border: 0;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    /* Section Styles */
+    .section {
+        @apply py-12 lg:py-16;
+    }
+
+    .section-sm {
+        @apply py-8 lg:py-12;
+    }
+
+    .section-lg {
+        @apply py-16 lg:py-24;
+    }
+
+    .section-title {
+        @apply text-2xl lg:text-3xl mb-2;
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: var(--primary);
+    }
+
+    .section-subtitle {
+        @apply text-sm mb-8 lg:mb-12;
+        color: var(--gray-dark);
+        font-family: 'Poppins', 'Jost', sans-serif;
+    }
+
+    /* Grid Layouts */
+    .grid-cols-auto {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .grid-cols-auto-sm {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .grid-cols-auto-lg {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    /* Tab Styles */
+    .tabs {
+        @apply w-full;
+    }
+
+    .tabs-list {
+        @apply flex rounded-xl p-1 gap-2;
+        background-color: rgba(217, 217, 217, 0.2);
+    }
+
+    .tabs-trigger {
+        @apply flex-1 py-2.5 px-4 text-sm font-medium rounded-lg transition-all focus:outline-none disabled:pointer-events-none disabled:opacity-50;
+        font-family: 'Poppins', 'Jost', sans-serif;
+        color: var(--gray-dark);
+    }
+
+    .tabs-trigger:hover {
+        background-color: rgba(217, 217, 217, 0.1);
+    }
+
+    .tabs-content {
+        @apply mt-2 focus-visible:outline-none;
+    }
+
+    .tabs-content:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 2px;
+    }
+
+    /* Dropdown Styles */
+    .dropdown {
+        @apply relative inline-block text-left;
+    }
+
+    .dropdown-content {
+        @apply absolute right-0 z-50 mt-2 w-56 origin-top-right rounded-lg shadow-lg focus:outline-none;
+        background-color: var(--white);
+        border: 1px solid var(--gray);
+    }
+
+    .dropdown-item {
+        @apply block px-4 py-2 text-sm cursor-pointer;
+        color: var(--gray-dark);
+        font-family: 'Poppins', 'Jost', sans-serif;
+    }
+
+    .dropdown-item:hover {
+        background-color: rgba(217, 217, 217, 0.1);
+        color: var(--primary);
+    }
+
+    /* Modal Styles */
+    .modal-overlay {
+        @apply fixed inset-0 z-50 backdrop-blur-sm;
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 100vh;
+        height: 100dvh;
+    }
+
+    .modal-content {
+        @apply fixed left-[50%] top-[50%] z-50 w-full translate-x-[-50%] translate-y-[-50%] shadow-2xl;
+        background-color: var(--white);
+        border: 1px solid var(--gray);
+    }
+
+    .modal-header {
+        @apply flex items-center justify-between pb-4;
+        border-bottom: 1px solid var(--gray);
+    }
+
+    .modal-title {
+        @apply text-lg;
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: var(--foreground);
+    }
+
+    .modal-body {
+        @apply py-4;
+        font-family: 'Poppins', 'Jost', sans-serif;
+    }
+
+    .modal-footer {
+        @apply flex justify-end space-x-2 pt-4;
+        border-top: 1px solid var(--gray);
+    }
+
+    /* Pagination Styles */
+    .pagination {
+        @apply flex items-center justify-center space-x-2;
+    }
+
+    .pagination-item {
+        @apply flex items-center justify-center w-10 h-10 text-sm font-medium rounded-lg;
+        background-color: var(--white);
+        border: 1px solid var(--gray);
+        color: var(--gray-dark);
+        font-family: 'Poppins', 'Jost', sans-serif;
+    }
+
+    .pagination-item:hover {
+        background-color: rgba(217, 217, 217, 0.1);
+        color: var(--foreground);
+    }
+
+    .pagination-item.active {
+        color: var(--white);
+        background-color: var(--primary);
+        border-color: var(--primary);
+    }
+
+    .pagination-item.disabled {
+        @apply opacity-50 cursor-not-allowed;
+    }
+
+    /* Alert Styles */
+    .alert {
+        @apply relative w-full rounded-lg border p-4 flex items-start;
+        font-family: 'Poppins', 'Jost', sans-serif;
+    }
+
+    .alert-info {
+        border: 1px solid rgba(178, 148, 65, 0.3);
+        background: linear-gradient(to right, rgba(178, 148, 65, 0.1) 0%, rgba(178, 148, 65, 0.15) 100%);
+        color: var(--primary);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .alert-success {
+        border: 1px solid rgba(34, 197, 94, 0.3);
+        background: linear-gradient(to right, rgba(34, 197, 94, 0.1) 0%, rgba(34, 197, 94, 0.15) 100%);
+        color: rgb(22, 163, 74);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .alert-warning {
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        background: linear-gradient(to right, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.15) 100%);
+        color: rgb(217, 119, 6);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .alert-error {
+        border: 1px solid rgba(220, 38, 38, 0.3);
+        background: linear-gradient(to right, rgba(220, 38, 38, 0.1) 0%, rgba(220, 38, 38, 0.15) 100%);
+        color: var(--destructive);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .alert-light {
+        border: 1px solid var(--gray);
+        background: linear-gradient(to right, rgba(217, 217, 217, 0.1) 0%, rgba(217, 217, 217, 0.15) 100%);
+        color: var(--foreground);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    /* Loading Styles */
+    .loading {
+        @apply animate-spin rounded-full border-2;
+        border-color: var(--gray);
+        border-top-color: var(--primary);
+    }
+
+    .loading-sm {
+        @apply w-4 h-4;
+    }
+
+    .loading-md {
+        @apply w-6 h-6;
+    }
+
+    .loading-lg {
+        @apply w-8 h-8;
+    }
+
+    /* Skeleton Styles */
+    .skeleton {
+        @apply animate-pulse rounded;
+        background-color: var(--gray);
+    }
+
+    .skeleton-text {
+        @apply h-4 rounded;
+        background-color: var(--gray);
+    }
+
+    .skeleton-avatar {
+        @apply w-10 h-10 rounded-full;
+        background-color: var(--gray);
+    }
+
+        /* Navigation Styles */
+        .nav-link {
+            @apply font-medium transition-colors whitespace-nowrap overflow-hidden text-ellipsis;
+            color: var(--gray-dark);
+            font-family: 'Poppins', 'Jost', sans-serif;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .nav-dropdown {
+            @apply relative;
+        }
+        
+        .nav-dropdown-trigger {
+            @apply flex items-center font-medium transition-colors whitespace-nowrap overflow-hidden text-ellipsis;
+            color: var(--gray-dark);
+            font-family: 'Poppins', 'Jost', sans-serif;
+        }
+
+        .nav-dropdown-trigger:hover {
+            color: var(--primary);
+        }
+        
+        .nav-dropdown-menu {
+            @apply absolute top-full left-0 mt-2 w-48 rounded-xl shadow-lg py-2 opacity-0 invisible transition-all duration-200 transform scale-95;
+            background-color: var(--white);
+            border: 1px solid var(--gray);
+        }
+        
+        .nav-dropdown:hover .nav-dropdown-menu {
+            @apply opacity-100 visible scale-100;
+        }
+        
+        .nav-dropdown-trigger:hover + .nav-dropdown-menu,
+        .nav-dropdown-menu:hover {
+            @apply opacity-100 visible scale-100;
+        }
+        
+        .nav-dropdown-item {
+            @apply block px-4 py-2.5 text-sm transition-colors;
+            color: var(--gray-dark);
+            font-family: 'Poppins', 'Jost', sans-serif;
+        }
+
+        .nav-dropdown-item:hover {
+            background-color: rgba(217, 217, 217, 0.1);
+            color: var(--primary);
+        }
+        
+        .mobile-menu-item {
+            @apply flex items-center space-x-3 p-3 rounded-xl transition-colors;
+            font-family: 'Poppins', 'Jost', sans-serif;
+        }
+
+        .mobile-menu-item:hover {
+            background-color: rgba(217, 217, 217, 0.1);
+        }
+        
+        .mobile-menu-expandable {
+            @apply flex items-center justify-between p-3 rounded-xl cursor-pointer transition-colors;
+            font-family: 'Poppins', 'Jost', sans-serif;
+        }
+
+        .mobile-menu-expandable:hover {
+            background-color: rgba(217, 217, 217, 0.1);
+        }
+        
+        .mobile-submenu-item {
+            @apply block p-2 text-sm transition-colors;
+            color: var(--gray-dark);
+            font-family: 'Poppins', 'Jost', sans-serif;
+        }
+
+        .mobile-submenu-item:hover {
+            color: var(--primary);
+        }
+
+        /* Text Utilities */
+        .text-nowrap-ellipsis {
+            @apply whitespace-nowrap overflow-hidden text-ellipsis;
+        }
+
+        /* Utility Classes */
+        .text-gradient {
+            background: linear-gradient(to bottom, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+    .bg-gradient-primary {
+        background: linear-gradient(to bottom, var(--gradient-start) 0%, var(--gradient-end) 100%);
+    }
+
+    .bg-gradient-secondary {
+        background: linear-gradient(to right, rgba(187, 170, 142, 0.1) 0%, rgba(187, 170, 142, 0.2) 100%);
+    }
+
+    /* Color Utility Classes */
+    .text-primary {
+        color: var(--primary);
+    }
+
+    .text-secondary {
+        color: var(--secondary);
+    }
+
+    .text-gray-dark {
+        color: var(--gray-dark);
+    }
+
+    .bg-primary {
+        background-color: var(--primary);
+    }
+
+    .bg-secondary {
+        background-color: var(--secondary);
+    }
+
+    .bg-gray-dark {
+        background-color: var(--gray-dark);
+    }
+
+    .bg-primary-light {
+        background-color: rgba(178, 148, 65, 0.1);
+    }
+
+    .bg-secondary-gradient {
+        background: linear-gradient(to right, rgba(187, 170, 142, 0.3) 0%, rgba(187, 170, 142, 0.5) 100%);
+    }
+
+    .bg-gray-gradient {
+        background: linear-gradient(to right, var(--gray-light) 0%, var(--gray-dark) 100%);
+    }
+
+    .bg-white-gradient {
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.4) 100%);
+    }
+
+    .text-success {
+        color: #22c55e;
+    }
+
+    .shadow-soft {
+        box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+    }
+
+    .shadow-medium {
+        box-shadow: 0 4px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .shadow-strong {
+        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15), 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive Text */
+    .text-responsive-sm {
+        @apply text-sm sm:text-base;
+    }
+
+    .text-responsive-md {
+        @apply text-base sm:text-lg;
+    }
+
+    .text-responsive-lg {
+        @apply text-lg sm:text-xl lg:text-2xl;
+    }
+
+    .text-responsive-xl {
+        @apply text-xl sm:text-2xl lg:text-3xl;
+    }
+
+    /* Hover Effects */
+    .hover-lift {
+        @apply transition-transform duration-200 hover:-translate-y-1;
+    }
+
+    .hover-scale {
+        @apply transition-transform duration-200 hover:scale-105;
+    }
+
+    .hover-glow {
+        @apply transition-shadow duration-200 hover:shadow-lg;
+    }
+
+    /* Form Elements */
+    .checkbox {
+        width: 1rem;
+        height: 1rem;
+        color: var(--primary);
+        border: 1px solid var(--gray);
+        border-radius: 0.25rem;
+    }
+
+    .checkbox:focus {
+        outline: 2px solid var(--primary);
+        outline-offset: 2px;
+    }
+
+    .checkbox-sm {
+        width: 0.75rem;
+        height: 0.75rem;
+        color: var(--primary);
+        border: 1px solid var(--gray);
+        border-radius: 0.25rem;
+    }
+
+    .checkbox-sm:focus {
+        outline: 2px solid var(--primary);
+        outline-offset: 2px;
+    }
+
+    .checkbox-lg {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: var(--primary);
+        border: 1px solid var(--gray);
+        border-radius: 0.25rem;
+    }
+
+    .checkbox-lg:focus {
+        outline: 2px solid var(--primary);
+        outline-offset: 2px;
+    }
+
+    /* Link Styles */
+    .link {
+        color: var(--primary);
+        transition: color 0.2s;
+        font-family: 'Poppins', 'Jost', sans-serif;
+    }
+
+    .link:hover {
+        color: var(--secondary);
+    }
+
+    .link-primary {
+        color: var(--primary);
+        font-weight: 500;
+        transition: color 0.2s;
+        font-family: 'Poppins', 'Jost', sans-serif;
+    }
+
+    .link-primary:hover {
+        color: var(--secondary);
+    }
+
+    .link-secondary {
+        color: var(--gray-dark);
+        transition: color 0.2s;
+        font-family: 'Poppins', 'Jost', sans-serif;
+    }
+
+    .link-secondary:hover {
+        color: var(--primary);
+    }
+
+    .link-muted {
+        color: var(--gray-light);
+        transition: color 0.2s;
+        font-family: 'Poppins', 'Jost', sans-serif;
+    }
+
+    .link-muted:hover {
+        color: var(--gray-dark);
+    }
+
+    .link-underline {
+        color: var(--primary);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        transition: color 0.2s;
+        font-family: 'Poppins', 'Jost', sans-serif;
+    }
+
+    .link-underline:hover {
+        color: var(--secondary);
+    }
+
+    .link-no-underline {
+        color: var(--primary);
+        text-decoration: none;
+        transition: color 0.2s;
+        font-family: 'Poppins', 'Jost', sans-serif;
+    }
+
+    .link-no-underline:hover {
+        color: var(--secondary);
+    }
+
+        /* Warning Button */
+        .btn-warning {
+        background: linear-gradient(to right, rgb(245, 158, 11) 0%, rgb(217, 119, 6) 100%);
+        color: var(--white);
+        border: 1px solid transparent;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        transition: all 0.2s;
+        }
+
+        .btn-warning:hover {
+        background: linear-gradient(to right, rgb(217, 119, 6) 0%, rgb(180, 83, 9) 100%);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-warning:focus {
+        outline: 2px solid rgb(245, 158, 11);
+        outline-offset: 2px;
+        }
+
+        .btn-danger {
+        background: linear-gradient(to right, rgb(239, 68, 68) 0%, rgb(220, 38, 38) 100%);
+        color: var(--white);
+        border: 1px solid transparent;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        transition: all 0.2s;
+        }
+
+        .btn-danger:hover {
+        background: linear-gradient(to right, rgb(220, 38, 38) 0%, rgb(185, 28, 28) 100%);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-danger:focus {
+        outline: 2px solid rgb(239, 68, 68);
+        outline-offset: 2px;
+        }
+
+        .btn-success {
+        background: linear-gradient(to right, rgb(34, 197, 94) 0%, rgb(22, 163, 74) 100%);
+        color: var(--white);
+        border: 1px solid transparent;
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+        transition: all 0.2s;
+        }
+
+        .btn-success:hover {
+        background: linear-gradient(to right, rgb(22, 163, 74) 0%, rgb(21, 128, 61) 100%);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-success:focus {
+        outline: 2px solid rgb(34, 197, 94);
+        outline-offset: 2px;
+        }
+
+        /* Toggle Switch Styles */
+        .toggle {
+        @apply relative inline-flex items-center cursor-pointer;
+        }
+
+        .toggle input {
+        @apply sr-only;
+        }
+
+        .toggle input + .toggle-track {
+        @apply relative w-11 h-6 rounded-full transition-all;
+        background-color: var(--gray);
+        }
+
+        .toggle input:focus + .toggle-track {
+        outline: 4px solid rgba(178, 148, 65, 0.2);
+        outline-offset: 0;
+        }
+
+        .toggle input:checked + .toggle-track {
+        background-color: var(--primary);
+        }
+
+        .toggle-track {
+        position: relative;
+        }
+
+        .toggle-track::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 20px;
+        height: 20px;
+        background: var(--white);
+        border: 1px solid var(--gray);
+        border-radius: 50%;
+        transition: all 0.2s;
+        }
+
+        .toggle input:checked + .toggle-track::after {
+        transform: translateX(100%);
+        border-color: var(--white);
+        }
+
+        /* Small Toggle */
+        .toggle-sm input + .toggle-track {
+        @apply w-9 h-5;
+        }
+
+        .toggle-sm .toggle-track::after {
+        width: 16px;
+        height: 16px;
+        }
+
+        .toggle-sm input:checked + .toggle-track::after {
+        transform: translateX(16px);
+        }
+
+        /* Large Toggle */
+        .toggle-lg input + .toggle-track {
+        @apply w-14 h-7;
+        }
+
+        .toggle-lg .toggle-track::after {
+        width: 24px;
+        height: 24px;
+        }
+
+        .toggle-lg input:checked + .toggle-track::after {
+        transform: translateX(28px);
+        }
+
+        /* Setting Item Component */
+        .setting-item {
+        @apply flex items-center justify-between py-3;
+        }
+
+        .setting-item-label {
+        @apply text-sm font-medium;
+        color: var(--foreground);
+        font-family: 'Poppins', 'Jost', sans-serif;
+        }
+
+        .setting-item-description {
+        @apply text-xs mt-1;
+        color: var(--gray-dark);
+        font-family: 'Poppins', 'Jost', sans-serif;
+        }
+
+        /* Rating Component */
+        .rating {
+        @apply flex items-center space-x-1;
+        }
+
+        .rating-star {
+        @apply w-5 h-5 cursor-pointer transition-colors;
+        }
+
+        .rating-star.filled {
+        color: rgb(245, 158, 11);
+        }
+
+        .rating-star.empty {
+        color: var(--gray);
+        }
+
+        .rating-star.empty:hover {
+        color: rgb(245, 158, 11);
+        }
+
+        /* Progress Bar Component */
+        .progress {
+        @apply w-full rounded-full;
+        background-color: var(--gray);
+        }
+
+        .progress-bar {
+        @apply rounded-full transition-all duration-300;
+        height: 0.5rem;
+        }
+
+        .progress-sm .progress-bar {
+        height: 0.25rem;
+        }
+
+        .progress-lg .progress-bar {
+        height: 0.75rem;
+        }
+
+        .progress-primary .progress-bar {
+        background-color: var(--primary);
+        }
+
+        .progress-success .progress-bar {
+        background-color: rgb(34, 197, 94);
+        }
+
+        .progress-warning .progress-bar {
+        background-color: rgb(245, 158, 11);
+        }
+
+        .progress-danger .progress-bar {
+        background-color: var(--destructive);
+        }
+
+        /* Status Indicator Component */
+        .status {
+        @apply inline-flex items-center px-2 py-1 rounded-md text-xs font-medium;
+        font-family: 'Poppins', 'Jost', sans-serif;
+        }
+
+        .status-online {
+        background-color: rgba(34, 197, 94, 0.1);
+        color: rgb(22, 163, 74);
+        }
+
+        .status-offline {
+        background-color: rgba(217, 217, 217, 0.2);
+        color: var(--gray-dark);
+        }
+
+        .status-away {
+        background-color: rgba(245, 158, 11, 0.1);
+        color: rgb(217, 119, 6);
+        }
+
+        .status-busy {
+        background-color: rgba(220, 38, 38, 0.1);
+        color: var(--destructive);
+        }
+
+        /* Tooltip Component */
+        .tooltip {
+        @apply relative inline-block cursor-help;
+        }
+
+        .tooltip-content {
+        @apply invisible absolute z-10 px-3 py-2 text-sm rounded-lg shadow-lg opacity-0 transition-opacity duration-300;
+        color: var(--white);
+        background-color: var(--black-light);
+        font-family: 'Poppins', 'Jost', sans-serif;
+        }
+
+        .tooltip:hover .tooltip-content {
+        @apply visible opacity-100;
+        }
+
+        .tooltip-top .tooltip-content {
+        @apply bottom-full left-1/2 transform -translate-x-1/2 mb-2;
+        }
+
+        .tooltip-bottom .tooltip-content {
+        @apply top-full left-1/2 transform -translate-x-1/2 mt-2;
+        }
+
+        .tooltip-left .tooltip-content {
+        @apply right-full top-1/2 transform -translate-y-1/2 mr-2;
+        }
+
+        .tooltip-right .tooltip-content {
+        @apply left-full top-1/2 transform -translate-y-1/2 ml-2;
+        }
+
+        /* Breadcrumb Components */
+        .breadcrumb {
+        @apply flex items-center flex-wrap gap-1;
+        }
+
+        .breadcrumb-item {
+        @apply flex items-center whitespace-nowrap;
+        }
+
+        .breadcrumb-link {
+        @apply transition-colors flex items-center text-sm;
+        color: var(--gray-dark);
+        font-family: 'Poppins', 'Jost', sans-serif;
+        }
+
+        .breadcrumb-link:hover {
+        color: var(--foreground);
+        }
+
+        .breadcrumb-current {
+        @apply font-medium flex items-center text-sm;
+        color: var(--foreground);
+        font-family: 'Poppins', 'Jost', sans-serif;
+        }
+
+        .breadcrumb-separator {
+        @apply mx-1 flex-shrink-0;
+        color: var(--gray-light);
+        }
+
+        /* Breadcrumb Variants */
+        .breadcrumb-pills {
+        @apply gap-2;
+        }
+
+        .breadcrumb-pills .breadcrumb-item {
+        @apply px-3 py-1.5 rounded-full transition-colors text-sm;
+        background-color: rgba(217, 217, 217, 0.2);
+        font-family: 'Poppins', 'Jost', sans-serif;
+        }
+
+        .breadcrumb-pills .breadcrumb-item:hover {
+        background-color: rgba(217, 217, 217, 0.3);
+        }
+
+        .breadcrumb-pills .breadcrumb-current {
+        @apply px-3 py-1.5 rounded-full;
+        background-color: rgba(178, 148, 65, 0.2);
+        color: var(--primary);
+        }
+
+        .breadcrumb-pills .breadcrumb-separator {
+        @apply hidden;
+        }
+
+        .breadcrumb-background {
+        @apply px-4 py-3 rounded-lg border;
+        background-color: rgba(217, 217, 217, 0.1);
+        border-color: var(--gray);
+        }
+
+        .breadcrumb-arrows .breadcrumb-separator::before {
+        content: '→';
+        @apply text-sm;
+        color: var(--gray-light);
+        }
+
+        .breadcrumb-dots .breadcrumb-separator::before {
+        content: '•';
+        @apply text-sm;
+        color: var(--gray-light);
+        }
+
+        .breadcrumb-minimal .breadcrumb-link {
+        @apply underline text-sm;
+        color: var(--primary);
+        font-family: 'Poppins', 'Jost', sans-serif;
+        }
+
+        .breadcrumb-minimal .breadcrumb-link:hover {
+        color: var(--secondary);
+        }
+
+        .breadcrumb-card {
+        @apply border rounded-lg shadow-sm p-4;
+        background-color: var(--white);
+        border-color: var(--gray);
+        }
+            
+
+        /* Text Truncation Utilities */
+        .truncate {
+            @apply whitespace-nowrap overflow-hidden text-ellipsis;
+        }
+        
+        .one-line { 
+            @apply whitespace-nowrap; 
+        }
+        
+        .two-lines {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            word-break: break-word;
+            line-height: 1.5;
+        }
+        
+        .three-lines {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            word-break: break-word;
+            line-height: 1.5;
+        }
+        
+        .four-lines {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            word-break: break-word;
+            line-height: 1.5;
+        }
+        
+        /* Truncate at Flex/Grid */
+        .flex-truncate-parent { 
+            @apply min-w-0; 
+        }
+        
+        .flex-truncate { 
+            @apply w-0 flex-1 truncate; 
+        }
+        
+        /* Truncate at Table/Cell */
+        .table-truncate { 
+            @apply block truncate; 
+        }
+        
+        /* Text Break Utilities */
+        .break-word {
+            word-break: break-word;
+            overflow-wrap: break-word;
+        }
+        
+        .break-all {
+            word-break: break-all;
+        }
+        
+        .no-break {
+            word-break: normal;
+            overflow-wrap: normal;
+        }
+        
+        /* Layout Utilities */
+        .flex-center {
+            @apply flex items-center justify-center;
+        }
+        
+        .flex-between {
+            @apply flex items-center justify-between;
+        }
+        
+        .flex-around {
+            @apply flex items-center justify-around;
+        }
+        
+        .flex-start {
+            @apply flex items-center justify-start;
+        }
+        
+        .flex-end {
+            @apply flex items-center justify-end;
+        }
+        
+        .flex-col-center {
+            @apply flex flex-col items-center justify-center;
+        }
+        
+        .flex-col-start {
+            @apply flex flex-col items-start justify-start;
+        }
+        
+        /* Spacing Utilities */
+        .space-y-0\.5 > * + * {
+            margin-top: 0.125rem;
+        }
+        
+        .space-y-1\.5 > * + * {
+            margin-top: 0.375rem;
+        }
+        
+        .space-y-2\.5 > * + * {
+            margin-top: 0.625rem;
+        }
+        
+        .space-y-3\.5 > * + * {
+            margin-top: 0.875rem;
+        }
+        
+        /* Size Utilities */
+        .w-fit {
+            width: fit-content;
+        }
+        
+        .h-fit {
+            height: fit-content;
+        }
+        
+        .size-4 {
+            @apply w-4 h-4;
+        }
+        
+        .size-5 {
+            @apply w-5 h-5;
+        }
+        
+        .size-6 {
+            @apply w-6 h-6;
+        }
+        
+        .size-8 {
+            @apply w-8 h-8;
+        }
+        
+        .size-10 {
+            @apply w-10 h-10;
+        }
+        
+        .size-12 {
+            @apply w-12 h-12;
+        }
+        
+            
+        /* Custom scrollbar for mobile menu */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: var(--gray);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: var(--gray-dark);
+            border-radius: 2px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: var(--primary);
+        }
+    }
+
+
+    </style>
+
+
+
+    <!-- Alpine.js CDN -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <!-- Header Component JS -->
+    <script src="js/header.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body class="min-h-screen bg-white">
+    <!-- Header -->
+    <header class="header-wrapper" data-name="Nav">
+
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="min-h-screen bg-gray-50">
+
+        <!-- Code Hero Section At Here -->
+
+        <!-- Demo Section -->
+        <div class="container mx-auto px-4 py-12">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold-900 mb-4">Component Demo</h1>
+                <p class="text-gray-600 text-lg">Showcase của tất cả các component và utility classes</p>
+            </div>
+
+            <!-- Buttons Demo -->
+            <section class="section-sm">
+                <h2 class="section-title">Buttons</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Button Variants -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Button Variants</h3>
+                            <p class="card-description">Different button styles</p>
+                        </div>
+                        <div class="card-content space-y-3">
+                            <button class="btn btn-primary w-full">Primary</button>
+                            <button class="btn btn-secondary w-full">Secondary</button>
+                            <button class="btn btn-outline w-full">Outline</button>
+                            <button class="btn btn-ghost w-full">Ghost</button>
+                            <button class="btn btn-success w-full">Success</button>
+                            <button class="btn btn-warning w-full">Warning</button>
+                            <button class="btn btn-danger w-full">Danger</button>
+                        </div>
+                    </div>
+
+                    <!-- Button Sizes -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Button Sizes</h3>
+                            <p class="card-description">Various button sizes</p>
+                        </div>
+                        <div class="card-content space-y-3">
+                            <button class="btn btn-primary btn-sm w-full">Small</button>
+                            <button class="btn btn-primary btn-md w-full">Medium</button>
+                            <button class="btn btn-primary btn-lg w-full">Large</button>
+                            <button class="btn btn-primary btn-xl w-full">Extra Large</button>
+                        </div>
+                    </div>
+
+                    <!-- Button with Icons -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">With Icons</h3>
+                            <p class="card-description">Buttons with icons</p>
+                        </div>
+                        <div class="card-content space-y-3">
+                            <button class="btn btn-primary w-full">
+                                <i data-lucide="heart" class="w-4 h-4 mr-2"></i>
+                                Like
+                            </button>
+                            <button class="btn btn-success w-full">
+                                <i data-lucide="download" class="w-4 h-4 mr-2"></i>
+                                Download
+                            </button>
+                            <button class="btn btn-warning w-full">
+                                <i data-lucide="alert-triangle" class="w-4 h-4 mr-2"></i>
+                                Warning
+                            </button>
+                            <button class="btn btn-danger w-full">
+                                <i data-lucide="trash-2" class="w-4 h-4 mr-2"></i>
+                                Delete
+                            </button>
+                            <button class="btn btn-outline w-full">
+                                <i data-lucide="share-2" class="w-4 h-4 mr-2"></i>
+                                Share
+                            </button>
+                            <button class="btn btn-ghost w-full">
+                                <i data-lucide="settings" class="w-4 h-4 mr-2"></i>
+                                Settings
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Button States -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Button States</h3>
+                            <p class="card-description">Different states</p>
+                        </div>
+                        <div class="card-content space-y-3">
+                            <button class="btn btn-primary w-full">Normal</button>
+                            <button class="btn btn-primary w-full" disabled>Disabled</button>
+                            <button class="btn btn-primary w-full">
+                                <div class="loading loading-sm mr-2"></div>
+                                Loading
+                            </button>
+                            <button class="btn btn-outline w-full">
+                                <i data-lucide="check" class="w-4 h-4 mr-2"></i>
+                                Success
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ghost Button Use Case Demo -->
+                <div class="mt-8">
+                    <h3 class="text-lg font-semibold mb-4">Ghost Button Use Cases</h3>
+                    <div class="card overflow-hidden">
+                        <div class="card-header">
+                            <h4 class="card-title text-base">When to use Ghost Buttons</h4>
+                            <p class="card-description">Ghost buttons work best on colored backgrounds</p>
+                        </div>
+                        <div class="card-content space-y-6">
+                            <!-- Gradient Background Example -->
+                            <div>
+                                <p class="text-sm font-medium-700 mb-3">On Gradient Backgrounds:</p>
+                                <div class="p-8 rounded-xl bg-gradient-primary">
+                                    <div class="text-center text-white space-y-4">
+                                        <h3 class="text-2xl font-bold">Join Our Newsletter</h3>
+                                        <p class="opacity-90">Stay updated with the latest news and updates</p>
+                                        <div class="flex flex-col sm:flex-row gap-3 justify-center items-center">
+                                            <button
+                                                class="btn btn-ghost text-white border-white/30 hover:bg-white/10 hover:border-white/50 hover:text-white">
+                                                <i data-lucide="mail" class="w-4 h-4 mr-2"></i>
+                                                Subscribe
+                                            </button>
+                                            <button
+                                                class="btn btn-ghost text-white border-white/30 hover:bg-white/10 hover:border-white/50 hover:text-white">
+                                                <i data-lucide="info" class="w-4 h-4 mr-2"></i>
+                                                Learn More
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Dark Background Example -->
+                            <div>
+                                <p class="text-sm font-medium-700 mb-3">On Dark Backgrounds:</p>
+                                <div class="bg-gray-900 p-8 rounded-xl">
+                                    <div class="text-center text-white space-y-4">
+                                        <h3 class="text-xl font-bold">Developer Tools</h3>
+                                        <p class="text-gray-300">Choose your development environment</p>
+                                        <div class="flex flex-wrap gap-3 justify-center">
+                                            <button
+                                                class="btn btn-ghost text-white border-gray-600 hover:bg-gray-800 hover:border-gray-500 hover:text-white">
+                                                <i data-lucide="terminal" class="w-4 h-4 mr-2"></i>
+                                                Terminal
+                                            </button>
+                                            <button
+                                                class="btn btn-ghost text-white border-gray-600 hover:bg-gray-800 hover:border-gray-500 hover:text-white">
+                                                <i data-lucide="code" class="w-4 h-4 mr-2"></i>
+                                                Code Editor
+                                            </button>
+                                            <button
+                                                class="btn btn-ghost text-white border-gray-600 hover:bg-gray-800 hover:border-gray-500 hover:text-white">
+                                                <i data-lucide="database" class="w-4 h-4 mr-2"></i>
+                                                Database
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Image Background Example -->
+                            <div>
+                                <p class="text-sm font-medium-700 mb-3">On Image/Pattern Backgrounds:</p>
+                                <div class="relative p-8 rounded-xl overflow-hidden bg-gradient-primary">
+                                    <!-- Pattern overlay -->
+                                    <div class="absolute inset-0 opacity-20">
+                                        <div class="w-full h-full"
+                                            style="background-image: url('data:image/svg+xml,<svg width=\" 60\"
+                                            height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\">
+                                            <g fill=\"none\" fill-rule=\"evenodd\">
+                                                <g fill=\"%23ffffff\" fill-opacity=\"0.3\">
+                                                    <circle cx=\"30\" cy=\"30\" r=\"4\" />
+                                                </g>
+                                            </g></svg>'); background-size: 30px 30px;">
+                                        </div>
+                                    </div>
+
+                                    <div class="relative text-center text-white space-y-4">
+                                        <h3 class="text-xl font-bold">Hero Section</h3>
+                                        <p class="text-white/90">Ghost buttons blend seamlessly with backgrounds</p>
+                                        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                                            <button
+                                                class="btn btn-ghost text-white border-white/40 hover:bg-white/15 hover:border-white/60 hover:text-white backdrop-blur-sm">
+                                                <i data-lucide="play" class="w-4 h-4 mr-2"></i>
+                                                Watch Demo
+                                            </button>
+                                            <button
+                                                class="btn btn-ghost text-white border-white/40 hover:bg-white/15 hover:border-white/60 hover:text-white backdrop-blur-sm">
+                                                <i data-lucide="download" class="w-4 h-4 mr-2"></i>
+                                                Download
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Comparison with other buttons -->
+                            <div>
+                                <p class="text-sm font-medium-700 mb-3">Comparison on White Background:</p>
+                                <div class="bg-white border-2 border-dashed border-gray-300 p-6 rounded-xl">
+                                    <div class="text-center space-y-4">
+                                        <p class="text-gray-600">Ghost buttons on white backgrounds have subtle borders
+                                        </p>
+                                        <div class="flex flex-wrap gap-3 justify-center">
+                                            <button class="btn btn-primary">Primary</button>
+                                            <button class="btn btn-outline">Outline</button>
+                                            <button class="btn btn-ghost">Ghost</button>
+                                            <button class="btn btn-secondary">Secondary</button>
+                                            <button class="btn btn-success">Success</button>
+                                            <button class="btn btn-warning">Warning</button>
+                                            <button class="btn btn-danger">Danger</button>
+                                        </div>
+                                        <p class="text-xs-500">Notice how Ghost button is more subtle and
+                                            elegant</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Best Practices -->
+                            <div class="p-4 rounded-lg bg-primary-light">
+                                <div class="flex items-start space-x-3">
+                                    <i data-lucide="lightbulb" class="w-5 h-5 mt-0.5 flex-shrink-0 text-primary"></i>
+                                    <div>
+                                        <h4 class="font-semibold mb-2 text-primary">Best
+                                            Practices for Ghost Buttons:
+                                        </h4>
+                                        <ul class="text-sm space-y-1-dark">
+                                            <li>• Use on colored, gradient, or image backgrounds for better visibility
+                                            </li>
+                                            <li>• Perfect for secondary actions that shouldn't compete with primary
+                                                buttons</li>
+                                            <li>• Add backdrop-blur-sm for better readability on busy backgrounds</li>
+                                            <li>• Ensure sufficient contrast between text/border and background</li>
+                                            <li>• Great for navigation, modals, and hero sections</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Icon Sizes & Examples Demo -->
+                <div class="mt-8 space-y-6">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-semibold">Icon Sizes & Examples</h3>
+                        <a href="https://lucide.dev/icons/" target="_blank" class="btn btn-outline btn-sm">
+                            <i data-lucide="external-link" class="w-4 h-4 mr-2"></i>
+                            View All Icons
+                        </a>
+                    </div>
+
+                    <!-- Icon Sizes -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title text-base">Icon Sizes</h4>
+                            <p class="card-description">Different icon sizes with Tailwind classes</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+                                <div class="flex flex-col items-center space-y-2 p-3 bg-gray-50 rounded-lg">
+                                    <i data-lucide="star" class="w-3 h-3 text-primary"></i>
+                                    <span class="text-xs font-mono">w-3 h-3</span>
+                                    <span class="text-xs-600">12px</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-2 p-3 bg-gray-50 rounded-lg">
+                                    <i data-lucide="heart" class="w-4 h-4 text-primary"></i>
+                                    <span class="text-xs font-mono">w-4 h-4</span>
+                                    <span class="text-xs-600">16px</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-2 p-3 bg-gray-50 rounded-lg">
+                                    <i data-lucide="shield-check" class="w-5 h-5 text-primary"></i>
+                                    <span class="text-xs font-mono">w-5 h-5</span>
+                                    <span class="text-xs-600">20px</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-2 p-3 bg-gray-50 rounded-lg">
+                                    <i data-lucide="zap" class="w-6 h-6 text-secondary"></i>
+                                    <span class="text-xs font-mono">w-6 h-6</span>
+                                    <span class="text-xs-600">24px</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-2 p-3 bg-gray-50 rounded-lg">
+                                    <i data-lucide="crown" class="w-8 h-8 text-primary"></i>
+                                    <span class="text-xs font-mono">w-8 h-8</span>
+                                    <span class="text-xs-600">32px</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Popular Icons -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title text-base">Popular Icons</h4>
+                            <p class="card-description">Commonly used Lucide icons in projects</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-12 gap-4">
+                                <div class="flex flex-col items-center space-y-2 p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+                                    title="Home">
+                                    <i data-lucide="home" class="w-5 h-5-600"></i>
+                                    <span class="text-xs">home</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-2 p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+                                    title="User">
+                                    <i data-lucide="user" class="w-5 h-5-600"></i>
+                                    <span class="text-xs">user</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-2 p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+                                    title="Search">
+                                    <i data-lucide="search" class="w-5 h-5-600"></i>
+                                    <span class="text-xs">search</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-2 p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+                                    title="Settings">
+                                    <i data-lucide="settings" class="w-5 h-5-600"></i>
+                                    <span class="text-xs">settings</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-2 p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+                                    title="Mail">
+                                    <i data-lucide="mail" class="w-5 h-5-600"></i>
+                                    <span class="text-xs">mail</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-2 p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+                                    title="Bell">
+                                    <i data-lucide="bell" class="w-5 h-5-600"></i>
+                                    <span class="text-xs">bell</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-2 p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+                                    title="Calendar">
+                                    <i data-lucide="calendar" class="w-5 h-5-600"></i>
+                                    <span class="text-xs">calendar</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-2 p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+                                    title="Download">
+                                    <i data-lucide="download" class="w-5 h-5-600"></i>
+                                    <span class="text-xs">download</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-2 p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+                                    title="Upload">
+                                    <i data-lucide="upload" class="w-5 h-5-600"></i>
+                                    <span class="text-xs">upload</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-2 p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+                                    title="Edit">
+                                    <i data-lucide="edit" class="w-5 h-5-600"></i>
+                                    <span class="text-xs">edit</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-2 p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+                                    title="Trash">
+                                    <i data-lucide="trash-2" class="w-5 h-5-600"></i>
+                                    <span class="text-xs">trash-2</span>
+                                </div>
+                                <div class="flex flex-col items-center space-y-2 p-2 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer"
+                                    title="Plus">
+                                    <i data-lucide="plus" class="w-5 h-5-600"></i>
+                                    <span class="text-xs">plus</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Icon Categories -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <!-- Interface Icons -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title text-sm">Interface</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="grid grid-cols-4 gap-3">
+                                    <div class="flex flex-col items-center space-y-1 p-2 hover:bg-gray-50 rounded transition-colors cursor-pointer"
+                                        title="Menu">
+                                        <i data-lucide="menu" class="w-4 h-4 text-primary"></i>
+                                        <span class="text-xs">menu</span>
+                                    </div>
+                                    <div class="flex flex-col items-center space-y-1 p-2 hover:bg-gray-50 rounded transition-colors cursor-pointer"
+                                        title="X">
+                                        <i data-lucide="x" class="w-4 h-4 text-red-600"></i>
+                                        <span class="text-xs">x</span>
+                                    </div>
+                                    <div class="flex flex-col items-center space-y-1 p-2 hover:bg-gray-50 rounded transition-colors cursor-pointer"
+                                        title="Check">
+                                        <i data-lucide="check" class="w-4 h-4 text-green-600"></i>
+                                        <span class="text-xs">check</span>
+                                    </div>
+                                    <div class="flex flex-col items-center space-y-1 p-2 hover:bg-gray-50 rounded transition-colors cursor-pointer"
+                                        title="Info">
+                                        <i data-lucide="info" class="w-4 h-4 text-primary"></i>
+                                        <span class="text-xs">info</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Communication Icons -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title text-sm">Communication</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="grid grid-cols-4 gap-3">
+                                    <div class="flex flex-col items-center space-y-1 p-2 hover:bg-gray-50 rounded transition-colors cursor-pointer"
+                                        title="Phone">
+                                        <i data-lucide="phone" class="w-4 h-4 text-green-600"></i>
+                                        <span class="text-xs">phone</span>
+                                    </div>
+                                    <div class="flex flex-col items-center space-y-1 p-2 hover:bg-gray-50 rounded transition-colors cursor-pointer"
+                                        title="Message Circle">
+                                        <i data-lucide="message-circle" class="w-4 h-4" class="text-primary"></i>
+                                        <span class="text-xs">message</span>
+                                    </div>
+                                    <div class="flex flex-col items-center space-y-1 p-2 hover:bg-gray-50 rounded transition-colors cursor-pointer"
+                                        title="Send">
+                                        <i data-lucide="send" class="w-4 h-4 text-secondary"></i>
+                                        <span class="text-xs">send</span>
+                                    </div>
+                                    <div class="flex flex-col items-center space-y-1 p-2 hover:bg-gray-50 rounded transition-colors cursor-pointer"
+                                        title="Share">
+                                        <i data-lucide="share-2" class="w-4 h-4 text-primary"></i>
+                                        <span class="text-xs">share-2</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Media Icons -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title text-sm">Media</h4>
+                            </div>
+                            <div class="card-content">
+                                <div class="grid grid-cols-4 gap-3">
+                                    <div class="flex flex-col items-center space-y-1 p-2 hover:bg-gray-50 rounded transition-colors cursor-pointer"
+                                        title="Play">
+                                        <i data-lucide="play" class="w-4 h-4 text-green-600"></i>
+                                        <span class="text-xs">play</span>
+                                    </div>
+                                    <div class="flex flex-col items-center space-y-1 p-2 hover:bg-gray-50 rounded transition-colors cursor-pointer"
+                                        title="Pause">
+                                        <i data-lucide="pause" class="w-4 h-4 text-primary"></i>
+                                        <span class="text-xs">pause</span>
+                                    </div>
+                                    <div class="flex flex-col items-center space-y-1 p-2 hover:bg-gray-50 rounded transition-colors cursor-pointer"
+                                        title="Image">
+                                        <i data-lucide="image" class="w-4 h-4 text-primary"></i>
+                                        <span class="text-xs">image</span>
+                                    </div>
+                                    <div class="flex flex-col items-center space-y-1 p-2 hover:bg-gray-50 rounded transition-colors cursor-pointer"
+                                        title="Video">
+                                        <i data-lucide="video" class="w-4 h-4 text-red-600"></i>
+                                        <span class="text-xs">video</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Usage Examples -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title text-base">Usage Examples</h4>
+                            <p class="card-description">How to use Lucide icons in your HTML</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="space-y-4">
+                                <div class="bg-gray-900 text-white p-4 rounded-lg font-mono text-sm overflow-x-auto">
+                                    <div class="text-success mb-2"><!-- Basic icon --></div>
+                                    <div>&lt;i data-lucide="heart" class="w-5 h-5"&gt;&lt;/i&gt;</div>
+
+                                    <div class="text-success mt-4 mb-2"><!-- Icon with color -->
+                                    </div>
+                                    <div>&lt;i data-lucide="star" class="w-5 h-5 text-primary"&gt;&lt;/i&gt;</div>
+
+                                    <div class="text-success mt-4 mb-2"><!-- Icon in button -->
+                                    </div>
+                                    <div>&lt;button class="btn btn-primary"&gt;</div>
+                                    <div class="ml-4">&lt;i data-lucide="download" class="w-4 h-4 mr-2"&gt;&lt;/i&gt;
+                                    </div>
+                                    <div class="ml-4">Download</div>
+                                    <div>&lt;/button&gt;</div>
+                                </div>
+
+                                <div class="flex items-center justify-between text-sm-600 p-3 rounded-lg"
+                                    class="bg-primary-light">
+                                    <div class="flex items-center space-x-2">
+                                        <i data-lucide="book-open" class="w-4 h-4 text-primary"></i>
+                                        <span>Need more icons? Browse 1000+ icons at Lucide.dev</span>
+                                    </div>
+                                    <a href="https://lucide.dev/icons/" target="_blank"
+                                        class="link-primary font-medium">
+                                        Browse All →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Text Truncation Demo -->
+            <section class="section-sm">
+                <h2 class="section-title">Text Truncation</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Single Line Truncation -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Single Line</h3>
+                        </div>
+                        <div class="card-content space-y-4">
+                            <div class="w-48">
+                                <p class="text-sm font-medium-700 mb-2">Truncate</p>
+                                <p class="truncate bg-gray-100 p-2 rounded">This is a very long text that will be
+                                    truncated with ellipsis when it exceeds the container width</p>
+                            </div>
+                            <div class="w-48">
+                                <p class="text-sm font-medium-700 mb-2">One Line (No Wrap)</p>
+                                <p class="one-line bg-gray-100 p-2 rounded">This text will not wrap to next line</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Multi-line Truncation -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Multi-line</h3>
+                            <p class="card-description">Line clamp truncation</p>
+                        </div>
+                        <div class="card-content space-y-4">
+                            <div>
+                                <p class="text-sm font-medium-700 mb-2">Two Lines</p>
+                                <div class="bg-gray-100 p-3 rounded-lg">
+                                    <p class="two-lines text-sm">This is a very long text that will be truncated after
+                                        exactly two lines. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+                                        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium-700 mb-2">Three Lines</p>
+                                <div class="bg-gray-100 p-3 rounded-lg">
+                                    <p class="three-lines text-sm">This is an even longer text that will be truncated
+                                        after exactly three lines. Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                                        ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                                        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                                        esse cillum dolore eu fugiat nulla pariatur.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium-700 mb-2">Four Lines</p>
+                                <div class="bg-gray-100 p-3 rounded-lg">
+                                    <p class="four-lines text-sm">This is the longest text that will be truncated after
+                                        exactly four lines. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed
+                                        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                                        sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Word Break -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Word Break</h3>
+                        </div>
+                        <div class="card-content space-y-4">
+                            <div class="w-48">
+                                <p class="text-sm font-medium-700 mb-2">Break Word</p>
+                                <p class="break-word bg-gray-100 p-2 rounded">
+                                    supercalifragilisticexpialidocious-verylongword</p>
+                            </div>
+                            <div class="w-48">
+                                <p class="text-sm font-medium-700 mb-2">Break All</p>
+                                <p class="break-all bg-gray-100 p-2 rounded">
+                                    thisverylongwordwillbreakanywherewithinthecontainer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cards Demo -->
+            <section class="section-sm">
+                <h2 class="section-title">Cards</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Basic Card -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Basic Card</h3>
+                            <p class="card-description">Card with header and footer</p>
+                        </div>
+                        <div class="card-content">
+                            <p class="text-gray-600">Card content goes here with proper spacing.</p>
+                        </div>
+                        <div class="card-footer space-x-3">
+                            <button class="btn btn-primary btn-sm">Action</button>
+                            <button class="btn btn-outline btn-sm">Cancel</button>
+                        </div>
+                    </div>
+
+                    <!-- Card No Header -->
+                    <div class="card">
+                        <div class="card-content-no-header">
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="w-12 h-12 rounded-lg flex-center" class="bg-primary-light">
+                                    <i data-lucide="bell" class="w-6 h-6 text-primary"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold-900">Notifications</h3>
+                                    <p class="text-sm-500">3 new messages</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 text-sm">Card without header but with proper padding.</p>
+                        </div>
+                    </div>
+
+                    <!-- Stats Card -->
+                    <div class="card text-white border-0" class="bg-gradient-primary">
+                        <div class="card-content-no-header text-center py-6">
+                            <div class="text-3xl font-bold mb-2">1,234</div>
+                            <div class="text-sm opacity-90 mb-3">Total Users</div>
+                            <div
+                                class="inline-flex items-center px-2 py-1 rounded-full bg-white/20 text-xs font-medium">
+                                <i data-lucide="trending-up" class="w-3 h-3 mr-1"></i>
+                                +12%
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Feature Card -->
+                    <div class="card hover:shadow-lg transition-shadow">
+                        <div class="card-content-no-header">
+                            <div class="w-12 h-12 rounded-lg flex-center mb-4" class="bg-primary-light">
+                                <i data-lucide="shield-check" class="w-6 h-6 text-primary"></i>
+                            </div>
+                            <h3 class="font-semibold-900 mb-2">Security</h3>
+                            <p class="text-gray-600 text-sm mb-4">Your data is protected with enterprise-grade security.
+                            </p>
+                            <button class="btn btn-outline btn-sm w-full">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card with Image -->
+                <div class="mt-6">
+                    <h3 class="text-lg font-semibold mb-4">Card with Image</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="card overflow-hidden">
+                            <div class="h-48 flex-center" class="bg-gradient-primary">
+                                <i data-lucide="image" class="w-12 h-12 text-white/80"></i>
+                            </div>
+                            <div class="card-header">
+                                <h3 class="card-title text-lg">Image Card</h3>
+                                <p class="card-description">Card with top image</p>
+                            </div>
+                            <div class="card-content">
+                                <p class="text-gray-600">This card includes an image at the top with content below.</p>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary btn-md w-full">View Details</button>
+                            </div>
+                        </div>
+
+                        <div class="card overflow-hidden">
+                            <div class="h-48 flex-center" class="bg-gradient-primary">
+                                <i data-lucide="play-circle" class="w-12 h-12 text-white/80"></i>
+                            </div>
+                            <div class="card-content-no-header">
+                                <h3 class="font-semibold-900 mb-2">Video Content</h3>
+                                <p class="text-gray-600 text-sm mb-4">Watch our latest tutorial video.</p>
+                                <div class="flex items-center justify-between">
+                                    <span class="badge badge-success">New</span>
+                                    <button class="btn btn-ghost btn-sm">
+                                        <i data-lucide="play" class="w-4 h-4 mr-1"></i>
+                                        Play
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card overflow-hidden">
+                            <div class="h-48 flex-center" class="bg-gradient-primary">
+                                <i data-lucide="star" class="w-12 h-12 text-white/80"></i>
+                            </div>
+                            <div class="card-content-no-header">
+                                <div class="flex items-center justify-between mb-2">
+                                    <h3 class="font-semibold-900">Premium Feature</h3>
+                                    <span class="badge badge-hot">Hot</span>
+                                </div>
+                                <p class="text-gray-600 text-sm mb-4">Unlock premium features with our subscription.</p>
+                                <button class="btn btn-primary btn-md w-full">Upgrade Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Badges Demo -->
+            <section class="section-sm">
+                <h2 class="section-title">Badges</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Standard Badges -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Standard Badges</h3>
+                            <p class="card-description">Basic badge variants</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="flex flex-wrap gap-3">
+                                <span class="badge badge-primary">Primary</span>
+                                <span class="badge badge-secondary">Secondary</span>
+                                <span class="badge badge-success">Success</span>
+                                <span class="badge badge-warning">Warning</span>
+                                <span class="badge badge-danger">Danger</span>
+                                <span class="badge badge-info">Info</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Special Badges -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Special Badges</h3>
+                            <p class="card-description">Gradient and status badges</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="flex flex-wrap gap-3">
+                                <span class="badge badge-hot">🔥 Hot</span>
+                                <span class="badge badge-new">✨ New</span>
+                                <span class="badge badge-trending">📈 Trending</span>
+                                <span class="badge badge-primary">
+                                    <i data-lucide="star" class="w-3 h-3 mr-1"></i>
+                                    Featured
+                                </span>
+                                <span class="badge badge-success">
+                                    <i data-lucide="check" class="w-3 h-3 mr-1"></i>
+                                    Verified
+                                </span>
+                                <span class="badge badge-warning">
+                                    <i data-lucide="clock" class="w-3 h-3 mr-1"></i>
+                                    Pending
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Alerts Demo -->
+            <section class="section-sm">
+                <h2 class="section-title">Alerts</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Standard Alerts -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold">Standard Alerts</h3>
+
+                        <div class="alert alert-info">
+                            <i data-lucide="info" class="w-5 h-5 mr-3 flex-shrink-0"></i>
+                            <div>
+                                <div class="font-medium">Information</div>
+                                <div class="text-sm opacity-90">This is an informational message.</div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-success">
+                            <i data-lucide="check-circle" class="w-5 h-5 mr-3 flex-shrink-0"></i>
+                            <div>
+                                <div class="font-medium">Success!</div>
+                                <div class="text-sm opacity-90">Your action was completed successfully.</div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <i data-lucide="alert-triangle" class="w-5 h-5 mr-3 flex-shrink-0"></i>
+                            <div>
+                                <div class="font-medium">Warning</div>
+                                <div class="text-sm opacity-90">Please check your input before proceeding.</div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-error">
+                            <i data-lucide="x-circle" class="w-5 h-5 mr-3 flex-shrink-0"></i>
+                            <div>
+                                <div class="font-medium">Error!</div>
+                                <div class="text-sm opacity-90">Something went wrong. Please try again.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Alert with Actions -->
+                    <div class="space-y-4">
+                        <h3 class="text-lg font-semibold">Alerts with Actions</h3>
+
+                        <div class="alert alert-info">
+                            <i data-lucide="download" class="w-5 h-5 mr-3 flex-shrink-0"></i>
+                            <div class="flex-1">
+                                <div class="font-medium">Update Available</div>
+                                <div class="text-sm opacity-90 mb-2">A new version is available for download.</div>
+                                <div class="flex space-x-2">
+                                    <button class="btn btn-primary btn-sm">Update Now</button>
+                                    <button class="btn btn-ghost btn-sm">Later</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-warning">
+                            <i data-lucide="shield-alert" class="w-5 h-5 mr-3 flex-shrink-0"></i>
+                            <div class="flex-1">
+                                <div class="font-medium">Security Notice</div>
+                                <div class="text-sm opacity-90 mb-2">Please verify your account to continue.</div>
+                                <button class="btn btn-warning btn-sm">Verify Account</button>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-light">
+                            <i data-lucide="bell" class="w-5 h-5 mr-3 flex-shrink-0"></i>
+                            <div class="flex-1">
+                                <div class="font-medium">Notification Settings</div>
+                                <div class="text-sm opacity-90 mb-2">Manage how you receive notifications.</div>
+                                <button class="btn btn-outline btn-sm">Settings</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Form Inputs Demo -->
+            <section class="section-sm">
+                <h2 class="section-title">Form Inputs</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Input Variants -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Input Variants</h3>
+                        </div>
+                        <div class="card-content space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium-700 mb-2">Normal Input</label>
+                                <input type="text" class="input w-full" placeholder="Enter text...">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium-700 mb-2">Large Input</label>
+                                <input type="text" class="input input-lg w-full" placeholder="Large input...">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium-700 mb-2">Small Input</label>
+                                <input type="text" class="input input-sm w-full" placeholder="Small input...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Input with Icons -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Input with Icons</h3>
+                        </div>
+                        <div class="card-content space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium-700 mb-2">Email</label>
+                                <div class="input-icon">
+                                    <input type="email" class="input w-full" placeholder="Enter email...">
+                                    <i data-lucide="mail" class="icon"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium-700 mb-2">Password</label>
+                                <div class="input-icon">
+                                    <input type="password" class="input w-full" placeholder="Enter password...">
+                                    <i data-lucide="lock" class="icon"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium-700 mb-2">Search</label>
+                                <div class="input-icon">
+                                    <input type="search" class="input w-full" placeholder="Search...">
+                                    <i data-lucide="search" class="icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Elements -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Form Elements</h3>
+                        </div>
+                        <div class="card-content space-y-4">
+                            <div>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="checkbox">
+                                    <span class="ml-2 text-sm">Normal Checkbox</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="checkbox-sm">
+                                    <span class="ml-2 text-sm">Small Checkbox</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="flex items-center">
+                                    <input type="checkbox" class="checkbox-lg">
+                                    <span class="ml-2 text-sm">Large Checkbox</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium-700 mb-2">Select</label>
+                                <select class="input w-full">
+                                    <option>Option 1</option>
+                                    <option>Option 2</option>
+                                    <option>Option 3</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Colors Demo -->
+            <section class="section-sm">
+                <h2 class="section-title">Colors</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Primary Colors -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Primary Colors</h3>
+                            <p class="card-description">Main brand colors</p>
+                        </div>
+                        <div class="card-content space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-lg bg-primary"></div>
+                                <span class="text-sm font-mono">Primary</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-lg bg-secondary"></div>
+                                <span class="text-sm font-mono">Secondary</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-lg bg-gray-dark"></div>
+                                <span class="text-sm font-mono">Gray Dark</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Status Colors -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Status Colors</h3>
+                            <p class="card-description">Semantic colors</p>
+                        </div>
+                        <div class="card-content space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-green-500 rounded-lg"></div>
+                                <span class="text-sm font-mono">Success</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-yellow-500 rounded-lg"></div>
+                                <span class="text-sm font-mono">Warning</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-red-500 rounded-lg"></div>
+                                <span class="text-sm font-mono">Error</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gradients -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Gradients</h3>
+                            <p class="card-description">Beautiful gradients</p>
+                        </div>
+                        <div class="card-content space-y-3">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-lg" class="bg-gradient-primary"></div>
+                                <span class="text-sm font-mono">Primary Gradient</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-lg" class="bg-secondary-gradient">
+                                </div>
+                                <span class="text-sm font-mono">Secondary Gradient</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 rounded-lg" class="bg-gray-gradient">
+                                </div>
+                                <span class="text-sm font-mono">Gray Gradient</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation Demo -->
+            <section class="section-sm">
+                <h2 class="section-title">Navigation</h2>
+                <div class="grid grid-cols-1">
+                    <!-- Breadcrumbs -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Breadcrumbs</h3>
+                            <p class="card-description">Navigation breadcrumbs</p>
+                        </div>
+                        <div class="card-content space-y-6">
+                            <!-- Classic with Icons -->
+                            <div>
+                                <h4 class="text-sm font-medium-700 mb-3">Classic with Icons</h4>
+                                <nav class="breadcrumb" aria-label="Breadcrumb">
+                                    <a href="#" class="breadcrumb-link">
+                                        <i data-lucide="home" class="w-4 h-4 mr-1"></i>
+                                        Home
+                                    </a>
+                                    <i data-lucide="chevron-right" class="breadcrumb-separator w-3 h-3"></i>
+                                    <a href="#" class="breadcrumb-link">Components</a>
+                                    <i data-lucide="chevron-right" class="breadcrumb-separator w-3 h-3"></i>
+                                    <span class="breadcrumb-current">Navigation</span>
+                                </nav>
+                            </div>
+
+                            <!-- Simple with Slashes -->
+                            <div>
+                                <h4 class="text-sm font-medium-700 mb-3">Simple with Slashes</h4>
+                                <nav class="breadcrumb" aria-label="Breadcrumb">
+                                    <a href="#" class="breadcrumb-link">Home</a>
+                                    <span class="breadcrumb-separator">/</span>
+                                    <a href="#" class="breadcrumb-link">Products</a>
+                                    <span class="breadcrumb-separator">/</span>
+                                    <span class="breadcrumb-current">Laptop</span>
+                                </nav>
+                            </div>
+
+
+                            <!-- Background Style -->
+                            <div>
+                                <h4 class="text-sm font-medium-700 mb-3">Background Style</h4>
+                                <nav class="breadcrumb breadcrumb-background" aria-label="Breadcrumb">
+                                    <a href="#" class="breadcrumb-link">
+                                        <i data-lucide="folder" class="w-4 h-4 mr-1"></i>
+                                        Projects
+                                    </a>
+                                    <i data-lucide="chevron-right" class="breadcrumb-separator w-3 h-3"></i>
+                                    <a href="#" class="breadcrumb-link">Website</a>
+                                    <i data-lucide="chevron-right" class="breadcrumb-separator w-3 h-3"></i>
+                                    <span class="breadcrumb-current">Frontend</span>
+                                </nav>
+                            </div>
+
+                            <!-- Arrow Style -->
+                            <div>
+                                <h4 class="text-sm font-medium-700 mb-3">Arrow Style</h4>
+                                <nav class="breadcrumb breadcrumb-arrows" aria-label="Breadcrumb">
+                                    <a href="#" class="breadcrumb-link">E-commerce</a>
+                                    <span class="breadcrumb-separator"></span>
+                                    <a href="#" class="breadcrumb-link">Categories</a>
+                                    <span class="breadcrumb-separator"></span>
+                                    <a href="#" class="breadcrumb-link">Electronics</a>
+                                    <span class="breadcrumb-separator"></span>
+                                    <span class="breadcrumb-current">Smartphones</span>
+                                </nav>
+                            </div>
+
+                            <!-- Dots Style -->
+                            <div>
+                                <h4 class="text-sm font-medium-700 mb-3">Dots Style</h4>
+                                <nav class="breadcrumb breadcrumb-dots" aria-label="Breadcrumb">
+                                    <a href="#" class="breadcrumb-link">Blog</a>
+                                    <span class="breadcrumb-separator"></span>
+                                    <a href="#" class="breadcrumb-link">Technology</a>
+                                    <span class="breadcrumb-separator"></span>
+                                    <span class="breadcrumb-current">Web Development</span>
+                                </nav>
+                            </div>
+
+                            <!-- Minimal Style -->
+                            <div>
+                                <h4 class="text-sm font-medium-700 mb-3">Minimal Style</h4>
+                                <nav class="breadcrumb breadcrumb-minimal" aria-label="Breadcrumb">
+                                    <a href="#" class="breadcrumb-link">Home</a>
+                                    <span class="breadcrumb-separator">></span>
+                                    <a href="#" class="breadcrumb-link">Documentation</a>
+                                    <span class="breadcrumb-separator">></span>
+                                    <span class="breadcrumb-current">Getting Started</span>
+                                </nav>
+                            </div>
+
+                            <!-- Card Style -->
+                            <div>
+                                <h4 class="text-sm font-medium-700 mb-3">Card Style</h4>
+                                <nav class="breadcrumb breadcrumb-card" aria-label="Breadcrumb">
+                                    <a href="#" class="breadcrumb-link">
+                                        <i data-lucide="building" class="w-4 h-4 mr-1"></i>
+                                        Company
+                                    </a>
+                                    <i data-lucide="chevron-right" class="breadcrumb-separator w-3 h-3"></i>
+                                    <a href="#" class="breadcrumb-link">Departments</a>
+                                    <i data-lucide="chevron-right" class="breadcrumb-separator w-3 h-3"></i>
+                                    <a href="#" class="breadcrumb-link">Engineering</a>
+                                    <i data-lucide="chevron-right" class="breadcrumb-separator w-3 h-3"></i>
+                                    <span class="breadcrumb-current">Frontend Team</span>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Advanced Breadcrumbs -->
+                    <div class="card mt-6">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Advanced Breadcrumbs</h3>
+                            <p class="card-description">Special breadcrumb variants</p>
+                        </div>
+                        <div class="card-content space-y-6">
+                            <!-- Breadcrumb with Dropdown -->
+                            <div>
+                                <h4 class="text-sm font-medium-700 mb-3">With Dropdown Menu</h4>
+                                <nav class="breadcrumb" aria-label="Breadcrumb">
+                                    <a href="#" class="breadcrumb-link">
+                                        <i data-lucide="home" class="w-4 h-4 mr-1"></i>
+                                        Home
+                                    </a>
+                                    <i data-lucide="chevron-right" class="breadcrumb-separator w-3 h-3"></i>
+                                    <div class="relative group">
+                                        <button class="breadcrumb-link">
+                                            Projects
+                                            <i data-lucide="chevron-down" class="w-3 h-3 ml-1"></i>
+                                        </button>
+                                        <div
+                                            class="absolute top-full left-0 mt-1 w-40 bg-white border rounded-lg shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-10">
+                                            <a href="#" class="block px-3 py-2 text-sm-700 hover:bg-gray-50">Web
+                                                App</a>
+                                            <a href="#" class="block px-3 py-2 text-sm-700 hover:bg-gray-50">Mobile
+                                                App</a>
+                                            <a href="#" class="block px-3 py-2 text-sm-700 hover:bg-gray-50">Desktop
+                                                App</a>
+                                        </div>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="breadcrumb-separator w-3 h-3"></i>
+                                    <span class="breadcrumb-current">Frontend</span>
+                                </nav>
+                            </div>
+
+                            <!-- Breadcrumb with Actions -->
+                            <div>
+                                <h4 class="text-sm font-medium-700 mb-3">With Action Buttons</h4>
+                                <div class="flex items-center justify-between gap-4">
+                                    <nav class="breadcrumb flex-1" aria-label="Breadcrumb">
+                                        <a href="#" class="breadcrumb-link">
+                                            <i data-lucide="folder" class="w-4 h-4 mr-1"></i>
+                                            Documents
+                                        </a>
+                                        <i data-lucide="chevron-right" class="breadcrumb-separator w-3 h-3"></i>
+                                        <a href="#" class="breadcrumb-link">Reports</a>
+                                        <i data-lucide="chevron-right" class="breadcrumb-separator w-3 h-3"></i>
+                                        <span class="breadcrumb-current">Report.pdf</span>
+                                    </nav>
+                                    <div class="flex items-center gap-1 flex-shrink-0">
+                                        <button class="btn btn-ghost btn-sm p-1.5">
+                                            <i data-lucide="share" class="w-4 h-4"></i>
+                                        </button>
+                                        <button class="btn btn-ghost btn-sm p-1.5">
+                                            <i data-lucide="download" class="w-4 h-4"></i>
+                                        </button>
+                                        <button class="btn btn-ghost btn-sm p-1.5">
+                                            <i data-lucide="more-horizontal" class="w-4 h-4"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Breadcrumb with Icons for Each Level -->
+                            <div>
+                                <h4 class="text-sm font-medium-700 mb-2">With Level Icons</h4>
+                                <nav class="breadcrumb" aria-label="Breadcrumb">
+                                    <div class="breadcrumb-item">
+                                        <a href="#" class="breadcrumb-link">
+                                            <i data-lucide="server" class="w-4 h-4 mr-1"></i>
+                                            Server
+                                        </a>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="breadcrumb-separator w-4 h-4"></i>
+                                    <div class="breadcrumb-item">
+                                        <a href="#" class="breadcrumb-link">
+                                            <i data-lucide="database" class="w-4 h-4 mr-1"></i>
+                                            Database
+                                        </a>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="breadcrumb-separator w-4 h-4"></i>
+                                    <div class="breadcrumb-item">
+                                        <a href="#" class="breadcrumb-link">
+                                            <i data-lucide="table" class="w-4 h-4 mr-1"></i>
+                                            Users
+                                        </a>
+                                    </div>
+                                    <i data-lucide="chevron-right" class="breadcrumb-separator w-4 h-4"></i>
+                                    <div class="breadcrumb-item">
+                                        <span class="breadcrumb-current">
+                                            <i data-lucide="user" class="w-4 h-4 mr-1"></i>
+                                            john.doe@email.com
+                                        </span>
+                                    </div>
+                                </nav>
+                            </div>
+
+
+                            <!-- Breadcrumb with Progress -->
+                            <div>
+                                <h4 class="text-sm font-medium-700 mb-2">With Progress Indicator</h4>
+                                <nav class="breadcrumb" aria-label="Breadcrumb">
+                                    <div class="flex items-center space-x-4">
+                                        <div class="flex items-center">
+                                            <div
+                                                class="w-8 h-8 text-white rounded-full flex items-center justify-center text-sm font-medium bg-primary">
+                                                1
+                                            </div>
+                                            <span class="ml-2 text-sm font-medium text-primary">Account</span>
+                                        </div>
+                                        <div class="w-12 h-1 rounded bg-primary">
+                                        </div>
+                                        <div class="flex items-center">
+                                            <div
+                                                class="w-8 h-8 text-white rounded-full flex items-center justify-center text-sm font-medium bg-primary">
+                                                2
+                                            </div>
+                                            <span class="ml-2 text-sm font-medium text-primary">Profile</span>
+                                        </div>
+                                        <div class="w-12 h-1 bg-gray-300 rounded"></div>
+                                        <div class="flex items-center">
+                                            <div
+                                                class="w-8 h-8 bg-gray-300-600 rounded-full flex items-center justify-center text-sm font-medium">
+                                                3
+                                            </div>
+                                            <span class="ml-2 text-sm-500">Preferences</span>
+                                        </div>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+
+            <!-- Progress Demo -->
+            <section class="section-sm">
+                <h2 class="section-title">Progress & Indicators</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Progress Bars -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Progress Bars</h3>
+                            <p class="card-description">Loading and progress indicators</p>
+                        </div>
+                        <div class="card-content space-y-4">
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span>HTML/CSS</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="progress progress-primary">
+                                    <div class="progress-bar" style="width: 90%"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span>JavaScript</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="progress progress-success">
+                                    <div class="progress-bar" style="width: 75%;"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span>React</span>
+                                    <span>60%</span>
+                                </div>
+                                <div class="progress progress-warning">
+                                    <div class="progress-bar" style="width: 60%;"></div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div class="flex justify-between text-sm mb-2">
+                                    <span>Vue.js</span>
+                                    <span>45%</span>
+                                </div>
+                                <div class="progress progress-danger">
+                                    <div class="progress-bar" style="width: 45%;"></div>
+                                </div>
+                            </div>
+
+                            <!-- Different Sizes -->
+                            <div class="pt-4 border-t border-gray-100">
+                                <h4 class="text-sm font-medium mb-3">Different Sizes</h4>
+
+                                <div class="space-y-3">
+                                    <div>
+                                        <div class="text-xs-600 mb-1">Small</div>
+                                        <div class="progress progress-sm progress-primary">
+                                            <div class="progress-bar" style="width: 80%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="text-xs-600 mb-1">Default</div>
+                                        <div class="progress progress-success">
+                                            <div class="progress-bar" style="width: 65%;"></div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <div class="text-xs-600 mb-1">Large</div>
+                                        <div class="progress progress-lg progress-warning">
+                                            <div class="progress-bar" style="width: 50%;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Status Indicators -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Status Indicators</h3>
+                            <p class="card-description">Various status indicators</p>
+                        </div>
+                        <div class="card-content space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span>Server Status</span>
+                                <span class="status status-online">
+                                    <i data-lucide="circle" class="w-2 h-2 mr-1 fill-current"></i>
+                                    Online
+                                </span>
+                            </div>
+
+                            <div class="flex items-center justify-between">
+                                <span>Database</span>
+                                <span class="status status-away">
+                                    <i data-lucide="circle" class="w-2 h-2 mr-1 fill-current"></i>
+                                    Warning
+                                </span>
+                            </div>
+
+                            <div class="flex items-center justify-between">
+                                <span>API Service</span>
+                                <span class="status status-busy">
+                                    <i data-lucide="circle" class="w-2 h-2 mr-1 fill-current"></i>
+                                    Offline
+                                </span>
+                            </div>
+
+                            <div class="flex items-center justify-between">
+                                <span>Background Jobs</span>
+                                <span class="status status-offline">
+                                    <i data-lucide="circle" class="w-2 h-2 mr-1 fill-current"></i>
+                                    Idle
+                                </span>
+                            </div>
+
+                            <!-- User Status Examples -->
+                            <div class="pt-4 border-t border-gray-100">
+                                <h4 class="text-sm font-medium mb-3">User Status</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-center space-x-3">
+                                        <img src="/placeholder.svg?height=32&width=32" alt="User"
+                                            class="w-8 h-8 rounded-full">
+                                        <div class="flex-1">
+                                            <div class="text-sm font-medium">John Doe</div>
+                                            <span class="status status-online">Online</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center space-x-3">
+                                        <img src="/placeholder.svg?height=32&width=32" alt="User"
+                                            class="w-8 h-8 rounded-full">
+                                        <div class="flex-1">
+                                            <div class="text-sm font-medium">Jane Smith</div>
+                                            <span class="status status-away">Away</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex items-center space-x-3">
+                                        <img src="/placeholder.svg?height=32&width=32" alt="User"
+                                            class="w-8 h-8 rounded-full">
+                                        <div class="flex-1">
+                                            <div class="text-sm font-medium">Mike Johnson</div>
+                                            <span class="status status-busy">Busy</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tooltips & Popovers Demo -->
+            <section class="section-sm">
+                <h2 class="section-title">Interactive Elements</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Tooltips -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Tooltips</h3>
+                            <p class="card-description">Hover for information</p>
+                        </div>
+                        <div class="card-content space-y-4">
+                            <div class="flex space-x-3">
+                                <button class="btn btn-primary" title="This is a primary button">
+                                    Primary
+                                </button>
+                                <button class="btn btn-outline" title="This is an outline button">
+                                    Outline
+                                </button>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <span>Hover the icon</span>
+                                <i data-lucide="info" class="w-4 h-4-400 cursor-help"
+                                    title="This is helpful information"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Toggle Switches -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Toggle Switches</h3>
+                            <p class="card-description">On/Off switches</p>
+                        </div>
+                        <div class="card-content space-y-4">
+                            <div class="setting-item">
+                                <div>
+                                    <div class="setting-item-label">Email Notifications</div>
+                                    <div class="setting-item-description">Receive email updates</div>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox" checked>
+                                    <div class="toggle-track"></div>
+                                </label>
+                            </div>
+
+                            <div class="setting-item">
+                                <div>
+                                    <div class="setting-item-label">Push Notifications</div>
+                                    <div class="setting-item-description">Browser push notifications</div>
+                                </div>
+                                <label class="toggle">
+                                    <input type="checkbox">
+                                    <div class="toggle-track"></div>
+                                </label>
+                            </div>
+
+                            <div class="setting-item">
+                                <div>
+                                    <div class="setting-item-label">Dark Mode</div>
+                                    <div class="setting-item-description">Toggle dark theme</div>
+                                </div>
+                                <label class="toggle toggle-sm">
+                                    <input type="checkbox">
+                                    <div class="toggle-track"></div>
+                                </label>
+                            </div>
+
+                            <div class="setting-item">
+                                <div>
+                                    <div class="setting-item-label">Auto Save</div>
+                                    <div class="setting-item-description">Save changes automatically</div>
+                                </div>
+                                <label class="toggle toggle-lg">
+                                    <input type="checkbox" checked>
+                                    <div class="toggle-track"></div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Rating -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title text-lg">Rating</h3>
+                            <p class="card-description">Star ratings</p>
+                        </div>
+                        <div class="card-content space-y-4">
+                            <div>
+                                <div class="rating mb-2">
+                                    <i data-lucide="star" class="rating-star filled fill-yellow-400"></i>
+                                    <i data-lucide="star" class="rating-star filled fill-yellow-400"></i>
+                                    <i data-lucide="star" class="rating-star filled fill-yellow-400"></i>
+                                    <i data-lucide="star" class="rating-star filled fill-yellow-400"></i>
+                                    <i data-lucide="star" class="rating-star empty"></i>
+                                </div>
+                                <span class="text-sm-600">4.0 out of 5</span>
+                            </div>
+
+                            <div>
+                                <div class="rating mb-2">
+                                    <i data-lucide="star" class="rating-star filled fill-yellow-400"></i>
+                                    <i data-lucide="star" class="rating-star filled fill-yellow-400"></i>
+                                    <i data-lucide="star" class="rating-star filled fill-yellow-400"></i>
+                                    <i data-lucide="star" class="rating-star empty"></i>
+                                    <i data-lucide="star" class="rating-star empty"></i>
+                                </div>
+                                <span class="text-sm-600">3.0 out of 5</span>
+                            </div>
+
+                            <div>
+                                <div class="rating mb-2">
+                                    <i data-lucide="star" class="rating-star filled fill-yellow-400"></i>
+                                    <i data-lucide="star" class="rating-star filled fill-yellow-400"></i>
+                                    <i data-lucide="star" class="rating-star filled fill-yellow-400"></i>
+                                    <i data-lucide="star" class="rating-star filled fill-yellow-400"></i>
+                                    <i data-lucide="star" class="rating-star filled fill-yellow-400"></i>
+                                </div>
+                                <span class="text-sm-600">Perfect rating!</span>
+                            </div>
+
+                            <div>
+                                <div class="flex items-center space-x-1 mb-2">
+                                    <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                                    <i data-lucide="star" class="w-4 h-4 fill-yellow-400 text-yellow-400"></i>
+                                </div>
+                                <span class="text-sm-600">Perfect rating</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Initialize Lucide Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
