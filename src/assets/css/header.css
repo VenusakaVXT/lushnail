@@ -75,7 +75,7 @@
     }
 
     .header-topbar-text {
-        @apply text-[#141414] text-[13px] sm:text-[14px] leading-snug flex-1;
+        @apply text-[#141414] text-[13px] sm:text-[14px] leading-snug flex-1 uppercase;
     }
 
     .header-topbar-link {
