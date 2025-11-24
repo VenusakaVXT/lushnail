@@ -2,9 +2,11 @@
    GLOBALS.CSS - CSS Variables & Component Styles
    ======================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700&display=swap');
+
 /* ========================================================================
-   @LAYER BASE - CSS Variables & Base Styles
-   ======================================================================== */
+      @LAYER BASE - CSS Variables & Base Styles
+      ======================================================================== */
 @layer base {
 
     /* CSS Variables */
@@ -18,15 +20,15 @@
         --popover-foreground: theme('colors.gray.900');
 
         /* Primary Colors */
-        --primary: #ddb657;
+        --primary: #b29441;
         --primary-foreground: theme('colors.white');
 
         /* Title Colors */
-        --title: theme('colors.amber.500');
+        --title: #b29441;
         --title-foreground: theme('colors.white');
 
         /* Secondary Colors */
-        --secondary: #d4a574;
+        --secondary: #bba8e0;
         --secondary-foreground: theme('colors.gray.900');
 
         /* Muted Colors */
@@ -34,8 +36,15 @@
         --muted-foreground: theme('colors.gray.500');
 
         /* Accent Colors */
-        --accent: #ae873e;
+        --accent: #b29441;
         --accent-foreground: theme('colors.gray.900');
+
+        /* Black Colors */
+        --black: #000000;
+        --black-90: #121212;
+
+        /* Gray Colors */
+        --gray: #c0c0c0;
 
         /* Status Colors */
         --destructive: theme('colors.red.500');
@@ -149,12 +158,76 @@
     }
 
     /* @font-face {
-        font-family: 'Avenir';
-        src: url('./fonts/Avenir/avenir-lt-w01_85-heavy1475544.woff2') format('woff2');
-        font-weight: 800;
+           font-family: 'Avenir';
+           src: url('./fonts/Avenir/avenir-lt-w01_85-heavy1475544.woff2') format('woff2');
+           font-weight: 800;
+           font-style: normal;
+           font-display: swap;
+       } */
+
+    @font-face {
+        font-family: 'Playfair Display';
+        src: url('./fonts/PlayfairDisplay/PlayfairDisplay-Regular.ttf') format('truetype');
+        font-weight: 400;
         font-style: normal;
         font-display: swap;
-    } */
+    }
+
+    @font-face {
+        font-family: 'Playfair Display';
+        src: url('./fonts/PlayfairDisplay/PlayfairDisplay-Medium.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Playfair Display';
+        src: url('./fonts/PlayfairDisplay/PlayfairDisplay-SemiBold.ttf') format('truetype');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Playfair Display';
+        src: url('./fonts/PlayfairDisplay/PlayfairDisplay-Bold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Poppins';
+        src: url('./fonts/Poppins/Poppins-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Poppins';
+        src: url('./fonts/Poppins/Poppins-Medium.ttf') format('truetype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Poppins';
+        src: url('./fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Poppins';
+        src: url('./fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
 
     html {
         scroll-behavior: smooth;
@@ -214,27 +287,27 @@
 }
 
 /* ========================================================================
-   @LAYER COMPONENTS - Reusable Component Styles
-   ======================================================================== */
+      @LAYER COMPONENTS - Reusable Component Styles
+      ======================================================================== */
 @layer components {
     .container {
-        @apply mx-auto px-4 sm:max-w-[640px] md:max-w-[768px] md:px-6 lg:max-w-[1240px] lg:px-8 xl:max-w-[1280px] 2xl:max-w-[1400px] 2xl:px-4;
+        @apply mx-auto px-4 sm:max-w-[640px] md:max-w-[768px] md:px-6 lg:max-w-[1128px] lg:px-8 xl:max-w-[1128px] 2xl:max-w-[1128px] 2xl:px-4;
     }
 
 
     /* ========================================================================
-        Common Section Styles
-    ======================================================================== */
+           Common Section Styles
+       ======================================================================== */
     .section__button {
-        @apply inline-flex items-center gap-2 bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 text-[14px] sm:text-[15px] ;
+        @apply inline-flex items-center gap-2 bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 text-[14px] sm:text-[15px];
     }
 
     .title-section {
-        @apply text-primary text-[#a5834a]  leading-tight text-2xl sm:text-4xl lg:text-5xl relative;
+        @apply text-primary text-[#a5834a] leading-tight text-2xl sm:text-4xl lg:text-5xl relative;
     }
 
     .title-section-dark {
-        @apply text-[#bbaa8e]  leading-tight text-2xl sm:text-4xl lg:text-5xl relative;
+        @apply text-[#bbaa8e] leading-tight text-2xl sm:text-4xl lg:text-5xl relative;
     }
 
     /* ========================================================================
@@ -482,8 +555,8 @@
     }
 
     /* .product-card__button {
-        @apply w-full bg-[#090707] text-white py-2 px-4 rounded-lg text-[13px] hover:bg-[#1a1816]  transition-all duration-300;
-    } */
+           @apply w-full bg-[#090707] text-white py-2 px-4 rounded-lg text-[13px] hover:bg-[#1a1816]  transition-all duration-300;
+       } */
 
 
     /* ========================================================================
@@ -530,8 +603,8 @@
     }
 
     /* 
-        Nếu muốn dạng scroll ngang (nội dung tràn sẽ cuộn theo chiều ngang), dùng như sau: 
-    */
+           Nếu muốn dạng scroll ngang (nội dung tràn sẽ cuộn theo chiều ngang), dùng như sau: 
+       */
     .course-card__tags {
         @apply h-[56px] gap-2 flex flex-wrap;
     }
@@ -553,13 +626,13 @@
     }
 
     /* .course-card__button {
-        @apply w-full bg-gradient-to-r from-accent to-[#c9a961] border-transparent text-white hover:from-[#c9a961] hover:to-accent py-3.5 rounded-full transition-all duration-300 text-[15px] shadow-[0_4px_20px_rgba(174,135,62,0.4)] hover:shadow-[0_6px_30px_rgba(174,135,62,0.6)] hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 relative overflow-hidden;
-    }
-
-    .course-card__button::before {
-        content: '';
-        @apply absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] transition-transform duration-700;
-    } */
+           @apply w-full bg-gradient-to-r from-accent to-[#c9a961] border-transparent text-white hover:from-[#c9a961] hover:to-accent py-3.5 rounded-full transition-all duration-300 text-[15px] shadow-[0_4px_20px_rgba(174,135,62,0.4)] hover:shadow-[0_6px_30px_rgba(174,135,62,0.6)] hover:scale-[1.02] active:scale-[0.98] flex items-center justify-center gap-2 relative overflow-hidden;
+       }
+   
+       .course-card__button::before {
+           content: '';
+           @apply absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] transition-transform duration-700;
+       } */
 
 
     /* ========================================================================
@@ -660,11 +733,12 @@
     }
 
     /* ========================================================================
-       SELECT STYLES: Các thuộc tính cho Select
-       ======================================================================== */
+          SELECT STYLES: Các thuộc tính cho Select
+          ======================================================================== */
     /* Option đã được chọn */
     select option:checked,
     select option[selected]
+
     /* Option khi hover (chưa được chọn) */
     select option:hover,
     select option:focus,
