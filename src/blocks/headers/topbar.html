@@ -1,9 +1,48 @@
 <!-- Topbar Banner Notification -->
 <div class="header-topbar">
-  <p class="header-topbar-text">
-    Tìm hiểu về chương trình đào tạo của Lush Nail tại đây, nhận ưu đãi lên đến 50%
-  </p>
-  <button class="btn btn-primary">
-    Tìm hiểu thêm
-  </button>
+  <div class="container flex justify-between items-center">
+    <div class="header-topbar-text">
+      Learn about Lush Nail's training program <a href="#" class="header-topbar-link">here</a> and get up to 50% off
+    </div>
+    <div class="header-topbar-lang relative">
+      <button id="language-toggle-topbar" class="header-topbar-language-button" aria-label="Change Language">
+        <i data-lucide="languages" class="header-topbar-language-icon"></i>
+        <span class="header-topbar-language-text">Language</span>
+        <i data-lucide="chevron-down" class="header-topbar-language-chevron"></i>
+      </button>
+      <div id="language-dropdown-topbar"
+        class="absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[150px] z-[9999] hidden">
+        <button
+          class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2"
+          data-lang="vi">
+          <span class="text-sm">🇻🇳</span>
+          <span class="text-sm">Tiếng Việt</span>
+        </button>
+        <button
+          class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2"
+          data-lang="en">
+          <span class="text-sm">🇺🇸</span>
+          <span class="text-sm">English</span>
+        </button>
+        <button
+          class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2"
+          data-lang="ja">
+          <span class="text-sm">🇯🇵</span>
+          <span class="text-sm">日本語</span>
+        </button>
+        <button
+          class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2"
+          data-lang="ko">
+          <span class="text-sm">🇰🇷</span>
+          <span class="text-sm">한국어</span>
+        </button>
+        <button
+          class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2"
+          data-lang="zh">
+          <span class="text-sm">🇨🇳</span>
+          <span class="text-sm">中文</span>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>

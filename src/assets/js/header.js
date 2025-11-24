@@ -313,5 +313,72 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    // Language Switcher Logic for Topbar
+    const languageToggleTopbar = document.getElementById("language-toggle-topbar");
+    const languageDropdownTopbar = document.getElementById("language-dropdown-topbar");
+    const languageOptionsTopbar = languageDropdownTopbar ? languageDropdownTopbar.querySelectorAll(".language-option") : [];
+    const languageContainerTopbar = languageToggleTopbar?.closest('.relative');
+
+    if (languageToggleTopbar && languageDropdownTopbar) {
+        // Show dropdown on hover
+        if (languageContainerTopbar) {
+            let hoverTimeoutTopbar;
+            
+            const showDropdownTopbar = () => {
+                clearTimeout(hoverTimeoutTopbar);
+                languageDropdownTopbar.style.display = "block";
+                languageDropdownTopbar.classList.remove("hidden");
+            };
+
+            const hideDropdownTopbar = () => {
+                hoverTimeoutTopbar = setTimeout(() => {
+                    languageDropdownTopbar.style.display = "none";
+                    languageDropdownTopbar.classList.add("hidden");
+                }, 100);
+            };
+
+            languageContainerTopbar.addEventListener("mouseenter", showDropdownTopbar);
+            languageContainerTopbar.addEventListener("mouseleave", hideDropdownTopbar);
+            
+            // Keep dropdown open when hovering over it
+            languageDropdownTopbar.addEventListener("mouseenter", showDropdownTopbar);
+            languageDropdownTopbar.addEventListener("mouseleave", hideDropdownTopbar);
+        }
+
+        // Handle language selection for topbar
+        languageOptionsTopbar.forEach(option => {
+            option.addEventListener("click", (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const selectedLang = option.getAttribute("data-lang");
+                
+                if (selectedLang) {
+                    localStorage.setItem("language", selectedLang);
+                    
+                    // Update active state
+                    languageOptionsTopbar.forEach(opt => {
+                        opt.classList.remove("bg-[#FFF9F2]");
+                    });
+                    option.classList.add("bg-[#FFF9F2]");
+                    
+                    // Close dropdown
+                    languageDropdownTopbar.style.display = "none";
+                    languageDropdownTopbar.classList.add("hidden");
+                    
+                    // Reload page to apply language changes
+                    window.location.reload();
+                }
+            });
+        });
+
+        // Highlight current language on load for topbar
+        const currentLangTopbar = localStorage.getItem("language") || "vi";
+        languageOptionsTopbar.forEach(option => {
+            if (option.getAttribute("data-lang") === currentLangTopbar) {
+                option.classList.add("bg-[#FFF9F2]");
+            }
+        });
+    }
 });
 

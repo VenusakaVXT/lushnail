@@ -1,7 +1,10 @@
+languages
+chevron-down
 shopping-cart
 user
-languages
+search
 log-out
+shopping-bag
 menu
 x
 facebook
@@ -11,7 +14,6 @@ home
 package
 sparkles
 graduation-cap
-shopping-bag
 scissors
 message-circle
 book-open
@@ -39,7 +41,6 @@ arrow-right
 flask-conical
 check-circle
 user-check
-chevron-down
 truck
 x-circle
 eye

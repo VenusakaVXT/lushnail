@@ -15,52 +15,27 @@
             </p>
         </div>
 
-        <!-- Content with Scroll -->
+        <!-- Content with View More -->
         <div class="max-w-[900px] mx-auto">
             <div class="course-content-wrapper bg-white rounded-[24px] p-4 sm:p-10 lg:p-12 border border-[#f0f0f0] scroll-slide-up relative" style="animation-delay: 0.1s;">
-                <!-- Custom Scrollbar Styles -->
-                <style>
-                    .course-content-scroll {
-                        max-height: 400px;
-                        overflow-y: auto;
-                        scrollbar-width: thin;
-                        scrollbar-color: #ae873e transparent;
-                    }
-                    /* Phần tổng của thanh cuộn */
-                    .course-content-scroll::-webkit-scrollbar {
-                        width: 8px;  /* độ rộng thanh cuộn dọc */
-                        height: 8px; /* độ cao thanh cuộn ngang (nếu có) */
-                    }
-                    /* Đường nền phía sau */
-                    .course-content-scroll::-webkit-scrollbar-track {
-                        background: transparent;
-                    }
-                    /* "Thanh trượt" mà bạn kéo */
-                    .course-content-scroll::-webkit-scrollbar-thumb {
-                        background: #ae873e;
-                        border-radius: 10px;
-                    }
-                    /* Khi hover vào thanh trượt */
-                    .course-content-scroll::-webkit-scrollbar-thumb:hover {
-                        background: #8b6b2f;
-                    }
-                    /* Ẩn scrollbar buttons (mũi tên) */
-                    .course-content-scroll::-webkit-scrollbar,
-                    .course-content-scroll::-webkit-scrollbar-button {
-                        display: none !important;
-                        width: 0 !important;
-                        height: 0 !important;
-                    }
-                    .course-content-scroll::-webkit-scrollbar-button:start:decrement,
-                    .course-content-scroll::-webkit-scrollbar-button:end:increment {
-                        display: none !important;
-                        width: 0 !important;
-                        height: 0 !important;
-                    }
-                </style>
-                <!-- Content - Scrollable -->
-                <div class="course-content-scroll pr-2">
-                        <div class="text-[#333] text-[15px] sm:text-[16px] leading-[26px] sm:leading-[28px] space-y-4">
+                <!-- Content - Short Version (Visible by default) -->
+                <div class="course-content-short">
+                    <div class="text-[#333] text-[15px] sm:text-[16px] leading-[26px] sm:leading-[28px] space-y-4">
+                        <h3 class="text-[#333] text-[15px] sm:text-[16px] leading-[26px] sm:leading-[28px] font-bold">
+                            Khóa học Nail Định Cư Mỹ
+                        </h3>
+                        <p>
+                            Khóa học Nail Định Cư Mỹ được thiết kế với phương pháp giảng dạy hiện đại, kết hợp giữa lý thuyết và thực hành thực tế. Chương trình học được xây dựng dựa trên tiêu chuẩn quốc tế và phù hợp với thị trường làm nail tại Mỹ.
+                        </p>
+                        <p>
+                            Với mô hình học 1-1 kèm sát, mỗi học viên sẽ được giáo viên theo dõi và hướng dẫn chi tiết từng bước. Bạn sẽ được thực hành trực tiếp trên mẫu thật và có cơ hội làm việc với khách hàng thật trong quá trình học.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Content - Full Version (Hidden by default) -->
+                <div class="course-content-full hidden">
+                    <div class="text-[#333] text-[15px] sm:text-[16px] leading-[26px] sm:leading-[28px] space-y-4">
                         <h3 class="text-[#333] text-[15px] sm:text-[16px] leading-[26px] sm:leading-[28px] font-bold">
                             Khóa học Nail Định Cư Mỹ
                         </h3>
@@ -89,6 +64,18 @@
                             Khóa học phù hợp cho mọi đối tượng, không yêu cầu kinh nghiệm trước đó. Chỉ cần bạn có đam mê, quyết tâm học hỏi và cam kết tham gia đầy đủ các buổi học. Độ tuổi từ 16 trở lên đều có thể tham gia.
                         </p>
                     </div>
+                </div>
+
+                <!-- View More Button -->
+                <div class="mt-6 text-center">
+                    <button 
+                        class="course-read-more-btn flex items-center justify-center gap-2 mx-auto text-[#ae873e] hover:text-[#8b6b2f] transition-colors font-medium text-[15px] sm:text-[16px]"
+                        aria-expanded="false"
+                    >
+                        <span class="read-more-text">Xem thêm</span>
+                        <span class="read-less-text hidden">Thu gọn</span>
+                        <i data-lucide="chevron-down" class="course-arrow-icon w-5 h-5 transition-transform duration-300"></i>
+                    </button>
                 </div>
             </div>
         </div>
