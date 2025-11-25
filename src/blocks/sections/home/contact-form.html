@@ -1,39 +1,94 @@
-<section class="contact-form-section relative w-full bg-black py-16 md:py-24 lg:py-32 overflow-hidden">
+<section class="contact-form-section relative w-full bg-black py-16 md:py-24 lg:py-32 overflow-hidden noise-overlay-2">
+  <!-- Main Container -->
+  <div class="content-stretch relative z-10 container">
+    <!-- Section Title -->
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="title-section-dark">
+        CHÚNG TÔI CAM KẾT
+      </h2>
+    </div>
+
+    <!-- Commitment Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      <!-- Card 1: Service Quality -->
+      <div class="bg-[#1a1a1a] rounded-lg p-6 flex flex-col items-center text-center">
+        <div class="mb-4">
+          <img src="/assets/images/ck3aa67e5df5fd52434d2408eb7b03138433265263f.png" alt="Service Quality"
+            class="w-12 h-12 object-contain">
+        </div>
+        <h3 class="text-base  text-[#b29441] mb-3">
+          CHẤT LƯỢNG PHỤC VỤ
+        </h3>
+        <p class="text-sm md:text-base text-gray-300 leading-relaxed">
+          Phục vụ tận tâm, chuyên nghiệp trong từng chi tiết
+        </p>
+      </div>
+
+      <!-- Card 2: Price -->
+      <div class="bg-[#1a1a1a] rounded-lg p-6 flex flex-col items-center text-center">
+        <div class="mb-4">
+          <img src="/assets/images/ck43f319be65e04d929a138b396a2f1e575a4423a88.png" alt="Price"
+            class="w-12 h-12 object-contain">
+        </div>
+        <h3 class="text-base  text-[#b29441] mb-3">
+          GIÁ THÀNH
+        </h3>
+        <p class="text-sm md:text-base text-gray-300 leading-relaxed">
+          Giá hợp lý, minh bạch và phù hợp mọi nhu cầu
+        </p>
+      </div>
+
+      <!-- Card 3: Quality Salon -->
+      <div class="bg-[#1a1a1a] rounded-lg p-6 flex flex-col items-center text-center">
+        <div class="mb-4">
+          <img src="/assets/images/ck13942cf51ff3bcd455d17b2da8e9ce79a0984664f.png" alt="Quality Salon"
+            class="w-12 h-12 object-contain">
+        </div>
+        <h3 class="text-base  text-[#b29441] mb-3">
+          SALON CHẤT LƯỢNG
+        </h3>
+        <p class="text-sm md:text-base text-gray-300 leading-relaxed">
+          Không gian đạt chuẩn, sạch đẹp và hiện đại
+        </p>
+      </div>
+
+      <!-- Card 4: Consultation Support -->
+      <div class="bg-[#1a1a1a] rounded-lg p-6 flex flex-col items-center text-center">
+        <div class="mb-4">
+          <img src="/assets/images/ck25532f53f5ef245c55faf21f09ca3884dafa694d4.png" alt="Consultation Support"
+            class="w-12 h-12 object-contain">
+        </div>
+        <h3 class="text-base  text-[#b29441] mb-3">
+          HỖ TRỢ TƯ VẤN
+        </h3>
+        <p class="text-sm md:text-base text-gray-300 leading-relaxed">
+          Tư vấn rõ ràng, nhiệt tình và chu đáo
+        </p>
+      </div>
+    </div>
+  </div>
   <!-- Background Glitter Effects -->
-  <img
-    src="../../../assets/images/glitter1.png"
-    alt=""
-    class="glitter-1 hidden lg:block absolute right-0 top-1/4 w-[600px] h-auto object-cover mix-blend-screen opacity-60 pointer-events-none"
-  />
-  <img
-    src="../../../assets/images/glitter2.png"
-    alt=""
-    class="glitter-2 hidden lg:block absolute left-0 bottom-0 w-[400px] h-auto object-cover mix-blend-color-dodge opacity-50 pointer-events-none"
-  />
+
 
   <!-- Main Container -->
   <div class="content-stretch relative z-10">
+
+
     <div class="flex flex-col lg:flex-row items-center lg:items-start gap-8 lg:gap-12 xl:gap-16">
       <!-- Left Side - Image -->
-      <div class="w-full lg:w-1/2 flex justify-center lg:justify-start order-2 lg:order-1">
-        <div class="relative w-full max-w-[470px] h-[500px] md:h-[600px] lg:h-[700px]">
-          <img
-            src="../../../assets/images/shutterstock.jpg"
-            alt="Nail art course"
-            class="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-      </div>
+      <div class="w-full lg:w-[30%] flex flex-col gap-6"></div>
 
       <!-- Right Side - Form -->
-      <div class="w-full lg:w-1/2 flex justify-center lg:justify-start order-1 lg:order-2">
+      <div
+        class="w-full lg:w-[70%] flex flex-col gap-6 flex justify-center lg:justify-start order-1 lg:order-2 pt-[200px] ">
         <div class="w-full max-w-[662px] flex flex-col gap-6">
           <!-- Form Header -->
           <div class="flex flex-col gap-1">
-            <p class="text-sm md:text-base text-[#b29441] font-light">
-              Tham gia khóa học của chúng tôi
-            </p>
-            <h2 class="text-2xl md:text-3xl lg:text-4xl font-medium text-white uppercase tracking-wide">
+            <div class=" text-sm md:text-sm text-[#8A9904] font-light w-fit">
+              <p>Tham gia khóa học của chúng tôi</p>
+
+            </div>
+            <h2 class="title-section text-primary">
               Đăng ký khóa học
             </h2>
           </div>
@@ -44,70 +99,41 @@
             <div class="flex flex-col gap-6">
               <!-- Full Name -->
               <div class="relative">
-                <input
-                  type="text"
-                  id="full-name"
-                  name="fullName"
-                  placeholder="Họ và Tên"
-                  class="contact-form-input w-full h-11 px-4 rounded-full bg-[#121212] text-[#bbaa8e] placeholder:text-[#bbaa8e] border-none outline-none focus:ring-2 focus:ring-[#b29441] transition-all"
-                  required
-                />
+                <input type="text" id="full-name" name="fullName" placeholder="Họ và Tên"
+                  class="contact-form-input w-full h-11 px-4 rounded-[16px] bg-[#121212] text-[#bbaa8e] placeholder:text-[#bbaa8e] border-none outline-none focus:ring-2 focus:ring-[#b29441] transition-all"
+                  required />
               </div>
 
               <!-- Phone Number (Zalo) -->
               <div class="relative">
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  placeholder="SĐT (Zalo)"
-                  class="contact-form-input w-full h-11 px-4 rounded-full bg-[#121212] text-[#bbaa8e] placeholder:text-[#bbaa8e] border-none outline-none focus:ring-2 focus:ring-[#b29441] transition-all"
-                  required
-                />
+                <input type="tel" id="phone" name="phone" placeholder="SĐT (Zalo)"
+                  class="contact-form-input w-full h-11 px-4 rounded-[16px] bg-[#121212] text-[#bbaa8e] placeholder:text-[#bbaa8e] border-none outline-none focus:ring-2 focus:ring-[#b29441] transition-all"
+                  required />
               </div>
 
               <!-- Email -->
               <div class="relative">
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Email"
-                  class="contact-form-input w-full h-11 px-4 rounded-full bg-[#121212] text-[#bbaa8e] placeholder:text-[#bbaa8e] border-none outline-none focus:ring-2 focus:ring-[#b29441] transition-all"
-                  required
-                />
+                <input type="email" id="email" name="email" placeholder="Email"
+                  class="contact-form-input w-full h-11 px-4 rounded-[16px] bg-[#121212] text-[#bbaa8e] placeholder:text-[#bbaa8e] border-none outline-none focus:ring-2 focus:ring-[#b29441] transition-all"
+                  required />
               </div>
 
               <!-- Notes -->
               <div class="relative">
-                <textarea
-                  id="notes"
-                  name="notes"
-                  placeholder="Ghi chú"
-                  rows="4"
-                  class="contact-form-input w-full min-h-[118px] px-4 py-3 rounded-[22px] bg-[#121212] text-[#bbaa8e] placeholder:text-[#bbaa8e] border-none outline-none resize-none focus:ring-2 focus:ring-[#b29441] transition-all"
-                ></textarea>
+                <textarea id="notes" name="notes" placeholder="Ghi chú" rows="4"
+                  class="contact-form-inputcontact-form-input w-full min-h-[118px] px-4 py-3 rounded-[22px] bg-[#121212] text-[#bbaa8e] placeholder:text-[#bbaa8e] border-none outline-none resize-none focus:ring-2 focus:ring-[#b29441] transition-all"></textarea>
               </div>
             </div>
 
             <!-- Submit Button -->
-            <button
-              type="submit"
-              class="contact-form-submit-btn flex items-center justify-center gap-2 w-fit px-5 py-3 rounded-lg bg-[#b29441] text-white font-medium hover:bg-[#c9a552] transition-colors cursor-pointer"
-            >
+            <button type="submit"
+              class="contact-form-submit-btn flex items-center justify-center gap-2 w-fit px-5 py-3 rounded-lg bg-[#b29441] text-white font-medium hover:bg-[#c9a552] transition-colors cursor-pointer">
               <span>GỬI</span>
-              <svg
-                width="10"
-                height="8"
-                viewBox="0 0 10 8"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-[10px] h-[8px]"
-              >
+              <svg width="10" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="w-[10px] h-[8px]">
                 <path
                   d="M8.15646 3.08353L8.12562 3.02129L5.80633 0.697596C5.52238 0.271802 6.01482 -0.199436 6.43483 0.0883745L9.56908 3.22757C9.71064 3.4121 9.71064 3.62252 9.56908 3.80705L6.42299 6.95479C5.98921 7.26766 5.48823 6.73528 5.81625 6.32629L8.12562 4.01306L8.15646 3.95082H0.332703C0.323615 3.95082 0.209867 3.89739 0.19169 3.88554C-0.0638966 3.71919 -0.0638966 3.31488 0.19169 3.14853C0.209867 3.13669 0.323615 3.08326 0.332703 3.08326H8.15646V3.08353Z"
-                  fill="white"
-                />
+                  fill="white" />
               </svg>
             </button>
           </form>
@@ -115,4 +141,14 @@
       </div>
     </div>
   </div>
+  <div class="absolute bottom-0 left-0">
+
+    <img src="../../../assets/images/shutterstock.png" alt="Nail art course"
+      class="h-full w-full object-cover rounded-lg" />
+
+  </div>
+  <div class="absolute bottom-[40%] left-[45%]">
+    <img src="../../../assets/images/glitter2.png" alt="" class=" w-[1000px] h-auto " />
+  </div>
+
 </section>
