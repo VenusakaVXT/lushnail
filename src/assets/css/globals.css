@@ -220,7 +220,7 @@
     }
 
     .title-section {
-        @apply text-black leading-tight text-[40px] relative font-playfair;
+        @apply text-black leading-tight text-[24px] sm:text-[40px] relative font-playfair font-medium;
         
     }
 

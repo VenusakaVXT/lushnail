@@ -9,7 +9,7 @@
 }
 
 .statistical-icon-circle {
-    @apply w-10 h-10 sm:w-15 sm:h-15 lg:w-20 lg:h-20 rounded-full bg-black flex items-center justify-center relative;
+    @apply w-20 h-20 sm:w-24 sm:h-24 lg:w-20 lg:h-20 rounded-full bg-black flex items-center justify-center relative;
 }
 
 .statistical-icon {
@@ -177,7 +177,7 @@
     text-indent: -9999px;
     overflow: visible;
     padding: 0;
-    box-shadow: 0 0 0 3px rgba(0,0,0,0.3);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
 /* Active state - 3 concentric circles */
@@ -267,7 +267,7 @@ ease; */
 .nail-image-item.active {
     flex: 0.6 1 0;
     z-index: 10;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     opacity: 1;
 }
 
@@ -279,7 +279,7 @@ ease; */
 .nail-image-item:hover {
     flex: 0.6 1 0 !important;
     z-index: 10;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     opacity: 1;
 }
 
@@ -374,7 +374,7 @@ ease; */
 }
 
 [data-name="master-nail-art"] .absolute > div:hover img {
-    box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
 }
 
 /* Golden box with texture and shimmer effect */
