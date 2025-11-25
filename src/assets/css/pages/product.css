@@ -299,7 +299,7 @@
   position: absolute;
   will-change: transform;
   transition: transform 0.1s ease-out;
-  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.15));
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.15));
   z-index: 30;
   overflow: visible;
   user-select: none;

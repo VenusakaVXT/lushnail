@@ -41,7 +41,7 @@
 /* White background for fixed navbar */
 .nav-bg-white {
     background-color: #ffffff !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 

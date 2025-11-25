@@ -248,11 +248,13 @@ style.textContent = `
         cursor: pointer;
         transition: all 0.3s ease;
         position: relative;
+        box-shadow: 0px 4px 20px rgba(0,0,0,, 0.08);
     }
 
     .faq-item:hover {
         transform: translateX(8px);
         background: #FFF9F2;
+        box-shadow: 0px 12px 40px rgba(174, 135, 62, 0.25);
     }
 
     .faq-item.active {

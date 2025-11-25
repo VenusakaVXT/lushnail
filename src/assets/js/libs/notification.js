@@ -3,7 +3,7 @@
  * Lightweight notification library with beautiful design
  */
 
-(function(global) {
+(function (global) {
     'use strict';
 
     // CSS Styles
@@ -78,7 +78,7 @@
             padding: 16px;
             margin-bottom: 12px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,, 0.15);
             max-width: 400px;
             min-width: 320px;
             pointer-events: auto;
@@ -196,7 +196,7 @@
         
         .fast-notice-close:hover {
             opacity: 1;
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: rgba(0,0,0,, 0.1);
         }
         
         .fast-notice-close::before {
@@ -278,7 +278,7 @@
     // Inject CSS
     function injectStyles() {
         if (document.getElementById('fast-notice-styles')) return;
-        
+
         const styleSheet = document.createElement('style');
         styleSheet.id = 'fast-notice-styles';
         styleSheet.textContent = styles;
@@ -292,21 +292,21 @@
             duration: options.duration || 3000,
             maxNotifications: options.maxNotifications || 3
         };
-        
+
         this.notifications = [];
         this.container = null;
         this.init();
     }
 
-    FastNotice.prototype.init = function() {
+    FastNotice.prototype.init = function () {
         injectStyles();
         this.createContainer();
     };
 
-    FastNotice.prototype.createContainer = function() {
+    FastNotice.prototype.createContainer = function () {
         this.container = document.createElement('div');
         this.container.className = `fast-notice-container fast-notice-${this.config.position}`;
-        
+
         // Đợi DOM sẵn sàng
         if (document.body) {
             document.body.appendChild(this.container);
@@ -320,7 +320,7 @@
         }
     };
 
-    FastNotice.prototype.show = function(message, type = 'info', options = {}) {
+    FastNotice.prototype.show = function (message, type = 'info', options = {}) {
         // Check max notifications
         if (this.notifications.length >= this.config.maxNotifications) {
             this.removeOldest();
@@ -358,11 +358,11 @@
     };
 
     // Hàm để thay đổi vị trí động
-    FastNotice.prototype.setPosition = function(position) {
+    FastNotice.prototype.setPosition = function (position) {
         if (this.container) {
             // Remove all position classes
-            this.container.classList.remove('fast-notice-top-left', 'fast-notice-top-center', 'fast-notice-top-right', 
-                                         'fast-notice-bottom-left', 'fast-notice-bottom-center', 'fast-notice-bottom-right');
+            this.container.classList.remove('fast-notice-top-left', 'fast-notice-top-center', 'fast-notice-top-right',
+                'fast-notice-bottom-left', 'fast-notice-bottom-center', 'fast-notice-bottom-right');
             // Add new position class
             this.container.classList.add(`fast-notice-${position}`);
             // Update config
@@ -371,22 +371,22 @@
     };
 
     // Hàm để thay đổi duration mặc định
-    FastNotice.prototype.setDuration = function(duration) {
+    FastNotice.prototype.setDuration = function (duration) {
         this.config.duration = duration;
     };
 
     // Hàm để thay đổi max notifications
-    FastNotice.prototype.setMaxNotifications = function(max) {
+    FastNotice.prototype.setMaxNotifications = function (max) {
         this.config.maxNotifications = max;
     };
 
-    FastNotice.prototype.createNotification = function(message, type, options) {
+    FastNotice.prototype.createNotification = function (message, type, options) {
         const notification = document.createElement('div');
         notification.className = `fast-notice fast-notice-${type}`;
-        
+
         const icon = this.getIcon(type);
         const title = options.title || this.getDefaultTitle(type);
-        
+
         notification.innerHTML = `
             <div class="fast-notice-icon">${icon}</div>
             <div class="fast-notice-content">
@@ -399,7 +399,7 @@
         return notification;
     };
 
-    FastNotice.prototype.getIcon = function(type) {
+    FastNotice.prototype.getIcon = function (type) {
         const icons = {
             'info': 'i',
             'success': '✓',
@@ -409,7 +409,7 @@
         return icons[type] || 'i';
     };
 
-    FastNotice.prototype.getDefaultTitle = function(type) {
+    FastNotice.prototype.getDefaultTitle = function (type) {
         const titles = {
             'info': 'Information',
             'success': 'Success!',
@@ -419,7 +419,7 @@
         return titles[type] || 'Information';
     };
 
-    FastNotice.prototype.remove = function(notification) {
+    FastNotice.prototype.remove = function (notification) {
         if (!notification || !notification.parentNode) return;
 
         const index = this.notifications.indexOf(notification);
@@ -435,43 +435,43 @@
         }, 300);
     };
 
-    FastNotice.prototype.removeOldest = function() {
+    FastNotice.prototype.removeOldest = function () {
         if (this.notifications.length > 0) {
             this.remove(this.notifications[0]);
         }
     };
 
-    FastNotice.prototype.clear = function() {
+    FastNotice.prototype.clear = function () {
         this.notifications.forEach(notification => {
             this.remove(notification);
         });
     };
 
     // Static methods
-    FastNotice.show = function(message, type, options) {
+    FastNotice.show = function (message, type, options) {
         if (!global.fastNotice) {
             global.fastNotice = new FastNotice();
         }
         return global.fastNotice.show(message, type, options);
     };
 
-    FastNotice.success = function(message, options) {
+    FastNotice.success = function (message, options) {
         return FastNotice.show(message, 'success', options);
     };
 
-    FastNotice.error = function(message, options) {
+    FastNotice.error = function (message, options) {
         return FastNotice.show(message, 'error', options);
     };
 
-    FastNotice.warning = function(message, options) {
+    FastNotice.warning = function (message, options) {
         return FastNotice.show(message, 'warning', options);
     };
 
-    FastNotice.info = function(message, options) {
+    FastNotice.info = function (message, options) {
         return FastNotice.show(message, 'info', options);
     };
 
-    FastNotice.clear = function() {
+    FastNotice.clear = function () {
         if (global.fastNotice) {
             global.fastNotice.clear();
         }
@@ -484,7 +484,7 @@
             global.fastNotice = new FastNotice();
         }
     }
-    
+
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', initializeFastNotice);
     } else {

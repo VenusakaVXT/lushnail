@@ -90,7 +90,7 @@
     color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 .blaze-prev {
@@ -124,7 +124,7 @@
     left: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0,0,0,0.5);
     color: white;
     padding: 0.5rem;
     border-radius: 50%;
@@ -132,7 +132,7 @@
 }
 
 .bslider-image .blaze-prev:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0,0,0,0.7);
 }
 
 .bslider-image .blaze-next {
@@ -140,7 +140,7 @@
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0,0,0,0.5);
     color: white;
     padding: 0.5rem;
     border-radius: 50%;
@@ -148,7 +148,7 @@
 }
 
 .bslider-image .blaze-next:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0,0,0,0.7);
 }
 
 /* Responsive adjustments */
@@ -303,7 +303,7 @@
 
 .blaze-pagination-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .blaze-pagination-item.active {
@@ -393,7 +393,7 @@
     background-color: #DDB657;
     color: #000;
     border-radius: 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
 .blaze-slider.bslider-hero-mobile .blaze-prev {

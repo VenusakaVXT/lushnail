@@ -69,84 +69,75 @@
         --font-size-2xl: 1.25rem;
         --font-size-3xl: 2.25rem;
         --font-size-4xl: 2.5rem;
-
-        /* Box Shadows */
-        --shadow-50: 0px 4px 12px 0px rgba(187, 170, 142, 0.2);
-        --shadow-5: 0px 4px 12px 0px rgba(0, 0, 0, 0.05);
-        --shadow-pink: 0px 4px 12px 0px rgba(255, 124, 181, 0.3);
-        --shadow-new: 0px 4px 12px 0px rgba(148, 136, 0, 0.25);
     }
 
     /* Base Element Styles */
 
+    /* VIP Beezle font */
+    @font-face {
+        font-family: 'VIP Beezle';
+        src: url('/assets/fonts/1FTV-VIP-Beezle.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
 
-/* VIP Beezle font */
-@font-face {
-    font-family: 'VIP Beezle';
-    src: url('/assets/fonts/1FTV-VIP-Beezle.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+    /* Playfair Display font - variable or static as fallback */
+    @font-face {
+        font-family: 'Playfair Display';
+        src: url('/assets/fonts/PlayfairDisplay/PlayfairDisplay-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Playfair Display';
+        src: url('/assets/fonts/PlayfairDisplay/PlayfairDisplay-Bold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Playfair Display';
+        src: url('/assets/fonts/PlayfairDisplay/PlayfairDisplay-Italic.ttf') format('truetype');
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+    }
 
-/* Playfair Display font - variable or static as fallback */
-@font-face {
-    font-family: 'Playfair Display';
-    src: url('/assets/fonts/PlayfairDisplay/PlayfairDisplay-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Playfair Display';
-    src: url('/assets/fonts/PlayfairDisplay/PlayfairDisplay-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Playfair Display';
-    src: url('/assets/fonts/PlayfairDisplay/PlayfairDisplay-Italic.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-}
+    /* Fz Poppins font (assuming FzPoppins in folder; adjust file names as needed) */
+    @font-face {
+        font-family: 'Fz Poppins';
+        src: url('/assets/fonts/Fz Poppins/FzPoppins-Regular.ttf') format('truetype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Fz Poppins';
+        src: url('/assets/fonts/Fz Poppins/FzPoppins-Bold.ttf') format('truetype');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Fz Poppins';
+        src: url('/assets/fonts/Fz Poppins/FzPoppins-Italic.ttf') format('truetype');
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+    }
 
-/* Fz Poppins font (assuming FzPoppins in folder; adjust file names as needed) */
-@font-face {
-    font-family: 'Fz Poppins';
-    src: url('/assets/fonts/Fz Poppins/FzPoppins-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Fz Poppins';
-    src: url('/assets/fonts/Fz Poppins/FzPoppins-Bold.ttf') format('truetype');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Fz Poppins';
-    src: url('/assets/fonts/Fz Poppins/FzPoppins-Italic.ttf') format('truetype');
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
-}
-
-/* Optional: set up some utility classes or custom font stacks */
-.font-vip-beezle {
-    font-family: 'VIP Beezle', cursive, sans-serif;
-}
-.font-playfair {
-    font-family: 'Playfair Display', serif;
-}
-.font-fz-poppins {
-    font-family: 'Fz Poppins', 'Poppins', sans-serif;
-}
-
-
+    /* Optional: set up some utility classes or custom font stacks */
+    .font-vip-beezle {
+        font-family: 'VIP Beezle', cursive, sans-serif;
+    }
+    .font-playfair {
+        font-family: 'Playfair Display', serif;
+    }
+    .font-fz-poppins {
+        font-family: 'Fz Poppins', 'Poppins', sans-serif;
+    }
 
     html {
         scroll-behavior: smooth;
@@ -495,7 +486,7 @@
     }
 
     /* .product-card__button {
-           @apply w-full bg-[#090707] text-white py-2 px-4 rounded-lg text-[13px] hover:bg-[#1a1816]  transition-all duration-300;
+           @apply w-full bg-[#090707] text-white py-2 px-4 rounded-lg text-[13px] hover:bg-[#1a1816] transition-all duration-300;
        } */
 
 
@@ -503,7 +494,7 @@
         Course Card Styles
     ======================================================================== */
     .course-card {
-        @apply relative bg-white rounded-[20px] overflow-hidden shadow-[0px_4px_20px_rgba(0, 0, 0, 0.08)] hover:shadow-[0px_12px_40px_rgba(174, 135, 62, 0.25)] transition-all duration-500 hover:-translate-y-1;
+        @apply relative bg-white rounded-[20px] overflow-hidden transition-all duration-500 hover:-translate-y-1;
     }
 
     .course-card__badge {
@@ -912,7 +903,7 @@
     }
 
     .faq-item {
-        @apply p-2 relative bg-white rounded-[20px] overflow-hidden shadow-[0px_4px_20px_rgba(0, 0, 0, 0.08)] hover:shadow-[0px_12px_40px_rgba(174, 135, 62, 0.25)] transition-all duration-500 hover:-translate-y-1;
+        @apply p-2 relative bg-white rounded-[20px] overflow-hidden transition-all duration-500 hover:-translate-y-1;
     }
 
     .map-iframe {
@@ -1054,25 +1045,5 @@
     .text-4xl-custom {
         font-size: var(--font-size-4xl);
     }
-
-    /* ========================================================================
-        Box Shadow Utility Classes
-    ======================================================================== */
-    .shadow-50 {
-        box-shadow: var(--shadow-50);
-    }
-
-    .shadow-5 {
-        box-shadow: var(--shadow-5);
-    }
-
-    .shadow-pink {
-        box-shadow: var(--shadow-pink);
-    }
-
-    .shadow-new {
-        box-shadow: var(--shadow-new);
-    }
-    
 
 }

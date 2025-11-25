@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //   // Function to create course card HTML
   //   function createCourseCard(course) {
   //     return `
-  //       <div class="course-card group">
+  //       <div class="course-card group shadow-[0px_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0px_12px_40px_rgba(174,135,62,0.25)]">
   //         <div class="course-card__badge">
   //           <p class="  text-[13px]  emibold" >${course.discount}</p>
   //         </div>
@@ -347,11 +347,13 @@ style.textContent = `
         cursor: pointer;
         transition: all 0.3s ease;
         position: relative;
+        box-shadow: 0px 4px 20px rgba(0,0,0,, 0.08);
     }
 
     .faq-item:hover {
         transform: translateX(8px);
         background: #FFF9F2;
+        box-shadow: 0px 12px 40px rgba(174, 135, 62, 0.25);
     }
 
     .faq-item.active {
