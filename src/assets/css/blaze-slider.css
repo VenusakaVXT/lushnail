@@ -104,7 +104,7 @@
 .blaze-prev:hover,
 .blaze-next:hover {
     background-color: var(--primary);
-    transform: translateY(-50%) scale(1.1);
+    transform: translateY(-50%) ;
 }
 
 .blaze-prev:disabled,
@@ -371,11 +371,15 @@
 
 /* Hero slider navigation buttons */
 .blaze-slider.bslider-hero .blaze-prev {
-    left: 20px;
+    left: 0px;
+    width: 48px;
+    height: 48px;
 }
 
 .blaze-slider.bslider-hero .blaze-next {
-    right: 20px;
+    right: 0px;
+    width: 48px;
+    height: 48px;
 }
 
 /* Feedback slider - Auto-scrolling image gallery */
