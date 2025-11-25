@@ -1,47 +1,52 @@
 <!-- Navbar mobile -->
 <div id="mobile-navbar" class="header-navbar-mobile">
-  <!-- Cart and Menu Icons -->
-  <div class="header-navbar-mobile-icons flex items-center gap-4 ml-auto">
-    <!-- include:headers/logo.html -->
-    <div class="header-navbar-mobile-links">
-      <a href="/" class="header-navbar-link">Trang chủ</a>
-      <a href="/about-us.html" class="header-navbar-link">Về chúng tôi</a>
-      <a href="/courses.html" class="header-navbar-link">Khoá học</a>
-      <a href="/products.html" class="header-navbar-link">Sản phẩm</a>
-      <a href="/news.html" class="header-navbar-link">Tin tức</a>
-      <a href="/contact.html" class="header-navbar-link">Liên hệ</a>
-    </div>
-    <div class="relative">
-      <button id="language-toggle-mobile" class="header-icon-button hover:text-[#ae873e] transition-colors" aria-label="Change Language">
-        <i data-lucide="languages" class="header-icon"></i>
-      </button>
-      <!-- Language Dropdown -->
-      <div id="language-dropdown-mobile" class="absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[150px] z-[9999]">
-        <button class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2" data-lang="vi">
-          <span class="text-sm">🇻🇳</span>
-          <span class="text-sm">Tiếng Việt</span>
-        </button>
-        <button class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2" data-lang="en">
-          <span class="text-sm">🇺🇸</span>
-          <span class="text-sm">English</span>
-        </button>
-        <button class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2" data-lang="ja">
-          <span class="text-sm">🇯🇵</span>
-          <span class="text-sm">日本語</span>
-        </button>
-        <button class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2" data-lang="ko">
-          <span class="text-sm">🇰🇷</span>
-          <span class="text-sm">한국어</span>
-        </button>
-        <button class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2" data-lang="zh">
-          <span class="text-sm">🇨🇳</span>
-          <span class="text-sm">中文</span>
-        </button>
-      </div>
-    </div>
+  <div class="container flex items-center justify-between w-full">
+    <!-- Hamburger Menu - Left -->
     <button id="mobile-menu-toggle" class="header-navbar-mobile-toggle" aria-label="Toggle mobile menu">
       <i data-lucide="menu" class="header-navbar-mobile-icon"></i>
     </button>
+
+    <!-- Logo - Center -->
+    <div class="flex-1 flex justify-center">
+      <!-- include:headers/logo.html -->
+      <a href="/" class="header-logo-link">
+        <img src="/assets/images/LOGO_GOLD.png" alt="Lush Nail Logo" class="header-logo">
+      </a>
+    </div>
+
+    <!-- Icons - Right -->
+    <div class="header-navbar-mobile-icons flex items-center gap-1">
+      <!-- Search Button -->
+      <button id="mobile-search-toggle" class="header-icon-button hover:text-[#ae873e] transition-colors" aria-label="Search">
+        <i data-lucide="search" class="header-icon"></i>
+      </button>
+      <!-- User Profile Button -->
+      <div class="relative">
+        <button id="user-toggle-mobile" class="header-icon-button hover:text-[#ae873e] transition-colors" aria-label="User Profile">
+          <i data-lucide="user" class="header-icon"></i>
+        </button>
+        <!-- User Dropdown -->
+        <div id="user-dropdown-mobile" class="absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[180px] z-[9999] hidden">
+          <a href="/user-profile.html" class="user-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2">
+            <i data-lucide="user" class="w-4 h-4"></i>
+            <span class="text-sm">Profile</span>
+          </a>
+          <a href="/cart.html" class="user-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2">
+            <i data-lucide="shopping-cart" class="w-4 h-4"></i>
+            <span class="text-sm">Cart</span>
+          </a>
+          <hr class="my-2 border-t border-gray-200">
+          <button class="user-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2" id="logout-btn-mobile" type="button">
+            <i data-lucide="log-out" class="w-4 h-4"></i>
+            <span class="text-sm">Logout</span>
+          </button>
+        </div>
+      </div>
+      <!-- Shopping Bag Button -->
+      <a href="/cart.html" class="header-icon-button hover:text-[#ae873e] transition-colors" aria-label="Shopping Cart">
+        <i data-lucide="shopping-bag" class="header-icon"></i>
+      </a>
+    </div>
   </div>
 
   <!-- Mobile Drawer -->

@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Setup autoplay resume for testimonials slider after drag ends
     setupAutoplayResume('.bslider-testimonials');
 
-    // Hero slider - Full width banner with autoplay
+    // Hero slider - Full width banner with autoplay (Desktop)
     initSlider('.bslider-hero', {
         all: {
             slidesToShow: 1,
@@ -132,6 +132,27 @@ document.addEventListener('DOMContentLoaded', function () {
     // Setup autoplay resume for hero slider after drag ends
     setupAutoplayResume('.bslider-hero');
 
+    // Hero slider Mobile - Full width banner with autoplay (Mobile only)
+    initSlider('.bslider-hero-mobile', {
+        all: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            transitionDuration: 600,
+            transitionTimingFunction: 'ease-in-out',
+            loop: true,
+            loopRepeats: -1,
+            slideGap: '0px',
+            enablePagination: true,
+            enableAutoplay: true,
+            autoplayInterval: 5000,
+            stopAutoplayOnInteraction: true,
+            draggable: true,
+        }
+    });
+
+    // Setup autoplay resume for hero mobile slider after drag ends
+    setupAutoplayResume('.bslider-hero-mobile');
+
     // Feedback slider - Auto-scrolling image gallery
     initSlider('.bslider-feedback', {
         all: {
@@ -148,25 +169,25 @@ document.addEventListener('DOMContentLoaded', function () {
             slidesToShow: 1,
             slidesToScroll: 1
         },
-        '(min-width: 500px) and (max-width: 768px)': { 
-            slidesToShow: 2, 
-            slidesToScroll: 2 
+        '(min-width: 500px) and (max-width: 768px)': {
+            slidesToShow: 2,
+            slidesToScroll: 2
         },
-        '(min-width: 768px) and (max-width: 1023px)': { 
-            slidesToShow: 3, 
-            slidesToScroll: 3 
+        '(min-width: 768px) and (max-width: 1023px)': {
+            slidesToShow: 3,
+            slidesToScroll: 3
         },
-        '(min-width: 1023px) and (max-width: 1360px)': { 
-            slidesToShow: 4, 
-            slidesToScroll: 4 
+        '(min-width: 1023px) and (max-width: 1360px)': {
+            slidesToShow: 4,
+            slidesToScroll: 4
         },
-        '(min-width: 1360px) and (max-width: 1590px)': { 
-            slidesToShow: 5, 
-            slidesToScroll: 5 
+        '(min-width: 1360px) and (max-width: 1590px)': {
+            slidesToShow: 5,
+            slidesToScroll: 5
         },
-        '(min-width: 1590px)': { 
-            slidesToShow: 6, 
-            slidesToScroll: 6 
+        '(min-width: 1590px)': {
+            slidesToShow: 6,
+            slidesToScroll: 6
         }
     });
 

@@ -1,7 +1,7 @@
 <!-- Hero Section -->
 <section class="bg-white flex flex-col items-start relative w-full section-hero-home" data-name="hero">
-    <!-- Hero Slider -->
-    <div class="blaze-slider bslider-hero w-full relative">
+    <!-- Hero Slider Desktop (hidden on mobile) -->
+    <div class="blaze-slider bslider-hero w-full relative hidden md:block">
         <div class="blaze-container relative">
             <!-- Navigation Buttons -->
             <button class="blaze-prev hidden sm:flex" aria-label="Previous">
@@ -35,11 +35,54 @@
                             <img src="./assets/images/slide_2.png" alt="Hero Slide 2" class="w-full">
                            </a>
                      </div>
-                        <!-- Slide 2 -->
+                        <!-- Slide 3 -->
                     <div class="blaze-slide">
                         <a href="#">
-                            <img src="./assets/images/slide_3.png" alt="Hero Slide 2" class="w-full">
+                            <img src="./assets/images/slide_3.png" alt="Hero Slide 3" class="w-full">
                            </a>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Slider Mobile (visible only on mobile) -->
+    <div class="blaze-slider bslider-hero-mobile w-full relative block md:hidden">
+        <div class="blaze-container relative">
+            <!-- Navigation Buttons -->
+            <button class="blaze-prev" aria-label="Previous">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button class="blaze-next" aria-label="Next">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+
+            <!-- Pagination inside banner -->
+            <div class="absolute bottom-6 left-[50%] transform -translate-x-1/2 z-20">
+                <div class="blaze-pagination"></div>
+            </div>
+
+            <div class="blaze-track-container" style="overflow: hidden;">
+                <div class="blaze-track">
+                    <!-- Mobile Slide -->
+                    <div class="blaze-slide">
+                       <a href="#">
+                        <img src="./assets/images/slidemobile.png" alt="Hero Slide Mobile" class="w-full">
+                       </a>
+                    </div>
+                    <div class="blaze-slide">
+                        <a href="#">
+                         <img src="./assets/images/slidemobile.png" alt="Hero Slide Mobile" class="w-full">
+                        </a>
+                     </div>
+                     <div class="blaze-slide">
+                        <a href="#">
+                         <img src="./assets/images/slidemobile.png" alt="Hero Slide Mobile" class="w-full">
+                        </a>
                      </div>
                 </div>
             </div>

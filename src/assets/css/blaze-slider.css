@@ -75,6 +75,9 @@
 /* Navigation button styles */
 .blaze-prev,
 .blaze-next {
+    @apply hidden sm:flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 46%;
     transform: translateY(-50%);
@@ -86,9 +89,6 @@
     background-color: var(--primary);
     color: #fff;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: all 0.3s ease;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
@@ -382,6 +382,31 @@
     width: 48px;
     height: 48px;
     border-radius: 0;
+}
+
+/* Hero slider mobile navigation buttons */
+.blaze-slider.bslider-hero-mobile .blaze-prev,
+.blaze-slider.bslider-hero-mobile .blaze-next {
+    @apply flex;
+    width: 40px;
+    height: 40px;
+    background-color: #DDB657;
+    color: #000;
+    border-radius: 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.blaze-slider.bslider-hero-mobile .blaze-prev {
+    left: 0px;
+}
+
+.blaze-slider.bslider-hero-mobile .blaze-next {
+    right: 0px;
+}
+
+.blaze-slider.bslider-hero-mobile .blaze-prev:hover,
+.blaze-slider.bslider-hero-mobile .blaze-next:hover {
+    background-color: #F4DB89;
 }
 
 /* Feedback slider - Auto-scrolling image gallery */

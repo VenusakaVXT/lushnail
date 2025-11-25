@@ -83,7 +83,7 @@
        TOPBAR GROUP: Topbar Banner Styles
        ======================================================================== */
     .header-topbar {
-        @apply bg-gradient-to-b from-[#F4DB89] to-[#DDB657] flex items-center justify-between gap-2 sm:gap-6 px-3 sm:px-4 py-1 sm:py-2 w-full;
+        @apply bg-gradient-to-b from-[#F4DB89] to-[#DDB657] flex items-center justify-between gap-2 sm:gap-6 px-0 sm:px-4 py-1 sm:py-2 w-full;
     }
 
     .header-topbar .container {
@@ -204,7 +204,11 @@
     }
 
     .header-navbar-mobile {
-        @apply flex md:hidden bg-[#f8f7f6] items-center justify-between px-4 py-3 shadow-sm transition-all duration-300 relative;
+        @apply flex md:hidden bg-[#f8f7f6] items-center justify-between px-0 sm:px-4 py-3 shadow-sm transition-all duration-300 relative;
+    }
+
+    .header-navbar-mobile .container {
+        @apply flex items-center justify-between w-full;
     }
 
     .header-navbar-mobile-links {
@@ -241,12 +245,67 @@
         overflow: visible !important;
     }
 
+    /* Hover underline effect - black line animation */
+    .header-navbar-link::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: #000;
+        transition: width 0.3s ease;
+    }
+
+    .header-navbar-link:hover::after {
+        width: 100%;
+    }
+
+    /* Active state - darker black text and yellow underline */
+    .header-navbar-link.active {
+        @apply text-black font-bold;
+        color: #000 !important;
+    }
+
+    .header-navbar-link.active::after {
+        width: 100%;
+        background-color: #DDB657;
+        height: 2px;
+    }
+
     .header-navbar-mobile-toggle {
         @apply text-black transition-colors;
+        flex-shrink: 0;
+        width: 44px;
     }
 
     .header-navbar-mobile-icon {
         @apply w-6 h-6;
+    }
+
+    /* Logo Styles */
+    .header-logo-link {
+        @apply flex items-center;
+    }
+
+    .header-logo {
+        @apply h-auto;
+        max-height: 50px;
+        width: auto;
+    }
+
+    @media (max-width: 640px) {
+        .header-logo {
+            max-height: 70px;
+        }
+    }
+
+    /* Mobile Logo Centering */
+    .header-navbar-mobile .container > .flex-1 {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1;
     }
 
     .header-navbar-mobile-menu {
@@ -259,11 +318,13 @@
     }
 
     .header-navbar-mobile-icons {
-        @apply flex items-center gap-4 ml-auto flex-1 min-w-0;
+        @apply flex items-center gap-4;
+        flex-shrink: 0;
+        width: auto;
     }
 
     .header-icon-button {
-        @apply p-2 text-[#333] hover:text-black transition-colors;
+        @apply p-1 text-[#333] hover:text-black transition-colors;
     }
 
     .header-icon {
@@ -348,6 +409,36 @@
 
     /* Keep user dropdown visible when hovering over it */
     #user-dropdown:hover {
+        display: block !important;
+    }
+
+    /* User Dropdown Mobile */
+    #user-dropdown-mobile {
+        position: absolute !important;
+        z-index: 9999 !important;
+        top: 100% !important;
+        right: 0 !important;
+        display: none !important;
+    }
+
+    /* Ensure user dropdown mobile text is always dark */
+    #user-dropdown-mobile * {
+        color: #333 !important;
+    }
+
+    /* Override nav-bg-blur for user dropdown mobile */
+    .nav-bg-blur #user-dropdown-mobile * {
+        color: #333 !important;
+    }
+
+    /* Show user dropdown mobile on click/touch */
+    .header-navbar-mobile-icons>.relative:hover #user-dropdown-mobile,
+    #user-toggle-mobile:hover~#user-dropdown-mobile {
+        display: block !important;
+    }
+
+    /* Keep user dropdown mobile visible when hovering over it */
+    #user-dropdown-mobile:hover {
         display: block !important;
     }
 
