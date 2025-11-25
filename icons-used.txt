@@ -74,6 +74,7 @@ help-circle
 arrow-right
 flask-conical
 user-check
+gift
 twitter
 truck
 eye
@@ -82,7 +83,6 @@ wallet
 rotate-ccw
 palette
 gem
-gift
 arrow-down
 link
 headphones
