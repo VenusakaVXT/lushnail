@@ -28,7 +28,7 @@
         --title-foreground: theme('colors.white');
 
         /* Secondary Colors */
-        --secondary: #bba8e0;
+        --secondary: #bbaa8e;
         --secondary-foreground: theme('colors.gray.900');
 
         /* Muted Colors */
@@ -44,7 +44,8 @@
         --black-90: #121212;
 
         /* Gray Colors */
-        --gray: #c0c0c0;
+        --gray: #808080;
+        --silver: #d9d9d9;
 
         /* Status Colors */
         --destructive: theme('colors.red.500');
@@ -57,6 +58,23 @@
 
         /* Border Radius */
         --radius: theme('spacing.2');
+
+        /* Font Sizes */
+        --font-size-2xs: 0.625rem;
+        --font-size-xs: 0.6875rem;
+        --font-size-sm: 0.75rem;
+        --font-size-base: 0.875rem;
+        --font-size-lg: 0.9375rem;
+        --font-size-xl: 1rem;
+        --font-size-2xl: 1.25rem;
+        --font-size-3xl: 2.25rem;
+        --font-size-4xl: 2.5rem;
+
+        /* Box Shadows */
+        --shadow-50: 0px 4px 12px 0px rgba(187, 170, 142, 0.2);
+        --shadow-5: 0px 4px 12px 0px rgba(0, 0, 0, 0.05);
+        --shadow-pink: 0px 4px 12px 0px rgba(255, 124, 181, 0.3);
+        --shadow-new: 0px 4px 12px 0px rgba(148, 136, 0, 0.25);
     }
 
     /* Base Element Styles */
@@ -299,15 +317,22 @@
            Common Section Styles
        ======================================================================== */
     .section__button {
-        @apply inline-flex items-center gap-2 bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 text-[14px] sm:text-[15px];
+        @apply inline-flex items-center gap-2 bg-transparent border-2 border-accent text-accent hover:bg-accent hover:text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300;
+        font-size: var(--font-size-base);
+    }
+
+    @media (min-width: 640px) {
+        .section__button {
+            font-size: var(--font-size-lg);
+        }
     }
 
     .title-section {
-        @apply text-black leading-tight text-2xl sm:text-4xl lg:text-5xl relative;
+        @apply text-black leading-tight text-[40px] relative;
     }
 
     .title-section-dark {
-        @apply text-[#bbaa8e] leading-tight text-2xl sm:text-4xl lg:text-5xl relative;
+        @apply text-[#bbaa8e] leading-tight text-[40px] relative;
     }
 
     /* ========================================================================
@@ -345,7 +370,7 @@
         content: '';
         @apply absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] transition-transform duration-700;
     } */
-/* 
+    /* 
     .btn-primary:hover::before {
         @apply translate-x-[100%];
     } */
@@ -375,7 +400,8 @@
     }
 
     .btn-outline-muted {
-        @apply w-full sm:w-auto px-8 py-4 border-2 border-[#ae873e] text-[#ae873e] text-[16px] hover:bg-[#FFF9F2] transition-all duration-300 flex items-center justify-center gap-2;
+        @apply w-full sm:w-auto px-8 py-4 border-2 border-[#ae873e] text-[#ae873e] hover:bg-[#FFF9F2] transition-all duration-300 flex items-center justify-center gap-2;
+        font-size: var(--font-size-xl);
     }
 
     .btn-detail {
@@ -416,14 +442,16 @@
        LABEL GROUP: Các thuộc tính cho Label
        ======================================================================== */
     .label {
-        @apply block text-[#090707] text-[14px] mb-2;
+        @apply block text-[#090707] mb-2;
+        font-size: var(--font-size-base);
     }
 
     /* ========================================================================
        INPUT GROUP: Các thuộc tính cho Input
        ======================================================================== */
     .input {
-        @apply w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e];
+        @apply w-full px-4 py-3 border-2 border-[#ececf0] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e];
+        font-size: var(--font-size-base);
     }
 
     .input:focus::placeholder {
@@ -431,11 +459,13 @@
     }
 
     .input-outline {
-        @apply w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] text-[12px] pb-1 transition-colors;
+        @apply w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] pb-1 transition-colors;
+        font-size: var(--font-size-sm);
     }
 
     .input-outline-dark {
-        @apply w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] pb-2;
+        @apply w-full bg-transparent border-0 border-b border-[#646464] text-white pb-2;
+        font-size: var(--font-size-xl);
     }
 
     .input-lg {
@@ -481,11 +511,13 @@
        TEXTAREA GROUP: Các thuộc tính cho Textarea
        ======================================================================== */
     .textarea {
-        @apply w-full px-4 py-3 border-2 outline-accent rounded-lg text-[14px] resize-none;
+        @apply w-full px-4 py-3 border-2 outline-accent rounded-lg resize-none;
+        font-size: var(--font-size-base);
     }
 
     .textarea-outline {
-        @apply w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] text-[12px] pb-1 transition-colors;
+        @apply w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] pb-1 transition-colors;
+        font-size: var(--font-size-sm);
     }
 
     .textarea-outline-dark {
@@ -543,11 +575,13 @@
     }
 
     .product-card__title {
-        @apply h-[42px] text-[14px] text-gray-800 mb-2 line-clamp-2;
+        @apply h-[42px] text-gray-800 mb-2 line-clamp-2;
+        font-size: var(--font-size-base);
     }
 
     .product-card__price {
-        @apply text-[16px] text-[#090707] mb-3;
+        @apply text-[#090707] mb-3;
+        font-size: var(--font-size-xl);
     }
 
     .product-card__price-original {
@@ -595,7 +629,7 @@
     }
 
     .course-card__title {
-        @apply text-[20px] h-[56px] text-[#030213]  group-hover:text-[#ae873e] transition-colors duration-300 line-clamp-2;
+        @apply text-[20px] h-[56px] text-[#030213] group-hover:text-[#ae873e] transition-colors duration-300 line-clamp-2;
     }
 
     .course-card__description {
@@ -610,7 +644,8 @@
     }
 
     .course-card__tag {
-        @apply px-3 py-1.5 bg-[#fff9f2] text-[#333] rounded-full text-[12px] font-medium border border-[#333] group-hover:bg-[#ae873e] group-hover:text-white transition-all duration-300;
+        @apply px-3 py-1.5 bg-[#fff9f2] text-[#333] rounded-full font-medium border border-[#333] group-hover:bg-[#ae873e] group-hover:text-white transition-all duration-300;
+        font-size: var(--font-size-sm);
     }
 
     .course-card__price-section {
@@ -655,7 +690,14 @@
     }
 
     .review__card-quote {
-        @apply text-white text-[15px] sm:text-[16px] leading-[24px] mb-4;
+        @apply text-white leading-[24px] mb-4;
+        font-size: var(--font-size-lg);
+    }
+
+    @media (min-width: 640px) {
+        .review__card-quote {
+            font-size: var(--font-size-xl);
+        }
     }
 
     .review__card-author {
@@ -667,7 +709,8 @@
     }
 
     .review__card-author-name {
-        @apply text-white text-[14px];
+        @apply text-white;
+        font-size: var(--font-size-base);
     }
 
     .review__card-author-location {
@@ -748,7 +791,8 @@
     }
 
     select.select-white {
-        @apply flex h-12 w-full rounded-lg bg-transparent px-3 py-3 pr-12 text-sm transition-colors duration-150 text-gray-900 border-2 border-[#ececf0] text-[14px] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e];
+        @apply flex h-12 w-full rounded-lg bg-transparent px-3 py-3 pr-12 text-sm transition-colors duration-150 text-gray-900 border-2 border-[#ececf0] focus:outline-none focus:ring-2 focus:ring-[#ae873e] focus:border-[#ae873e];
+        font-size: var(--font-size-base);
         appearance: none;
         background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'%3E%3C/path%3E%3C/svg%3E");
         background-size: 16px 16px;
@@ -766,11 +810,13 @@
     }
 
     .select-outline {
-        @apply pb-2 w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] text-[12px] pb-1 appearance-none cursor-pointer pr-6 focus:border-[#ae873e] transition-colors;
+        @apply pb-2 w-full bg-transparent border-b border-[#e0e0e0] outline-none text-[#030213] pb-1 appearance-none cursor-pointer pr-6 focus:border-[#ae873e] transition-colors;
+        font-size: var(--font-size-sm);
     }
 
     .select-outline-dark {
-        @apply w-full bg-transparent border-0 border-b border-[#646464] text-white text-[16px] pb-2 appearance-none cursor-pointer;
+        @apply w-full bg-transparent border-0 border-b border-[#646464] text-white pb-2 appearance-none cursor-pointer;
+        font-size: var(--font-size-xl);
     }
 
     .select-outline-dark option {
@@ -804,7 +850,8 @@
     }
 
     .tabs .tab-menu {
-        @apply px-6 py-3 text-[15px] border-b-2 border-transparent text-[#666666] hover:text-[#ae873e] transition-all duration-300 cursor-pointer;
+        @apply px-6 py-3 border-b-2 border-transparent text-[#666666] hover:text-[#ae873e] transition-all duration-300 cursor-pointer;
+        font-size: var(--font-size-lg);
     }
 
     .tabs .tab-menu.active {
@@ -850,7 +897,8 @@
     }
 
     .tabs-btn .tab-menu {
-        @apply px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full text-[14px] hover:bg-[#ae873e] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap flex-shrink-0;
+        @apply px-6 py-2.5 bg-[#FFF9F2] text-[#ae873e] border-2 border-[#ae873e]/20 rounded-full hover:bg-[#ae873e] hover:text-white transition-all duration-300 cursor-pointer whitespace-nowrap flex-shrink-0;
+        font-size: var(--font-size-base);
     }
 
     .tabs-btn .tab-menu.active {
@@ -881,7 +929,8 @@
     }
 
     .pagination-btn {
-        @apply px-4 py-2 border border-[#ececf0] rounded-lg text-[14px] font-medium text-[#666666] hover:bg-[#FFF9F2] hover:border-[#ae873e] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed;
+        @apply px-4 py-2 border border-[#ececf0] rounded-lg font-medium text-[#666666] hover:bg-[#FFF9F2] hover:border-[#ae873e] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed;
+        font-size: var(--font-size-base);
     }
 
     .pagination-btn:disabled:hover {
@@ -994,6 +1043,64 @@
 
     .feedback-slider__dot.active:hover {
         @apply bg-[#c9a961];
+    }
+
+    /* ========================================================================
+        Font Size Utility Classes
+    ======================================================================== */
+    .text-2xs {
+        font-size: var(--font-size-2xs);
+    }
+
+    .text-xs-custom {
+        font-size: var(--font-size-xs);
+    }
+
+    .text-sm-custom {
+        font-size: var(--font-size-sm);
+    }
+
+    .text-base-custom {
+        font-size: var(--font-size-base);
+    }
+
+    .text-lg-custom {
+        font-size: var(--font-size-lg);
+    }
+
+    .text-xl-custom {
+        font-size: var(--font-size-xl);
+    }
+
+    .text-2xl-custom {
+        font-size: var(--font-size-2xl);
+    }
+
+    .text-3xl-custom {
+        font-size: var(--font-size-3xl);
+    }
+
+    .text-4xl-custom {
+        font-size: var(--font-size-4xl);
+    }
+
+    /* ========================================================================
+        Box Shadow Utility Classes
+    ======================================================================== */
+    .shadow-50 {
+        box-shadow: var(--shadow-50);
+    }
+
+    .shadow-5 {
+        box-shadow: var(--shadow-5);
+    }
+
+    .shadow-pink {
+        box-shadow: var(--shadow-pink);
+    }
+
+    .shadow-new {
+        box-shadow: var(--shadow-new);
     }
 
 }
