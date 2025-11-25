@@ -4,31 +4,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     // Get header elements
     const header = document.querySelector("header[data-name='Nav']");
+    const headerWrapper = header ? header.querySelector(".header-wrapper") : header;
     const logo = header ? header.querySelector("[data-name='Asset 1 1']") : null;
     const desktopNav = document.getElementById("main-navbar");
     const mobileNav = document.getElementById("mobile-navbar");
     const mobileMenuToggle = document.getElementById("mobile-menu-toggle");
 
-    if (!header || !logo) return;
+    if (!header) return;
 
-    // Calculate initial trigger point - when logo bottom is scrolled past
-    const getInitialTriggerPoint = () => {
-        const logoRect = logo.getBoundingClientRect();
-        const scrollY = window.scrollY || window.pageYOffset;
-        return scrollY + logoRect.bottom;
-    };
+    // Get topbar element to calculate its height
+    const topbar = header.querySelector(".header-topbar");
+    const topbarHeight = topbar ? topbar.offsetHeight : 0;
 
-    // Store initial trigger point
-    let triggerPoint = getInitialTriggerPoint();
+    // Set trigger point - when topbar is scrolled past
+    const triggerPoint = topbarHeight;
 
-    // Recalculate trigger point on window resize
-    const recalculateTriggerPoint = () => {
-        triggerPoint = getInitialTriggerPoint();
-    };
-
-    window.addEventListener("resize", recalculateTriggerPoint);
-
-    // Apply sticky to navbar with blur background
+    // Apply sticky to navbar with blur background (desktop)
     const applySticky = (el) => {
         if (!el) return;
 
@@ -40,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "right-0",
                 "z-[100]",
                 "shadow-md",
-                "nav-bg-blur"
+                "nav-bg-white"
             );
         } else {
             // Remove all classes
@@ -50,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
             el.classList.remove("right-0");
             el.classList.remove("z-[100]");
             el.classList.remove("shadow-md");
-            el.classList.remove("nav-bg-blur");
+            el.classList.remove("nav-bg-white");
         }
     };
 
@@ -66,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 "right-0",
                 "z-[100]",
                 "shadow-md",
-                "nav-bg-blur"
+                "nav-bg-white"
             );
             mobileNav.classList.remove("relative");
         } else {
@@ -77,12 +68,12 @@ document.addEventListener("DOMContentLoaded", () => {
             mobileNav.classList.remove("right-0");
             mobileNav.classList.remove("z-[100]");
             mobileNav.classList.remove("shadow-md");
-            mobileNav.classList.remove("nav-bg-blur");
+            mobileNav.classList.remove("nav-bg-white");
             mobileNav.classList.add("relative");
         }
     };
 
-    // Listen to scroll event to apply sticky for both desktop & mobile
+    // Listen to scroll event to apply sticky for desktop & mobile navbar only
     const handleScroll = () => {
         applySticky(desktopNav);
         applyMobileSticky();
@@ -191,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Show dropdown on hover
         if (languageContainer) {
             let hoverTimeout;
-            
+
             const showDropdown = () => {
                 clearTimeout(hoverTimeout);
                 languageDropdown.classList.remove("hidden");
@@ -206,12 +197,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
             languageContainer.addEventListener("mouseenter", showDropdown);
             languageContainer.addEventListener("mouseleave", hideDropdown);
-            
+
             // Keep dropdown open when hovering over it
             languageDropdown.addEventListener("mouseenter", showDropdown);
             languageDropdown.addEventListener("mouseleave", hideDropdown);
         }
-        
+
         // Reposition on scroll and resize
         window.addEventListener("scroll", positionDropdown);
         window.addEventListener("resize", positionDropdown);
@@ -222,19 +213,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.preventDefault();
                 e.stopPropagation();
                 const selectedLang = option.getAttribute("data-lang");
-                
+
                 if (selectedLang) {
                     localStorage.setItem("language", selectedLang);
-                    
+
                     // Update active state
                     languageOptions.forEach(opt => {
                         opt.classList.remove("bg-[#FFF9F2]");
                     });
                     option.classList.add("bg-[#FFF9F2]");
-                    
+
                     // Close dropdown
                     languageDropdown.classList.add("hidden");
-                    
+
                     // Reload page to apply language changes
                     window.location.reload();
                 }
@@ -260,7 +251,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Show dropdown on hover
         if (languageContainerMobile) {
             let hoverTimeoutMobile;
-            
+
             const showDropdownMobile = () => {
                 clearTimeout(hoverTimeoutMobile);
                 languageDropdownMobile.style.display = "block";
@@ -274,7 +265,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             languageContainerMobile.addEventListener("mouseenter", showDropdownMobile);
             languageContainerMobile.addEventListener("mouseleave", hideDropdownMobile);
-            
+
             // Keep dropdown open when hovering over it
             languageDropdownMobile.addEventListener("mouseenter", showDropdownMobile);
             languageDropdownMobile.addEventListener("mouseleave", hideDropdownMobile);
@@ -286,19 +277,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.preventDefault();
                 e.stopPropagation();
                 const selectedLang = option.getAttribute("data-lang");
-                
+
                 if (selectedLang) {
                     localStorage.setItem("language", selectedLang);
-                    
+
                     // Update active state
                     languageOptionsMobile.forEach(opt => {
                         opt.classList.remove("bg-[#FFF9F2]");
                     });
                     option.classList.add("bg-[#FFF9F2]");
-                    
+
                     // Close dropdown
                     languageDropdownMobile.style.display = "none";
-                    
+
                     // Reload page to apply language changes
                     window.location.reload();
                 }
@@ -324,7 +315,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // Show dropdown on hover
         if (languageContainerTopbar) {
             let hoverTimeoutTopbar;
-            
+
             const showDropdownTopbar = () => {
                 clearTimeout(hoverTimeoutTopbar);
                 languageDropdownTopbar.style.display = "block";
@@ -340,7 +331,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             languageContainerTopbar.addEventListener("mouseenter", showDropdownTopbar);
             languageContainerTopbar.addEventListener("mouseleave", hideDropdownTopbar);
-            
+
             // Keep dropdown open when hovering over it
             languageDropdownTopbar.addEventListener("mouseenter", showDropdownTopbar);
             languageDropdownTopbar.addEventListener("mouseleave", hideDropdownTopbar);
@@ -352,20 +343,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 e.preventDefault();
                 e.stopPropagation();
                 const selectedLang = option.getAttribute("data-lang");
-                
+
                 if (selectedLang) {
                     localStorage.setItem("language", selectedLang);
-                    
+
                     // Update active state
                     languageOptionsTopbar.forEach(opt => {
                         opt.classList.remove("bg-[#FFF9F2]");
                     });
                     option.classList.add("bg-[#FFF9F2]");
-                    
+
                     // Close dropdown
                     languageDropdownTopbar.style.display = "none";
                     languageDropdownTopbar.classList.add("hidden");
-                    
+
                     // Reload page to apply language changes
                     window.location.reload();
                 }
