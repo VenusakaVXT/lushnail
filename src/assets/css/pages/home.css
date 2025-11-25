@@ -131,23 +131,13 @@
     @apply w-full h-full object-cover;
 }
 
-/* Dark overlay at the top for title */
-.category-card-overlay-top {
-    @apply absolute top-0 left-0 right-0 z-10 p-6;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 50%, transparent 100%);
-}
-
-.category-card-title {
-    @apply text-primary text-2xl sm:text-3xl lg:text-4xl text-center;
-}
-
-/* Button overlay at the bottom */
+/* Button overlay at the bottom right */
 .category-card-overlay-bottom {
-    @apply absolute bottom-6 left-1/2 transform -translate-x-1/2 z-10;
+    @apply absolute bottom-4 right-0 left-0  mx-auto z-10 text-center;
 }
 
 .category-card-button {
-    @apply bg-[#ae873e] text-black px-6 py-3 rounded-lg text-sm sm:text-base font-semibold hover:bg-[#d4a85a] transition-colors;
+    @apply bg-[#ae873e] text-black px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold hover:bg-[#d4a85a] transition-colors;
     white-space: nowrap;
 }
 
@@ -249,10 +239,11 @@ ease; */
 
 .nail-image-item {
     @apply relative overflow-hidden rounded-lg cursor-pointer;
-    flex: 1 1 0;
+    flex: 0.1 1 0;
     min-width: 0;
     height: 400px;
-    transition: flex-grow 0.5s cubic-bezier(0.4, 0, 0.2, 1), flex-basis 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.7;
+    transition: flex-grow 0.5s cubic-bezier(0.4, 0, 0.2, 1), flex-basis 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
 }
 
 @media (max-width: 639px) {
@@ -272,20 +263,34 @@ ease; */
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Hover effect: Keep hovered item same size, decrease others */
-.most-popular-nail-gallery:hover .nail-image-item:not(:hover) {
-    flex: 0.4 1 0;
-    opacity: 0.8;
-}
-
-.nail-image-item:hover {
-    flex: 1 1 0;
+/* Active item styling - takes 60% of screen */
+.nail-image-item.active {
+    flex: 0.6 1 0;
     z-index: 10;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+}
+
+.nail-image-item.active .nail-image {
+    transform: scale(1.05);
+}
+
+/* Hover effect: hovered item becomes active (60%) */
+.nail-image-item:hover {
+    flex: 0.6 1 0 !important;
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    opacity: 1;
 }
 
 .nail-image-item:hover .nail-image {
     transform: scale(1.05);
+}
+
+/* When hovering on gallery, shrink non-hovered and non-active items to 10% */
+.most-popular-nail-gallery:hover .nail-image-item:not(:hover):not(.active) {
+    flex: 0.1 1 0;
+    opacity: 0.7;
 }
 
 /* ========================================================================
@@ -328,6 +333,112 @@ ease; */
     }
     50% {
         transform: translateY(-20px);
+    }
+}
+
+/* ========================================================================
+   Master Nail Art Section Styles
+   ======================================================================== */
+[data-name="master-nail-art"] {
+    position: relative;
+}
+
+[data-name="master-nail-art"] svg path {
+    animation: wave 3s ease-in-out infinite;
+}
+
+[data-name="master-nail-art"] svg:last-child path {
+    animation-delay: 1.5s;
+}
+
+@keyframes wave {
+    0%, 100% {
+        d: path("M0,50 Q300,20 600,50 T1200,50 L1200,0 L0,0 Z");
+    }
+    50% {
+        d: path("M0,50 Q300,30 600,50 T1200,50 L1200,0 L0,0 Z");
+    }
+}
+
+/* Image collage hover effects */
+[data-name="master-nail-art"] img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+[data-name="master-nail-art"] .absolute > div {
+    will-change: transform, z-index;
+}
+
+[data-name="master-nail-art"] .absolute > div:hover {
+    z-index: 40 !important;
+}
+
+[data-name="master-nail-art"] .absolute > div:hover img {
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Golden box with texture and shimmer effect */
+.master-nail-art-box {
+    position: relative;
+    background: linear-gradient(135deg, #F4DB89 0%, #ae873e 50%, #d4a85a 100%);
+    animation: shimmer-gold 4s ease-in-out infinite;
+}
+
+.master-nail-art-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.15) 0%, transparent 50%),
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(255, 255, 255, 0.03) 10px,
+            rgba(255, 255, 255, 0.03) 20px
+        );
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0.6;
+}
+
+.master-nail-art-box::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        transparent 30%,
+        transparent 70%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    border-radius: inherit;
+    pointer-events: none;
+    animation: shimmer-sweep 3s ease-in-out infinite;
+}
+
+@keyframes shimmer-gold {
+    0%, 100% {
+        filter: brightness(1) saturate(1);
+    }
+    50% {
+        filter: brightness(1.08) saturate(1.1);
+    }
+}
+
+@keyframes shimmer-sweep {
+    0% {
+        transform: translateX(-100%) translateY(-100%);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateX(100%) translateY(100%);
+        opacity: 0;
     }
 }
 

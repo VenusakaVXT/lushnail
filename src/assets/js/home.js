@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     initContactForm();
     initScrollAnimations();
+    initMostPopularNailGallery();
 });
 
 function initScrollAnimations() {
@@ -28,6 +29,28 @@ function initScrollAnimations() {
     const statisticalItems = document.querySelectorAll('.statistical-item');
     statisticalItems.forEach(item => {
         observer.observe(item);
+    });
+}
+
+function initMostPopularNailGallery() {
+    const gallery = document.querySelector('.most-popular-nail-gallery');
+    if (!gallery) return;
+
+    const items = gallery.querySelectorAll('.nail-image-item');
+    
+    items.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            // Remove active from all items
+            items.forEach(i => i.classList.remove('active'));
+            // Add active to hovered item
+            this.classList.add('active');
+        });
+    });
+
+    // Reset to first item when mouse leaves gallery
+    gallery.addEventListener('mouseleave', function() {
+        items.forEach(i => i.classList.remove('active'));
+        items[0].classList.add('active');
     });
 }
 

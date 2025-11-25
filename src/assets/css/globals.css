@@ -20,7 +20,7 @@
         --popover-foreground: theme('colors.gray.900');
 
         /* Primary Colors */
-        --primary: #b29441;
+        --primary: #DDB657;
         --primary-foreground: theme('colors.white');
 
         /* Title Colors */
@@ -303,7 +303,7 @@
     }
 
     .title-section {
-        @apply text-primary text-[#a5834a] leading-tight text-2xl sm:text-4xl lg:text-5xl relative;
+        @apply text-black leading-tight text-2xl sm:text-4xl lg:text-5xl relative;
     }
 
     .title-section-dark {
@@ -338,17 +338,17 @@
 
     /* Button Custom */
     .btn-primary {
-        @apply bg-black border-transparent text-white rounded-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
+        @apply bg-gradient-to-b from-[#F4DB89] to-[#DDB657] border-transparent text-black rounded-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
     }
 
-    .btn-primary::before {
+    /* .btn-primary::before {
         content: '';
         @apply absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] transition-transform duration-700;
-    }
-
+    } */
+/* 
     .btn-primary:hover::before {
         @apply translate-x-[100%];
-    }
+    } */
 
     .btn-primary-gradient {
         @apply bg-gradient-to-r from-[#ae873e] to-[#c9a961] text-white py-2 px-4 rounded-lg text-[13px] hover:from-[#a5834a] hover:to-[#ae873e] transition-all duration-300;
