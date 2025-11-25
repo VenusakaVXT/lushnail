@@ -320,6 +320,9 @@
     .bg-section-yellow-white {
         background: linear-gradient(174deg, #fff9f2, #ffffff);
     }
+    .bg-gradient-primary {
+        @apply bg-gradient-to-b from-[#F4DB89] to-[#DDB657];
+    }
 
     /* ========================================================================
        BUTTON STYLES: Các thuộc tính cho Button
@@ -363,7 +366,7 @@
     }
 
     .btn-outline {
-        @apply inline-flex items-center gap-2 bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 sm:px-8 py-2.5 sm:py-3 transition-all duration-300;
+        @apply inline-flex items-center gap-2 bg-transparent border-2 border-primary text-black hover:bg-primary hover:text-white   transition-all duration-300;
     }
 
     .btn-outline-white {
