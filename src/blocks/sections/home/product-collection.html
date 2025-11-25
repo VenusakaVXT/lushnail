@@ -1,198 +1,181 @@
-<!-- Product Collection Section -->
-<section class="bg-[#090707] noise-overlay relative w-full pt-12 pb-0 sm:pt-16 lg:pt-24 overflow-visible"
-  data-name="product-collection">
-  <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 pb-[1px] sm:pb-[84px] lg:pb-[84px] relative">
-    <!-- Title -->
-    <h2
-      class="title-section text-[#bbaa8e] text-center tracking-[-1.5px] mb-12 lg:mb-16">
-      Khám phá bộ sưu tập
-    </h2>
+<section class="bg-black-90 relative w-full h-full bg-black py-[96px] flex flex-col items-center gap-8">
+  <div class="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center gap-6">
+    <div class="flex flex-col items-center gap-1 mb-6">
+      <h2
+        class="title-section text-center font-[Playfair Display] text-4xl font-medium text-[#DDB657] leading-tight uppercase">
+        BỘ SƯU TẬP CỦA CHÚNG TÔI
+      </h2>
 
-    <!-- Products Grid -->
-    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-6 mb-8 lg:mb-12">
-      <!-- Product 1 -->
-      <div class="product-card">
-        <div class="product-card__image">
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
-            alt="Beyond Pro Bundle - White">
+      <p class="align-strech text-white text-center font-[Fz Poppins] text-xs font-light leading-relaxed max-w-2xl">
+        Mỗi mẫu trong bộ sưu tập là một dấu ấn riêng biệt dành cho bạn.
+      </p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-6 w-full mt-9">
+      <!-- Product 1: Cozy Winter Vibes -->
+      <div class="flex flex-col bg-white rounded-lg overflow-hidden shadow-sm w-[258px] h-[397px]">
+        <div class="relative w-full h-[258px] overflow-hidden">
+          <img src="/assets/images/products/product1.png" alt="Cozy Winter Vibes" class="w-full h-full object-cover">
+          <div
+            class="absolute top-2 right-2 bg-[#DDB657] text-white text-xs font-semibold px-2 py-1 rounded flex items-center gap-1">
+            <img src="assets/images/discount.png" alt="Discount" class="w-3 h-3">
+            Save 50%
+          </div>
         </div>
-        <div class="product-card__body">
-          <p class="product-card__title">Beyond
-            Pro Bundle - White</p>
-          <p class="product-card__price">$27</p>
-          <div class="flex flex-col justify-center"><button class="btn btn-primary">
-            Thêm giỏ hàng
-          </button></div>
+        <div class="flex-1 flex flex-col items-center justify-center p-4 gap-2">
+          <h3 class="text-black text-base font-medium text-center">Cozy Winter Vibes</h3>
+          <div class="flex items-baseline gap-2 justify-center border-t border-gray-200 pt-2 w-full">
+            <span class="text-black text-lg font-semibold">783.000₫</span>
+            <span class="text-gray-400 text-sm line-through">1.350.000₫</span>
+          </div>
+          <button class="btn btn-primary w-full mt-2">
+            ĐĂNG KÝ NGAY
+          </button>
         </div>
       </div>
 
-      <!-- Product 2 -->
-      <div class="product-card">
-        <div class="product-card__image">
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
-            alt="Nail Drill Bits">
+      <!-- Product 2: Trending Now Collection -->
+      <div class="flex flex-col bg-white rounded-lg overflow-hidden shadow-sm w-[258px] h-[397px]">
+        <div class="relative w-full h-[258px] overflow-hidden">
+          <img src="/assets/images/products/product2.png" alt="Trending Now Collection"
+            class="w-full h-full object-cover">
         </div>
-        <div class="product-card__body">
-          <p class="product-card__title">Nail
-            Drill Bits Set</p>
-          <p class="product-card__price">$27</p>
-          <div class="flex flex-col justify-center"><button class="btn btn-primary">
-            Thêm giỏ hàng
-          </button></div>
-        </div>
-      </div>
-
-      <!-- Product 3 -->
-      <div class="product-card">
-        <div class="product-card__image">
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
-            alt="Geky Art Colors">
-        </div>
-        <div class="product-card__body">
-          <p class="product-card__title">Geky
-            Art Color Set</p>
-          <p class="product-card__price">$27</p>
-          <div class="flex flex-col justify-center"><button class="btn btn-primary">
-            Thêm giỏ hàng
-          </button></div>
+        <div class="flex-1 flex flex-col items-center justify-center p-4 gap-2">
+          <h3 class="text-black text-base font-medium text-center">Trending Now Collection</h3>
+          <div class="flex items-baseline gap-2 justify-center border-t border-gray-200 pt-2 w-full">
+            <span class="text-black text-lg font-semibold">864.000₫</span>
+          </div>
+          <button class="btn btn-primary w-full mt-2">
+            ĐĂNG KÝ NGAY
+          </button>
         </div>
       </div>
 
-      <!-- Product 4 -->
-      <div class="product-card">
-        <div class="product-card__image">
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
-            alt="Nail Tools">
+      <!-- Product 3: Elegant Classic Bundle -->
+      <div class="flex flex-col bg-white rounded-lg overflow-hidden shadow-sm w-[258px] h-[397px]">
+        <div class="relative w-full h-[258px] overflow-hidden">
+          <img src="/assets/images/products/product3.png" alt="Elegant Classic Bundle"
+            class="w-full h-full object-cover">
         </div>
-        <div class="product-card__body">
-          <p class="product-card__title">
-            Professional Nail Tools</p>
-          <p class="product-card__price">$27</p>
-          <div class="flex flex-col justify-center"><button class="btn btn-primary">
-            Thêm giỏ hàng
-          </button></div>
-        </div>
-      </div>
-
-      <!-- Product 5 -->
-      <div class="product-card">
-        <div class="product-card__image">
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
-            alt="Kiara Sky Gel Polish">
-        </div>
-        <div class="product-card__body">
-          <p class="product-card__title">KIARA
-            SKY GEL POLISH</p>
-          <p class="product-card__price">$27</p>
-          <div class="flex flex-col justify-center"><button class="btn btn-primary">
-            Thêm giỏ hàng
-          </button></div>
+        <div class="flex-1 flex flex-col items-center justify-center p-4 gap-2">
+          <h3 class="text-black text-base font-medium text-center">Elegant Classic Bundle</h3>
+          <div class="flex items-baseline gap-2 justify-center border-t border-gray-200 pt-2 w-full">
+            <span class="text-black text-lg font-semibold">486.000₫</span>
+          </div>
+          <button class="btn btn-primary w-full mt-2">
+            ĐĂNG KÝ NGAY
+          </button>
         </div>
       </div>
 
-      <!-- Product 6 -->
-      <div class="product-card">
-        <div class="product-card__image">
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
-            alt="Nail Art Set 1">
+      <!-- Product 4: Celebration Party Pack -->
+      <div class="flex flex-col bg-white rounded-lg overflow-hidden shadow-sm w-[258px] h-[397px]">
+        <div class="relative w-full h-[258px] overflow-hidden">
+          <img src="/assets/images/products/product1.png" alt="Celebration Party Pack"
+            class="w-full h-full object-cover">
         </div>
-        <div class="product-card__body">
-          <p class="product-card__title">Nail
-            Art Collection</p>
-          <p class="product-card__price">$27</p>
-          <div class="flex flex-col justify-center"><button class="btn btn-primary">
-            Thêm giỏ hàng
-          </button></div>
-        </div>
-      </div>
-
-      <!-- Product 7 (hidden on mobile, shown on md+) -->
-      <div class="hidden md:block product-card">
-        <div class="product-card__image">
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
-            alt="Nail Art Set 2">
-        </div>
-        <div class="product-card__body">
-          <p class="product-card__title">Nail
-            Art Collection</p>
-          <p class="product-card__price">$27</p>
-          <div class="flex flex-col justify-center"><button class="btn btn-primary">
-            Thêm giỏ hàng
-          </button></div>
+        <div class="flex-1 flex flex-col items-center justify-center p-4 gap-2">
+          <h3 class="text-black text-base font-medium text-center">Celebration Party Pack</h3>
+          <div class="flex items-baseline gap-2 justify-center border-t border-gray-200 pt-2 w-full">
+            <span class="text-black text-lg font-semibold">1.107.003₫</span>
+          </div>
+          <button class="btn btn-primary w-full mt-2">
+            ĐĂNG KÝ NGAY
+          </button>
         </div>
       </div>
 
-      <!-- Product 8 (hidden on mobile, shown on md+) -->
-      <div class="hidden md:block product-card">
-        <div class="product-card__image">
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
-            alt="Nail Art Set 3">
+      <!-- Product 5: Winter Wonderland Set -->
+      <div class="flex flex-col bg-white rounded-lg overflow-hidden shadow-sm w-[258px] h-[397px]">
+        <div class="relative w-full h-[258px] overflow-hidden">
+          <img src="/assets/images/products/product5.png" alt="Winter Wonderland Set"
+            class="w-full h-full object-cover">
         </div>
-        <div class="product-card__body">
-          <p class="product-card__title">Nail
-            Art Collection</p>
-          <p class="product-card__price">$27</p>
-          <div class="flex flex-col justify-center"><button class="btn btn-primary">
-            Thêm giỏ hàng
-          </button></div>
-        </div>
-      </div>
-
-      <!-- Product 9 (hidden on mobile/tablet, shown on lg+) -->
-      <div class="hidden lg:block product-card">
-        <div class="product-card__image">
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
-            alt="Nail Art Set 4">
-        </div>
-        <div class="product-card__body">
-          <p class="product-card__title">Nail
-            Art Collection</p>
-          <p class="product-card__price">$27</p>
-          <div class="flex flex-col justify-center"><button class="btn btn-primary">
-            Thêm giỏ hàng
-          </button></div>
+        <div class="flex-1 flex flex-col items-center justify-center p-4 gap-2">
+          <h3 class="text-black text-base font-medium text-center">Winter Wonderland Set</h3>
+          <div class="flex items-baseline gap-2 justify-center border-t border-gray-200 pt-2 w-full">
+            <span class="text-black text-lg font-semibold">729.000₫</span>
+          </div>
+          <button class="btn btn-primary w-full mt-2">
+            ĐĂNG KÝ NGAY
+          </button>
         </div>
       </div>
 
-      <!-- Product 10 (hidden on mobile/tablet, shown on lg+) -->
-      <div class="hidden lg:block product-card">
-        <div class="product-card__image">
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
-            alt="Nail Art Set 5">
+      <!-- Product 6: Modern Trend Collection -->
+      <div class="flex flex-col bg-white rounded-lg overflow-hidden shadow-sm w-[258px] h-[397px]">
+        <div class="relative w-full h-[258px] overflow-hidden">
+          <img src="/assets/images/products/product6.png" alt="Modern Trend Collection"
+            class="w-full h-full object-cover">
+          <div
+            class="absolute top-2 right-2 bg-[#DDB657] text-white text-xs font-semibold px-2 py-1 rounded flex items-center gap-1">
+            <img src="assets/images/discount.png" alt="Discount" class="w-3 h-3">
+            Save 50%
+          </div>
         </div>
-        <div class="product-card__body">
-          <p class="product-card__title">Nail
-            Art Collection</p>
-          <p class="product-card__price">$27</p>
-          <div class="flex flex-col justify-center"><button class="btn btn-primary">
-            Thêm giỏ hàng
-          </button></div>
+        <div class="flex-1 flex flex-col items-center justify-center p-4 gap-2">
+          <h3 class="text-black text-base font-medium text-center">Modern Trend Collection</h3>
+          <div class="flex items-baseline gap-2 justify-center border-t border-gray-200 pt-2 w-full">
+            <span class="text-black text-lg font-semibold">891.000₫</span>
+            <span class="text-gray-400 text-sm line-through">1.566.000₫</span>
+          </div>
+          <button class="btn btn-primary w-full mt-2">
+            ĐĂNG KÝ NGAY
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 7: Party Glamour Set -->
+      <div class="flex flex-col bg-white rounded-lg overflow-hidden shadow-sm w-[258px] h-[397px]">
+        <div class="relative w-full h-[258px] overflow-hidden">
+          <img src="/assets/images/products/product7.png" alt="Party Glamour Set"
+            class="w-full h-full object-cover">
+          <div
+            class="absolute top-2 right-2 bg-[#DDB657] text-white text-xs font-semibold px-2 py-1 rounded flex items-center gap-1">
+            <img src="assets/images/discount.png" alt="Discount" class="w-3 h-3">
+            Save 50%
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col items-center justify-center p-4 gap-2">
+          <h3 class="text-black text-base font-medium text-center">Party Glamour Set</h3>
+          <div class="flex items-baseline gap-2 justify-center border-t border-gray-200 pt-2 w-full">
+            <span class="text-black text-lg font-semibold">945.000₫</span>
+            <span class="text-gray-400 text-sm line-through">1.673.996₫</span>
+          </div>
+          <button class="btn btn-primary w-full mt-2">
+            ĐĂNG KÝ NGAY
+          </button>
+        </div>
+      </div>
+
+      <!-- Product 8: Hot Trend Design Collection -->
+      <div class="flex flex-col bg-white rounded-lg overflow-hidden shadow-sm w-[258px] h-[397px]">
+        <div class="relative w-full h-[258px] overflow-hidden">
+          <img src="/assets/images/products/product8.png" alt="Hot Trend Design Collection"
+            class="w-full h-full object-cover">
+          <div
+            class="absolute top-2 right-2 bg-[#DDB657] text-white text-xs font-semibold px-2 py-1 rounded flex items-center gap-1">
+            <img src="assets/images/discount.png" alt="Discount" class="w-3 h-3">
+            Save 50%
+          </div>
+        </div>
+        <div class="flex-1 flex flex-col items-center justify-center p-4 gap-2">
+          <h3 class="text-black text-base font-medium text-center">Hot Trend Design Collection</h3>
+          <div class="flex items-baseline gap-2 justify-center border-t border-gray-200 pt-2 w-full">
+            <span class="text-black text-lg font-semibold">945.000₫</span>
+            <span class="text-gray-400 text-sm line-through">1.674.000₫</span>
+          </div>
+          <button class="btn btn-primary w-full mt-2">
+            ĐĂNG KÝ NGAY
+          </button>
         </div>
       </div>
     </div>
 
-    <!-- View More Button -->
-    <div class="flex justify-center lg:justify-end mb-8 lg:mb-12 relative z-10">
-      <a href="products.html"
-        class="btn bg-[#090707] border-2 border-white text-white px-6 py-2.5 text-[14px] hover:bg-white hover:text-[#090707] transition-all duration-300">
-        Xem thêm
+    <div class="flex justify-center mt-4 relative z-10">
+      <a href="products.html" class="btn btn-primary">
+        XEM TẤT CẢ
       </a>
     </div>
-
-    <!-- Decorative Background Bottom - Inside Container -->
-    <div class="absolute bottom-0 left-0 right-0 w-full h-[200px] sm:h-[250px] lg:h-[300px] pointer-events-none z-0 bg-product-decorative"
-      style="background-image: url('assets/images/bg-product.png'); background-size: 100% auto; background-position: bottom center; background-repeat: no-repeat; z-index: -1; margin: 0;">
-    </div>
- 
   </div>
 </section>

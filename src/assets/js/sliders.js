@@ -131,6 +131,47 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Setup autoplay resume for hero slider after drag ends
     setupAutoplayResume('.bslider-hero');
+
+    // Feedback slider - Auto-scrolling image gallery
+    initSlider('.bslider-feedback', {
+        all: {
+            enableAutoplay: true,
+            autoplayInterval: 3000,
+            stopAutoplayOnInteraction: true,
+            enablePagination: false,
+            draggable: true,
+            loop: true,
+            loopRepeats: -1,
+            transitionDuration: 500,
+            transitionTimingFunction: 'ease-in-out',
+            slideGap: '16px',
+            slidesToShow: 1,
+            slidesToScroll: 1
+        },
+        '(min-width: 500px) and (max-width: 768px)': { 
+            slidesToShow: 2, 
+            slidesToScroll: 2 
+        },
+        '(min-width: 768px) and (max-width: 1023px)': { 
+            slidesToShow: 3, 
+            slidesToScroll: 3 
+        },
+        '(min-width: 1023px) and (max-width: 1360px)': { 
+            slidesToShow: 4, 
+            slidesToScroll: 4 
+        },
+        '(min-width: 1360px) and (max-width: 1590px)': { 
+            slidesToShow: 5, 
+            slidesToScroll: 5 
+        },
+        '(min-width: 1590px)': { 
+            slidesToShow: 6, 
+            slidesToScroll: 6 
+        }
+    });
+
+    // Setup autoplay resume for feedback slider after drag ends
+    setupAutoplayResume('.bslider-feedback');
 });
 
 // Setup autoplay resume after drag ends for sliders with autoplay enabled

@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initScrollAnimations();
     initMostPopularNailGallery();
     initReviewSlider();
+    initFeedbackImagesSlider();
 });
 
 function initScrollAnimations() {
@@ -38,9 +39,9 @@ function initMostPopularNailGallery() {
     if (!gallery) return;
 
     const items = gallery.querySelectorAll('.nail-image-item');
-    
+
     items.forEach(item => {
-        item.addEventListener('mouseenter', function() {
+        item.addEventListener('mouseenter', function () {
             // Remove active from all items
             items.forEach(i => i.classList.remove('active'));
             // Add active to hovered item
@@ -49,7 +50,7 @@ function initMostPopularNailGallery() {
     });
 
     // Reset to first item when mouse leaves gallery
-    gallery.addEventListener('mouseleave', function() {
+    gallery.addEventListener('mouseleave', function () {
         items.forEach(i => i.classList.remove('active'));
         items[0].classList.add('active');
     });
@@ -71,12 +72,12 @@ function initReviewSlider() {
     const totalItems = profileItems.length;
     const visibleCount = 5; // Always show 5 items
     const centerIndex = 2; // Center position (0-indexed, so 2 is the 3rd item)
-    
+
     // Clone last 2 items to the beginning and first 2 items to the end for infinite loop
     const cloneCount = 2;
     const lastItems = Array.from(profileItems).slice(-cloneCount);
     const firstItems = Array.from(profileItems).slice(0, cloneCount);
-    
+
     // Clone items to beginning
     lastItems.forEach((item, idx) => {
         const clone = item.cloneNode(true);
@@ -85,7 +86,7 @@ function initReviewSlider() {
         clone.style.display = 'none'; // Initially hidden
         profileTrack.insertBefore(clone, profileTrack.firstChild);
     });
-    
+
     // Clone items to end
     firstItems.forEach((item, idx) => {
         const clone = item.cloneNode(true);
@@ -94,10 +95,10 @@ function initReviewSlider() {
         clone.style.display = 'none'; // Initially hidden
         profileTrack.appendChild(clone);
     });
-    
+
     // Update profileItems after cloning
     profileItems = slider.querySelectorAll('.review-profile-item');
-    
+
     let currentIndex = 2; // Start with the middle item (index 2)
 
     // Function to calculate visible range with infinite loop support
@@ -105,7 +106,7 @@ function initReviewSlider() {
         // Always show 5 items: 2 before, 1 active, 2 after
         // Calculate indices with wrap-around
         const indices = [];
-        
+
         for (let i = -centerIndex; i <= centerIndex; i++) {
             let idx = activeIndex + i;
             // Wrap around using modulo for infinite loop
@@ -176,12 +177,12 @@ function initReviewSlider() {
             // Show items that match the calculated indices
             // For clones, show them only when needed for wrap-around
             let shouldShow = false;
-            
+
             if (isClone) {
                 // Show clones only when we need wrap-around
                 const cloneType = item.getAttribute('data-clone');
                 const realIndex = parseInt(item.getAttribute('data-index'));
-                
+
                 if (cloneType === 'start') {
                     // Start clones represent items at the end (totalItems-2, totalItems-1)
                     shouldShow = cloneIndicesToShow.has(realIndex);
@@ -194,7 +195,7 @@ function initReviewSlider() {
                 const shouldHideBecauseClone = cloneIndicesToShow.has(itemIndex);
                 shouldShow = indices.includes(itemIndex) && !shouldHideBecauseClone;
             }
-            
+
             if (shouldShow) {
                 item.style.display = 'block';
             } else {
@@ -220,11 +221,11 @@ function initReviewSlider() {
             // Find the active item (prefer original, fallback to clone)
             let activeItem = null;
             let originalItem = null;
-            
+
             profileItems.forEach(item => {
                 const itemIndex = parseInt(item.getAttribute('data-index'));
                 const isClone = item.hasAttribute('data-clone');
-                
+
                 if (itemIndex === currentIndex && item.style.display !== 'none') {
                     if (!isClone) {
                         originalItem = item;
@@ -233,40 +234,40 @@ function initReviewSlider() {
                     }
                 }
             });
-            
+
             // Prefer original over clone
             activeItem = originalItem || activeItem;
-            
+
             if (activeItem && activeItem.style.display !== 'none') {
                 const wrapper = slider.querySelector('.review-profiles-wrapper');
                 if (!wrapper) return;
-                
+
                 // For loop transitions, temporarily disable transition for smoother jump
                 if (isLooping) {
                     profileTrack.style.transition = 'none';
                 }
-                
+
                 // Reset transform first to calculate natural positions
                 profileTrack.style.transform = 'translateX(0px)';
-                
+
                 // Wait for layout to update
                 requestAnimationFrame(() => {
                     requestAnimationFrame(() => {
                         const wrapperRect = wrapper.getBoundingClientRect();
                         const wrapperCenter = wrapperRect.width / 2;
-                        
+
                         const activeItemRect = activeItem.getBoundingClientRect();
                         const trackRect = profileTrack.getBoundingClientRect();
-                        
+
                         // Calculate active item center position relative to track
                         const itemLeftRelativeToTrack = activeItemRect.left - trackRect.left;
                         const itemCenterRelativeToTrack = itemLeftRelativeToTrack + activeItemRect.width / 2;
-                        
+
                         // Calculate offset needed to center the active item
                         const offset = wrapperCenter - itemCenterRelativeToTrack;
-                        
+
                         profileTrack.style.transform = `translateX(${offset}px)`;
-                        
+
                         // Re-enable transition after loop jump
                         if (isLooping) {
                             setTimeout(() => {
@@ -354,4 +355,29 @@ function initContactForm() {
             courseForm.reset();
         });
     }
+}
+
+function initFeedbackImagesSlider() {
+    const slider = document.querySelector('.feedback-images-slider');
+    if (!slider) return;
+
+    const track = slider.querySelector('.feedback-images-track');
+    if (!track) return;
+
+    // Get all image items
+    const items = track.querySelectorAll('.feedback-image-item');
+    if (items.length === 0) return;
+
+    // Calculate total width: 8 images * 160px + 7 gaps * 8px (gap between images)
+    const imageWidth = 160;
+    const gap = 8;
+    const originalSetWidth = (8 * imageWidth) + (7 * gap); // 8 images + 7 gaps
+    const totalWidth = originalSetWidth * 3; // 3 sets for seamless loop
+
+    // Set track width
+    track.style.width = totalWidth + 'px';
+
+    // The CSS animation will handle the scrolling
+    // Animation moves exactly one set width, then loops seamlessly
+    // With 3 sets, when animation completes, it resets to show the same visual position
 }

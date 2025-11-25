@@ -345,6 +345,7 @@
     .bg-section-yellow-white {
         background: linear-gradient(174deg, #fff9f2, #ffffff);
     }
+
     .bg-gradient-primary {
         @apply bg-gradient-to-b from-[#F4DB89] to-[#DDB657];
     }
@@ -391,7 +392,7 @@
     }
 
     .btn-outline {
-        @apply inline-flex items-center gap-2 bg-transparent border-2 border-primary text-black hover:bg-primary hover:text-white   transition-all duration-300;
+        @apply inline-flex items-center gap-2 bg-transparent border-2 border-primary text-black hover:bg-primary hover:text-white transition-all duration-300;
     }
 
     .btn-outline-white {
@@ -600,7 +601,7 @@
         Course Card Styles
     ======================================================================== */
     .course-card {
-        @apply relative bg-white rounded-[20px] overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0px_12px_40px_rgba(174,135,62,0.25)] transition-all duration-500 hover:-translate-y-1;
+        @apply relative bg-white rounded-[20px] overflow-hidden shadow-[0px_4px_20px_rgba(0, 0, 0, 0.08)] hover:shadow-[0px_12px_40px_rgba(174, 135, 62, 0.25)] transition-all duration-500 hover:-translate-y-1;
     }
 
     .course-card__badge {
@@ -992,7 +993,7 @@
     }
 
     .faq-item {
-        @apply p-2 relative bg-white rounded-[20px] overflow-hidden shadow-[0px_4px_20px_rgba(0,0,0,0.08)] hover:shadow-[0px_12px_40px_rgba(174,135,62,0.25)] transition-all duration-500 hover:-translate-y-1;
+        @apply p-2 relative bg-white rounded-[20px] overflow-hidden shadow-[0px_4px_20px_rgba(0, 0, 0, 0.08)] hover:shadow-[0px_12px_40px_rgba(174, 135, 62, 0.25)] transition-all duration-500 hover:-translate-y-1;
     }
 
     .map-iframe {
@@ -1046,6 +1047,54 @@
 
     .feedback-slider__dot.active:hover {
         @apply bg-[#c9a961];
+    }
+
+    /* ========================================================================
+        Feedback Images Auto-Scroll Slider
+    ======================================================================== */
+    .feedback-images-slider {
+        width: 100vw;
+        overflow: hidden;
+        position: relative;
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
+    }
+
+    .feedback-images-track {
+        display: flex;
+        width: fit-content;
+        animation: feedbackScroll 30s linear infinite;
+        will-change: transform;
+        gap: 8px;
+    }
+
+    .feedback-image-item {
+        flex-shrink: 0;
+        width: 160px;
+        height: 161px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .feedback-image {
+        width: 160px;
+        height: 161px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    @keyframes feedbackScroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-160px * 8 - 8px * 7));
+        }
+    }
+
+    .feedback-images-track:hover {
+        animation-play-state: paused;
     }
 
     /* ========================================================================
