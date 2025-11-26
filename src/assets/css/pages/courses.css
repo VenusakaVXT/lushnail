@@ -39,6 +39,35 @@
     }
 }
 
+/* Right column indentation - using margin-left: auto to push items in from right */
+.course-benefit-item-indent-right {
+    margin-left: -1.5rem;
+    margin-right: auto;
+}
+
+.course-benefit-item-indent-more-right {
+    margin-left: -2.5rem !important;
+   
+}
+
+@media (min-width: 1024px) {
+    .course-benefit-item-indent-right {
+        margin-left: -2.5rem;
+        margin-right: auto;
+    }
+    
+    .course-benefit-item-indent-more-right {
+        margin-left: 0rem !important;
+        margin-right: 0 !important;
+    }
+}
+
+/* First and last items margin */
+.course-benefit-item-first,
+.course-benefit-item-last {
+    margin-left: -4rem;
+}
+
 .course-benefit-check {
     @apply w-6 h-6 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0;
     background: linear-gradient(to bottom, #F4DB89, #DDB657);
@@ -48,6 +77,21 @@
 .course-benefit-item span {
     @apply text-sm sm:text-base text-[#333333] leading-relaxed flex-1;
     line-height: 1.6;
+}
+
+/* Right column items - icon on the right */
+.course-benefit-item-first .course-benefit-check,
+.course-benefit-item-indent-right .course-benefit-check,
+.course-benefit-item-last .course-benefit-check {
+    order: 2;
+    flex-shrink: 0;
+}
+
+.course-benefit-item-first span,
+.course-benefit-item-indent-right span,
+.course-benefit-item-last span {
+    order: 1;
+    text-align: left;
 }
 
 .course-benefit-circle {
