@@ -9,7 +9,7 @@
 }
 
 .statistical-icon-circle {
-    @apply w-20 h-20 sm:w-24 sm:h-24 lg:w-20 lg:h-20 rounded-full bg-black flex items-center justify-center relative;
+    @apply w-[60px] h-[60px] sm:w-20 sm:h-20 lg:w-20 lg:h-20 rounded-full bg-black flex items-center justify-center relative;
 }
 
 .statistical-icon {
@@ -485,4 +485,7 @@ ease; */
 .review-profile-item.active {
     transform: scale(1.1);
     z-index: 10;
+}
+.right-form {
+    @apply w-full lg:w-[70%] flex flex-col gap-6 flex justify-center lg:justify-start order-1 lg:order-2 px-4  pt-4 sm:pt-[200px]
 }

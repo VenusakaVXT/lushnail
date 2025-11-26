@@ -456,14 +456,14 @@
         Product Card Styles
     ======================================================================== */
     .product-card {
-        @apply border border-[#ececf0] bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all duration-300;
+        @apply relative border border-[#ececf0] bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all duration-300;
     }
 
     .product-card__image {
         @apply aspect-square bg-gray-50 overflow-hidden;
     }
 
-    .product-card__image img {
+    .product-card__image>img {
         @apply w-full h-full object-cover;
     }
 
@@ -479,6 +479,15 @@
     .product-card__price {
         @apply text-[#090707] mb-3;
         font-size: var(--font-size-xl);
+    }
+    .product-name{
+        @apply text-[14px] sm:text-base font-medium text-center leading-6 m-0 h-12 overflow-hidden line-clamp-2;
+    }
+    .product-box-content{
+        @apply flex-1 flex flex-col items-center justify-center p-2 sm:p-4 gap-2;
+    }
+    .product-box-price{
+        @apply flex items-baseline gap-2 justify-center border-t border-gray-200 pt-2 w-full;
     }
 
     .product-card__price-original {
@@ -694,9 +703,7 @@
           ======================================================================== */
     /* Option đã được chọn */
     select option:checked,
-    select option[selected]
-
-    /* Option khi hover (chưa được chọn) */
+    select option[selected],
     select option:hover,
     select option:focus,
     select option:active {
@@ -1047,3 +1054,6 @@
     }
 
 }
+/* .right-form {
+    @apply w-full lg:w-[70%] flex flex-col gap-6 flex justify-center lg:justify-start order-1 lg:order-2 px-4  pt-4 sm:pt-[200px]
+} */
