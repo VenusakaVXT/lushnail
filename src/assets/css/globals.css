@@ -283,8 +283,7 @@
     }
 
     .btn-secondary {
-        @apply bg-gradient-to-b from-[#F4DB89]/30 to-[#DDB657]/30 border-transparent text-black rounded-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
-
+        @apply bg-accent border border-primary gap-2 text-white px-6 sm:px-8 py-2.5 sm:py-3;
     }
 
     .btn-third {
@@ -432,15 +431,12 @@
        BADGE STYLES: Các thuộc tính cho Badge
        ======================================================================== */
     .badge {
-        @apply absolute top-2 right-2 text-white text-xs font-semibold px-2 py-1 rounded flex items-center gap-1;
+        @apply absolute top-4 right-0 text-white text-xs font-semibold px-2 py-1 flex items-center gap-1 rounded-[2px_0_0_2px];
     }
-
 
     .badge-primary {
-        @apply bg-[#DDB657];
+        @apply bg-[#B29441];
     }
-
-
 
     .badge-primary-gradient {
         @apply bg-gradient-to-r from-[#ae873e] to-[#c9a961];
@@ -478,33 +474,23 @@
     }
 
     .product-card__body {
-        @apply p-2 sm:p-4 bg-[#FFF9F2];
-    }
-
-    .product-card__title {
-        @apply h-[42px] text-gray-800 mb-2 line-clamp-2;
-        font-size: var(--font-size-base);
-    }
-
-    .product-card__price {
-        @apply text-[#090707] mb-3;
-        font-size: var(--font-size-xl);
-    }
-
-    .product-name {
-        @apply text-[14px] sm:text-base font-medium text-center leading-6 m-0 h-12 overflow-hidden line-clamp-2;
-    }
-
-    .product-box-content {
         @apply flex-1 flex flex-col items-center justify-center p-2 sm:p-4 gap-2;
     }
 
-    .product-box-price {
+    .product-card__title {
+        @apply text-[14px] sm:text-base font-medium text-center leading-6 m-0 h-6 overflow-hidden line-clamp-1;
+    }
+
+    .product-card__price-wrapper {
         @apply flex items-baseline gap-2 justify-center border-t border-gray-200 pt-2 w-full;
     }
 
+    .product-card__price {
+        @apply text-black text-sm sm:text-lg font-semibold;
+    }
+
     .product-card__price-original {
-        @apply text-[13px] text-[#999999] line-through mb-3;
+        @apply text-gray-400 text-sm line-through;
     }
 
     /* .product-card__button {
@@ -1002,25 +988,16 @@
     .feedback-image-item {
         flex-shrink: 0;
         width: 160px;
-        height: 160px;
+        height: 161px;
         margin: 0;
         padding: 0;
     }
 
     .feedback-image {
         width: 160px;
-        height: 160px;
+        height: 161px;
         object-fit: cover;
-
-    }
-
-    @media (max-width: 640px) {
-
-        .feedback-image-item,
-        .feedback-image {
-            width: 80px;
-            height: 80px;
-        }
+        border-radius: 8px;
     }
 
     @keyframes feedbackScroll {
