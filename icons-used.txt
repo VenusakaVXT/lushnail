@@ -71,7 +71,6 @@ server
 table
 circle
 help-circle
-arrow-right
 flask-conical
 user-check
 gift
@@ -81,6 +80,7 @@ eye
 credit-card
 wallet
 rotate-ccw
+arrow-right
 palette
 gem
 arrow-down

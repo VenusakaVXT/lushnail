@@ -283,7 +283,7 @@
     }
 
     .btn-secondary {
-        @apply bg-accent border border-primary gap-2 text-white px-6 sm:px-8 py-2.5 sm:py-3;
+        @apply bg-gradient-to-b from-[#F4DB89]/30 to-[#DDB657]/30 border-transparent text-black rounded-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
     }
 
     .btn-third {

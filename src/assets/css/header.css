@@ -7,11 +7,11 @@
    ======================================================================== */
 /* When scroll down - background #f8f7f6 blur with transparency */
 .nav-bg-blur {
-    background-color: rgb(0 0 0 / 15%) !important;
-    backdrop-filter: blur(12px) !important;
-    -webkit-backdrop-filter: blur(12px) !important;
-    box-shadow: 0 2px 10px rgb(82 82 82) !important;
-    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease;
+    /* background-color: rgb(0 0 0 / 15%) !important; */
+    /* backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important; */
+    /* box-shadow: 0 2px 10px rgb(82 82 82) !important;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, -webkit-backdrop-filter 0.3s ease; */
 }
 
 /* 
@@ -42,6 +42,9 @@
 .nav-bg-white {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    /* background-color: #f8f7f6 !important; */
+    border-radius: 0 !important;
+    max-height: 90px;
 }
 
 /* Ensure topbar is not fixed - it should scroll away */
@@ -209,7 +212,7 @@
        NAVBAR GROUP: Navigation Bar Styles
        ======================================================================== */
     .header-navbar-desktop {
-        @apply hidden md:flex bg-[#f8f7f6] whitespace-nowrap items-center min-h-[106px] justify-between px-4 py-3 shadow-sm transition-all duration-300;
+        @apply hidden md:flex bg-[#fefcf4] border-transparent text-black rounded-lg transition-all duration-300   relative overflow-hidden whitespace-nowrap items-center min-h-[106px] justify-between px-4 py-3 shadow-sm transition-all duration-300;
 
     }
 
@@ -232,7 +235,7 @@
         }
 
         .header-logo {
-            max-height: 45px;
+            max-height: 80px;
         }
 
         .header-navbar-desktop form {
@@ -370,13 +373,13 @@
 
     .header-logo {
         @apply h-auto;
-        max-height: 50px;
+        max-height: 80px;
         width: auto;
     }
 
     @media (max-width: 640px) {
         .header-logo {
-            max-height: 70px;
+            max-height: 50px;
         }
     }
 
