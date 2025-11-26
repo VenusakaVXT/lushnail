@@ -41,7 +41,7 @@
 /* White background for fixed navbar */
 .nav-bg-white {
     background-color: #ffffff !important;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -83,7 +83,7 @@
        TOPBAR GROUP: Topbar Banner Styles
        ======================================================================== */
     .header-topbar {
-        @apply bg-gradient-to-b from-[#F4DB89] to-[#DDB657] flex items-center justify-between gap-2 sm:gap-6 px-0 sm:px-4 py-1 sm:py-2 w-full;
+        @apply bg-gradient-to-b from-[#F4DB89] to-[#DDB657] flex items-center justify-between gap-2 sm:gap-6 px-0 md:px-4 py-1 sm:py-2 w-full;
     }
 
     .header-topbar .container {
@@ -115,6 +115,35 @@
     @media (min-width: 641px) {
         .header-topbar-text {
             max-width: calc(100% - 150px);
+        }
+    }
+
+    /* Tablet-specific topbar optimizations (768px - 1023px) */
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .header-topbar {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .header-topbar-text {
+            font-size: 12px;
+            max-width: calc(100% - 140px);
+        }
+
+        .header-topbar-language-button {
+            font-size: 12px;
+        }
+
+        .header-topbar-language-icon {
+            width: 1rem;
+            height: 1rem;
+        }
+
+        .header-topbar-language-chevron {
+            width: 0.75rem;
+            height: 0.75rem;
         }
     }
 
@@ -183,6 +212,58 @@
     .header-navbar-desktop {
         @apply hidden md:flex bg-[#f8f7f6] whitespace-nowrap items-center min-h-[106px] justify-between px-4 py-3 shadow-sm transition-all duration-300;
 
+    }
+
+    /* Tablet-specific optimizations (768px - 1023px) */
+    @media (min-width: 768px) and (max-width: 1023px) {
+        .header-navbar-desktop {
+            min-height: 90px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .header-navbar-desktop .container {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .header-navbar-link {
+            font-size: 14px;
+            padding: 0.25rem 0;
+        }
+
+        .header-logo {
+            max-height: 45px;
+        }
+
+        .header-navbar-desktop form {
+            min-width: 180px;
+            max-width: 200px;
+        }
+
+        .header-navbar-desktop form input {
+            font-size: 13px;
+            padding-left: 2.5rem;
+            padding-right: 0.75rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .header-navbar-desktop form i {
+            width: 1rem;
+            height: 1rem;
+            left: 0.75rem;
+        }
+
+        .header-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+        }
+
+        .header-navbar-desktop .container>div:first-child {
+            flex-shrink: 1;
+            min-width: 0;
+        }
     }
 
     /* Center navigation links */
@@ -301,7 +382,7 @@
     }
 
     /* Mobile Logo Centering */
-    .header-navbar-mobile .container > .flex-1 {
+    .header-navbar-mobile .container>.flex-1 {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
