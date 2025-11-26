@@ -90,6 +90,7 @@
         font-style: normal;
         font-display: swap;
     }
+
     @font-face {
         font-family: 'Playfair Display';
         src: url('/assets/fonts/PlayfairDisplay/PlayfairDisplay-Bold.ttf') format('truetype');
@@ -97,6 +98,7 @@
         font-style: normal;
         font-display: swap;
     }
+
     @font-face {
         font-family: 'Playfair Display';
         src: url('/assets/fonts/PlayfairDisplay/PlayfairDisplay-Italic.ttf') format('truetype');
@@ -113,6 +115,7 @@
         font-style: normal;
         font-display: swap;
     }
+
     @font-face {
         font-family: 'Fz Poppins';
         src: url('/assets/fonts/Fz Poppins/FzPoppins-Bold.ttf') format('truetype');
@@ -120,6 +123,7 @@
         font-style: normal;
         font-display: swap;
     }
+
     @font-face {
         font-family: 'Fz Poppins';
         src: url('/assets/fonts/Fz Poppins/FzPoppins-Italic.ttf') format('truetype');
@@ -132,9 +136,11 @@
     .font-vip-beezle {
         font-family: 'VIP Beezle', cursive, sans-serif;
     }
+
     .font-playfair {
         font-family: 'Playfair Display', serif;
     }
+
     .font-fz-poppins {
         font-family: 'Fz Poppins', 'Poppins', sans-serif;
     }
@@ -221,7 +227,7 @@
 
     .title-section {
         @apply text-black leading-tight text-[24px] sm:text-[40px] relative font-playfair font-medium;
-        
+
     }
 
     .title-section-dark {
@@ -277,7 +283,8 @@
     }
 
     .btn-secondary {
-        @apply bg-accent border border-primary gap-2 text-white px-6 sm:px-8 py-2.5 sm:py-3;
+        @apply bg-gradient-to-b from-[#F4DB89]/30 to-[#DDB657]/30 border-transparent text-black rounded-lg transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] relative overflow-hidden;
+
     }
 
     .btn-third {
@@ -425,12 +432,15 @@
        BADGE STYLES: Các thuộc tính cho Badge
        ======================================================================== */
     .badge {
-        @apply text-white absolute top-3 right-3 z-10 px-3 pt-[0.15rem] text-[11px] rounded-full shadow-lg whitespace-nowrap flex items-center justify-center;
+        @apply absolute top-2 right-2 text-white text-xs font-semibold px-2 py-1 rounded flex items-center gap-1;
     }
 
+
     .badge-primary {
-        @apply bg-[#ae873e];
+        @apply bg-[#DDB657];
     }
+
+
 
     .badge-primary-gradient {
         @apply bg-gradient-to-r from-[#ae873e] to-[#c9a961];
@@ -480,13 +490,16 @@
         @apply text-[#090707] mb-3;
         font-size: var(--font-size-xl);
     }
-    .product-name{
+
+    .product-name {
         @apply text-[14px] sm:text-base font-medium text-center leading-6 m-0 h-12 overflow-hidden line-clamp-2;
     }
-    .product-box-content{
+
+    .product-box-content {
         @apply flex-1 flex flex-col items-center justify-center p-2 sm:p-4 gap-2;
     }
-    .product-box-price{
+
+    .product-box-price {
         @apply flex items-baseline gap-2 justify-center border-t border-gray-200 pt-2 w-full;
     }
 
@@ -660,7 +673,7 @@
 
     .noise-overlay-2 {
         position: relative;
-       
+
         /* Separate from child blend modes */
     }
 
@@ -675,6 +688,7 @@
         z-index: 1;
         pointer-events: none;
     }
+
     .overlay-dark {
         @apply absolute inset-0 bg-black/70 pointer-events-none z-0;
     }
@@ -988,16 +1002,25 @@
     .feedback-image-item {
         flex-shrink: 0;
         width: 160px;
-        height: 161px;
+        height: 160px;
         margin: 0;
         padding: 0;
     }
 
     .feedback-image {
         width: 160px;
-        height: 161px;
+        height: 160px;
         object-fit: cover;
-        border-radius: 8px;
+
+    }
+
+    @media (max-width: 640px) {
+
+        .feedback-image-item,
+        .feedback-image {
+            width: 80px;
+            height: 80px;
+        }
     }
 
     @keyframes feedbackScroll {
@@ -1054,6 +1077,7 @@
     }
 
 }
+
 /* .right-form {
     @apply w-full lg:w-[70%] flex flex-col gap-6 flex justify-center lg:justify-start order-1 lg:order-2 px-4  pt-4 sm:pt-[200px]
 } */
