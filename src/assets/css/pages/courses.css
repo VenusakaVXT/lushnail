@@ -13,3 +13,75 @@
 .section_testimonials .blaze-next{
     right: -60px;
 }
+
+/* Course Benefits Section */
+.course-benefit-item {
+    @apply flex items-start gap-3 p-3 sm:p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300;
+    min-height: fit-content;
+    max-width: 320px;
+}
+
+.course-benefit-item-indent {
+    margin-left: 1.5rem;
+}
+
+.course-benefit-item-indent-more {
+    margin-left: 2.5rem !important;
+}
+
+@media (min-width: 1024px) {
+    .course-benefit-item-indent {
+        margin-left: 2.5rem;
+    }
+    
+    .course-benefit-item-indent-more {
+        margin-left: 4rem !important;
+    }
+}
+
+.course-benefit-check {
+    @apply w-6 h-6 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0;
+    background: linear-gradient(to bottom, #F4DB89, #DDB657);
+    margin-top: 2px;
+}
+
+.course-benefit-item span {
+    @apply text-sm sm:text-base text-[#333333] leading-relaxed flex-1;
+    line-height: 1.6;
+}
+
+.course-benefit-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2.5);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(244, 219, 137, 0.5) 0%, rgba(244, 219, 137, 0.2) 40%, transparent 70%);
+    filter: blur(50px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+[data-name="course-benefits"] .container img {
+    @apply rounded-full;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
+    position: relative;
+    z-index: 10;
+}
+
+/* Alignment for benefit columns */
+[data-name="course-benefits"] .flex.flex-col {
+    align-items: stretch;
+}
+
+@media (min-width: 1024px) {
+    [data-name="course-benefits"] .flex.flex-col {
+        align-items: flex-start;
+    }
+    
+    .course-benefit-item {
+        width: 100%;
+    }
+}

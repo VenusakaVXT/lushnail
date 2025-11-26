@@ -71,9 +71,9 @@ server
 table
 circle
 help-circle
+gift
 flask-conical
 user-check
-gift
 twitter
 truck
 eye
