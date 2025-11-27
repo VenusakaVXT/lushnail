@@ -212,7 +212,7 @@
        NAVBAR GROUP: Navigation Bar Styles
        ======================================================================== */
     .header-navbar-desktop {
-        @apply hidden md:flex bg-[#fefcf4] border-transparent text-black rounded-lg transition-all duration-300   relative overflow-hidden whitespace-nowrap items-center min-h-[106px] justify-between px-4 py-3 shadow-sm transition-all duration-300;
+        @apply hidden md:flex bg-[#fefcf4] border-transparent text-black rounded-lg transition-all duration-300 relative overflow-hidden whitespace-nowrap items-center min-h-[106px] justify-between px-4 py-3 shadow-sm transition-all duration-300;
 
     }
 
@@ -360,10 +360,16 @@
         @apply text-black transition-colors;
         flex-shrink: 0;
         width: 44px;
+        pointer-events: auto;
     }
 
     .header-navbar-mobile-icon {
         @apply w-6 h-6;
+        pointer-events: auto;
+    }
+
+    .header-navbar-mobile-toggle * {
+        pointer-events: auto;
     }
 
     /* Logo Styles */
@@ -572,7 +578,9 @@
 
     /* Mobile Drawer */
     .header-mobile-drawer {
-        @apply fixed inset-0 z-[9999] pointer-events-none;
+        @apply fixed left-0 right-0 z-[9999] pointer-events-none;
+        top: var(--header-height, 0px);
+        height: calc(100vh - var(--header-height, 0px));
     }
 
     .header-mobile-drawer.active {
@@ -581,14 +589,18 @@
 
     .header-mobile-drawer-overlay {
         @apply absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300;
+        display: none;
     }
 
     .header-mobile-drawer.active .header-mobile-drawer-overlay {
         @apply opacity-100;
+        display: none;
     }
 
     .header-mobile-drawer-content {
-        @apply absolute right-0 top-0 h-screen w-[85vw] max-w-[400px] bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-out;
+        @apply absolute left-0 top-0 w-full h-full bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 ease-out;
+        overflow-y: auto;
+        pointer-events: auto;
     }
 
     .header-mobile-drawer.active .header-mobile-drawer-content {
@@ -596,11 +608,11 @@
     }
 
     .header-mobile-drawer-header {
-        @apply flex items-center justify-between p-6 border-b border-gray-200;
+        @apply flex items-center p-6 border-b border-gray-200 bg-white;
     }
 
     .header-mobile-drawer-logo {
-        @apply flex-1 flex items-center;
+        @apply flex-1 flex items-center justify-center;
     }
 
     .header-mobile-drawer-logo>div {
@@ -612,7 +624,7 @@
     }
 
     .header-mobile-drawer-body {
-        @apply flex flex-col h-[calc(100%-120px)] overflow-y-auto;
+        @apply flex flex-col;
     }
 
     .header-mobile-drawer-section {
@@ -620,7 +632,7 @@
     }
 
     .header-mobile-drawer-link {
-        @apply px-6 py-4 text-[#333] text-[16px] hover:bg-[#f8f7f6] hover:text-black transition-colors;
+        @apply px-6 py-4 text-[#333] text-[16px] hover:bg-[#f8f7f6] hover:text-black transition-colors block;
     }
 
     /* Social Media Icons */
