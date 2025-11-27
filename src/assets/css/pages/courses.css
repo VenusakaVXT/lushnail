@@ -16,7 +16,7 @@
 
 /* Course Benefits Section */
 .course-benefit-item {
-    @apply flex items-start gap-3 p-3 sm:p-4 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300;
+    @apply flex items-start gap-3 p-3 sm:p-4 bg-white/50 backdrop-blur-md rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300;
     min-height: fit-content;
     max-width: 320px;
 }

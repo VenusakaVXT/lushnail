@@ -72,8 +72,6 @@ table
 circle
 help-circle
 gift
-flask-conical
-user-check
 twitter
 truck
 eye
