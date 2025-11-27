@@ -97,13 +97,78 @@ document.addEventListener("DOMContentLoaded", () => {
     // Mobile Drawer Logic
     const mobileDrawer = document.getElementById("mobile-drawer");
     const mobileDrawerOverlay = document.getElementById("mobile-drawer-overlay");
-    const mobileDrawerClose = document.getElementById("mobile-drawer-close");
+
+    // Calculate and set header height for drawer positioning
+    const updateHeaderHeight = () => {
+        if (header) {
+            const headerHeight = header.offsetHeight;
+            document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+        }
+    };
+
+    // Update header height on load and resize
+    updateHeaderHeight();
+    window.addEventListener('resize', updateHeaderHeight);
+
+    // Function to get icon elements (works with lucide-replaced elements)
+    const getIconElements = () => {
+        const menuIcon = document.getElementById("menu-icon");
+        const closeIcon = document.getElementById("close-icon");
+        return { menuIcon, closeIcon };
+    };
+
+    // Function to toggle menu icons
+    const toggleMenuIcons = (isOpen) => {
+        const { menuIcon, closeIcon } = getIconElements();
+
+        if (menuIcon && closeIcon) {
+            if (isOpen) {
+                // Hide menu icon, show close icon
+                menuIcon.classList.add("hidden");
+                closeIcon.classList.remove("hidden");
+                // Reinitialize lucide icons if needed
+                if (typeof lucide !== 'undefined') {
+                    setTimeout(() => {
+                        lucide.createIcons({ root: closeIcon.closest('#mobile-menu-toggle') });
+                    }, 50);
+                }
+            } else {
+                // Show menu icon, hide close icon
+                menuIcon.classList.remove("hidden");
+                closeIcon.classList.add("hidden");
+                // Reinitialize lucide icons if needed
+                if (typeof lucide !== 'undefined') {
+                    setTimeout(() => {
+                        lucide.createIcons({ root: menuIcon.closest('#mobile-menu-toggle') });
+                    }, 50);
+                }
+            }
+        }
+    };
+
+    // Initialize icon state - ensure menu icon is visible, close icon is hidden
+    const initializeIcons = () => {
+        // Wait for lucide to initialize, then ensure correct state
+        setTimeout(() => {
+            const { menuIcon, closeIcon } = getIconElements();
+            if (menuIcon && closeIcon) {
+                // Ensure initial state: menu visible, close hidden
+                menuIcon.classList.remove("hidden");
+                closeIcon.classList.add("hidden");
+            }
+        }, 300);
+    };
+
+    // Initialize icons after page loads
+    initializeIcons();
 
     // Function to open drawer
     const openDrawer = () => {
         if (mobileDrawer) {
+            updateHeaderHeight(); // Update height before opening
             mobileDrawer.classList.add("active");
             document.body.style.overflow = "hidden"; // Prevent body scroll
+            toggleMenuIcons(true);
         }
     };
 
@@ -112,6 +177,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (mobileDrawer) {
             mobileDrawer.classList.remove("active");
             document.body.style.overflow = ""; // Restore body scroll
+            toggleMenuIcons(false);
         }
     };
 
@@ -124,14 +190,6 @@ document.addEventListener("DOMContentLoaded", () => {
             } else {
                 openDrawer();
             }
-        });
-    }
-
-    // Close drawer on close button click
-    if (mobileDrawerClose) {
-        mobileDrawerClose.addEventListener("click", (e) => {
-            e.stopPropagation();
-            closeDrawer();
         });
     }
 
@@ -150,6 +208,17 @@ document.addEventListener("DOMContentLoaded", () => {
             link.addEventListener("click", () => {
                 closeDrawer();
             });
+        });
+    }
+
+    // Handle logout button in drawer
+    const logoutBtnDrawer = document.getElementById("logout-btn-drawer");
+    if (logoutBtnDrawer) {
+        logoutBtnDrawer.addEventListener("click", (e) => {
+            e.stopPropagation();
+            // Add your logout logic here
+            // For example: window.location.href = '/logout.html';
+            closeDrawer();
         });
     }
 
@@ -419,4 +488,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+
+
 
