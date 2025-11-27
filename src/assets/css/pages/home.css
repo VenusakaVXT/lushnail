@@ -486,6 +486,3 @@ ease; */
     transform: scale(1.1);
     z-index: 10;
 }
-.right-form {
-    @apply w-full lg:w-[70%] flex flex-col gap-6 flex justify-center lg:justify-start order-1 lg:order-2 px-4  pt-4 sm:pt-[200px]
-}

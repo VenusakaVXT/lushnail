@@ -462,7 +462,7 @@
         Product Card Styles
     ======================================================================== */
     .product-card {
-        @apply relative border border-[#ececf0] bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-2 transition-all duration-300;
+        @apply relative border border-[#ececf0] bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg  transition-all ;
     }
 
     .product-card__image {
