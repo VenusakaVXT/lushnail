@@ -30,6 +30,8 @@ map-pin
 check
 phone
 clock
+send
+twitter
 chevron-right
 minus
 plus
@@ -53,7 +55,6 @@ zap
 bell
 upload
 edit
-send
 pause
 image
 video
@@ -72,7 +73,6 @@ table
 circle
 help-circle
 gift
-twitter
 truck
 eye
 credit-card
