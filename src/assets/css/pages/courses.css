@@ -110,7 +110,6 @@
 
 [data-name="course-benefits"] .container img {
     @apply rounded-full;
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
     position: relative;
     z-index: 10;
 }
@@ -128,4 +127,20 @@
     .course-benefit-item {
         width: 100%;
     }
+}
+
+/* Mobile/Tablet Benefit Items */
+.course-benefit-item-mobile {
+    @apply flex items-start gap-3 py-4 border-b border-gray-200/50;
+}
+
+.course-benefit-item-mobile span {
+    @apply text-sm sm:text-base text-[#333333] leading-relaxed flex-1;
+    line-height: 1.6;
+}
+
+.course-benefit-item-mobile .course-benefit-check {
+    @apply w-6 h-6 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0;
+    background: linear-gradient(to bottom, #F4DB89, #DDB657);
+    margin-top: 2px;
 }

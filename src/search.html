@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tìm Kiếm - Lush Nail</title>
+  <meta name="description"
+    content="Tìm kiếm tin tức, khóa học, sản phẩm và thông tin về ngành nail tại Lush Nail.">
+
+  <!-- all css -->
+  <link rel="stylesheet" href="assets/css/all_news.css" />
+
+  <!-- 1. CAC THU VIEN CAN SU DUNG -->
+  <!-- Notification Library -->
+  <script src="assets/js/libs/notification.js" defer></script>
+  <!-- Initialize FastNotice -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      window.fastNotice = new FastNotice({
+        position: 'top-center',
+        duration: 3000,
+        maxNotifications: 3
+      });
+    });
+  </script>
+  <!-- Lucide Icons - Custom Build -->
+  <script src="assets/js/lucide-custom.min.js" defer></script>
+  <!-- jModal manager -->
+  <script src="assets/js/libs/jmodal.1.1.0.js" defer></script>
+  <!-- Load BlazeSlider Library -->
+  <script src="assets/js/libs/blaze-slider.js" defer></script>
+  <!-- Libs Tabs JS Thuần -->
+  <script src="assets/js/libs/tabs.js" defer></script>
+  <!-- Image Fallback Utility -->
+  <script src="assets/js/libs/image-fallback.js" defer></script>
+
+  <!-- 2. CAC CODE JS TU VIET. -->
+
+  <!-- Header Component JS -->
+  <script src="assets/js/header.js" defer></script>
+  <!-- Footer Component JS -->
+  <script src="assets/js/footer.js" defer></script>
+  <!-- Run BlazeSlider -->
+  <script src="assets/js/sliders.js" defer></script>
+
+  <!-- Alpine.js CDN -->
+  <script src="assets/js/libs/alpinejs.3.15.0.js" defer></script>
+
+</head>
+
+<body class="w-full min-h-screen">
+  <!-- header -->
+  <!-- include:blocks/header.html -->
+
+  <!-- Main Content Area -->
+  <main class="bg-white content-stretch flex flex-col items-start">
+    <!-- Breadcrumb Section -->
+    <div class="bg-[#FFF9F2] w-full py-4 sm:py-6" data-name="breadcrumb">
+      <div class="container">
+        <nav class="flex items-center gap-2 text-[14px] sm:text-[15px]">
+          <a href="index.html" class="text-[#666666] hover:text-[#ae873e] transition-colors duration-300">
+            Trang Chủ
+          </a>
+          <i data-lucide="chevron-right" class="w-4 h-4 text-[#999999]"></i>
+          <span class="text-[#a5834a]">
+            Tìm Kiếm
+          </span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Search Section -->
+    <div class="search-section w-full bg-white py-8 sm:py-12">
+      <div class="container">
+        <!-- Search Header -->
+        <div class="text-center mb-8">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            Tìm Kiếm
+          </h1>
+          <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+            Tìm kiếm tin tức, khóa học, sản phẩm và thông tin về ngành nail
+          </p>
+        </div>
+
+        <!-- Search Form -->
+        <div class="max-w-3xl mx-auto mb-8">
+          <form action="search.html" method="GET" class="relative">
+            <div class="relative flex items-center">
+              <input 
+                type="text" 
+                name="q" 
+                id="search-input"
+                placeholder="Nhập từ khóa tìm kiếm..." 
+                value=""
+                class="w-full h-14 sm:h-16 px-6 pr-16 text-base sm:text-lg border-2 border-gray-300 rounded-full focus:outline-none focus:border-[#ae873e] focus:ring-2 focus:ring-[#ae873e]/20 transition-all duration-300"
+                autocomplete="off"
+              />
+              <button 
+                type="submit"
+                class="absolute right-2 h-10 sm:h-12 w-10 sm:w-12 bg-gradient-to-b from-[#F4DB89] to-[#DDB657] hover:from-[#DDB657] hover:to-[#c9a961] text-white rounded-full flex items-center justify-center transition-all duration-300 shadow-md hover:shadow-lg"
+                aria-label="Tìm kiếm"
+              >
+                <i data-lucide="search" class="w-5 h-5 sm:w-6 sm:h-6"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Search Filters -->
+        <div class="max-w-3xl mx-auto mb-8">
+          <div class="flex flex-wrap items-center gap-4 justify-center">
+            <span class="text-sm text-gray-600 font-medium">Lọc theo:</span>
+            <div class="flex flex-wrap gap-2">
+              <button class="search-filter-btn active px-4 py-2 text-sm rounded-full border border-gray-300 bg-white hover:bg-[#FFF9F2] hover:border-[#ae873e] transition-all duration-300" data-filter="all">
+                Tất cả
+              </button>
+              <button class="search-filter-btn px-4 py-2 text-sm rounded-full border border-gray-300 bg-white hover:bg-[#FFF9F2] hover:border-[#ae873e] transition-all duration-300" data-filter="news">
+                Tin tức
+              </button>
+              <button class="search-filter-btn px-4 py-2 text-sm rounded-full border border-gray-300 bg-white hover:bg-[#FFF9F2] hover:border-[#ae873e] transition-all duration-300" data-filter="courses">
+                Khóa học
+              </button>
+              <button class="search-filter-btn px-4 py-2 text-sm rounded-full border border-gray-300 bg-white hover:bg-[#FFF9F2] hover:border-[#ae873e] transition-all duration-300" data-filter="products">
+                Sản phẩm
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Results -->
+        <div class="search-results-section">
+          <!-- Results Count -->
+          <div class="mb-6 flex items-center justify-between flex-wrap gap-4">
+            <p class="text-gray-600 text-sm sm:text-base">
+              Tìm thấy <span class="font-semibold text-[#ae873e]">9</span> kết quả cho từ khóa "<span class="font-semibold text-gray-900">nail art</span>"
+            </p>
+            <div class="flex items-center gap-2">
+              <span class="text-sm text-gray-600">Sắp xếp:</span>
+              <select class="text-sm border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:border-[#ae873e] transition-colors">
+                <option value="relevance">Liên quan nhất</option>
+                <option value="newest">Mới nhất</option>
+                <option value="oldest">Cũ nhất</option>
+                <option value="popular">Phổ biến nhất</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Results Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-8">
+            <!-- Search Result Item 1 -->
+            <article class="search-result-item group bg-white rounded-lg border border-gray-200 hover:border-[#ae873e] hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <a href="/single-news.html" class="block">
+                <div class="search-result-image mb-4 overflow-hidden">
+                  <img src="assets/images/slide/home1.png" alt="Nail art design"
+                    class="w-full h-[150px] sm:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300"
+                    data-fallback="assets/images/noimage1.png" loading="lazy" />
+                </div>
+                <div class="search-result-content px-4 pb-4">
+                  <div class="mb-2">
+                    <span class="inline-block px-3 py-1 text-xs font-medium bg-[#FFF9F2] text-[#ae873e] rounded-full">
+                      Tin tức
+                    </span>
+                  </div>
+                  <h3 class="search-result-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                    Bí quyết chọn màu sơn móng phù hợp với da tay
+                  </h3>
+                  <p class="search-result-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
+                    Việc chọn đúng màu sơn móng có thể làm nổi bật vẻ đẹp tự nhiên của đôi tay bạn. Hãy cùng tìm hiểu cách chọn màu phù hợp nhất.
+                  </p>
+                  <div class="search-result-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
+                    <span class="flex items-center gap-1">
+                      <i data-lucide="calendar" class="w-4 h-4"></i>
+                      15/01/2025
+                    </span>
+                    <span>•</span>
+                    <span class="flex items-center gap-1">
+                      <i data-lucide="eye" class="w-4 h-4"></i>
+                      1.2K lượt xem
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <!-- Search Result Item 2 -->
+            <article class="search-result-item group bg-white rounded-lg border border-gray-200 hover:border-[#ae873e] hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <a href="/single-news.html" class="block">
+                <div class="search-result-image mb-4 overflow-hidden">
+                  <img src="assets/images/slide/home1.png" alt="Nail art design"
+                    class="w-full h-[150px] sm:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300"
+                    data-fallback="assets/images/noimage1.png" loading="lazy" />
+                </div>
+                <div class="search-result-content px-4 pb-4">
+                  <div class="mb-2">
+                    <span class="inline-block px-3 py-1 text-xs font-medium bg-[#FFF9F2] text-[#ae873e] rounded-full">
+                      Tin tức
+                    </span>
+                  </div>
+                  <h3 class="search-result-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                    Kỹ thuật vẽ nail art cơ bản cho người mới bắt đầu
+                  </h3>
+                  <p class="search-result-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
+                    Hướng dẫn chi tiết các bước vẽ nail art đơn giản mà đẹp mắt, phù hợp cho những ai mới bước vào nghề nail.
+                  </p>
+                  <div class="search-result-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
+                    <span class="flex items-center gap-1">
+                      <i data-lucide="calendar" class="w-4 h-4"></i>
+                      14/01/2025
+                    </span>
+                    <span>•</span>
+                    <span class="flex items-center gap-1">
+                      <i data-lucide="eye" class="w-4 h-4"></i>
+                      980 lượt xem
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <!-- Search Result Item 3 -->
+            <article class="search-result-item group bg-white rounded-lg border border-gray-200 hover:border-[#ae873e] hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <a href="/single-news.html" class="block">
+                <div class="search-result-image mb-4 overflow-hidden">
+                  <img src="assets/images/slide/home1.png" alt="Nail art design"
+                    class="w-full h-[150px] sm:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300"
+                    data-fallback="assets/images/noimage1.png" loading="lazy" />
+                </div>
+                <div class="search-result-content px-4 pb-4">
+                  <div class="mb-2">
+                    <span class="inline-block px-3 py-1 text-xs font-medium bg-[#FFF9F2] text-[#ae873e] rounded-full">
+                      Tin tức
+                    </span>
+                  </div>
+                  <h3 class="search-result-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                    Top 10 mẫu nail art được yêu thích nhất năm 2024
+                  </h3>
+                  <p class="search-result-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
+                    Tổng hợp những mẫu nail art đẹp nhất, được nhiều người yêu thích và tìm kiếm trong năm qua.
+                  </p>
+                  <div class="search-result-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
+                    <span class="flex items-center gap-1">
+                      <i data-lucide="calendar" class="w-4 h-4"></i>
+                      13/01/2025
+                    </span>
+                    <span>•</span>
+                    <span class="flex items-center gap-1">
+                      <i data-lucide="eye" class="w-4 h-4"></i>
+                      1.5K lượt xem
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <!-- Search Result Item 4 -->
+            <article class="search-result-item group bg-white rounded-lg border border-gray-200 hover:border-[#ae873e] hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <a href="/single-course.html" class="block">
+                <div class="search-result-image mb-4 overflow-hidden">
+                  <img src="assets/images/slide/home1.png" alt="Nail art design"
+                    class="w-full h-[150px] sm:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300"
+                    data-fallback="assets/images/noimage1.png" loading="lazy" />
+                </div>
+                <div class="search-result-content px-4 pb-4">
+                  <div class="mb-2">
+                    <span class="inline-block px-3 py-1 text-xs font-medium bg-blue-50 text-blue-600 rounded-full">
+                      Khóa học
+                    </span>
+                  </div>
+                  <h3 class="search-result-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                    Khóa học nail art cơ bản - Nền tảng vững chắc
+                  </h3>
+                  <p class="search-result-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
+                    Khóa học dành cho người mới bắt đầu, học từ những kỹ thuật cơ bản nhất đến các mẫu nail art đơn giản.
+                  </p>
+                  <div class="search-result-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
+                    <span class="flex items-center gap-1">
+                      <i data-lucide="clock" class="w-4 h-4"></i>
+                      30 giờ
+                    </span>
+                    <span>•</span>
+                    <span class="flex items-center gap-1">
+                      <i data-lucide="users" class="w-4 h-4"></i>
+                      50 học viên
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+
+            <!-- Search Result Item 5 -->
+            <article class="search-result-item group bg-white rounded-lg border border-gray-200 hover:border-[#ae873e] hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <a href="/single-product.html" class="block">
+                <div class="search-result-image mb-4 overflow-hidden">
+                  <img src="assets/images/slide/home1.png" alt="Nail art design"
+                    class="w-full h-[150px] sm:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300"
+                    data-fallback="assets/images/noimage1.png" loading="lazy" />
+                </div>
+                <div class="search-result-content px-4 pb-4">
+                  <div class="mb-2">
+                    <span class="inline-block px-3 py-1 text-xs font-medium bg-green-50 text-green-600 rounded-full">
+                      Sản phẩm
+                    </span>
+                  </div>
+                  <h3 class="search-result-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                    Bộ sưu tập sơn móng nail art cao cấp
+                  </h3>
+                  <p class="search-result-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
+                    Bộ sưu tập 20 màu sơn móng chất lượng cao, phù hợp cho các mẫu nail art chuyên nghiệp.
+                  </p>
+                </div>
+              </a>
+            </article>
+
+            <!-- Search Result Item 6 -->
+            <article class="search-result-item group bg-white rounded-lg border border-gray-200 hover:border-[#ae873e] hover:shadow-lg transition-all duration-300 overflow-hidden">
+              <a href="/single-news.html" class="block">
+                <div class="search-result-image mb-4 overflow-hidden">
+                  <img src="assets/images/slide/home1.png" alt="Nail art design"
+                    class="w-full h-[150px] sm:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300"
+                    data-fallback="assets/images/noimage1.png" loading="lazy" />
+                </div>
+                <div class="search-result-content px-4 pb-4">
+                  <div class="mb-2">
+                    <span class="inline-block px-3 py-1 text-xs font-medium bg-[#FFF9F2] text-[#ae873e] rounded-full">
+                      Tin tức
+                    </span>
+                  </div>
+                  <h3 class="search-result-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                    Xu hướng nail art mùa xuân 2025: Màu sắc và hoa văn hot nhất
+                  </h3>
+                  <p class="search-result-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
+                    Khám phá những xu hướng nail art mới nhất cho mùa xuân 2025, từ màu sắc pastel đến các hoa văn độc đáo.
+                  </p>
+                  <div class="search-result-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
+                    <span class="flex items-center gap-1">
+                      <i data-lucide="calendar" class="w-4 h-4"></i>
+                      09/01/2025
+                    </span>
+                    <span>•</span>
+                    <span class="flex items-center gap-1">
+                      <i data-lucide="eye" class="w-4 h-4"></i>
+                      1.1K lượt xem
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </article>
+          </div>
+
+          <!-- Pagination -->
+          <div class="flex justify-center items-center gap-2 mt-8">
+            <button class="pagination-btn px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-[#FFF9F2] hover:border-[#ae873e] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+              <i data-lucide="chevron-left" class="w-4 h-4"></i>
+            </button>
+            <button class="pagination-btn active px-4 py-2 text-sm border border-[#ae873e] bg-[#FFF9F2] text-[#ae873e] rounded-lg font-medium">
+              1
+            </button>
+            <button class="pagination-btn px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-[#FFF9F2] hover:border-[#ae873e] transition-all duration-300">
+              2
+            </button>
+            <button class="pagination-btn px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-[#FFF9F2] hover:border-[#ae873e] transition-all duration-300">
+              3
+            </button>
+            <button class="pagination-btn px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-[#FFF9F2] hover:border-[#ae873e] transition-all duration-300">
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Contact Form Section -->
+  <!-- include:blocks/sections/home/contact-form.html -->
+  <!-- Footer -->
+  <!-- include:blocks/footer.html -->
+</body>
+
+</html>

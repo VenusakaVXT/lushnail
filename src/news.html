@@ -56,57 +56,47 @@
   <!-- Main Content Area -->
   <main class="bg-white content-stretch flex flex-col items-start">
     <!-- Breadcrumb Section -->
-    <div class="bg-[#FFF9F2] w-full py-4 sm:py-6" data-name="breadcrumb">
-      <div class="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
-        <nav class="flex items-center gap-2 text-[14px] sm:text-[15px]">
-          <a href="index.html" class="text-[#666666] hover:text-[#ae873e] transition-colors duration-300">
-            Trang Chủ
-          </a>
-          <i data-lucide="chevron-right" class="w-4 h-4 text-[#999999]"></i>
-          <span class="text-[#a5834a]">
-            Tin Tức
-          </span>
-        </nav>
-      </div>
-    </div>
+  <!-- include:blocks/sections/news/breadcrumb.html --> 
 
 
     <!-- News Grid Section -->
     <div class="news-grid-section w-full bg-white py-6 sm:py-8 lg:py-10">
-      <div class="w-full max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12">
+      <div class="w-full container mx-auto px-4">
         <h2 class="section-title text-2xl sm:text-3xl font-bold text-gray-900 mb-6 pb-4 border-b-2 border-[#ae873e]">
           Tin Tức Mới Nhất
         </h2>
         <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
           <!-- Main Content -->
           <div class="flex-1">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 lg:gap-8">
               <!-- News Item 1 -->
-              <article class="news-grid-item group">
+              <article class="search-result-item group bg-white rounded-lg border border-gray-200 hover:border-[#ae873e] hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <a href="/single-news.html" class="block">
-                  <div class="news-image-wrapper mb-4 overflow-hidden rounded-lg">
+                  <div class="search-result-image mb-4 overflow-hidden">
                     <img src="assets/images/slide/home1.png" alt="Nail art design"
                       class="w-full h-[150px] sm:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300"
                       data-fallback="assets/images/noimage1.png" loading="lazy" />
                   </div>
-                  <div class="news-content">
-                    <h3
-                      class="news-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                  <div class="search-result-content px-4 pb-4">
+                    <div class="mb-2">
+                      <span class="inline-block px-3 py-1 text-xs font-medium bg-[#FFF9F2] text-[#ae873e] rounded-full">
+                        Tin tức
+                      </span>
+                    </div>
+                    <h3 class="search-result-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
                       Bí quyết chọn màu sơn móng phù hợp với da tay
                     </h3>
-                    <p class="news-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
-                      Việc chọn đúng màu sơn móng có thể làm nổi bật vẻ đẹp tự nhiên của đôi tay bạn. Hãy cùng tìm hiểu
-                      cách
-                      chọn màu phù hợp nhất.
+                    <p class="search-result-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
+                      Việc chọn đúng màu sơn móng có thể làm nổi bật vẻ đẹp tự nhiên của đôi tay bạn. Hãy cùng tìm hiểu cách chọn màu phù hợp nhất.
                     </p>
-                    <div class="news-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
+                    <div class="search-result-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
                       <span class="flex items-center gap-1">
-                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" class="lucide lucide-calendar w-4 h-4"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
                         15/01/2025
                       </span>
                       <span>•</span>
                       <span class="flex items-center gap-1">
-                        <i data-lucide="eye" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" class="lucide lucide-eye w-4 h-4"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
                         1.2K lượt xem
                       </span>
                     </div>
@@ -115,31 +105,33 @@
               </article>
 
               <!-- News Item 2 -->
-              <article class="news-grid-item group">
+              <article class="search-result-item group bg-white rounded-lg border border-gray-200 hover:border-[#ae873e] hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <a href="/single-news.html" class="block">
-                  <div class="news-image-wrapper mb-4 overflow-hidden rounded-lg">
+                  <div class="search-result-image mb-4 overflow-hidden">
                     <img src="assets/images/slide/home1.png" alt="Nail art design"
                       class="w-full h-[150px] sm:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300"
                       data-fallback="assets/images/noimage1.png" loading="lazy" />
                   </div>
-                  <div class="news-content">
-                    <h3
-                      class="news-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                  <div class="search-result-content px-4 pb-4">
+                    <div class="mb-2">
+                      <span class="inline-block px-3 py-1 text-xs font-medium bg-[#FFF9F2] text-[#ae873e] rounded-full">
+                        Tin tức
+                      </span>
+                    </div>
+                    <h3 class="search-result-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
                       Kỹ thuật vẽ nail art cơ bản cho người mới bắt đầu
                     </h3>
-                    <p class="news-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
-                      Hướng dẫn chi tiết các bước vẽ nail art đơn giản mà đẹp mắt, phù hợp cho những ai mới bước vào
-                      nghề
-                      nail.
+                    <p class="search-result-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
+                      Hướng dẫn chi tiết các bước vẽ nail art đơn giản mà đẹp mắt, phù hợp cho những ai mới bước vào nghề nail.
                     </p>
-                    <div class="news-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
+                    <div class="search-result-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
                       <span class="flex items-center gap-1">
-                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" class="lucide lucide-calendar w-4 h-4"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
                         14/01/2025
                       </span>
                       <span>•</span>
                       <span class="flex items-center gap-1">
-                        <i data-lucide="eye" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" class="lucide lucide-eye w-4 h-4"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
                         980 lượt xem
                       </span>
                     </div>
@@ -148,29 +140,33 @@
               </article>
 
               <!-- News Item 3 -->
-              <article class="news-grid-item group">
+              <article class="search-result-item group bg-white rounded-lg border border-gray-200 hover:border-[#ae873e] hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <a href="/single-news.html" class="block">
-                  <div class="news-image-wrapper mb-4 overflow-hidden rounded-lg">
+                  <div class="search-result-image mb-4 overflow-hidden">
                     <img src="assets/images/slide/home1.png" alt="Nail art design"
                       class="w-full h-[150px] sm:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300"
                       data-fallback="assets/images/noimage1.png" loading="lazy" />
                   </div>
-                  <div class="news-content">
-                    <h3
-                      class="news-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                  <div class="search-result-content px-4 pb-4">
+                    <div class="mb-2">
+                      <span class="inline-block px-3 py-1 text-xs font-medium bg-[#FFF9F2] text-[#ae873e] rounded-full">
+                        Tin tức
+                      </span>
+                    </div>
+                    <h3 class="search-result-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
                       Top 10 mẫu nail art được yêu thích nhất năm 2024
                     </h3>
-                    <p class="news-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
+                    <p class="search-result-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
                       Tổng hợp những mẫu nail art đẹp nhất, được nhiều người yêu thích và tìm kiếm trong năm qua.
                     </p>
-                    <div class="news-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
+                    <div class="search-result-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
                       <span class="flex items-center gap-1">
-                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" class="lucide lucide-calendar w-4 h-4"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
                         13/01/2025
                       </span>
                       <span>•</span>
                       <span class="flex items-center gap-1">
-                        <i data-lucide="eye" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" class="lucide lucide-eye w-4 h-4"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
                         1.5K lượt xem
                       </span>
                     </div>
@@ -179,31 +175,33 @@
               </article>
 
               <!-- News Item 4 -->
-              <article class="news-grid-item group">
+              <article class="search-result-item group bg-white rounded-lg border border-gray-200 hover:border-[#ae873e] hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <a href="/single-news.html" class="block">
-                  <div class="news-image-wrapper mb-4 overflow-hidden rounded-lg">
+                  <div class="search-result-image mb-4 overflow-hidden">
                     <img src="assets/images/slide/home1.png" alt="Nail art design"
                       class="w-full h-[150px] sm:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300"
                       data-fallback="assets/images/noimage1.png" loading="lazy" />
                   </div>
-                  <div class="news-content">
-                    <h3
-                      class="news-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                  <div class="search-result-content px-4 pb-4">
+                    <div class="mb-2">
+                      <span class="inline-block px-3 py-1 text-xs font-medium bg-[#FFF9F2] text-[#ae873e] rounded-full">
+                        Tin tức
+                      </span>
+                    </div>
+                    <h3 class="search-result-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
                       Công nghệ mới trong ngành nail: Gel builder và extension
                     </h3>
-                    <p class="news-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
-                      Khám phá những công nghệ và kỹ thuật mới nhất trong ngành nail, giúp tạo ra những bộ móng đẹp và
-                      bền
-                      hơn.
+                    <p class="search-result-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
+                      Khám phá những công nghệ và kỹ thuật mới nhất trong ngành nail, giúp tạo ra những bộ móng đẹp và bền hơn.
                     </p>
-                    <div class="news-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
+                    <div class="search-result-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
                       <span class="flex items-center gap-1">
-                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" class="lucide lucide-calendar w-4 h-4"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
                         12/01/2025
                       </span>
                       <span>•</span>
                       <span class="flex items-center gap-1">
-                        <i data-lucide="eye" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" class="lucide lucide-eye w-4 h-4"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
                         850 lượt xem
                       </span>
                     </div>
@@ -212,31 +210,33 @@
               </article>
 
               <!-- News Item 5 -->
-              <article class="news-grid-item group">
+              <article class="search-result-item group bg-white rounded-lg border border-gray-200 hover:border-[#ae873e] hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <a href="/single-news.html" class="block">
-                  <div class="news-image-wrapper mb-4 overflow-hidden rounded-lg">
+                  <div class="search-result-image mb-4 overflow-hidden">
                     <img src="assets/images/slide/home1.png" alt="Nail art design"
                       class="w-full h-[150px] sm:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300"
                       data-fallback="assets/images/noimage1.png" loading="lazy" />
                   </div>
-                  <div class="news-content">
-                    <h3
-                      class="news-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                  <div class="search-result-content px-4 pb-4">
+                    <div class="mb-2">
+                      <span class="inline-block px-3 py-1 text-xs font-medium bg-[#FFF9F2] text-[#ae873e] rounded-full">
+                        Tin tức
+                      </span>
+                    </div>
+                    <h3 class="search-result-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
                       Học nail ở đâu? Top 5 trung tâm đào tạo uy tín tại TP.HCM
                     </h3>
-                    <p class="news-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
-                      Danh sách các trung tâm đào tạo nail chuyên nghiệp, có chương trình học chất lượng và bằng cấp
-                      được
-                      công nhận.
+                    <p class="search-result-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
+                      Danh sách các trung tâm đào tạo nail chuyên nghiệp, có chương trình học chất lượng và bằng cấp được công nhận.
                     </p>
-                    <div class="news-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
+                    <div class="search-result-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
                       <span class="flex items-center gap-1">
-                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" class="lucide lucide-calendar w-4 h-4"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
                         11/01/2025
                       </span>
                       <span>•</span>
                       <span class="flex items-center gap-1">
-                        <i data-lucide="eye" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" class="lucide lucide-eye w-4 h-4"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
                         1.8K lượt xem
                       </span>
                     </div>
@@ -245,31 +245,33 @@
               </article>
 
               <!-- News Item 6 -->
-              <article class="news-grid-item group">
+              <article class="search-result-item group bg-white rounded-lg border border-gray-200 hover:border-[#ae873e] hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <a href="/single-news.html" class="block">
-                  <div class="news-image-wrapper mb-4 overflow-hidden rounded-lg">
+                  <div class="search-result-image mb-4 overflow-hidden">
                     <img src="assets/images/slide/home1.png" alt="Nail art design"
                       class="w-full h-[150px] sm:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300"
                       data-fallback="assets/images/noimage1.png" loading="lazy" />
                   </div>
-                  <div class="news-content">
-                    <h3
-                      class="news-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                  <div class="search-result-content px-4 pb-4">
+                    <div class="mb-2">
+                      <span class="inline-block px-3 py-1 text-xs font-medium bg-[#FFF9F2] text-[#ae873e] rounded-full">
+                        Tin tức
+                      </span>
+                    </div>
+                    <h3 class="search-result-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
                       Cách bảo quản sơn móng và dụng cụ nail đúng cách
                     </h3>
-                    <p class="news-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
-                      Hướng dẫn chi tiết cách bảo quản sơn móng và các dụng cụ nail để giữ chúng luôn trong tình trạng
-                      tốt
-                      nhất.
+                    <p class="search-result-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
+                      Hướng dẫn chi tiết cách bảo quản sơn móng và các dụng cụ nail để giữ chúng luôn trong tình trạng tốt nhất.
                     </p>
-                    <div class="news-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
+                    <div class="search-result-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
                       <span class="flex items-center gap-1">
-                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" class="lucide lucide-calendar w-4 h-4"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
                         10/01/2025
                       </span>
                       <span>•</span>
                       <span class="flex items-center gap-1">
-                        <i data-lucide="eye" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" class="lucide lucide-eye w-4 h-4"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
                         720 lượt xem
                       </span>
                     </div>
@@ -278,30 +280,33 @@
               </article>
 
               <!-- News Item 7 -->
-              <article class="news-grid-item group">
+              <article class="search-result-item group bg-white rounded-lg border border-gray-200 hover:border-[#ae873e] hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <a href="/single-news.html" class="block">
-                  <div class="news-image-wrapper mb-4 overflow-hidden rounded-lg">
+                  <div class="search-result-image mb-4 overflow-hidden">
                     <img src="assets/images/slide/home1.png" alt="Nail art design"
                       class="w-full h-[150px] sm:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300"
                       data-fallback="assets/images/noimage1.png" loading="lazy" />
                   </div>
-                  <div class="news-content">
-                    <h3
-                      class="news-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                  <div class="search-result-content px-4 pb-4">
+                    <div class="mb-2">
+                      <span class="inline-block px-3 py-1 text-xs font-medium bg-[#FFF9F2] text-[#ae873e] rounded-full">
+                        Tin tức
+                      </span>
+                    </div>
+                    <h3 class="search-result-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
                       Xu hướng nail art mùa xuân 2025: Màu sắc và hoa văn hot nhất
                     </h3>
-                    <p class="news-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
-                      Khám phá những xu hướng nail art mới nhất cho mùa xuân 2025, từ màu sắc pastel đến các hoa văn
-                      độc đáo.
+                    <p class="search-result-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
+                      Khám phá những xu hướng nail art mới nhất cho mùa xuân 2025, từ màu sắc pastel đến các hoa văn độc đáo.
                     </p>
-                    <div class="news-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
+                    <div class="search-result-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
                       <span class="flex items-center gap-1">
-                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" class="lucide lucide-calendar w-4 h-4"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
                         09/01/2025
                       </span>
                       <span>•</span>
                       <span class="flex items-center gap-1">
-                        <i data-lucide="eye" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" class="lucide lucide-eye w-4 h-4"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
                         1.1K lượt xem
                       </span>
                     </div>
@@ -310,29 +315,33 @@
               </article>
 
               <!-- News Item 8 -->
-              <article class="news-grid-item group">
+              <article class="search-result-item group bg-white rounded-lg border border-gray-200 hover:border-[#ae873e] hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <a href="/single-news.html" class="block">
-                  <div class="news-image-wrapper mb-4 overflow-hidden rounded-lg">
+                  <div class="search-result-image mb-4 overflow-hidden">
                     <img src="assets/images/slide/home1.png" alt="Nail art design"
                       class="w-full h-[150px] sm:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300"
                       data-fallback="assets/images/noimage1.png" loading="lazy" />
                   </div>
-                  <div class="news-content">
-                    <h3
-                      class="news-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                  <div class="search-result-content px-4 pb-4">
+                    <div class="mb-2">
+                      <span class="inline-block px-3 py-1 text-xs font-medium bg-[#FFF9F2] text-[#ae873e] rounded-full">
+                        Tin tức
+                      </span>
+                    </div>
+                    <h3 class="search-result-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
                       Kỹ thuật ombre nail: Hướng dẫn từng bước chi tiết
                     </h3>
-                    <p class="news-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
+                    <p class="search-result-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
                       Học cách tạo hiệu ứng ombre đẹp mắt trên móng tay với hướng dẫn từng bước cụ thể và dễ hiểu.
                     </p>
-                    <div class="news-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
+                    <div class="search-result-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
                       <span class="flex items-center gap-1">
-                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" class="lucide lucide-calendar w-4 h-4"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
                         08/01/2025
                       </span>
                       <span>•</span>
                       <span class="flex items-center gap-1">
-                        <i data-lucide="eye" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" class="lucide lucide-eye w-4 h-4"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
                         950 lượt xem
                       </span>
                     </div>
@@ -341,29 +350,33 @@
               </article>
 
               <!-- News Item 9 -->
-              <article class="news-grid-item group">
+              <article class="search-result-item group bg-white rounded-lg border border-gray-200 hover:border-[#ae873e] hover:shadow-lg transition-all duration-300 overflow-hidden">
                 <a href="/single-news.html" class="block">
-                  <div class="news-image-wrapper mb-4 overflow-hidden rounded-lg">
+                  <div class="search-result-image mb-4 overflow-hidden">
                     <img src="assets/images/slide/home1.png" alt="Nail art design"
                       class="w-full h-[150px] sm:h-[180px] object-cover group-hover:scale-105 transition-transform duration-300"
                       data-fallback="assets/images/noimage1.png" loading="lazy" />
                   </div>
-                  <div class="news-content">
-                    <h3
-                      class="news-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                  <div class="search-result-content px-4 pb-4">
+                    <div class="mb-2">
+                      <span class="inline-block px-3 py-1 text-xs font-medium bg-[#FFF9F2] text-[#ae873e] rounded-full">
+                        Tin tức
+                      </span>
+                    </div>
+                    <h3 class="search-result-title text-lg sm:text-xl font-bold text-gray-900 mb-2 group-hover:text-[#ae873e] transition-colors line-clamp-2">
                       Tác dụng của gel nail và những lưu ý khi sử dụng
                     </h3>
-                    <p class="news-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
+                    <p class="search-result-excerpt text-gray-600 text-sm sm:text-base mb-3 line-clamp-2">
                       Tìm hiểu về gel nail, ưu nhược điểm và những điều cần lưu ý để có bộ móng đẹp và an toàn.
                     </p>
-                    <div class="news-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
+                    <div class="search-result-meta flex items-center gap-3 text-xs sm:text-sm text-gray-500">
                       <span class="flex items-center gap-1">
-                        <i data-lucide="calendar" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" class="lucide lucide-calendar w-4 h-4"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
                         07/01/2025
                       </span>
                       <span>•</span>
                       <span class="flex items-center gap-1">
-                        <i data-lucide="eye" class="w-4 h-4"></i>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="eye" class="lucide lucide-eye w-4 h-4"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
                         890 lượt xem
                       </span>
                     </div>
@@ -439,7 +452,7 @@
                     </div>
                     <div class="sidebar-content flex-1">
                       <h3
-                        class="sidebar-news-title text-sm sm:text-base text-gray-900 mb-1 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                        class="sidebar-news-title text-sm sm:text-base text-gray-900 mb-1  transition-colors line-clamp-2">
                         Kỹ thuật gel nail bền đẹp: Bí quyết từ chuyên gia
                       </h3>
                       <p class="sidebar-news-time text-xs text-gray-500">
@@ -459,7 +472,7 @@
                     </div>
                     <div class="sidebar-content flex-1">
                       <h3
-                        class="sidebar-news-title text-sm sm:text-base text-gray-900 mb-1 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                        class="sidebar-news-title text-sm sm:text-base text-gray-900 mb-1  transition-colors line-clamp-2">
                         Khóa học nail nâng cao: Nâng tầm kỹ năng của bạn
                       </h3>
                       <p class="sidebar-news-time text-xs text-gray-500">
@@ -479,7 +492,7 @@
                     </div>
                     <div class="sidebar-content flex-1">
                       <h3
-                        class="sidebar-news-title text-sm sm:text-base text-gray-900 mb-1 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                        class="sidebar-news-title text-sm sm:text-base text-gray-900 mb-1  transition-colors line-clamp-2">
                         Sản phẩm nail mới: Bộ sưu tập mùa xuân 2025
                       </h3>
                       <p class="sidebar-news-time text-xs text-gray-500">
@@ -499,7 +512,7 @@
                     </div>
                     <div class="sidebar-content flex-1">
                       <h3
-                        class="sidebar-news-title text-sm sm:text-base text-gray-900 mb-1 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                        class="sidebar-news-title text-sm sm:text-base text-gray-900 mb-1  transition-colors line-clamp-2">
                         Cách chăm sóc móng tay tại nhà hiệu quả
                       </h3>
                       <p class="sidebar-news-time text-xs text-gray-500">
@@ -519,7 +532,7 @@
                     </div>
                     <div class="sidebar-content flex-1">
                       <h3
-                        class="sidebar-news-title text-sm sm:text-base text-gray-900 mb-1 group-hover:text-[#ae873e] transition-colors line-clamp-2">
+                        class="sidebar-news-title text-sm sm:text-base text-gray-900 mb-1  transition-colors line-clamp-2">
                         Lễ hội nail art: Sự kiện lớn nhất năm 2025
                       </h3>
                       <p class="sidebar-news-time text-xs text-gray-500">

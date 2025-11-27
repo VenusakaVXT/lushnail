@@ -12,10 +12,107 @@
             </p>
         </div>
 
-        <!-- Main Content: Image and Benefits -->
-        <div class="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-6 xl:gap-8">
+        <!-- Mobile & Tablet Layout: Image First, Then Benefits -->
+        <div class="flex flex-col lg:hidden items-center gap-8 sm:gap-10">
+            <!-- Image with Circular Background -->
+            <div class="w-full flex items-center justify-center relative">
+                <div class="relative w-full max-w-[300px] sm:max-w-[400px] aspect-square rounded-full overflow-hidden flex items-center justify-center">
+                    <img 
+                        src="../../../assets/images/model1.png" 
+                        alt="Học viên vui vẻ với khóa học" 
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+            </div>
+
+            <!-- Benefits List - Mobile: 1 column, Tablet: 2 columns -->
+            <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <!-- Benefit 1 -->
+                <div class="course-benefit-item-mobile">
+                    <div class="course-benefit-check">
+                        <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <span>Nắm vững kiến thức chuyên môn từ cơ bản đến nâng cao</span>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="course-benefit-item-mobile">
+                    <div class="course-benefit-check">
+                        <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <span>Thành thạo kỹ năng thực hành</span>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="course-benefit-item-mobile">
+                    <div class="course-benefit-check">
+                        <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <span>Được hướng dẫn trực tiếp bởi chuyên gia</span>
+                </div>
+                
+                <!-- Benefit 4 -->
+                <div class="course-benefit-item-mobile">
+                    <div class="course-benefit-check">
+                        <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <span>Tài liệu học tập trọn đời</span>
+                </div>
+                
+                <!-- Benefit 5 -->
+                <div class="course-benefit-item-mobile">
+                    <div class="course-benefit-check">
+                        <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <span>Bài tập – Dự án thực tế</span>
+                </div>
+                
+                <!-- Benefit 6 -->
+                <div class="course-benefit-item-mobile">
+                    <div class="course-benefit-check">
+                        <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <span>Cộng đồng học viên – hỗ trợ dài lâu</span>
+                </div>
+                
+                <!-- Benefit 7 -->
+                <div class="course-benefit-item-mobile">
+                    <div class="course-benefit-check">
+                        <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <span>Lộ trình học bài bản, dễ theo dõi</span>
+                </div>
+                
+                <!-- Benefit 8 -->
+                <div class="course-benefit-item-mobile">
+                    <div class="course-benefit-check">
+                        <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <span>Định hướng nghề nghiệp & cơ hội việc làm</span>
+                </div>
+                
+                <!-- Benefit 9 -->
+                <div class="course-benefit-item-mobile">
+                    <div class="course-benefit-check">
+                        <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <span>Chứng nhận hoàn thành khóa học</span>
+                </div>
+                
+                <!-- Benefit 10 -->
+                <div class="course-benefit-item-mobile">
+                    <div class="course-benefit-check">
+                        <i data-lucide="check" class="w-4 h-4 text-white"></i>
+                    </div>
+                    <span>Linh hoạt hình thức học</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desktop Layout: 3 Columns (Image in Center) -->
+        <div class="hidden lg:flex flex-row items-start lg:items-center gap-8 xl:gap-8">
             <!-- Left Column: Benefits -->
-            <div class="w-full lg:w-[30%] flex flex-col gap-4 sm:gap-6 justify-center z-10">
+            <div class="w-[30%] flex flex-col gap-4 sm:gap-6 justify-center z-10">
                 <div class="course-benefit-item course-benefit-item-indent course-benefit-item-indent-more">
                     <div class="course-benefit-check">
                         <i data-lucide="check" class="w-4 h-4 text-white"></i>
@@ -49,21 +146,21 @@
             </div>
 
             <!-- Center: Image with Yellow Circle Background -->
-            <div class="w-full lg:w-[40%] flex items-center justify-center relative py-8 lg:py-0 lg:self-center">
+            <div class="w-[40%] flex items-center justify-center relative py-8 lg:py-0 lg:self-center">
                 <!-- Background Image - Nằm phía dưới, to hơn -->
                 <div class="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
                     <div class="relative w-full max-w-[700px] sm:max-w-[800px] lg:max-w-[900px] xl:max-w-[1000px]">
                         <img 
                             src="../../../assets/images/model1.png" 
                             alt="Học viên vui vẻ với khóa học" 
-                            class="w-full h-auto object-contain scale-[1.5]"
+                            class="w-full h-auto object-contain scale-[1.4]"
                         />
                     </div>
                 </div>
             </div>
 
             <!-- Right Column: Benefits -->
-            <div class="w-full lg:w-[30%] flex flex-col gap-6 sm:gap-6 justify-center z-10">
+            <div class="w-[30%] flex flex-col gap-6 sm:gap-6 justify-center z-10">
                 <div class="course-benefit-item course-benefit-item-first">
                     <span>Cộng đồng học viên – hỗ trợ dài lâu</span>
                     <div class="course-benefit-check">
@@ -98,4 +195,3 @@
         </div>
     </div>
 </section>
-

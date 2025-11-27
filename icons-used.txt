@@ -71,7 +71,6 @@ more-horizontal
 server
 table
 circle
-help-circle
 gift
 truck
 eye
