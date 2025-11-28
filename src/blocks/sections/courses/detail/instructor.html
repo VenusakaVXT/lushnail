@@ -1,51 +1,84 @@
 <!-- Instructor Section -->
-<section class="relative shrink-0 w-full bg-[#f8f7f6] py-12 sm:py-16 lg:py-24" data-name="instructor">
-    <div class="size-full">
-        <div class="container mx-auto box-border flex flex-col items-center gap-10 sm:gap-14 lg:gap-[64px] px-4 sm:px-10 lg:px-[64px] w-full">
+<section class="relative w-full bg-section-white-yellow py-12 sm:py-16 lg:py-20" data-name="instructor">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="w-full text-center mb-10 sm:mb-12 lg:mb-16">
+            <p class="sub-title-section mb-2">
+                GIẢNG VIÊN CỦA CHÚNG TÔI
+            </p>
+            <h2 class="title-section text-black mb-4 sm:mb-6 font-playfair">
+                GIẢNG VIÊN KHÓA HỌC
+            </h2>
+            <p class="font-fz-poppins text-[#030213] text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed max-w-3xl mx-auto">
+                Chương trình được thiết kế riêng cho từng học viên. Cam kết tay nghề vững chắc, tự tin mở tiệm hoặc đi nước ngoài.
+            </p>
+        </div>
 
-            <!-- Header -->
-            <div class="flex flex-col items-center text-center gap-4 sm:gap-6 max-w-[700px] w-full">
-                <h2 class="title-section">Giảng viên</h2>
-            </div>
+        <!-- Instructor Card -->
+        <div class="bg-white rounded-2xl p-6 sm:p-8 lg:p-10 shadow-sm border border-gray-100 w-full max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
+                <!-- Instructor Image -->
+                <div class="flex">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop" 
+                         alt="Giảng viên nail art" 
+                         class="w-full h-full object-cover rounded-lg" 
+                         loading="lazy" />
+                </div>
 
-            <!-- Instructor Card -->
-            <div class="bg-white rounded-[20px] p-4 sm:p-10 lg:p-12 shadow-[0px_8px_40px_rgba(0,0,0,0.08)] w-full max-w-[1000px] mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-                    <!-- Instructor Image -->
-                    <div class="md:col-span-1 flex">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop" alt="Giảng viên nail art" class="w-full h-full object-cover" loading="lazy" />
+                <!-- Instructor Info -->
+                <div class="flex flex-col gap-4 sm:gap-6">
+                    <!-- Title & Experience -->
+                    <div>
+                        <p class="font-fz-poppins text-[#030213] text-[14px] sm:text-[15px] md:text-[16px] font-medium uppercase mb-2">
+                            NAIL ARTIST/TRAINER - 8+ NĂM KINH NGHIỆM
+                        </p>
+                        <h3 class="font-playfair text-[#030213] text-[28px] sm:text-[32px] lg:text-[36px] font-bold mb-4">
+                            Ngô Mai Hương
+                        </h3>
+                    </div>
+
+                    <!-- Teaching Philosophy Box -->
+                    <div class="bg-[#F5E6D3] rounded-lg p-4 sm:p-5">
+                        <p class="font-fz-poppins text-[#030213] text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed">
+                            <span class="font-semibold">Quan điểm dạy:</span> "Vững nền tảng - chắc tay nghề - làm ra thu nhập"
+                        </p>
+                    </div>
+
+                    <!-- Biography -->
+                    <div class="space-y-4">
+                        <p class="font-fz-poppins text-[#030213] text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed">
+                            Với hơn 8 năm kinh nghiệm trong nghề nail, cô Mai Hương từng làm việc tại các salon cao cấp tại Hà Nội và TP.HCM, đồng thời là giảng viên được chứng nhận bởi Hội Nghệ thuật Nail Việt Nam. Cô đã tham gia và đạt giải tại cuộc thi Nail Art Championship 2020, cũng như sở hữu chứng chỉ quốc tế về Nail Art & Design từ Học viện Nail Art Hàn Quốc.
+                        </p>
+
+                        <!-- Strengths -->
+                        <div>
+                            <p class="font-fz-poppins text-[#030213] text-[14px] sm:text-[15px] md:text-[16px] font-bold mb-2">
+                                THẾ MẠNH:
+                            </p>
+                            <p class="font-fz-poppins text-[#030213] text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed">
+                                Chuyên sâu về vẽ 3D nail art, gel structure, kỹ thuật cat-eye, ombre gradient và các xu hướng nail hiện đại. Cô có khả năng truyền đạt kiến thức phức tạp một cách dễ hiểu, giúp học viên nắm vững từ cơ bản đến nâng cao.
+                            </p>
                         </div>
                     </div>
-                    <!-- Instructor Info -->
-                    <div class="md:col-span-2 flex flex-col gap-6">
-                        <div>
-                            <h3 class="  text-[#131518] text-[24px] sm:text-[28px] lg:text-[32px]  emibold mb-2">
-                                Ngô Mai Hương – Nail Artist/Trainer
-                            </h3>
-                            <p class=" text-[#ae873e] text-[16px] sm:text-[18px]  edium mb-4">
-                                8+ năm kinh nghiệm
+
+                    <!-- Statistics -->
+                    <div class="flex items-center gap-6 sm:gap-8 pt-4 border-t border-gray-200">
+                        <div class="flex-1 text-center">
+                            <p class="font-playfair text-[#030213] text-[32px] sm:text-[40px] lg:text-[48px] font-bold">
+                                2000+
+                            </p>
+                            <p class="font-fz-poppins text-[#030213] text-[14px] sm:text-[15px] md:text-[16px] mt-1">
+                                Học viên
                             </p>
                         </div>
-                        <div class="space-y-4 text-[14px] sm:text-[15px] md:text-[16px] text-[#333] ">
-                            <p class="">
-                                Với hơn 8 năm kinh nghiệm trong nghề nail, cô Mai Hương từng làm việc tại các salon cao cấp tại Hà Nội và TP.HCM, đồng thời là giảng viên được chứng nhận bởi Hội Nghệ thuật Nail Việt Nam. Cô đã tham gia và đạt giải tại cuộc thi Nail Art Championship 2020, cũng như sở hữu chứng chỉ quốc tế về Nail Art & Design từ Học viện Nail Art Hàn Quốc.
+                        <div class="w-px h-16 bg-gray-200"></div>
+                        <div class="flex-1 text-center">
+                            <p class="font-playfair text-[#030213] text-[32px] sm:text-[40px] lg:text-[48px] font-bold">
+                                20
                             </p>
-                            <div>
-                                <p class="text-[#131518] font-bold">
-                                    Thế mạnh:
-                                </p>
-                                <p class="">
-                                    Chuyên sâu về vẽ 3D nail art, gel structure, kỹ thuật cat-eye, ombre gradient và các xu hướng nail hiện đại. Cô có khả năng truyền đạt kiến thức phức tạp một cách dễ hiểu, giúp học viên nắm vững từ cơ bản đến nâng cao.
-                                </p>
-                            </div>
-                            <div>
-                                <p class="  text-[#131518] font-bold">
-                                    Quan điểm dạy:
-                                </p>
-                                <p class=" italic text-[#a5834a] text-[15px] sm:text-[16px] ">
-                                    "Vững nền tảng – chắc tay nghề – làm ra thu nhập"
-                                </p>
-                            </div>
+                            <p class="font-fz-poppins text-[#030213] text-[14px] sm:text-[15px] md:text-[16px] mt-1">
+                                Giải thưởng
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -53,4 +86,3 @@
         </div>
     </div>
 </section>
-

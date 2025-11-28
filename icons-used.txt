@@ -7,8 +7,9 @@ log-out
 shopping-bag
 menu
 x
-play
 user-plus
+log-in
+play
 facebook
 instagram
 youtube
@@ -81,7 +82,7 @@ rotate-ccw
 arrow-right
 palette
 gem
-arrow-down
+chevron-up
 link
 headphones
 image-plus

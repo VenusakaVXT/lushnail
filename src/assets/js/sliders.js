@@ -58,6 +58,34 @@ document.addEventListener('DOMContentLoaded', function () {
         '(min-width: 1023px)': { slidesToShow: 3, slidesToScroll: 3 }
     });
 
+    // Feedback testimonials slider - 3 slides with autoplay
+    initSlider('.bslider-feedback-testimonials', {
+        all: {
+            enableAutoplay: true,
+            autoplayInterval: 4000,
+            stopAutoplayOnInteraction: true,
+            enablePagination: true,
+            draggable: true,
+            loop: true,
+            transitionDuration: 600,
+            transitionTimingFunction: 'ease-in-out',
+            slideGap: '16px',
+            slidesToShow: 1,
+            slidesToScroll: 1
+        },
+        '(min-width: 600px) and (max-width: 1023px)': {
+            slidesToShow: 2,
+            slidesToScroll: 2
+        },
+        '(min-width: 1023px)': {
+            slidesToShow: 3,
+            slidesToScroll: 3
+        }
+    });
+
+    // Setup autoplay resume for feedback testimonials slider
+    setupAutoplayResume('.bslider-feedback-testimonials');
+
     // Image carousel slider - 1 image per slide
     initSlider('.bslider-image', {
         all: {
