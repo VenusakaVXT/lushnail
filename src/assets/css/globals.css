@@ -462,7 +462,7 @@
         Product Card Styles
     ======================================================================== */
     .product-card {
-        @apply relative border border-[#ececf0] bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg  transition-all ;
+        @apply relative border border-[#ececf0] bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all;
     }
 
     .product-card__image {
@@ -984,6 +984,7 @@
         will-change: transform;
         gap: 8px;
     }
+
     .feedback-image-item {
         flex-shrink: 0;
         width: 160px;
@@ -1003,12 +1004,13 @@
             width: 80px;
             height: 80px;
         }
+
         .feedback-image {
             width: 80px;
             height: 80px;
         }
     }
-    
+
 
     @keyframes feedbackScroll {
         0% {
@@ -1063,11 +1065,25 @@
         font-size: var(--font-size-4xl);
     }
 
-}
+    .right-form {
+        @apply w-full lg:w-[70%] flex flex-col gap-6 flex justify-center lg:justify-start order-1 lg:order-2 px-4 pt-4 sm:pt-[200px]
+    }
+    
+    .box-right-single-detail-cousrses {
+        position: relative;
+    }
+    
+    .box-right-single-detail-cousrses::before {
+        content: '';
+        position: absolute;
+        width: calc(100% + 16px);
+        height: 100%;
+        top: -24px;
+        left: -8px;
+        background: linear-gradient(to bottom, #F4DB89 0%, #DDB657 100%);
+        border-radius: 20px;
+        z-index: -1;
+        pointer-events: none;
+    }
 
-/* .right-form {
-    @apply w-full lg:w-[70%] flex flex-col gap-6 flex justify-center lg:justify-start order-1 lg:order-2 px-4  pt-4 sm:pt-[200px]
-} */
- .right-form {
-    @apply w-full lg:w-[70%] flex flex-col gap-6 flex justify-center lg:justify-start order-1 lg:order-2 px-4  pt-4 sm:pt-[200px]
 }

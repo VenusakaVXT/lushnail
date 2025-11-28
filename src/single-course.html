@@ -9,6 +9,7 @@
 		content="Khóa học nail chuyên nghiệp từ cơ bản đến nâng cao. Học 1-1 kèm sát, có chứng chỉ, hỗ trợ xin việc.">
 
 	<!-- all css -->
+	<link rel="stylesheet" href="assets/css/all_courses.css" />
 	<link rel="stylesheet" href="assets/css/all_single-courses.css" />
 
 	<!-- 1. CAC THU VIEN CAN SU DUNG -->
@@ -65,46 +66,41 @@
 
 	<!-- Main Content Area -->
 	<main class="bg-white content-stretch flex flex-col items-start size-full">
+
 		<!-- Course Hero Section -->
-		<!-- include:blocks/sections/courses/breadcrumb.html -->
+		<!-- include:blocks/sections/courses/detail/hero.html -->
+
+		<!-- Breadcrumb Section -->
+		<!-- include:blocks/sections/courses/detail/breadcrumb.html -->
 		 
 		<!-- Course Detail Section -->
-		<!-- include:blocks/sections/courses/single-course-detail.html --> 
+		<!-- include:blocks/sections/courses/detail/single-course-detail.html --> 
 
-		<!-- Course Content & Learning Path Section (2 Columns) -->
-		<section class="relative w-full bg-gradient-to-b from-white to-[#f8f7f6] py-12 sm:py-16 lg:py-20">
-			<div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
-				<div class="grid grid-cols-1 gap-6 lg:gap-8">
-					<!-- Row 1 - Course Content -->
-					<div class="">
-						<!-- include:blocks/sections/courses/course-content.html -->
-					</div>
-					
-					<!-- Row 2 - Learning Path -->
-					<div>
-						<!-- include:blocks/sections/courses/learning-path.html -->
-					</div>
-				</div>
-			</div>
-		</section>
+		<!-- Course Content Section -->
+		<!-- include:blocks/sections/courses/detail/course-content.html -->
 
-		<!-- What You Will Learn Section -->
-		<!-- include:blocks/sections/courses/what-you-will-learn.html -->
+		<!-- CTA Section -->
+		<!-- include:blocks/sections/courses/detail/cta.html -->
 
-		<!-- Course Gallery Section -->
-		<!-- include:blocks/sections/courses/course-gallery.html -->
+		<!-- Learning Path Section -->
+		<!-- include:blocks/sections/courses/detail/learning-path.html -->
 
 		<!-- Instructor Section -->
-		<!-- include:blocks/sections/courses/instructor.html -->
+		<!-- include:blocks/sections/courses/detail/instructor.html -->
+
+		<!-- Course Gallery Section -->
+		<!-- include:blocks/sections/courses/detail/course-gallery.html -->
+
+		<!-- Feedback Section -->
+		<!-- include:blocks/sections/courses/detail/feedback.html -->
 
 		<!-- FAQ Section -->
 		<!-- include:blocks/sections/courses/faq.html -->
-
-	
 	
 	</main>
+
 	<!-- Contact Form Section -->
-		<!-- include:blocks/sections/home/contact-form.html -->
+	<!-- include:blocks/sections/home/contact-form.html -->
 	<!-- Footer -->
 	<!-- include:blocks/footer.html -->
 </body>
