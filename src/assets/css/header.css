@@ -42,7 +42,7 @@
 .nav-bg-white {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    /* background-color: #f8f7f6 !important; */
+    background-color: #fcf7ea !important;
     border-radius: 0 !important;
     max-height: 90px;
 }
@@ -212,7 +212,7 @@
        NAVBAR GROUP: Navigation Bar Styles
        ======================================================================== */
     .header-navbar-desktop {
-        @apply hidden md:flex bg-[#fefcf4] border-transparent text-black rounded-lg transition-all duration-300 relative overflow-visible whitespace-nowrap items-center min-h-[106px] justify-between px-4 py-3 shadow-sm transition-all duration-300;
+        @apply hidden md:flex bg-[#fcf7ea] border-transparent text-black rounded-lg transition-all duration-300 relative overflow-visible whitespace-nowrap items-center min-h-[106px] justify-between px-4 py-3 shadow-sm transition-all duration-300;
 
     }
 
@@ -287,7 +287,7 @@
     }
 
     .header-navbar-mobile {
-        @apply flex md:hidden bg-[#f8f7f6] items-center justify-between px-0 sm:px-4 py-3 shadow-sm transition-all duration-300 relative;
+        @apply flex md:hidden bg-[#DDB657]/15 items-center justify-between px-0 sm:px-4 py-3 shadow-sm transition-all duration-300 relative;
     }
 
     .header-navbar-mobile .container {
