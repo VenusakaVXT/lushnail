@@ -1,19 +1,27 @@
 <!-- Topbar Banner Notification -->
 <div class="header-topbar">
   <div class="container flex justify-between items-center">
-    <p class="header-topbar-text">
-      Learn about Lush Nail's training program <a href="/courses.html" class="header-topbar-link">here</a> <span class="hidden md:inline">and get up to 50% off</span>
+    <!-- Desktop Text -->
+    <p class="header-topbar-text hidden md:block">
+      Learn about Lush Nail's training program <a href="/courses.html" class="header-topbar-link">here</a> and get up to
+      50% off
     </p>
-    <div class="header-topbar-lang relative">
+    <!-- Mobile Marquee -->
+    <marquee behavior="scroll" direction="left" scrollamount="6"
+      class="header-topbar-text hidden md:block text-base uppercase tracking-wide">
+      <span class="mr-20">Learn about Lush Nail's training program <a href="/courses.html"
+          class="header-topbar-link">here</a> and get up to 50% off</span>
+    </marquee>
+    <div class="header-topbar-lang relative" style="overflow: visible;">
       <button id="language-toggle-topbar" class="header-topbar-language-button" aria-label="Change Language">
         <i data-lucide="languages" class="header-topbar-language-icon"></i>
         <span class="header-topbar-language-text">Language</span>
         <i data-lucide="chevron-down" class="header-topbar-language-chevron"></i>
       </button>
       <div id="language-dropdown-topbar"
-        class="absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[150px] z-[9999] hidden">
+        class="absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[150px] z-[10001] hidden">
         <button
-          class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2"
+          class="language-option w-full text-full px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2"
           data-lang="vi">
           <span class="text-sm">🇻🇳</span>
           <span class="text-sm">Tiếng Việt</span>

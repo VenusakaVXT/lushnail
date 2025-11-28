@@ -4,12 +4,10 @@
     <!-- Hamburger Menu - Left -->
     <button id="mobile-menu-toggle" class="header-navbar-mobile-toggle" aria-label="Toggle mobile menu">
       <i data-lucide="menu" class="header-navbar-mobile-icon" id="menu-icon"></i>
-      <i data-lucide="x" class="header-navbar-mobile-icon hidden" id="close-icon"></i>
     </button>
 
     <!-- Logo - Center -->
     <div class="flex-1 flex justify-center">
-      <!-- include:headers/logo.html -->
       <a href="/" class="header-logo-link">
         <img src="/assets/images/LOGO_GOLD.png" alt="Lush Nail Logo" class="header-logo">
       </a>
@@ -22,8 +20,9 @@
         <i data-lucide="search" class="header-icon"></i>
       </button> -->
       <!-- User Profile Button -->
-      <div class="relative">
-        <button id="user-toggle-mobile" class="header-icon-button hover:text-[#ae873e] transition-colors"
+      <div class="relative flex items-center">
+        <button id="user-toggle-mobile"
+          class="header-icon-button hover:text-[#ae873e] transition-colors flex items-center justify-center"
           aria-label="User Profile">
           <i data-lucide="user" class="header-icon"></i>
         </button>
@@ -50,7 +49,9 @@
         </div>
       </div>
       <!-- Shopping Bag Button -->
-      <a href="/cart.html" class="header-icon-button hover:text-[#ae873e] transition-colors" aria-label="Shopping Cart">
+      <a href="/cart.html"
+        class="header-icon-button hover:text-[#ae873e] transition-colors flex items-center justify-center"
+        aria-label="Shopping Cart">
         <i data-lucide="shopping-bag" class="header-icon"></i>
       </a>
     </div>
@@ -63,15 +64,26 @@
 
     <!-- Drawer Content -->
     <div class="header-mobile-drawer-content">
+      <!-- Drawer Header with Close Button -->
+      <div class="header-mobile-drawer-header flex justify-between">
+        <a href="/" class="header-logo-link">
+          <img src="/assets/images/LOGO_GOLD.png" alt="Lush Nail Logo" class="header-logo">
+        </a>
+        <button id="mobile-drawer-close" class="header-mobile-drawer-close" aria-label="Close mobile menu">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
       <!-- Drawer Body -->
       <div class="header-mobile-drawer-body">
         <!-- Search Bar Section -->
-        <div class="header-mobile-drawer-section px-6 py-4 border-b border-gray-200">
-          <div class="relative">
-            <i data-lucide="search"
-              class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"></i>
-            <input type="text" placeholder="Tìm kiếm..."
-              class="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 bg-white focus:outline-none focus:border-[#ae873e] text-sm">
+        <div class="header-mobile-drawer-section p-4 border-b border-gray-200">
+          <div class="header-mobile-search-wrapper">
+            <div class="relative">
+              <i data-lucide="search"
+                class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"></i>
+              <input type="text" placeholder="Tìm kiếm..."
+                class="header-mobile-search-input w-full pl-10 pr-4 py-3 rounded-lg bg-white focus:outline-none text-sm">
+            </div>
           </div>
         </div>
 
@@ -84,11 +96,24 @@
           <a href="/contact.html" class="header-mobile-drawer-link uppercase">Liên hệ</a>
         </div>
 
+        <!-- Login and Register Buttons Section -->
+        <div class="header-mobile-drawer-section px-6 py-4 space-y-3">
+          <a href="/register.html" class="btn btn-primary gap-2">
+            <i data-lucide="user-plus" class="w-5 h-5"></i>
+            <span>Tạo tài khoản</span>
+          </a>
+          <a href="/login.html"
+            class="btn w-full flex items-center justify-center gap-2 bg-gray-200 text-[#000] py-3 px-4 font-medium hover:bg-gray-300 transition-all">
+            <i data-lucide="log-in" class="w-5 h-5"></i>
+            <span>Đăng nhập</span>
+          </a>
+        </div>
+
         <!-- Video Courses Section -->
-        <div class="header-mobile-drawer-section px-6 py-4 border-b border-gray-200">
+        <!-- <div class="header-mobile-drawer-section px-6 py-4 border-b border-gray-200">
           <h3 class="text-[#000] text-[14px] font-medium mb-4 uppercase">Danh sách video khóa học của bạn</h3>
           <div class="flex gap-3 overflow-x-auto pb-2 -mx-6 px-6">
-            <!-- Video Card 1 -->
+            
             <div class="flex-shrink-0 w-[120px] h-[80px] bg-gray-200 rounded-lg relative overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <div class="w-10 h-10 bg-[#F4DB89] rounded-full flex items-center justify-center">
@@ -96,7 +121,7 @@
                 </div>
               </div>
             </div>
-            <!-- Video Card 2 -->
+            
             <div class="flex-shrink-0 w-[120px] h-[80px] bg-gray-200 rounded-lg relative overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <div class="w-10 h-10 bg-[#F4DB89] rounded-full flex items-center justify-center">
@@ -104,7 +129,7 @@
                 </div>
               </div>
             </div>
-            <!-- Video Card 3 -->
+            
             <div class="flex-shrink-0 w-[120px] h-[80px] bg-gray-200 rounded-lg relative overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <div class="w-10 h-10 bg-[#F4DB89] rounded-full flex items-center justify-center">
@@ -112,7 +137,7 @@
                 </div>
               </div>
             </div>
-            <!-- Video Card 4 -->
+            
             <div class="flex-shrink-0 w-[120px] h-[80px] bg-gray-200 rounded-lg relative overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <div class="w-10 h-10 bg-[#F4DB89] rounded-full flex items-center justify-center">
@@ -120,7 +145,7 @@
                 </div>
               </div>
             </div>
-            <!-- Video Card 5 -->
+            
             <div class="flex-shrink-0 w-[120px] h-[80px] bg-gray-200 rounded-lg relative overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <div class="w-10 h-10 bg-[#F4DB89] rounded-full flex items-center justify-center">
@@ -128,7 +153,7 @@
                 </div>
               </div>
             </div>
-            <!-- Video Card 6 -->
+            
             <div class="flex-shrink-0 w-[120px] h-[80px] bg-gray-200 rounded-lg relative overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center">
                 <div class="w-10 h-10 bg-[#F4DB89] rounded-full flex items-center justify-center">
@@ -137,17 +162,17 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Logout Button Section -->
-        <div class="header-mobile-drawer-section px-6 py-4 border-b border-gray-200">
+        <!-- <div class="header-mobile-drawer-section px-6 py-4 border-b border-gray-200">
           <button
             class="w-full flex items-center justify-center gap-2 bg-gray-200 text-[#333] py-3 px-4 rounded-lg font-medium hover:bg-gray-300 transition-all"
             id="logout-btn-drawer" type="button">
             <i data-lucide="user-plus" class="w-5 h-5"></i>
             <span>Đăng xuất</span>
           </button>
-        </div>
+        </div> -->
 
         <!-- Social Media Section -->
         <div class="header-mobile-drawer-section">

@@ -34,7 +34,7 @@
     top: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    z-index: 100 !important;
+    z-index: 10000 !important;
     transition: all 0.3s ease;
 }
 
@@ -42,7 +42,7 @@
 .nav-bg-white {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
-    background-color: #fcf7ea !important;
+    /* background-color: #f8f7f6 !important; */
     border-radius: 0 !important;
     max-height: 90px;
 }
@@ -98,12 +98,23 @@
         max-width: calc(100% - 120px);
         word-wrap: break-word;
         white-space: normal;
-        display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
         line-clamp: 2;
+    }
+
+    /* Override for marquee to work properly - only on mobile */
+    marquee.header-topbar-text {
+        display: none !important;
+        white-space: nowrap !important;
+        -webkit-line-clamp: unset !important;
+        -webkit-box-orient: unset !important;
+        line-clamp: unset !important;
+        text-overflow: unset !important;
+        max-width: none !important;
+        word-wrap: normal !important;
     }
 
     @media (max-width: 640px) {
@@ -182,10 +193,16 @@
     /* Language Dropdown Topbar */
     #language-dropdown-topbar {
         position: absolute !important;
-        z-index: 9999 !important;
-        top: 100% !important;
+        z-index: 10001 !important;
+        top: 70% !important;
         right: 0 !important;
         display: none !important;
+    }
+
+    /* Ensure topbar lang container doesn't clip dropdown */
+    .header-topbar-lang {
+        overflow: visible !important;
+        z-index: 10001;
     }
 
     /* Show language dropdown on hover */
@@ -212,7 +229,7 @@
        NAVBAR GROUP: Navigation Bar Styles
        ======================================================================== */
     .header-navbar-desktop {
-        @apply hidden md:flex bg-[#fcf7ea] border-transparent text-black rounded-lg transition-all duration-300 relative overflow-visible whitespace-nowrap items-center min-h-[106px] justify-between px-4 py-3 shadow-sm transition-all duration-300;
+        @apply hidden md:flex bg-[#fefcf4] border-transparent text-black rounded-lg transition-all duration-300 relative overflow-visible whitespace-nowrap items-center min-h-[106px] justify-between px-4 py-3 shadow-sm transition-all duration-300;
 
     }
 
@@ -287,7 +304,7 @@
     }
 
     .header-navbar-mobile {
-        @apply flex md:hidden bg-[#DDB657]/15 items-center justify-between px-0 sm:px-4 py-3 shadow-sm transition-all duration-300 relative;
+        @apply flex md:hidden bg-[#f8f7f6] items-center justify-between px-0 sm:px-4 py-3 shadow-sm transition-all duration-300 relative;
     }
 
     .header-navbar-mobile .container {
@@ -579,8 +596,8 @@
     /* Mobile Drawer */
     .header-mobile-drawer {
         @apply fixed left-0 right-0 z-[9999] pointer-events-none;
-        top: var(--header-height, 0px);
-        height: calc(100vh - var(--header-height, 0px));
+        top: 0;
+        height: 100vh;
     }
 
     .header-mobile-drawer.active {
@@ -601,6 +618,8 @@
         @apply absolute left-0 top-0 w-full h-full bg-white shadow-2xl transform -translate-x-full transition-transform duration-300 ease-out;
         overflow-y: auto;
         pointer-events: auto;
+        display: flex;
+        flex-direction: column;
     }
 
     .header-mobile-drawer.active .header-mobile-drawer-content {
@@ -608,7 +627,10 @@
     }
 
     .header-mobile-drawer-header {
-        @apply flex items-center p-6 border-b border-gray-200 bg-white;
+        @apply flex items-center justify-end p-4 sm:p-6 border-b border-gray-200 bg-white;
+        position: sticky;
+        top: 0;
+        z-index: 10;
     }
 
     .header-mobile-drawer-logo {
@@ -620,11 +642,18 @@
     }
 
     .header-mobile-drawer-close {
-        @apply p-2 text-[#333] hover:text-black transition-colors;
+        @apply p-2 text-[#333] hover:text-black transition-colors cursor-pointer;
+        flex-shrink: 0;
+    }
+
+    .header-mobile-drawer-close i {
+        @apply w-6 h-6;
     }
 
     .header-mobile-drawer-body {
         @apply flex flex-col;
+        flex: 1;
+        overflow-y: auto;
     }
 
     .header-mobile-drawer-section {
@@ -633,6 +662,33 @@
 
     .header-mobile-drawer-link {
         @apply px-6 py-4 text-[#333] text-[16px] hover:bg-[#f8f7f6] hover:text-black transition-colors block;
+    }
+
+    /* Mobile Search Input with Gradient Border */
+    .header-mobile-search-wrapper {
+        position: relative;
+        padding: 1px;
+        background: linear-gradient(to bottom, #f4db89, #fff);
+        border-radius: 0.5rem;
+    }
+
+    /* Desktop Search Input with Gradient Border */
+    .header-desktop-search-wrapper {
+        position: relative;
+        padding: 1px;
+        background: linear-gradient(to bottom, #f4db89, #fff);
+        border-radius: 9999px;
+    }
+
+    .header-mobile-search-input,
+    .header-desktop-search-input {
+        border: none;
+        outline: none;
+    }
+
+    .header-mobile-search-input:focus,
+    .header-desktop-search-input:focus {
+        outline: none;
     }
 
     /* Social Media Icons */
