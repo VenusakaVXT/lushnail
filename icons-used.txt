@@ -7,6 +7,8 @@ log-out
 shopping-bag
 menu
 x
+play
+user-plus
 facebook
 instagram
 youtube
@@ -47,7 +49,6 @@ info
 terminal
 code
 database
-play
 lightbulb
 external-link
 shield-check
