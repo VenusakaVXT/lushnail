@@ -7,8 +7,9 @@ log-out
 shopping-bag
 menu
 x
-play
 user-plus
+log-in
+play
 facebook
 instagram
 youtube
