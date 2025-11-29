@@ -74,6 +74,7 @@ more-horizontal
 server
 table
 circle
+link
 arrow-right
 gift
 truck
@@ -84,7 +85,6 @@ rotate-ccw
 palette
 gem
 chevron-up
-link
 headphones
 image-plus
 camera
