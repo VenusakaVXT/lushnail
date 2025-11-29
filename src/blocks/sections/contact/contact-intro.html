@@ -1,41 +1,200 @@
 <!-- Contact Intro Section -->
-<section class="relative shrink-0 w-full scroll-fade-in noise-overlay" data-name="contact-intro">
-    <div class="size-full bg-white relative overflow-hidden">
-        <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 opacity-30">
+<section class="relative shrink-0 w-full scroll-fade-in" data-name="contact-intro">
+    <div class="size-full relative overflow-hidden min-h-[800px] sm:min-h-[900px] lg:min-h-[1000px]">
+        <!-- Background Image with Dark Overlay -->
+        <div class="absolute inset-0">
             <div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style="background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/71ba49cf7dd12aa15aff5db67f2128427396c3fa-sxy0azUh1CItWAQG9f8vxnw3VwIGuv.jpg');">
             </div>
-            <div class="absolute inset-0 bg-gradient-to-b from-[#FFF9F2]/90 via-[#FFF9F2]/80 to-[#FFF9F2]"></div>
+            <div class="absolute inset-0 bg-black/60"></div>
         </div>
 
-        <div
-            class="relative z-10 box-border flex flex-col md:flex-row items-center gap-8 md:gap-12 lg:gap-16 px-6 sm:px-10 lg:px-[64px] py-16 sm:py-20 lg:py-24 w-full container mx-auto">
-            <!-- Left: Text Content -->
-            <div class="flex-1 flex flex-col gap-6 sm:gap-8 max-w-[600px] w-full md:text-left text-center">
-                <h1 class="title-section">Liên hệ với chúng tôi</h1>
-                <p class="text-[#333333] text-[16px] sm:text-[17px] lg:text-[18px] leading-[28px]">
-                    Chúng tôi luôn sẵn sàng hỗ trợ bạn mọi lúc, mọi nơi. Hãy liên hệ với chúng tôi qua bất kỳ cách nào
-                    bạn cảm thấy thuận tiện nhất.
+        <!-- Content Container -->
+        <div class="relative z-10 w-full container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+            <!-- Header Section -->
+            <div class="text-center mb-8 sm:mb-12 lg:mb-16">
+                <p class="text-white/90 text-[14px] sm:text-[16px] mb-2">LUSH NAIL ACADEMY</p>
+                <h1 class="text-[#DDB657] text-[48px] sm:text-[56px] lg:text-[72px] font-serif mb-4 sm:mb-6">
+                    LIÊN HỆ
+                </h1>
+                <p class="text-white text-[15px] sm:text-[16px] lg:text-[17px] leading-relaxed max-w-[700px] mx-auto">
+                    Chúng tôi luôn sẵn sàng lắng nghe bạn. Dù là đặt lịch làm đẹp hay tư vấn sự nghiệp, hãy để lại lời nhắn nhé.
                 </p>
-                <div class="flex flex-wrap items-center gap-6 mt-4 md:justify-start justify-center">
-                    <div class="flex items-center gap-2 text-[#a5834a]">
-                        <i data-lucide="phone" class="w-5 h-5"></i>
-                        <span class="text-[15px]">+xxx xxx xxx
-                            xxx</span>
-                    </div>
-                    <div class="flex items-center gap-2 text-[#a5834a]">
-                        <i data-lucide="mail" class="w-5 h-5"></i>
-                        <span class="text-[15px]">sohorabxxxxx.xxxxx</span>
-                    </div>
-                </div>
             </div>
 
-            <!-- Right: Decorative Image -->
-            <div
-                class="w-full md:w-[400px] lg:w-[500px] h-[300px] sm:h-[350px] md:h-[400px] rounded-[24px] overflow-hidden shadow-[0px_12px_48px_rgba(0,0,0,0.15)]">
-                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/581ac1eeadec1ba9a621cb7856fe532a2bab70ba-qywziwzWJ7W1T2zxE78ag6f9oCsdo6.png"
-                    alt="Contact Lush Nail" class="object-cover w-full h-full" />
+            <!-- Contact Box: White/Yellow Container -->
+            <div class="bg-white/95 backdrop-blur-sm rounded-[24px] sm:rounded-[32px] p-6 sm:p-8 lg:p-10 max-w-[1200px] mx-auto shadow-2xl">
+                <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+                    
+                    <!-- Left: Contact Information -->
+                    <div class="flex-1 lg:w-[45%]">
+                        <h2 class="text-[#090707] text-[24px] sm:text-[28px] font-bold mb-6">
+                            Thông tin liên hệ
+                        </h2>
+                        
+                        <div class="space-y-6">
+                            <!-- Địa chỉ -->
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-[#ae873e] mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <p class="text-[#666666] text-[14px] sm:text-[15px] leading-relaxed">
+                                        Số 33 Đường số 3, Phường 10, Quận Gò Vấp - Cityland Park Hill
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Số điện thoại -->
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="phone" class="w-5 h-5 text-[#ae873e] mt-1 flex-shrink-0"></i>
+                                <div class="flex-1">
+                                    <p class="text-[#666666] text-[14px] sm:text-[15px] mb-1">
+                                        098 765 4321
+                                    </p>
+                                    <a href="#" class="text-[#ae873e] text-[13px] sm:text-[14px] hover:underline">
+                                        Liên kết Zalo
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Email hỗ trợ -->
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="mail" class="w-5 h-5 text-[#ae873e] mt-1 flex-shrink-0"></i>
+                                <div>
+                                    <p class="text-[#666666] text-[14px] sm:text-[15px]">
+                                        hoangthimail99Bhy@gmail.com
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Social Media -->
+                            <div class="pt-4">
+                                <p class="text-[#666666] text-[14px] sm:text-[15px] mb-4">Theo dõi chúng tôi</p>
+                                <div class="flex items-center gap-3">
+                                    <!-- Facebook -->
+                                    <a href="#" class="w-10 h-10 bg-[#1877F2] rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity">
+                                        <span class="text-white font-bold text-[18px]">f</span>
+                                    </a>
+                                    <!-- Instagram -->
+                                    <a href="#" class="w-10 h-10 bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045] rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity">
+                                        <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
+                                    </a>
+                                    <!-- TikTok -->
+                                    <a href="#" class="w-10 h-10 bg-black rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity">
+                                        <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                                        </svg>
+                                    </a>
+                                    <!-- Snapchat -->
+                                    <a href="#" class="w-10 h-10 bg-[#FFFC00] rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity">
+                                        <svg class="w-5 h-5 text-black" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M12.206.793c.99 0 4.347.276 5.93 3.821.529 1.193.403 3.219.299 4.847l-.003 1.861h3.48c1.055 0 1.548.794 1.548 1.348v.272c0 .553-.57 1.348-1.548 1.348h-3.48c-.144.858-.301 1.693-.52 2.448-.41 1.424-1.125 2.52-2.047 3.31-.847.72-1.84 1.194-2.881 1.453-.99.243-2.006.29-2.984.29-.978 0-1.995-.047-2.984-.29-1.04-.26-2.034-.733-2.881-1.453-1.064-.904-1.78-2.062-2.047-3.31-.219-.755-.376-1.59-.52-2.448H1.548C.493 12.69 0 11.896 0 11.343v-.272c0-.554.493-1.348 1.548-1.348h3.48l-.003-1.861c-.104-1.628-.23-3.654.299-4.847C6.907 1.069 10.264.793 11.254.793h.952z"/>
+                                        </svg>
+                                    </a>
+                                    <!-- X (Twitter) -->
+                                    <a href="#" class="w-10 h-10 bg-black rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity">
+                                        <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Contact Form -->
+                    <div class="flex-1 lg:w-[55%]">
+                        <h2 class="text-[#090707] text-[24px] sm:text-[28px] font-bold mb-6">
+                            Gửi tin nhắn hỗ trợ
+                        </h2>
+                        
+                        <form method="POST" class="space-y-4" id="contactForm">
+                            <!-- Họ và Tên -->
+                            <div>
+                                <label for="fullName" class="block text-[#666666] text-[14px] sm:text-[15px] mb-2">
+                                    Họ và Tên
+                                </label>
+                                <input
+                                    type="text"
+                                    id="fullName"
+                                    name="fullName"
+                                    required
+                                    class="w-full px-4 py-3 border border-[#ececf0] rounded-lg focus:outline-none focus:border-[#ae873e] transition-colors text-[14px] sm:text-[15px]"
+                                    placeholder="Nhập họ và tên của bạn" />
+                            </div>
+
+                            <!-- SĐT/Zalo -->
+                            <div>
+                                <label for="phoneZalo" class="block text-[#666666] text-[14px] sm:text-[15px] mb-2">
+                                    SĐT/Zalo
+                                </label>
+                                <input
+                                    type="tel"
+                                    id="phoneZalo"
+                                    name="phoneZalo"
+                                    required
+                                    class="w-full px-4 py-3 border border-[#ececf0] rounded-lg focus:outline-none focus:border-[#ae873e] transition-colors text-[14px] sm:text-[15px]"
+                                    placeholder="Nhập số điện thoại hoặc Zalo" />
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="block text-[#666666] text-[14px] sm:text-[15px] mb-2">
+                                    Email
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    class="w-full px-4 py-3 border border-[#ececf0] rounded-lg focus:outline-none focus:border-[#ae873e] transition-colors text-[14px] sm:text-[15px]"
+                                    placeholder="Nhập email của bạn" />
+                            </div>
+
+                            <!-- Vấn đề cần hỗ trợ -->
+                            <div>
+                                <label for="issue" class="block text-[#666666] text-[14px] sm:text-[15px] mb-2">
+                                    Vấn đề cần hỗ trợ
+                                </label>
+                                <div class="relative">
+                                    <select
+                                        id="issue"
+                                        name="issue"
+                                        required
+                                        class="w-full px-4 py-3 border border-[#ececf0] rounded-lg focus:outline-none focus:border-[#ae873e] transition-colors text-[14px] sm:text-[15px] appearance-none bg-white pr-10">
+                                        <option value="">Chọn vấn đề cần hỗ trợ</option>
+                                        <option value="booking">Đặt lịch làm đẹp</option>
+                                        <option value="career">Tư vấn sự nghiệp</option>
+                                        <option value="course">Thông tin khóa học</option>
+                                        <option value="other">Khác</option>
+                                    </select>
+                                    <i data-lucide="chevron-down" class="absolute right-3 top-1/2 -translate-y-1/2 w-5 h-5 text-[#666666] pointer-events-none"></i>
+                                </div>
+                            </div>
+
+                            <!-- Ghi chú -->
+                            <div>
+                                <label for="notes" class="block text-[#666666] text-[14px] sm:text-[15px] mb-2">
+                                    Ghi chú
+                                </label>
+                                <textarea
+                                    id="notes"
+                                    name="notes"
+                                    rows="4"
+                                    class="w-full px-4 py-3 border border-[#ececf0] rounded-lg focus:outline-none focus:border-[#ae873e] transition-colors text-[14px] sm:text-[15px] resize-none"
+                                    placeholder="Nhập ghi chú của bạn..."></textarea>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button
+                                type="submit"
+                                class="w-full sm:w-auto px-8 py-3 bg-[#FFF9F2] hover:bg-[#ae873e] text-[#090707] hover:text-white rounded-lg text-[14px] sm:text-[15px] font-medium transition-all duration-300 flex items-center justify-center gap-2 group">
+                                <span>GỬI THÔNG TIN</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
             </div>
         </div>
     </div>
