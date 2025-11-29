@@ -4,20 +4,20 @@
         <!-- Header -->
         <div class="text-center mb-10 sm:mb-12 lg:mb-16">
             <h2 class="title-section text-black mb-4 font-playfair">
-                THƯ VIỆN ẢNH KHÓA HỌC
+                COURSE GALLERY
             </h2>
             <p class="font-fz-poppins text-[#030213] text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed max-w-2xl mx-auto">
-                Xem những khoảnh khắc đẹp từ các buổi học của học viên
+                View beautiful moments from student classes
             </p>
         </div>
 
         <!-- Gallery Grid - 4 Images -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 course-gallery-grid">
             <!-- Gallery Item 1 -->
-            <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer course-gallery-item" data-image-index="0">
                 <img 
                     src="https://m.media-amazon.com/images/I/51YC56BJ0WL._SL1024_.jpg" 
-                    alt="Khóa học nail - Hình ảnh 1"
+                    alt="Nail course - Image 1"
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                     onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
@@ -25,10 +25,10 @@
             </div>
 
             <!-- Gallery Item 2 -->
-            <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer course-gallery-item" data-image-index="1">
                 <img 
                     src="https://m.media-amazon.com/images/I/7159sUj7TNL._SL1500_.jpg" 
-                    alt="Khóa học nail - Hình ảnh 2"
+                    alt="Nail course - Image 2"
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                     onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
@@ -36,32 +36,118 @@
             </div>
 
             <!-- Gallery Item 3 -->
-            <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
+            <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer course-gallery-item" data-image-index="2">
                 <img 
                     src="https://m.media-amazon.com/images/I/71vPZFCTi8L._SL1500_.jpg" 
-                    alt="Khóa học nail - Hình ảnh 3"
+                    alt="Nail course - Image 3"
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                     onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
                 />
             </div>
 
-            <!-- Gallery Item 4 - Link with Overlay -->
-            <a href="#gallery" class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer block">
+            <!-- Gallery Item 4 - With Overlay showing remaining count -->
+            <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer course-gallery-item" data-image-index="3">
                 <img 
                     src="https://m.media-amazon.com/images/I/71jqxWepZvL._SL1500_.jpg" 
-                    alt="Xem thêm ảnh khóa học"
+                    alt="View more course images"
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                     onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
                 />
                 <!-- Dark Overlay with Text -->
-                <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
-                    <p class="text-white font-fz-poppins text-[16px] sm:text-[18px] md:text-[20px]">
-                        +100 Ảnh khác
+                <div class="absolute inset-0 bg-black/60 flex items-center justify-center pointer-events-none">
+                    <p class="text-white font-fz-poppins text-[16px] sm:text-[18px] md:text-[20px]" id="gallery-more-count">
+                        +0 More Images
                     </p>
                 </div>
-            </a>
+            </div>
+
+            <!-- Hidden Gallery Items (for modal, not displayed in grid) -->
+            <div class="hidden course-gallery-item" data-image-index="4">
+                <img 
+                    src="https://m.media-amazon.com/images/I/51YC56BJ0WL._SL1024_.jpg" 
+                    alt="Nail course - Image 5"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
+                />
+            </div>
+            <div class="hidden course-gallery-item" data-image-index="5">
+                <img 
+                    src="https://m.media-amazon.com/images/I/7159sUj7TNL._SL1500_.jpg" 
+                    alt="Nail course - Image 6"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
+                />
+            </div>
+            <div class="hidden course-gallery-item" data-image-index="6">
+                <img 
+                    src="https://m.media-amazon.com/images/I/71vPZFCTi8L._SL1500_.jpg" 
+                    alt="Nail course - Image 7"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
+                />
+            </div>
+            <div class="hidden course-gallery-item" data-image-index="7">
+                <img 
+                    src="https://m.media-amazon.com/images/I/71jqxWepZvL._SL1500_.jpg" 
+                    alt="Nail course - Image 8"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
+                />
+            </div>
+            <div class="hidden course-gallery-item" data-image-index="8">
+                <img 
+                    src="https://m.media-amazon.com/images/I/51YC56BJ0WL._SL1024_.jpg" 
+                    alt="Nail course - Image 9"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
+                />
+            </div>
+            <div class="hidden course-gallery-item" data-image-index="9">
+                <img 
+                    src="https://m.media-amazon.com/images/I/7159sUj7TNL._SL1500_.jpg" 
+                    alt="Nail course - Image 10"
+                    loading="lazy"
+                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
+                />
+            </div>
         </div>
     </div>
 </section>
+
+<!-- Gallery Modal with Slider -->
+<div id="course-gallery-modal" class="jmodal fixed inset-0 z-[99999] hidden items-center justify-center bg-black/95 backdrop-blur-sm" data-modal="course-gallery-modal">
+    <div class="jmodal-content bg-transparent max-w-[90vw] sm:max-w-[85vw] lg:max-w-[80vw] w-full max-h-[90vh] relative flex items-center justify-center p-4 sm:p-6 lg:p-8">
+        <!-- Close Button -->
+        <button class="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 w-10 h-10 sm:w-12 sm:h-12 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110" data-jmodal-close>
+            <i data-lucide="x" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
+        </button>
+
+        <!-- Navigation Buttons -->
+        <button id="gallery-prev-btn" class="absolute left-2 sm:left-4 lg:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+            <i data-lucide="chevron-left" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
+        </button>
+        <button id="gallery-next-btn" class="absolute right-2 sm:right-4 lg:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110">
+            <i data-lucide="chevron-right" class="w-5 h-5 sm:w-6 sm:h-6 text-white"></i>
+        </button>
+
+        <!-- Slider Container -->
+        <div class="blaze-slider course-gallery-slider w-full h-full" id="course-gallery-slider">
+            <div class="blaze-container h-full">
+                <div class="blaze-track-container h-full">
+                    <div class="blaze-track h-full">
+                        <!-- Slides will be dynamically inserted here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Counter -->
+        <div class="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 z-20 bg-black/60 backdrop-blur-sm rounded-full px-4 py-2 sm:px-5 sm:py-2.5">
+            <p class="text-white font-fz-poppins text-sm sm:text-base font-medium">
+                <span id="gallery-current-index">1</span> / <span id="gallery-total-count">4</span>
+            </p>
+        </div>
+    </div>
+</div>

@@ -131,7 +131,10 @@
 
 /* Mobile/Tablet Benefit Items */
 .course-benefit-item-mobile {
-    @apply flex items-start gap-3 py-4 border-b border-gray-200/50;
+    @apply flex items-start gap-3 p-4 border-b border-gray-200/50 mb-0 ;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.10);
+    box-shadow: 0 4px 16px 0 rgba(142, 142, 142, 0.15);
 }
 
 .course-benefit-item-mobile span {

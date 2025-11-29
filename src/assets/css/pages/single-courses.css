@@ -177,3 +177,184 @@
 .learning-path-scroll::-webkit-scrollbar-thumb:hover {
     background: #8b6b2f;
 }
+
+/* Course Gallery Modal */
+#course-gallery-modal {
+    animation: fadeIn 0.3s ease-out;
+}
+
+#course-gallery-modal .jmodal-content {
+    padding: 0;
+    animation: slideUp 0.3s ease-out;
+    min-height: 200px;
+}
+
+.course-gallery-slider {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+}
+
+.course-gallery-slider .blaze-container {
+    height: 100%;
+    width: 100%;
+}
+
+.course-gallery-slider .blaze-track-container {
+    height: 100%;
+    width: 100%;
+}
+
+.course-gallery-slider .blaze-track {
+    height: 100%;
+    width: 100%;
+}
+
+.course-gallery-slider .blaze-slide {
+    height: 100%;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.course-gallery-slider .blaze-slide img {
+    max-width: 100%;
+    max-height: 85vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* Navigation Buttons */
+#gallery-prev-btn,
+#gallery-next-btn {
+    display: flex;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#gallery-prev-btn:hover,
+#gallery-next-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+#gallery-prev-btn:active,
+#gallery-next-btn:active {
+    transform: scale(0.95);
+}
+
+/* Close Button */
+#course-gallery-modal [data-jmodal-close] {
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#course-gallery-modal [data-jmodal-close]:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Image Counter */
+#course-gallery-modal .absolute.bottom-4 {
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    #course-gallery-modal .jmodal-content {
+        max-width: 95vw;
+        padding: 1rem;
+    }
+    
+    .course-gallery-slider .blaze-slide img {
+        max-height: 75vh;
+    }
+    
+    #gallery-prev-btn,
+    #gallery-next-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    #gallery-prev-btn {
+        left: 0.5rem;
+    }
+    
+    #gallery-next-btn {
+        right: 0.5rem;
+    }
+    
+    #course-gallery-modal [data-jmodal-close] {
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Course Video Modal Styles */
+.course-video-modal {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.course-video-modal-content {
+    animation: slideUp 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.course-video-player-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.course-video-player-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 640px) {
+    .course-video-modal-content {
+        margin: 0.5rem;
+    }
+    
+    #course-video-modal-close {
+        top: 0.5rem;
+        right: 0.5rem;
+        width: 36px;
+        height: 36px;
+    }
+    
+    #course-video-modal-title {
+        font-size: 14px;
+        padding: 0.5rem;
+    }
+}
