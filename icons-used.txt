@@ -82,7 +82,7 @@ rotate-ccw
 arrow-right
 palette
 gem
-arrow-down
+chevron-up
 link
 headphones
 image-plus

@@ -1,222 +1,195 @@
 <!-- Learning Path Section -->
-<div class="relative shrink-0 w-full py-0" data-name="learning-path">
-    <div class="size-full">
-        <div class=" box-border flex flex-col items-center  w-full">
-
+<div class="relative w-full bg-section-white-yellow py-12 sm:py-16 lg:py-20" data-name="learning-path">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Header -->
             <div class="w-full text-center mb-10 sm:mb-12 lg:mb-16">
-                <h2 class="title-section mb-4">
-                    Lộ trình học 
+            <p class="sub-title-section">
+                LỘ TRÌNH KHÓA HỌC
+            </p>
+            <h2 class="title-section text-black mb-4 sm:mb-6 font-playfair">
+                NỘI DUNG CHI TIẾT KHÓA HỌC
                 </h2>
-                <p class="text-[#8b6b2f] text-[14px] sm:text-[15px] md:text-[16px] leading-[24px] max-w-[700px] mx-auto">
-                    Ghi chú: Có thể rút gọn thành 6 tuần hoặc mở lớp cấp tốc theo yêu cầu.
+            <p class="font-fz-poppins text-[#030213] text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed">
+                6 Buổi (4 tuần học - 38 giờ)
                 </p>
             </div>
 
-            <!-- Timeline - Scrollable -->
-            <div class="learning-path-scroll-wrapper relative w-full">
-                <!-- <style>
-                    .learning-path-scroll {
-                        scrollbar-width: thin;
-                        scrollbar-color: #ae873e transparent;
-                    }
-                    /* Phần tổng của thanh cuộn */
-                    .learning-path-scroll::-webkit-scrollbar {
-                        width: 8px;  /* độ rộng thanh cuộn dọc */
-                        height: 8px; /* độ cao thanh cuộn ngang (nếu có) */
-                    }
-                    /* Đường nền phía sau */
-                    .learning-path-scroll::-webkit-scrollbar-track {
-                        background: transparent;
-                    }
-                    /* "Thanh trượt" mà bạn kéo */
-                    .learning-path-scroll::-webkit-scrollbar-thumb {
-                        background: #ae873e;
-                        border-radius: 10px;
-                    }
-                    /* Khi hover vào thanh trượt */
-                    .learning-path-scroll::-webkit-scrollbar-thumb:hover {
-                        background: #8b6b2f;
-                    }
-                    /* Ẩn scrollbar buttons (mũi tên) */
-                    .learning-path-scroll::-webkit-scrollbar-button {
-                        display: none !important;
-                        width: 0 !important;
-                        height: 0 !important;
-                    }
-                    .learning-path-scroll::-webkit-scrollbar-button:start:decrement,
-                    .learning-path-scroll::-webkit-scrollbar-button:end:increment {
-                        display: none !important;
-                        width: 0 !important;
-                        height: 0 !important;
-                    }
-                </style> -->
-                <div class="learning-path-scroll w-full max-w-[1000px] mx-auto max-h-[500px] overflow-y-auto pr-2">
-                <div class="relative pb-4">
-                    <!-- Timeline line for desktop -->
-                    <div class="hidden md:block absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#ae873e]/30 via-[#ae873e]/20 to-[#ae873e]/30"></div>
-                    
-                    <div class="space-y-6 sm:space-y-8">
-                        
-                        <!-- Week 1 -->
-                        <div class="relative flex items-start gap-4 sm:gap-6 md:gap-8">
-                            <div class="absolute md:relative top-0 left-0 z-1 flex-shrink-0">
-                                <div class="w-6 h-6 sm:w-12 sm:h-12 bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] rounded-full flex items-center justify-center text-white    old text-[16px] sm:text-[18px] md:text-[20px] shadow-lg ring-2 ring-white">
-                                    1
+        <!-- Course Content Blocks -->
+        <div class="max-w-4xl mx-auto space-y-4 sm:space-y-6">
+            
+            <!-- Block 1: BUỔI 1 (Expanded) -->
+            <div class="course-content-block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" data-expanded="true">
+                <div class="flex items-center gap-4 p-5 sm:p-6 lg:p-6">
+                    <!-- Session Button -->
+                    <button class="btn btn-primary flex-shrink-0 uppercase" onclick="toggleCourseBlock(this)">
+                        BUỔI 1
+                    </button>
+                    <!-- Title -->
+                    <div class="flex-1 text-left">
+                        <h3 class="font-fz-poppins text-[#030213] text-[15px] sm:text-[16px] md:text-[18px] font-medium">
+                            Giới thiệu & Kiến thức cơ bản
+                        </h3>
                                 </div>
+                    <!-- Chevron Icon -->
+                    <button class="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center cursor-pointer hover:opacity-70 transition-opacity" onclick="toggleCourseBlock(this)">
+                        <i data-lucide="chevron-down" class="w-full h-full text-[#030213] course-chevron transition-transform duration-300"></i>
+                    </button>
                             </div>
-                            <div class="flex-1 pl-8 md:pl-0">
-                                <div class="bg-white rounded-[16px] p-5 sm:p-6 shadow-[0px_4px_20px_rgba(174,135,62,0.15)] border border-[#ae873e]/10 hover:shadow-[0px_8px_30px_rgba(174,135,62,0.25)] transition-all duration-300">
-                                    <h3 class="  text-[#a5834a] text-[18px] sm:text-[20px] md:text-[22px]  emibold mb-2">
-                                        Tuần 1: Cơ bản móng
-                                    </h3>
-                                    <p class=" text-[#666] text-[14px] sm:text-[15px] md:text-[16px] leading-[24px]">
-                                        Cấu trúc móng, bệnh lý, vệ sinh, cắt da, tạo form, sơn nền.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Week 2 -->
-                        <div class="relative flex items-start gap-4 sm:gap-6 md:gap-8">
-                            <div class="absolute md:relative top-0 left-0 z-1 flex-shrink-0">
-                                <div class="w-6 h-6 sm:w-12 sm:h-12 bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] rounded-full flex items-center justify-center text-white    old text-[16px] sm:text-[18px] md:text-[20px] shadow-lg ring-2 ring-white">
-                                    2
-                                </div>
-                            </div>
-                            <div class="flex-1 pl-8 md:pl-0">
-                                <div class="bg-white rounded-[16px] p-5 sm:p-6 shadow-[0px_4px_20px_rgba(174,135,62,0.15)] border border-[#ae873e]/10 hover:shadow-[0px_8px_30px_rgba(174,135,62,0.25)] transition-all duration-300">
-                                    <h3 class="  text-[#a5834a] text-[18px] sm:text-[20px] md:text-[22px]  emibold mb-2">
-                                        Tuần 2: Gel cơ bản
-                                    </h3>
-                                    <p class=" text-[#666] text-[14px] sm:text-[15px] md:text-[16px] leading-[24px]">
-                                        Nền gel, top, xử lý bề mặt, finish bóng/lỳ.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Week 3 -->
-                        <div class="relative flex items-start gap-4 sm:gap-6 md:gap-8">
-                            <div class="absolute md:relative top-0 left-0 z-1 flex-shrink-0">
-                                <div class="w-6 h-6 sm:w-12 sm:h-12 bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] rounded-full flex items-center justify-center text-white    old text-[16px] sm:text-[18px] md:text-[20px] shadow-lg ring-2 ring-white">
-                                    3
-                                </div>
-                            </div>
-                            <div class="flex-1 pl-8 md:pl-0">
-                                <div class="bg-white rounded-[16px] p-5 sm:p-6 shadow-[0px_4px_20px_rgba(174,135,62,0.15)] border border-[#ae873e]/10 hover:shadow-[0px_8px_30px_rgba(174,135,62,0.25)] transition-all duration-300">
-                                    <h3 class="  text-[#a5834a] text-[18px] sm:text-[20px] md:text-[22px]  emibold mb-2">
-                                        Tuần 3: Đắp bột/Gel
-                                    </h3>
-                                    <p class=" text-[#666] text-[14px] sm:text-[15px] md:text-[16px] leading-[24px]">
-                                        Build form, nối móng, xử lý lifting, tháo an toàn.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Week 4 -->
-                        <div class="relative flex items-start gap-4 sm:gap-6 md:gap-8">
-                            <div class="absolute md:relative top-0 left-0 z-1 flex-shrink-0">
-                                <div class="w-6 h-6 sm:w-12 sm:h-12 bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] rounded-full flex items-center justify-center text-white    old text-[16px] sm:text-[18px] md:text-[20px] shadow-lg ring-2 ring-white">
-                                    4
-                                </div>
-                            </div>
-                            <div class="flex-1 pl-8 md:pl-0">
-                                <div class="bg-white rounded-[16px] p-5 sm:p-6 shadow-[0px_4px_20px_rgba(174,135,62,0.15)] border border-[#ae873e]/10 hover:shadow-[0px_8px_30px_rgba(174,135,62,0.25)] transition-all duration-300">
-                                    <h3 class="  text-[#a5834a] text-[18px] sm:text-[20px] md:text-[22px]  emibold mb-2">
-                                        Tuần 4: Trang trí basic
-                                    </h3>
-                                    <p class=" text-[#666] text-[14px] sm:text-[15px] md:text-[16px] leading-[24px]">
-                                        Line art, ombre, nhũ, sticker, cat-eye.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Week 5 -->
-                        <div class="relative flex items-start gap-4 sm:gap-6 md:gap-8">
-                            <div class="absolute md:relative top-0 left-0 z-1 flex-shrink-0">
-                                <div class="w-6 h-6 sm:w-12 sm:h-12 bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] rounded-full flex items-center justify-center text-white    old text-[16px] sm:text-[18px] md:text-[20px] shadow-lg ring-2 ring-white">
-                                    5
-                                </div>
-                            </div>
-                            <div class="flex-1 pl-8 md:pl-0">
-                                <div class="bg-white rounded-[16px] p-5 sm:p-6 shadow-[0px_4px_20px_rgba(174,135,62,0.15)] border border-[#ae873e]/10 hover:shadow-[0px_8px_30px_rgba(174,135,62,0.25)] transition-all duration-300">
-                                    <h3 class="  text-[#a5834a] text-[18px] sm:text-[20px] md:text-[22px]  emibold mb-2">
-                                        Tuần 5: Vẽ nâng cao
-                                    </h3>
-                                    <p class=" text-[#666] text-[14px] sm:text-[15px] md:text-[16px] leading-[24px]">
-                                        Hoa 3D nhẹ, vân đá, marble, chrome.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Week 6 -->
-                        <div class="relative flex items-start gap-4 sm:gap-6 md:gap-8">
-                            <div class="absolute md:relative top-0 left-0 z-1 flex-shrink-0">
-                                <div class="w-6 h-6 sm:w-12 sm:h-12 bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] rounded-full flex items-center justify-center text-white    old text-[16px] sm:text-[18px] md:text-[20px] shadow-lg ring-2 ring-white">
-                                    6
-                                </div>
-                            </div>
-                            <div class="flex-1 pl-8 md:pl-0">
-                                <div class="bg-white rounded-[16px] p-5 sm:p-6 shadow-[0px_4px_20px_rgba(174,135,62,0.15)] border border-[#ae873e]/10 hover:shadow-[0px_8px_30px_rgba(174,135,62,0.25)] transition-all duration-300">
-                                    <h3 class="  text-[#a5834a] text-[18px] sm:text-[20px] md:text-[22px]  emibold mb-2">
-                                        Tuần 6: Speed & quy trình salon
-                                    </h3>
-                                    <p class=" text-[#666] text-[14px] sm:text-[15px] md:text-[16px] leading-[24px]">
-                                        Tối ưu thời gian, combo dịch vụ.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Week 7 -->
-                        <div class="relative flex items-start gap-4 sm:gap-6 md:gap-8">
-                            <div class="absolute md:relative top-0 left-0 z-1 flex-shrink-0">
-                                <div class="w-6 h-6 sm:w-12 sm:h-12 bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] rounded-full flex items-center justify-center text-white    old text-[16px] sm:text-[18px] md:text-[20px] shadow-lg ring-2 ring-white">
-                                    7
-                                </div>
-                            </div>
-                            <div class="flex-1 pl-8 md:pl-0">
-                                <div class="bg-white rounded-[16px] p-5 sm:p-6 shadow-[0px_4px_20px_rgba(174,135,62,0.15)] border border-[#ae873e]/10 hover:shadow-[0px_8px_30px_rgba(174,135,62,0.25)] transition-all duration-300">
-                                    <h3 class="  text-[#a5834a] text-[18px] sm:text-[20px] md:text-[22px]  emibold mb-2">
-                                        Tuần 7: Chăm sóc khách – bán dịch vụ
-                                    </h3>
-                                    <p class=" text-[#666] text-[14px] sm:text-[15px] md:text-[16px] leading-[24px]">
-                                        Tư vấn, upsell, giữ chân.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Week 8 -->
-                        <div class="relative flex items-start gap-4 sm:gap-6 md:gap-8">
-                            <div class="absolute md:relative top-0 left-0 z-1 flex-shrink-0">
-                                <div class="w-6 h-6 sm:w-12 sm:h-12 bg-gradient-to-br from-[#ae873e] to-[#8b6b2f] rounded-full flex items-center justify-center text-white    old text-[16px] sm:text-[18px] md:text-[20px] shadow-lg ring-2 ring-white">
-                                    8
-                                </div>
-                            </div>
-                            <div class="flex-1 pl-8 md:pl-0">
-                                <div class="bg-white rounded-[16px] p-5 sm:p-6 shadow-[0px_4px_20px_rgba(174,135,62,0.15)] border border-[#ae873e]/10 hover:shadow-[0px_8px_30px_rgba(174,135,62,0.25)] transition-all duration-300">
-                                    <h3 class="  text-[#a5834a] text-[18px] sm:text-[20px] md:text-[22px]  emibold mb-2">
-                                        Tuần 8: Ôn – thi chứng chỉ
-                                    </h3>
-                                    <p class=" text-[#666] text-[14px] sm:text-[15px] md:text-[16px] leading-[24px]">
-                                        Chụp portfolio – định hướng việc làm.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
+                <!-- Content (Expanded by default) -->
+                <div class="course-content-details relative pr-5 sm:pr-6 lg:pr-6 pb-5 sm:pb-6 lg:pb-6">
+                    <div class="border-l-[3px] border-[#F5E6D3] pl-5 sm:pl-6 lg:pl-6 ml-[calc(80px+1rem)] sm:ml-[calc(100px+1rem)]">
+                        <ul class="space-y-2.5 sm:space-y-3">
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#030213] mt-2"></span>
+                            <p class="font-fz-poppins text-[#030213] text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed">
+                                Tổng quan nghề nail, quy trình làm việc trong salon
+                            </p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#030213] mt-2"></span>
+                            <p class="font-fz-poppins text-[#030213] text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed">
+                                Vệ sinh - an toàn khi làm nail
+                            </p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#030213] mt-2"></span>
+                            <p class="font-fz-poppins text-[#030213] text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed">
+                                Nhận biết cấu trúc móng, các tình trạng móng thường gặp
+                            </p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#030213] mt-2"></span>
+                            <p class="font-fz-poppins text-[#030213] text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed">
+                                Cầm kềm - giũa - dụng cụ đúng kỹ thuật
+                            </p>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#030213] mt-2"></span>
+                            <p class="font-fz-poppins text-[#030213] text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed">
+                                Thực hành khô làm quen thao tác trên mẫu giá
+                            </p>
+                        </li>
+                    </ul>
                     </div>
                 </div>
             </div>
 
+            <!-- Block 2: BUỔI 2 & 3 (Collapsed) -->
+            <div class="course-content-block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" data-expanded="false">
+                <div class="flex items-center gap-4 p-5 sm:p-6 lg:p-6">
+                    <!-- Session Button -->
+                    <button class="btn btn-primary flex-shrink-0 uppercase" onclick="toggleCourseBlock(this)">
+                        BUỔI 2 & 3
+                    </button>
+                    <!-- Title -->
+                    <div class="flex-1 text-left">
+                        <h3 class="font-fz-poppins text-[#030213] text-[15px] sm:text-[16px] md:text-[18px] font-medium">
+                            Kỹ thuật sơn nền tảng
+                                    </h3>
+                                </div>
+                    <!-- Chevron Icon -->
+                    <button class="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center cursor-pointer hover:opacity-70 transition-opacity" onclick="toggleCourseBlock(this)">
+                        <i data-lucide="chevron-up" class="w-full h-full text-[#030213] course-chevron transition-transform duration-300"></i>
+                    </button>
+                            </div>
+                <!-- Content (Hidden by default) -->
+                <div class="course-content-details hidden relative pr-5 sm:pr-6 lg:pr-6 pb-5 sm:pb-6 lg:pb-6">
+                    <div class="border-l-[3px] border-[#F5E6D3] pl-5 sm:pl-6 lg:pl-6 ml-[calc(80px+1rem)] sm:ml-[calc(100px+1rem)]">
+                        <ul class="space-y-2.5 sm:space-y-3">
+                            <!-- Add content items here when needed -->
+                        </ul>
+                    </div>
                 </div>
             </div>
+
+            <!-- Block 3: BUỔI 4 & 5 (Collapsed) -->
+            <div class="course-content-block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" data-expanded="false">
+                <div class="flex items-center gap-4 p-5 sm:p-6 lg:p-6">
+                    <!-- Session Button -->
+                    <button class="btn btn-primary flex-shrink-0 uppercase" onclick="toggleCourseBlock(this)">
+                        BUỔI 4 & 5
+                    </button>
+                    <!-- Title -->
+                    <div class="flex-1 text-left">
+                        <h3 class="font-fz-poppins text-[#030213] text-[15px] sm:text-[16px] md:text-[18px] font-medium">
+                            Tạo form và nghệ thuật cơ bản
+                        </h3>
+                                </div>
+                    <!-- Chevron Icon -->
+                    <button class="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center cursor-pointer hover:opacity-70 transition-opacity" onclick="toggleCourseBlock(this)">
+                        <i data-lucide="chevron-up" class="w-full h-full text-[#030213] course-chevron transition-transform duration-300"></i>
+                    </button>
+                            </div>
+                <!-- Content (Hidden by default) -->
+                <div class="course-content-details hidden relative pr-5 sm:pr-6 lg:pr-6 pb-5 sm:pb-6 lg:pb-6">
+                    <div class="border-l-[3px] border-[#F5E6D3] pl-5 sm:pl-6 lg:pl-6 ml-[calc(80px+1rem)] sm:ml-[calc(100px+1rem)]">
+                        <ul class="space-y-2.5 sm:space-y-3">
+                            <!-- Add content items here when needed -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Block 4: BUỔI 6 (Collapsed) -->
+            <div class="course-content-block bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden" data-expanded="false">
+                <div class="flex items-center gap-4 p-5 sm:p-6 lg:p-6">
+                    <!-- Session Button -->
+                    <button class="btn btn-primary flex-shrink-0 uppercase" onclick="toggleCourseBlock(this)">
+                        BUỔI 6
+                    </button>
+                    <!-- Title -->
+                    <div class="flex-1 text-left">
+                        <h3 class="font-fz-poppins text-[#030213] text-[15px] sm:text-[16px] md:text-[18px] font-medium">
+                            Quy trình thực tế và hoàn thiện kỹ năng
+                        </h3>
+                    </div>
+                    <!-- Chevron Icon -->
+                    <button class="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center cursor-pointer hover:opacity-70 transition-opacity" onclick="toggleCourseBlock(this)">
+                        <i data-lucide="chevron-up" class="w-full h-full text-[#030213] course-chevron transition-transform duration-300"></i>
+                    </button>
+                </div>
+                <!-- Content (Hidden by default) -->
+                <div class="course-content-details hidden relative pl-5 sm:pl-6 lg:pl-6 pr-5 sm:pr-6 lg:pr-6 pb-5 sm:pb-6 lg:pb-6 border-l-2 border-[#F5E6D3] ml-4 sm:ml-6">
+                    <ul class="space-y-2.5 sm:space-y-3">
+                        <!-- Add content items here when needed -->
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>
 
+<script>
+function toggleCourseBlock(button) {
+    const block = button.closest('.course-content-block');
+    const details = block.querySelector('.course-content-details');
+    const chevron = block.querySelector('.course-chevron');
+    const isExpanded = block.getAttribute('data-expanded') === 'true';
+    
+    if (isExpanded) {
+        // Collapse
+        details.classList.add('hidden');
+        chevron.setAttribute('data-lucide', 'chevron-up');
+        block.setAttribute('data-expanded', 'false');
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    } else {
+        // Expand
+        details.classList.remove('hidden');
+        chevron.setAttribute('data-lucide', 'chevron-down');
+        block.setAttribute('data-expanded', 'true');
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    }
+}
+
+// Initialize icons when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.lucide) {
+        lucide.createIcons();
+    }
+});
+</script>

@@ -234,6 +234,10 @@
         @apply text-[#bbaa8e] leading-tight text-[40px] relative;
     }
 
+    .sub-title-section {
+        @apply font-playfair text-[#8A9904] text-xs sm:text-base mb-2;
+    }
+
     /* ========================================================================
        BACKGROUND SECTION: Các thuộc tính cho Background Section
        ======================================================================== */

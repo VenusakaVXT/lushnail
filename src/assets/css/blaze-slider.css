@@ -278,6 +278,24 @@
     }
 }
 
+/* bslider-feedback-testimonials: 1 → 2 (>=600) → 3 (>=1023) with autoplay */
+.bslider-feedback-testimonials.blaze-slider {
+    --slides-to-show: 1;
+    --slide-gap: 16px;
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+    .bslider-feedback-testimonials.blaze-slider {
+        --slides-to-show: 2;
+    }
+}
+
+@media (min-width: 1023px) {
+    .bslider-feedback-testimonials.blaze-slider {
+        --slides-to-show: 3;
+    }
+}
+
 /* Image pagination styles */
 .blaze-pagination-image {
     display: flex;
@@ -357,7 +375,14 @@
 
 .section_testimonials .blaze-next,
 .section_testimonials .blaze-prev {
-    @apply hidden sm:flex;
+    display: flex !important;
+}
+
+@media (max-width: 640px) {
+    .section_testimonials .blaze-next,
+    .section_testimonials .blaze-prev {
+        display: flex !important;
+    }
 }
 
 .section_testimonials .blaze-prev {

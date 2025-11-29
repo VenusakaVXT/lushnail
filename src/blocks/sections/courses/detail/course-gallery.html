@@ -1,20 +1,20 @@
 <!-- Course Gallery Section -->
 <section class="bg-white py-12 sm:py-16 lg:py-20 w-full" data-name="course-gallery">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-[1400px]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Header -->
         <div class="text-center mb-10 sm:mb-12 lg:mb-16">
-            <h2 class="title-section mb-4">
-                Thư viện ảnh khóa học
+            <h2 class="title-section text-black mb-4 font-playfair">
+                THƯ VIỆN ẢNH KHÓA HỌC
             </h2>
-            <p class="text-[#666666] text-[15px] sm:text-[16px] leading-[24px] max-w-[700px] mx-auto">
-                Xem những khoảnh khắc đẹp từ các buổi học và tác phẩm của học viên
+            <p class="font-fz-poppins text-[#030213] text-[14px] sm:text-[15px] md:text-[16px] leading-relaxed max-w-2xl mx-auto">
+                Xem những khoảnh khắc đẹp từ các buổi học của học viên
             </p>
         </div>
 
-        <!-- Gallery Grid -->
-        <div class="course-gallery-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <!-- Gallery Grid - 4 Images -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             <!-- Gallery Item 1 -->
-            <div class="course-gallery-item group relative overflow-hidden rounded-[16px] aspect-square cursor-pointer">
+            <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
                 <img 
                     src="https://m.media-amazon.com/images/I/51YC56BJ0WL._SL1024_.jpg" 
                     alt="Khóa học nail - Hình ảnh 1"
@@ -22,13 +22,10 @@
                     loading="lazy"
                     onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <p class="text-white text-[14px] font-medium">Buổi học thực hành</p>
-                </div>
             </div>
 
             <!-- Gallery Item 2 -->
-            <div class="course-gallery-item group relative overflow-hidden rounded-[16px] aspect-square cursor-pointer">
+            <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
                 <img 
                     src="https://m.media-amazon.com/images/I/7159sUj7TNL._SL1500_.jpg" 
                     alt="Khóa học nail - Hình ảnh 2"
@@ -36,13 +33,10 @@
                     loading="lazy"
                     onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <p class="text-white text-[14px] font-medium">Tác phẩm học viên</p>
-                </div>
             </div>
 
             <!-- Gallery Item 3 -->
-            <div class="course-gallery-item group relative overflow-hidden rounded-[16px] aspect-square cursor-pointer">
+            <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer">
                 <img 
                     src="https://m.media-amazon.com/images/I/71vPZFCTi8L._SL1500_.jpg" 
                     alt="Khóa học nail - Hình ảnh 3"
@@ -50,63 +44,24 @@
                     loading="lazy"
                     onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <p class="text-white text-[14px] font-medium">Kỹ thuật vẽ nâng cao</p>
-                </div>
             </div>
 
-            <!-- Gallery Item 4 -->
-            <div class="course-gallery-item group relative overflow-hidden rounded-[16px] aspect-square cursor-pointer">
+            <!-- Gallery Item 4 - Link with Overlay -->
+            <a href="#gallery" class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer block">
                 <img 
                     src="https://m.media-amazon.com/images/I/71jqxWepZvL._SL1500_.jpg" 
-                    alt="Khóa học nail - Hình ảnh 4"
+                    alt="Xem thêm ảnh khóa học"
                     class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     loading="lazy"
                     onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
                 />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <p class="text-white text-[14px] font-medium">Lớp học thực hành</p>
+                <!-- Dark Overlay with Text -->
+                <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
+                    <p class="text-white font-fz-poppins text-[18px] sm:text-[20px] md:text-[24px] font-semibold">
+                        +100 Ảnh khác
+                    </p>
                 </div>
-            </div>
-
-            <!-- Gallery Item 5 -->
-            <div class="course-gallery-item group relative overflow-hidden rounded-[16px] aspect-square cursor-pointer">
-                <img 
-                    src="https://m.media-amazon.com/images/I/7159sUj7TNL._SL1500_.jpg" 
-                    alt="Khóa học nail - Hình ảnh 5"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <p class="text-white text-[14px] font-medium">Nail art sáng tạo</p>
-                </div>
-            </div>
-
-            <!-- Gallery Item 6 -->
-            <div class="course-gallery-item group relative overflow-hidden rounded-[16px] aspect-square cursor-pointer">
-                <img 
-                    src="https://m.media-amazon.com/images/I/51YC56BJ0WL._SL1024_.jpg" 
-                    alt="Khóa học nail - Hình ảnh 6"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
-                />
-                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <p class="text-white text-[14px] font-medium">Tốt nghiệp khóa học</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Load More Button -->
-        <div class="flex justify-center mt-10 sm:mt-12">
-            <button 
-                id="gallery-load-more-btn"
-                class="btn btn-outline flex items-center gap-2">
-                <span>Tải thêm ảnh</span>
-                <i data-lucide="arrow-down" class="w-4 h-4"></i>
-            </button>
+            </a>
         </div>
     </div>
 </section>
-
