@@ -227,7 +227,6 @@
 
     .title-section {
         @apply text-black leading-tight text-[24px] sm:text-[40px] relative font-playfair font-medium;
-
     }
 
     .title-section-dark {
@@ -1072,11 +1071,11 @@
     .right-form {
         @apply w-full lg:w-[70%] flex flex-col gap-6 flex justify-center lg:justify-start order-1 lg:order-2 px-4 pt-4 sm:pt-[200px]
     }
-    
+
     .box-right-single-detail-cousrses {
         position: relative;
     }
-    
+
     .box-right-single-detail-cousrses::before {
         content: '';
         position: absolute;
@@ -1090,4 +1089,21 @@
         pointer-events: none;
     }
 
+    .rounded-frame {
+        width: 350px;
+        padding: 6px;
+        background: white;
+        border-radius: 0 35% 0 35%;
+        border: 4px double #d7c9b4;
+        /* background: linear-gradient(135deg, #F4DB89 0%, #DDB657 50%, #F4DB89 100%); */
+        /* hiệu ứng viền kép giống hình 2 */
+        overflow: hidden;
+    }
+
+    .rounded-frame img {
+        width: 100%;
+        display: block;
+        border-radius: 0 35% 0 35%;
+        /* bo góc ảnh khớp khung */
+    }
 }

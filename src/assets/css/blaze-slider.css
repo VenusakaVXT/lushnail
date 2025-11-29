@@ -75,7 +75,8 @@
 /* Navigation button styles */
 .blaze-prev,
 .blaze-next {
-    @apply hidden sm:flex;
+    /* Mặc định ẩn (mobile) */
+    display: none;
     align-items: center;
     justify-content: center;
     position: absolute;
@@ -89,7 +90,16 @@
     color: #fff;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Hiển thị trên tablet & desktop (>= 640px) */
+@media (min-width: 640px) {
+
+    .blaze-prev,
+    .blaze-next {
+        display: flex;
+    }
 }
 
 .blaze-prev {
@@ -103,7 +113,7 @@
 .blaze-prev:hover,
 .blaze-next:hover {
     background-color: var(--primary);
-    transform: translateY(-50%) ;
+    transform: translateY(-50%);
 }
 
 .blaze-prev:disabled,
@@ -123,7 +133,7 @@
     left: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 0.5rem;
     border-radius: 50%;
@@ -131,7 +141,7 @@
 }
 
 .bslider-image .blaze-prev:hover {
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .bslider-image .blaze-next {
@@ -139,7 +149,7 @@
     right: 1rem;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 0.5rem;
     border-radius: 50%;
@@ -147,7 +157,7 @@
 }
 
 .bslider-image .blaze-next:hover {
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 /* Responsive adjustments */
@@ -320,7 +330,7 @@
 
 .blaze-pagination-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .blaze-pagination-item.active {
@@ -375,10 +385,11 @@
 
 .section_testimonials .blaze-next,
 .section_testimonials .blaze-prev {
-    display: flex !important;
+    display: none !important;
 }
 
-@media (max-width: 640px) {
+@media (min-width: 640px) {
+
     .section_testimonials .blaze-next,
     .section_testimonials .blaze-prev {
         display: flex !important;
@@ -417,7 +428,7 @@
     background-color: #DDB657;
     color: #000;
     border-radius: 0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .blaze-slider.bslider-hero-mobile .blaze-prev {

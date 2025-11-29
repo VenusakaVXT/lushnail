@@ -78,7 +78,10 @@
        HEADER LAYOUT GROUP: Header Layout Properties
        ======================================================================== */
     .header-wrapper {
-        @apply bg-[#f8f7f6] flex flex-col w-full;
+        @apply flex flex-col w-full;
+        /* Custom header gradient background and box-shadow */
+        background: linear-gradient(180deg, #F4DB89 -42.5%, #FFF 86.37%);
+        box-shadow: 0 4px 12px 0 rgba(187, 170, 142, 0.20);
     }
 
     /* ========================================================================
@@ -107,7 +110,6 @@
 
     /* Override for marquee to work properly - only on mobile */
     marquee.header-topbar-text {
-        display: none !important;
         white-space: nowrap !important;
         -webkit-line-clamp: unset !important;
         -webkit-box-orient: unset !important;

@@ -1,23 +1,25 @@
 <!-- Breadcrumb Section -->
 <section class="bg-[#fefcf4] w-full py-4 sm:py-4 mb-4 md:mb-6 lg:mb-8" data-name="breadcrumb">
     <div class="w-full container mx-auto px-4 sm:px-4 lg:px-4">
-        <nav class="flex items-center gap-2 text-[14px] sm:text-[15px]">
-            <a href="/" class="text-black transition-colors duration-300">
+        <nav class="flex items-center gap-2 text-[14px] sm:text-[15px] overflow-hidden">
+            <a href="/" class="text-black transition-colors duration-300 flex-shrink-0">
                 <i data-lucide="home" class="w-4 h-4 text-black"></i>
             </a>
-            /
-            <span class="text-black">
+            <span class="text-black flex-shrink-0">/</span>
+            <!-- Tất cả khóa học - với max-width theo từng breakpoint -->
+            <span class="text-black truncate max-w-[60px] sm:max-w-[90px] md:max-w-[120px] lg:max-w-none">
                 Tất cả khóa học
             </span>
-            /
-            <span class="text-black">
+            <span class="text-black flex-shrink-0">/</span>
+            <!-- Khóa học tại trung tâm - với max-width theo từng breakpoint -->
+            <span class="text-black truncate max-w-[70px] sm:max-w-[110px] md:max-w-[140px] lg:max-w-none">
                 Khóa học tại trung tâm
             </span>
-            /
-            <span class="text-black font-bold">
+            <span class="text-black flex-shrink-0">/</span>
+            <!-- Last item - với max-width theo từng breakpoint -->
+            <span class="text-black font-bold truncate max-w-[80px] sm:max-w-[120px] md:max-w-[150px] lg:max-w-none">
                 Khóa cơ bản
             </span>
         </nav>
     </div>
 </section>
-
