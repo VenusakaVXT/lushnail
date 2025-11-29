@@ -73,13 +73,13 @@ more-horizontal
 server
 table
 circle
+arrow-right
 gift
 truck
 eye
 credit-card
 wallet
 rotate-ccw
-arrow-right
 palette
 gem
 chevron-up
