@@ -75,6 +75,44 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // About Us Section Read More Button
+  const aboutUsSection = document.querySelector('[data-name="about-us"]');
+  if (aboutUsSection) {
+    const readMoreBtn = aboutUsSection.querySelector('.about-read-more-btn');
+    const contentShort = aboutUsSection.querySelector('.about-content-short');
+    const contentFull = aboutUsSection.querySelector('.about-content-full');
+    const readMoreText = aboutUsSection.querySelector('.read-more-text');
+    const readLessText = aboutUsSection.querySelector('.read-less-text');
+    const arrowIcon = aboutUsSection.querySelector('.about-arrow-icon');
+
+    if (readMoreBtn && contentShort && contentFull && arrowIcon) {
+      readMoreBtn.addEventListener('click', function () {
+        const isExpanded = this.getAttribute('aria-expanded') === 'true';
+        
+        if (isExpanded) {
+          // Collapse - hide full content, show short content
+          contentFull.classList.add('hidden');
+          readMoreText.classList.remove('hidden');
+          readLessText.classList.add('hidden');
+          arrowIcon.style.transform = 'rotate(0deg)';
+          this.setAttribute('aria-expanded', 'false');
+        } else {
+          // Expand - show full content (short content remains visible)
+          contentFull.classList.remove('hidden');
+          readMoreText.classList.add('hidden');
+          readLessText.classList.remove('hidden');
+          arrowIcon.style.transform = 'rotate(180deg)';
+          this.setAttribute('aria-expanded', 'true');
+        }
+
+        // Reinitialize icons after state change
+        if (typeof lucide !== 'undefined') {
+          lucide.createIcons();
+        }
+      });
+    }
+  }
+
   // Location Cards Interactive Map
   const ourLocationsSection = document.querySelector('[data-name="our-locations"]');
   if (ourLocationsSection) {
