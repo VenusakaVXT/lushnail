@@ -149,6 +149,10 @@
 
         .header-topbar-language-button {
             font-size: 12px;
+            width:32px;
+            height: 32px;
+            margin: 0 auto !important;
+     
         }
 
         .header-topbar-language-icon {
@@ -167,15 +171,15 @@
     }
 
     .header-topbar-lang {
-        @apply flex-shrink-0 ml-3 sm:ml-4;
+        @apply flex-shrink-0 p-1;
     }
 
     .header-topbar-language-button {
-        @apply flex items-center gap-1 sm:gap-1.5 md:gap-2 text-[#141414] text-[10px] sm:text-[13px] md:text-[14px] hover:text-[#ae873e] transition-colors bg-transparent border-0 cursor-pointer;
+        @apply flex items-center  text-[#141414] text-[10px] sm:text-[13px] md:text-[14px] hover:text-[#ae873e] transition-colors bg-transparent border-0 cursor-pointer;
     }
 
     .header-topbar-language-icon {
-        @apply w-5 h-5 mt-[-5px];
+        @apply w-5 h-5;
     }
 
     .header-topbar-language-text {
@@ -204,7 +208,8 @@
     /* Ensure topbar lang container doesn't clip dropdown */
     .header-topbar-lang {
         overflow: visible !important;
-        z-index: 10001;
+        z-index: 10;
+        
     }
 
     /* Show language dropdown on hover */
@@ -297,7 +302,7 @@
     /* Ensure icons container stays on the right */
     .header-navbar-desktop>div:last-child {
         position: relative;
-        z-index: 10000;
+        z-index: 9;
     }
 
     /* Ensure language dropdown container doesn't get clipped */
@@ -608,12 +613,12 @@
 
     .header-mobile-drawer-overlay {
         @apply absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300;
-        display: none;
+        display: block;
     }
 
     .header-mobile-drawer.active .header-mobile-drawer-overlay {
         @apply opacity-100;
-        display: none;
+        display: block;
     }
 
     .header-mobile-drawer-content {

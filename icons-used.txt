@@ -7,12 +7,12 @@ log-out
 shopping-bag
 menu
 x
-user-plus
 log-in
-play
+user-plus
 facebook
 instagram
 youtube
+play
 home
 heart
 lightbulb

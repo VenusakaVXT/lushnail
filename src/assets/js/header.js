@@ -183,6 +183,81 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // Search Drawer Logic
+    const searchDrawer = document.getElementById("search-drawer");
+    const searchDrawerOverlay = document.getElementById("search-drawer-overlay");
+    const mobileSearchToggle = document.getElementById("mobile-search-toggle");
+    const mobileSearchInput = document.getElementById("mobile-search-input");
+
+    // Function to open search drawer
+    const openSearchDrawer = () => {
+        if (searchDrawer) {
+            updateHeaderHeight(); // Update height before opening
+            searchDrawer.classList.add("active");
+            document.body.style.overflow = "hidden"; // Prevent body scroll
+            // Focus on search input after a short delay to allow drawer animation
+            setTimeout(() => {
+                if (mobileSearchInput) {
+                    mobileSearchInput.focus();
+                }
+            }, 300);
+        }
+    };
+
+    // Function to close search drawer
+    const closeSearchDrawer = () => {
+        if (searchDrawer) {
+            searchDrawer.classList.remove("active");
+            document.body.style.overflow = ""; // Restore body scroll
+            // Clear search input when closing
+            if (mobileSearchInput) {
+                mobileSearchInput.value = "";
+            }
+        }
+    };
+
+    // Open search drawer on search button click
+    if (mobileSearchToggle) {
+        mobileSearchToggle.addEventListener("click", (e) => {
+            e.stopPropagation();
+            openSearchDrawer();
+        });
+    }
+
+    // Close search drawer on close button click
+    const searchDrawerClose = document.getElementById("search-drawer-close");
+    if (searchDrawerClose) {
+        searchDrawerClose.addEventListener("click", (e) => {
+            e.stopPropagation();
+            closeSearchDrawer();
+        });
+    }
+
+    // Close search drawer on overlay click
+    if (searchDrawerOverlay) {
+        searchDrawerOverlay.addEventListener("click", (e) => {
+            e.stopPropagation();
+            closeSearchDrawer();
+        });
+    }
+
+    // Prevent search drawer content click from closing drawer
+    if (searchDrawer) {
+        const searchDrawerContent = searchDrawer.querySelector(".header-mobile-drawer-content");
+        if (searchDrawerContent) {
+            searchDrawerContent.addEventListener("click", (e) => {
+                e.stopPropagation();
+            });
+        }
+    }
+
+    // Close search drawer on Escape key
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && searchDrawer && searchDrawer.classList.contains("active")) {
+            closeSearchDrawer();
+        }
+    });
+
     // Language Switcher Logic
     const languageToggle = document.getElementById("language-toggle");
     const languageDropdown = document.getElementById("language-dropdown");

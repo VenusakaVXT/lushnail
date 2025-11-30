@@ -51,7 +51,7 @@
       </a>
       <div class="header-topbar-lang relative" style="overflow: visible;">
         <button id="language-toggle-topbar" class="header-topbar-language-button" aria-label="Change Language">
-          <i data-lucide="languages" class="header-topbar-language-icon"></i>
+          <i data-lucide="languages" class="header-topbar-language-icon "></i>
         
         </button>
         <div id="language-dropdown-topbar"
@@ -75,6 +75,94 @@
     <button id="mobile-menu-toggle" class="header-navbar-mobile-toggle" aria-label="Toggle mobile menu">
       <i data-lucide="menu" class="header-navbar-mobile-icon" id="menu-icon"></i>
     </button>
+    </div>
+  </div>
+
+  <!-- Search Drawer -->
+  <div id="search-drawer" class="header-mobile-drawer">
+    <!-- Drawer Overlay -->
+    <div id="search-drawer-overlay" class="header-mobile-drawer-overlay"></div>
+
+    <!-- Drawer Content -->
+    <div class="header-mobile-drawer-content">
+      <!-- Drawer Header with Close Button -->
+      <div class="header-mobile-drawer-header flex justify-between">
+        <a href="/" class="header-logo-link">
+          <img src="/assets/images/LOGO_GOLD.png" alt="Lush Nail Logo" class="header-logo">
+        </a>
+        <button id="search-drawer-close" class="header-mobile-drawer-close" aria-label="Close search">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <!-- Drawer Body -->
+      <div class="header-mobile-drawer-body">
+        <!-- Search Bar Section -->
+        <div class="header-mobile-drawer-section p-4 border-b border-gray-200">
+          <div class="header-mobile-search-wrapper">
+            <div class="relative">
+              <i data-lucide="search"
+                class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"></i>
+              <input type="text" id="mobile-search-input" placeholder="Tìm kiếm..."
+                class="header-mobile-search-input w-full pl-10 pr-4 py-3 rounded-lg bg-white focus:outline-none text-sm">
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Results Section (can be populated dynamically) -->
+        <div id="search-results" class="header-mobile-drawer-section p-4">
+          <p class="text-gray-500 text-sm text-center">Nhập từ khóa để tìm kiếm...</p>
+        </div>
+
+        <!-- Login and Register Buttons Section -->
+        <div class="header-mobile-drawer-section px-4 py-4 space-y-2">
+          <div class="flex gap-3 justify-center">
+            <a href="/login.html"
+            class="btn btn-outline">
+              <i data-lucide="log-in" class="w-5 h-5"></i>
+              <span>Đăng Nhập</span>
+            </a>
+            <a href="/register.html"
+              class="btn btn-outline">
+              <i data-lucide="user-plus" class="w-5 h-5"></i>
+              <span>Tạo Tài Khoản</span>
+            </a>
+          </div>
+          <a href="/cart.html"
+            class="btn btn-primary gap-2">
+            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+            <span>Xem Giỏ Hàng</span>
+          </a>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="header-mobile-drawer-section">
+          <div class="px-6 py-4">
+            <h3 class="text-[#333] text-[14px] mb-4 uppercase tracking-wider text-center">Social Media</h3>
+            <div class="flex items-center justify-center gap-4">
+              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"
+                class="header-social-icon w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors"
+                aria-label="Facebook">
+                <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
+              </a>
+              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"
+                class="header-social-icon w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors"
+                aria-label="Instagram">
+                <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
+              </a>
+              <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer"
+                class="header-social-icon w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors"
+                aria-label="Twitter">
+                <i data-lucide="x" class="w-5 h-5 text-white"></i>
+              </a>
+              <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"
+                class="header-social-icon w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition-colors"
+                aria-label="Youtube">
+                <i data-lucide="youtube" class="w-5 h-5 text-white"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
