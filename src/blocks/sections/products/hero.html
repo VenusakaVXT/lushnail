@@ -1,76 +1,40 @@
 <!-- Products Hero Section -->
-<section class="bg-white flex flex-col items-start relative w-full noise-overlay overflow-hidden" data-name="products-hero">
-  <div class="flex flex-col lg:flex-row gap-2 p-2 relative w-full">
-    <!-- Left Column: Background Image with Text -->
-    <div
-      class="relative flex items-center justify-center min-h-[500px] sm:min-h-[600px] lg:h-[700px] w-full lg:w-[60%] bg-cover bg-center bg-no-repeat rounded-lg overflow-hidden"
-      style="background-image: url('https://www.londonlashpro.com/cdn/shop/articles/gelnails_55b3c982-fcd0-45ea-a589-475268814361_1248x.jpg?v=1740413550');">
-      <div
-        class="absolute inset-0 backdrop-blur-[7.5px] bg-gradient-to-r from-[#AE873E]/80 via-[#AE873E]/60 to-[#AE873E]/40">
-      </div>
+<section class="relative w-full overflow-hidden" data-name="products-hero">
+  <!-- Background Banner -->
+  <div class="relative w-full">
+    <img src="/assets/images/Rectangle10236.png" 
+         alt="Products Hero Banner" 
+         class="w-full h-auto object-cover" />
+  </div>
 
-      <div
-        class="relative z-10 flex flex-col gap-6 sm:gap-8 lg:gap-10 text-white max-w-[800px] w-full px-6 sm:px-8 lg:pl-16 lg:pr-20 py-12 sm:py-16 lg:py-0">
-        <div class="flex flex-col gap-4 sm:gap-6 scroll-fade-in">
-          <h1
-            class="text-[36px] sm:text-[48px] md:text-[56px] lg:text-[64px] leading-tight tracking-[-2px]">
-            Bộ Sưu Tập Sản Phẩm
-          </h1>
-          <p
-            class="text-[16px] sm:text-[18px] lg:text-[20px] leading-[28px] sm:leading-[32px] text-white/95 max-w-[600px]">
-            Khám phá thế giới nghệ thuật nail với những thiết kế độc đáo, chất lượng cao và xu hướng mới nhất
-          </p>
-        </div>
-        <div class="flex flex-wrap gap-4 scroll-slide-up" style="animation-delay: 0.2s;">
-          <a href="#all-products"
-            class="hero-scroll-btn bg-white text-[#333] text-[14px] sm:text-[15px] lg:text-[16px] px-8 py-3.5 lg:px-10 lg:py-4 flex items-center gap-2 rounded-lg hover:bg-[#FFF9F2] hover:scale-105 transition-all duration-300 shadow-lg">
-            Khám Phá Ngay
-            <i data-lucide="arrow-right" class="w-5 h-5"></i>
-          </a>
-          <a href="#trending-collection"
-            class="hero-scroll-btn bg-transparent border-2 border-white text-white text-[14px] sm:text-[15px] lg:text-[16px] px-8 py-3.5 lg:px-10 lg:py-4 rounded-lg hover:bg-white/10 transition-all duration-300">
-            Xem Bộ Sưu Tập
-          </a>
-        </div>
-      </div>
-    </div>
+  <!-- Content Overlay -->
+  <div class="absolute inset-0 flex items-center justify-center z-10">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center text-center gap-4  justify-center max-w-4xl mx-auto">
+        <!-- Headline -->
+      
 
-    <!-- Right Column: Image Gallery -->
-    <div class="relative w-full lg:w-[40%] h-[400px] sm:h-[500px] lg:h-[700px] scroll-fade-in"
-      style="animation-delay: 0.3s;">
-      <div class="absolute inset-0 grid grid-cols-2 gap-2">
-        <div class="relative overflow-hidden rounded-lg group scroll-slide-up" style="animation-delay: 0.4s;">
-          <img src="https://i5.walmartimages.com/asr/10000316-338a-4f9e-a81f-2e5dedbecd8f.33f3e88e3f9709e51ec0b12549b806f6.png"
-            alt="Nail Art Design 1"
-            class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          </div>
+        <!-- Main Title with Golden Gradient -->
+        <h1 class="title-section text-primary">
+          PRODUCT COLLECTION
+        </h1>
+
+        <!-- Description -->
+        <p class="text-white text-base sm:text-lg  max-w-[700px]">
+          Discover the world of nail art with unique designs, high quality, and the latest trends
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 items-center justify-center mt-4">
+          <!-- Primary Button -->
+       
+          <!-- Secondary Button -->
+          <a href="#products"  class="btn btn-primary">
+            SHOP TOOLS
+          </a>
         </div>
-        <div class="relative overflow-hidden rounded-lg group scroll-slide-up" style="animation-delay: 0.5s;">
-          <img src="https://eternal-cosmetics.com/cdn/shop/files/B07R7DCKSX.PT03_1000x1000.jpg?v=1690466833"
-            alt="Nail Art Design 2"
-            class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          </div>
-        </div>
-        <div class="relative overflow-hidden rounded-lg group scroll-slide-up" style="animation-delay: 0.6s;">
-          <img src="https://uk.manucurist.com/cdn/shop/products/Clove_22b37910-672b-476a-ab3a-55e9bb6b216f.jpg?v=1665654505&width=1500"
-            alt="Nail Art Design 3"
-            class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          </div>
-        </div>
-        <div class="relative overflow-hidden rounded-lg group scroll-slide-up" style="animation-delay: 0.7s;">
-          <img src="https://www.beyondpolish.com/cdn/shop/files/KS_GEL_PRO_HEMA_FREE_-_ROW.png?v=1761858312"
-            alt="Nail Art Design 4"
-            class="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700" />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          </div>
-        </div>
+
+      
       </div>
     </div>
   </div>
