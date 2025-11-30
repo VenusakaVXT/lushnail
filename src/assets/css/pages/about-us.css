@@ -164,3 +164,37 @@ main {
     max-width: 85%;
   }
 }
+
+.statistical-icon-wrapper {
+  @apply relative;
+}
+
+.statistical-icon-circle {
+  @apply w-[60px] h-[60px] sm:w-20 sm:h-20 lg:w-20 lg:h-20 rounded-full bg-black flex items-center justify-center relative;
+}
+
+.statistical-icon {
+  @apply w-full h-full object-contain;
+}
+
+.statistical-content {
+  @apply flex flex-col gap-2 items-start;
+}
+
+.statistical-number {
+  @apply text-lg sm:text-3xl lg:text-4xl text-[#090707] leading-none font-vip-beezle;
+}
+
+.statistical-text {
+  @apply flex flex-col gap-0 items-start text-left;
+}
+
+.statistical-text-main {
+  @apply text-[#090707] text-[14px] sm:text-[15px] lg:text-[16px] leading-tight;
+  display: block;
+}
+
+.statistical-text-sub {
+  @apply text-[#090707] text-[14px] sm:text-[15px] lg:text-[16px] leading-tight;
+  display: block;
+}

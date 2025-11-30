@@ -1,251 +1,160 @@
 <!-- Achievements Section -->
-<section class="bg-section-white-yellow w-full">
-    <div style="background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/71ba49cf7dd12aa15aff5db67f2128427396c3fa-sxy0azUh1CItWAQG9f8vxnw3VwIGuv.jpg');"
-        class="bg-cover bg-center noise-overlay relative rounded-[40px] sm:rounded-[60px] lg:rounded-[80px] w-full overflow-hidden"
-        data-name="achievements">
-        <div class="overlay-dark"></div>
-        <div class="size-full relative z-10">
-            <div
-                class="box-border flex flex-col items-center gap-10 sm:gap-14 lg:gap-[64px] px-6 sm:px-10 lg:px-[64px] py-12 sm:py-[80px] lg:py-[128px] w-full">
+<section class="bg-white w-full py-12 sm:py-16 lg:py-20" data-name="achievements">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center gap-10 sm:gap-14 lg:gap-16 w-full">
 
-                <!-- Header -->
-                <div class="flex flex-col items-center text-center gap-4 sm:gap-6 max-w-[800px] w-full">
-                    <h2 class="title-section-dark text-white">
-                        Thành tích của chúng tôi
-                    </h2>
-                    <p class="text-white/80 text-[15px] sm:text-[16px] leading-[24px]">
-                        Những thành tựu đáng tự hào mà Lush Nail đã đạt được trong suốt quá trình phát triển
-                    </p>
+            <!-- Header -->
+            <div class="flex flex-col items-center text-center gap-4 sm:gap-6 max-w-[800px] w-full">
+                <h2 class="title-section text-black">
+                    Thành tích của chúng tôi
+                </h2>
+                <p class="text-[#666666] text-[15px] sm:text-[16px] leading-relaxed">
+                    Những thành tựu đáng tự hào mà Lush Nail đã đạt được trong suốt quá trình phát triển
+                </p>
+            </div>
+
+            <!-- Competition Achievements -->
+            <div class="w-full space-y-8 sm:space-y-12 lg:space-y-16">
+
+                <!-- Achievement 1: Vietnam Nail Championship -->
+                <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 scroll-slide-up">
+                    <div class="w-full lg:w-1/2 relative max-w-[380px] mx-auto lg:mx-0">
+                        <div class="relative w-full h-[300px] sm:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80&fit=crop&crop=center&auto=format"
+                                alt="Vietnam Nail Championship" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="w-full flex-1 flex flex-col gap-4 sm:gap-6">
+                        <div class="flex items-center gap-3">
+                            <div class="h-[60px] w-[60px] rounded-full flex items-center justify-center shadow-md"
+                                style="background: linear-gradient(135deg, #FFE5B4 0%, #FFD89B 50%, #FFC966 100%);">
+                                <i data-lucide="trophy" class="w-8 h-8 text-[#DDB657]"></i>
+                            </div>
+                            <div>
+                                <p class="text-[#DDB657] text-[14px] sm:text-[16px] font-semibold uppercase tracking-wider">
+                                    Vietnam Nail Championship 2024
+                                </p>
+                                <p class="text-[#999999] text-[12px] sm:text-[14px]">
+                                    First Place Winner
+                                </p>
+                            </div>
+                        </div>
+                        <h3 class="text-[#090707] text-[24px] sm:text-[28px] lg:text-[32px] font-bold leading-tight">
+                            Giải nhất cuộc thi Nail Art quốc gia
+                        </h3>
+                        <p class="text-[#666666] text-[15px] sm:text-[16px] leading-relaxed">
+                            Lush Nail đã xuất sắc giành giải nhất tại cuộc thi Vietnam Nail Championship 2024 với bộ sưu tập "Tinh hoa Việt Nam" - kết hợp hài hòa giữa nghệ thuật nail hiện đại và văn hóa truyền thống.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <div class="flex items-center gap-2 bg-[#FFF9F2] px-3 py-2 rounded-lg">
+                                <i data-lucide="award" class="w-5 h-5 text-[#DDB657]"></i>
+                                <span class="text-[#333333] text-[14px] font-medium">Gold Medal</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-[#FFF9F2] px-3 py-2 rounded-lg">
+                                <i data-lucide="calendar" class="w-5 h-5 text-[#DDB657]"></i>
+                                <span class="text-[#333333] text-[14px] font-medium">2024</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-[#FFF9F2] px-3 py-2 rounded-lg">
+                                <i data-lucide="users" class="w-5 h-5 text-[#DDB657]"></i>
+                                <span class="text-[#333333] text-[14px] font-medium">50+ Participants</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Achievements Grid -->
-                <div
-                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 w-full container mx-auto">
+                <!-- Divider -->
+                <hr class="border-t border-gray-200 my-8 sm:my-12 lg:my-16">
 
-                    <!-- Achievement 1 -->
-                    <div
-                        class="scroll-slide-up bg-[#1a1a1a] rounded-[20px] p-6 sm:p-8 flex flex-col items-center text-center gap-4 w-full shadow-[0px_8px_40px_rgba(0,0,0,0.3)] hover:shadow-[0px_12px_48px_rgba(165,131,74,0.2)] transition-all duration-300 border-2 border-[#2a2a2a] hover:border-[#a5834a]/40">
-                        <div class="h-[80px] w-[80px] rounded-full bg-[#2a2a2a] flex items-center justify-center">
-                            <i data-lucide="award" class="w-10 h-10 text-[#a5834a]"></i>
+                <!-- Achievement 2: International Nail Expo -->
+                <div class="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 scroll-slide-up">
+                    <div class="w-full lg:w-1/2 relative max-w-[380px] mx-auto lg:mx-0">
+                        <div class="relative w-full h-[300px] sm:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80&fit=crop&crop=center&auto=format"
+                                alt="International Nail Expo" class="w-full h-full object-cover">
                         </div>
-                        <p class="text-white text-[32px] sm:text-[36px]">
-                            #1
-                        </p>
-                        <p class="text-white/70 text-[14px] sm:text-[15px] leading-[20px]">
-                            Thương hiệu nail hàng đầu Việt Nam
-                        </p>
                     </div>
-
-                    <!-- Achievement 2 -->
-                    <div class="scroll-slide-up bg-[#1a1a1a] rounded-[20px] p-6 sm:p-8 flex flex-col items-center text-center gap-4 w-full shadow-[0px_8px_40px_rgba(0,0,0,0.3)] hover:shadow-[0px_12px_48px_rgba(165,131,74,0.2)] transition-all duration-300 border-2 border-[#2a2a2a] hover:border-[#a5834a]/40"
-                        style="animation-delay: 0.1s;">
-                        <div class="h-[80px] w-[80px] rounded-full bg-[#2a2a2a] flex items-center justify-center">
-                            <i data-lucide="users" class="w-10 h-10 text-[#a5834a]"></i>
+                    <div class="w-full flex-1 flex flex-col gap-4 sm:gap-6">
+                        <div class="flex items-center gap-3">
+                            <div class="h-[60px] w-[60px] rounded-full flex items-center justify-center shadow-md"
+                                style="background: linear-gradient(135deg, #FFE5B4 0%, #FFD89B 50%, #FFC966 100%);">
+                                <i data-lucide="medal" class="w-8 h-8 text-[#DDB657]"></i>
+                            </div>
+                            <div>
+                                <p class="text-[#DDB657] text-[14px] sm:text-[16px] font-semibold uppercase tracking-wider">
+                                    International Nail Expo 2023
+                                </p>
+                                <p class="text-[#999999] text-[12px] sm:text-[14px]">
+                                    Best Innovation Award
+                                </p>
+                            </div>
                         </div>
-                        <p class="text-white text-[32px] sm:text-[36px]">
-                            5K+
+                        <h3 class="text-[#090707] text-[24px] sm:text-[28px] lg:text-[32px] font-bold leading-tight">
+                            Giải thưởng đổi mới sáng tạo quốc tế
+                        </h3>
+                        <p class="text-[#666666] text-[15px] sm:text-[16px] leading-relaxed">
+                            Vinh dự nhận giải thưởng "Best Innovation Award" tại International Nail Expo 2023 với công nghệ ứng dụng AI trong thiết kế nail pattern và kỹ thuật 3D nail art độc đáo.
                         </p>
-                        <p class="text-white/70 text-[14px] sm:text-[15px] leading-[20px]">
-                            Học viên đã tốt nghiệp
-                        </p>
-                    </div>
-
-                    <!-- Achievement 3 -->
-                    <div class="scroll-slide-up bg-[#1a1a1a] rounded-[20px] p-6 sm:p-8 flex flex-col items-center text-center gap-4 w-full shadow-[0px_8px_40px_rgba(0,0,0,0.3)] hover:shadow-[0px_12px_48px_rgba(165,131,74,0.2)] transition-all duration-300 border-2 border-[#2a2a2a] hover:border-[#a5834a]/40"
-                        style="animation-delay: 0.2s;">
-                        <div class="h-[80px] w-[80px] rounded-full bg-[#2a2a2a] flex items-center justify-center">
-                            <i data-lucide="store" class="w-10 h-10 text-[#a5834a]"></i>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <div class="flex items-center gap-2 bg-[#FFF9F2] px-3 py-2 rounded-lg">
+                                <i data-lucide="sparkles" class="w-5 h-5 text-[#DDB657]"></i>
+                                <span class="text-[#333333] text-[14px] font-medium">Innovation Award</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-[#FFF9F2] px-3 py-2 rounded-lg">
+                                <i data-lucide="globe" class="w-5 h-5 text-[#DDB657]"></i>
+                                <span class="text-[#333333] text-[14px] font-medium">International</span>
+                            </div>
+                            <div class="flex items-center gap-2 bg-[#FFF9F2] px-3 py-2 rounded-lg">
+                                <i data-lucide="calendar" class="w-5 h-5 text-[#DDB657]"></i>
+                                <span class="text-[#333333] text-[14px] font-medium">2023</span>
+                            </div>
                         </div>
-                        <p class="text-white text-[32px] sm:text-[36px]">
-                            20+
-                        </p>
-                        <p class="text-white/70 text-[14px] sm:text-[15px] leading-[20px]">
-                            Chi nhánh trên toàn quốc
-                        </p>
                     </div>
-
-                    <!-- Achievement 4 -->
-                    <div class="scroll-slide-up bg-[#1a1a1a] rounded-[20px] p-6 sm:p-8 flex flex-col items-center text-center gap-4 w-full shadow-[0px_8px_40px_rgba(0,0,0,0.3)] hover:shadow-[0px_12px_48px_rgba(165,131,74,0.2)] transition-all duration-300 border-2 border-[#2a2a2a] hover:border-[#a5834a]/40"
-                        style="animation-delay: 0.3s;">
-                        <div class="h-[80px] w-[80px] rounded-full bg-[#2a2a2a] flex items-center justify-center">
-                            <i data-lucide="star" class="w-10 h-10 text-[#a5834a]"></i>
-                        </div>
-                        <p class="text-white text-[32px] sm:text-[36px]">
-                            98%
-                        </p>
-                        <p class="text-white/70 text-[14px] sm:text-[15px] leading-[20px]">
-                            Khách hàng hài lòng
-                        </p>
-                    </div>
-
                 </div>
 
-                <!-- Competition Achievements -->
-                <div class="w-full container mx-auto space-y-12 sm:space-y-16 lg:space-y-20">
+                <!-- Divider -->
+                <hr class="border-t border-gray-200 my-8 sm:my-12 lg:my-16">
 
-                    <!-- Achievement 1: Vietnam Nail Championship -->
-                    <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 scroll-slide-up">
-                        <div class="w-full lg:w-1/2 relative">
-                            <div
-                                class="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-[24px] overflow-hidden shadow-[0px_12px_48px_rgba(0,0,0,0.3)]">
-                                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&q=80&fit=crop&crop=center&auto=format"
-                                    alt="Vietnam Nail Championship" class="w-full h-full object-cover">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent">
-                                </div>
-                                <div class="absolute inset-0 bg-[#a5834a]/10"></div>
-                            </div>
-                        </div>
-                        <div class="w-full lg:w-1/2 flex flex-col gap-4 sm:gap-6">
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="h-[60px] w-[60px] rounded-full bg-[#2a2a2a] flex items-center justify-center">
-                                    <i data-lucide="trophy" class="w-8 h-8 text-[#a5834a]"></i>
-                                </div>
-                                <div>
-                                    <p
-                                        class="text-[#a5834a] text-[14px] sm:text-[16px] font-medium uppercase tracking-wider">
-                                        Vietnam Nail Championship 2024
-                                    </p>
-                                    <p class="text-white/60 text-[12px] sm:text-[14px]">
-                                        First Place Winner
-                                    </p>
-                                </div>
-                            </div>
-                            <h3
-                                class="text-white text-[24px] sm:text-[28px] lg:text-[32px] leading-tight">
-                                Giải nhất cuộc thi Nail Art quốc gia
-                            </h3>
-                            <p class="text-white/70 text-[15px] sm:text-[16px] leading-relaxed">
-                                Lush Nail đã xuất sắc giành giải nhất tại cuộc thi Vietnam Nail Championship 2024 với bộ
-                                sưu
-                                tập "Tinh hoa Việt Nam" - kết hợp hài hòa giữa nghệ thuật nail hiện đại và văn hóa
-                                truyền
-                                thống.
-                            </p>
-                            <div class="flex flex-wrap gap-4 pt-2">
-                                <div class="flex items-center gap-2">
-                                    <i data-lucide="award" class="w-5 h-5 text-[#a5834a]"></i>
-                                    <span class="text-white/80 text-[14px]">Gold Medal</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <i data-lucide="calendar" class="w-5 h-5 text-[#a5834a]"></i>
-                                    <span class="text-white/80 text-[14px]">2024</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <i data-lucide="users" class="w-5 h-5 text-[#a5834a]"></i>
-                                    <span class="text-white/80 text-[14px]">50+ Participants</span>
-                                </div>
-                            </div>
+                <!-- Achievement 3: Asia Pacific Nail Competition -->
+                <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 scroll-slide-up">
+                    <div class="w-full lg:w-1/2 relative max-w-[380px] mx-auto lg:mx-0">
+                        <div class="relative w-full h-[300px] sm:h-[400px] lg:h-[450px] rounded-2xl overflow-hidden shadow-lg">
+                            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80&fit=crop&crop=center&auto=format"
+                                alt="Asia Pacific Nail Competition" class="w-full h-full object-cover">
                         </div>
                     </div>
-
-                    <!-- Achievement 2: International Nail Expo -->
-                    <div class="flex flex-col lg:flex-row-reverse items-center gap-8 lg:gap-12 scroll-slide-up">
-                        <div class="w-full lg:w-1/2 relative">
-                            <div
-                                class="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-[24px] overflow-hidden shadow-[0px_12px_48px_rgba(0,0,0,0.3)]">
-                                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80&fit=crop&crop=center&auto=format"
-                                    alt="International Nail Expo" class="w-full h-full object-cover">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent">
-                                </div>
-                                <div class="absolute inset-0 bg-[#a5834a]/10"></div>
+                    <div class="w-full flex-1 flex flex-col gap-4 sm:gap-6">
+                        <div class="flex items-center gap-3">
+                            <div class="h-[60px] w-[60px] rounded-full flex items-center justify-center shadow-md"
+                                style="background: linear-gradient(135deg, #FFE5B4 0%, #FFD89B 50%, #FFC966 100%);">
+                                <i data-lucide="crown" class="w-8 h-8 text-[#DDB657]"></i>
+                            </div>
+                            <div>
+                                <p class="text-[#DDB657] text-[14px] sm:text-[16px] font-semibold uppercase tracking-wider">
+                                    Asia Pacific Nail Competition 2023
+                                </p>
+                                <p class="text-[#999999] text-[12px] sm:text-[14px]">
+                                    Excellence Award
+                                </p>
                             </div>
                         </div>
-                        <div class="w-full lg:w-1/2 flex flex-col gap-4 sm:gap-6">
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="h-[60px] w-[60px] rounded-full bg-[#2a2a2a] flex items-center justify-center">
-                                    <i data-lucide="medal" class="w-8 h-8 text-[#a5834a]"></i>
-                                </div>
-                                <div>
-                                    <p
-                                        class="text-[#a5834a] text-[14px] sm:text-[16px] font-medium uppercase tracking-wider">
-                                        International Nail Expo 2023
-                                    </p>
-                                    <p class="text-white/60 text-[12px] sm:text-[14px]">
-                                        Best Innovation Award
-                                    </p>
-                                </div>
+                        <h3 class="text-[#090707] text-[24px] sm:text-[28px] lg:text-[32px] font-bold leading-tight">
+                            Giải xuất sắc khu vực châu Á - Thái Bình Dương
+                        </h3>
+                        <p class="text-[#666666] text-[15px] sm:text-[16px] leading-relaxed">
+                            Đạt giải xuất sắc tại cuộc thi Asia Pacific Nail Competition 2023 với bộ sưu tập "Sắc màu châu Á", được đánh giá cao về tính nghệ thuật và kỹ thuật chuyên nghiệp.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2">
+                            <div class="flex items-center gap-2 bg-[#FFF9F2] px-3 py-2 rounded-lg">
+                                <i data-lucide="award" class="w-5 h-5 text-[#DDB657]"></i>
+                                <span class="text-[#333333] text-[14px] font-medium">Excellence Award</span>
                             </div>
-                            <h3
-                                class="text-white text-[24px] sm:text-[28px] lg:text-[32px] leading-tight">
-                                Giải thưởng đổi mới sáng tạo quốc tế
-                            </h3>
-                            <p class="text-white/70 text-[15px] sm:text-[16px] leading-relaxed">
-                                Vinh dự nhận giải thưởng "Best Innovation Award" tại International Nail Expo 2023 với
-                                công
-                                nghệ ứng dụng AI trong thiết kế nail pattern và kỹ thuật 3D nail art độc đáo.
-                            </p>
-                            <div class="flex flex-wrap gap-4 pt-2">
-                                <div class="flex items-center gap-2">
-                                    <i data-lucide="sparkles" class="w-5 h-5 text-[#a5834a]"></i>
-                                    <span class="text-white/80 text-[14px]">Innovation Award</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <i data-lucide="globe" class="w-5 h-5 text-[#a5834a]"></i>
-                                    <span class="text-white/80 text-[14px]">International</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <i data-lucide="calendar" class="w-5 h-5 text-[#a5834a]"></i>
-                                    <span class="text-white/80 text-[14px]">2023</span>
-                                </div>
+                            <div class="flex items-center gap-2 bg-[#FFF9F2] px-3 py-2 rounded-lg">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-[#DDB657]"></i>
+                                <span class="text-[#333333] text-[14px] font-medium">Asia Pacific</span>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Achievement 3: Asia Pacific Nail Competition -->
-                    <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12 scroll-slide-up">
-                        <div class="w-full lg:w-1/2 relative">
-                            <div
-                                class="relative w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-[24px] overflow-hidden shadow-[0px_12px_48px_rgba(0,0,0,0.3)]">
-                                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800&q=80&fit=crop&crop=center&auto=format"
-                                    alt="Asia Pacific Nail Competition" class="w-full h-full object-cover">
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent">
-                                </div>
-                                <div class="absolute inset-0 bg-[#a5834a]/10"></div>
-                            </div>
-                        </div>
-                        <div class="w-full lg:w-1/2 flex flex-col gap-4 sm:gap-6">
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="h-[60px] w-[60px] rounded-full bg-[#2a2a2a] flex items-center justify-center">
-                                    <i data-lucide="crown" class="w-8 h-8 text-[#a5834a]"></i>
-                                </div>
-                                <div>
-                                    <p
-                                        class="text-[#a5834a] text-[14px] sm:text-[16px] font-medium uppercase tracking-wider">
-                                        Asia Pacific Nail Competition 2023
-                                    </p>
-                                    <p class="text-white/60 text-[12px] sm:text-[14px]">
-                                        Excellence Award
-                                    </p>
-                                </div>
-                            </div>
-                            <h3
-                                class="text-white text-[24px] sm:text-[28px] lg:text-[32px] leading-tight">
-                                Giải xuất sắc khu vực châu Á - Thái Bình Dương
-                            </h3>
-                            <p class="text-white/70 text-[15px] sm:text-[16px] leading-relaxed">
-                                Đạt giải xuất sắc tại cuộc thi Asia Pacific Nail Competition 2023 với bộ sưu tập "Sắc
-                                màu
-                                châu Á", được đánh giá cao về tính nghệ thuật và kỹ thuật chuyên nghiệp.
-                            </p>
-                            <div class="flex flex-wrap gap-4 pt-2">
-                                <div class="flex items-center gap-2">
-                                    <i data-lucide="award" class="w-5 h-5 text-[#a5834a]"></i>
-                                    <span class="text-white/80 text-[14px]">Excellence Award</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <i data-lucide="map-pin" class="w-5 h-5 text-[#a5834a]"></i>
-                                    <span class="text-white/80 text-[14px]">Asia Pacific</span>
-                                </div>
-                                <div class="flex items-center gap-2">
-                                    <i data-lucide="calendar" class="w-5 h-5 text-[#a5834a]"></i>
-                                    <span class="text-white/80 text-[14px]">2023</span>
-                                </div>
+                            <div class="flex items-center gap-2 bg-[#FFF9F2] px-3 py-2 rounded-lg">
+                                <i data-lucide="calendar" class="w-5 h-5 text-[#DDB657]"></i>
+                                <span class="text-[#333333] text-[14px] font-medium">2023</span>
                             </div>
                         </div>
                     </div>

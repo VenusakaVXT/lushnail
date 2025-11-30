@@ -1,32 +1,27 @@
 <!-- Navbar mobile -->
 <div id="mobile-navbar" class="header-navbar-mobile">
   <div class="container flex items-center justify-between w-full">
-    <!-- Hamburger Menu - Left -->
-    <button id="mobile-menu-toggle" class="header-navbar-mobile-toggle" aria-label="Toggle mobile menu">
-      <i data-lucide="menu" class="header-navbar-mobile-icon" id="menu-icon"></i>
-    </button>
-
-    <!-- Logo - Center -->
-    <div class="flex-1 flex justify-center">
+  
+    <!-- Logo - Left -->
+    <div class="flex-shrink-0">
       <a href="/" class="header-logo-link">
         <img src="/assets/images/LOGO_GOLD.png" alt="Lush Nail Logo" class="header-logo">
       </a>
     </div>
 
     <!-- Icons - Right -->
-    <div class="header-navbar-mobile-icons flex items-center gap-1">
+    <div class="header-navbar-mobile-icons flex items-center gap-1 ml-auto">
       <!-- Search Button -->
-      <!-- <button id="mobile-search-toggle" class="header-icon-button hover:text-[#ae873e] transition-colors" aria-label="Search">
+      <button id="mobile-search-toggle" class="header-icon-button hover:text-[#ae873e] transition-colors" aria-label="Search">
         <i data-lucide="search" class="header-icon"></i>
-      </button> -->
+      </button>
       <!-- User Profile Button -->
-      <div class="relative flex items-center">
+      <!-- <div class="relative flex items-center">
         <button id="user-toggle-mobile"
           class="header-icon-button hover:text-[#ae873e] transition-colors flex items-center justify-center"
           aria-label="User Profile">
           <i data-lucide="user" class="header-icon"></i>
         </button>
-        <!-- User Dropdown -->
         <div id="user-dropdown-mobile"
           class="absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[180px] z-[9999] hidden">
           <a href="/user-profile.html"
@@ -47,13 +42,39 @@
             <span class="text-sm">Logout</span>
           </button>
         </div>
-      </div>
+      </div> -->
       <!-- Shopping Bag Button -->
       <a href="/cart.html"
         class="header-icon-button hover:text-[#ae873e] transition-colors flex items-center justify-center"
         aria-label="Shopping Cart">
         <i data-lucide="shopping-bag" class="header-icon"></i>
       </a>
+      <div class="header-topbar-lang relative" style="overflow: visible;">
+        <button id="language-toggle-topbar" class="header-topbar-language-button" aria-label="Change Language">
+          <i data-lucide="languages" class="header-topbar-language-icon"></i>
+        
+        </button>
+        <div id="language-dropdown-topbar"
+          class="absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[150px] z-[10001] hidden">
+          <button
+            class="language-option w-full text-full px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2"
+            data-lang="vi">
+            <span class="text-sm">🇻🇳</span>
+            <span class="text-sm">Tiếng Việt</span>
+          </button>
+          <button
+            class="language-option w-full text-left px-4 py-2 hover:bg-[#FFF9F2] transition-colors flex items-center gap-2"
+            data-lang="en">
+            <span class="text-sm">🇺🇸</span>
+            <span class="text-sm">English</span>
+          </button>
+          
+        </div>
+      </div>
+        <!-- Hamburger Menu - Left -->
+    <button id="mobile-menu-toggle" class="header-navbar-mobile-toggle" aria-label="Toggle mobile menu">
+      <i data-lucide="menu" class="header-navbar-mobile-icon" id="menu-icon"></i>
+    </button>
     </div>
   </div>
 

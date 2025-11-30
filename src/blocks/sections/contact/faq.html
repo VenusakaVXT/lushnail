@@ -1,207 +1,178 @@
-<!-- FAQ Section -->
-<section class="relative w-full py-12 sm:py-16 lg:py-24" data-name="faq">
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col lg:flex-row gap-8 lg:gap-16 justify-center mx-auto">
-          <!-- Left Column: FAQ Questions (60%) -->
-          <div class=" bg-black rounded-[16px]  lg:max-w-[640px] w-full p-4 sm:p-6 lg:p-8 ">
-              <!-- Header -->
-              <div class="mb-4 sm:mb-8 text-center">
-                  <h2 class="title-section text-primary">
-                      CÂU HỎI THƯỜNG GẶP (FAQ)
-                  </h2>
-              </div>
+<!-- Contact Intro Section -->
+<section class="relative shrink-0 w-full scroll-fade-in" data-name="contact-intro">
+    <!-- Background Image Section with Title -->
+    <div class="relative w-full min-h-[60vh] sm:min-h-[65vh] lg:min-h-[100vh] overflow-visible">
+        <!-- Background Image with Dark Overlay -->
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style="background-image: url('../../../../assets/images/bg-contact.jpg');">
+            </div>
+            <div class="absolute inset-0 bg-black/80"></div>
+        </div>
 
-              <!-- FAQ Items -->
-              <div class="flex flex-col">
-                  
-                  <!-- FAQ Item 1 -->
-                  <div class="faq-item-accordion group py-4 sm:py-4 border-t border-b border-white/20 cursor-pointer transition-all duration-300" data-answer="Khóa học khai giảng hàng tháng với nhiều ca học linh hoạt: sáng (8h-12h), chiều (13h-17h), tối (18h-21h). Bạn có thể chọn lịch học phù hợp với thời gian biểu của mình. Lịch học cụ thể sẽ được thông báo khi đăng ký.">
-                      <div class="flex items-center gap-4">
-                          <!-- Question Icon - Circular with yellow background and white question mark -->
-                          <div class="flex-shrink-0 w-6 h-6 sm:w-6 sm:h-6 rounded-full bg-[#c9a961] flex items-center justify-center">
-                              <span class="text-black text-sm sm:text-sm">?</span>
-                          </div>
-                          <!-- Question Text -->
-                          <div class="flex-1">
-                              <p class="text-white text-sm sm:text-base lg:text-lg font-normal leading-relaxed">
-                                  Khi nào khai giảng & lịch học như thế nào
-                              </p>
-                          </div>
-                          <!-- Chevron Icon - White -->
-                          <div class="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center transition-transform duration-300">
-                              <i data-lucide="chevron-down" class="w-full h-full text-white"></i>
-                          </div>
-                      </div>
-                      <!-- Answer (hidden by default) -->
-                      <div class="faq-answer hidden mt-4 pt-4 border-t border-white/10">
-                          <p class="text-white/80 text-sm sm:text-base leading-relaxed pl-6 sm:pl-10">
-                              Khóa học khai giảng hàng tháng với nhiều ca học linh hoạt: sáng (8h-12h), chiều (13h-17h), tối (18h-21h). Bạn có thể chọn lịch học phù hợp với thời gian biểu của mình. Lịch học cụ thể sẽ được thông báo khi đăng ký.
-                          </p>
-                      </div>
-                  </div>
+        <!-- Header Section on Background -->
+        <div
+            class="relative z-10 min-h-[60vh] sm:min-h-[65vh] lg:min-h-[100vh] flex flex-col justify-end items-center w-full container mx-auto px-4 sm:px-6 lg:px-8 pb-40 sm:pb-48 lg:pb-56">
+            <div class="text-center">
+                <h1 class="title-section">
+                    <h1 class="title-section gradient-gold-text  tracking-wide text-center leading-tight"
+                        style="
+                        background: linear-gradient(180deg, #FFF 0%, #F4DB89 100%);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
+                        background-clip: text;
+                        text-fill-color: transparent;
+                        letter-spacing: 0.04em;
+                    ">
+                        CONTACT
+                    </h1>
+                    <p
+                        class="text-[#D8D8D8] font-fz-poppins text-sliver text-[15px] sm:text-[16px] lg:text-[17px] leading-relaxed max-w-[700px] mx-auto">
+                        We are always ready to listen to you. Whether it's booking an appointment or career advice, please leave us a message.
+                    </p>
+            </div>
+        </div>
+    </div>
 
-                  <!-- FAQ Item 2 -->
-                  <div class="faq-item-accordion group py-4 sm:py-4 border-b border-white/20 last:border-b-0 cursor-pointer transition-all duration-300" data-answer="Có, sau khi hoàn thành khóa học, chúng tôi sẽ hỗ trợ giới thiệu việc làm tại các salon đối tác. Học viên xuất sắc sẽ được ưu tiên giới thiệu đến các salon lớn và uy tín. Chúng tôi có mạng lưới đối tác rộng khắp và cam kết hỗ trợ học viên tìm được công việc phù hợp.">
-                      <div class="flex items-center gap-4">
-                          <!-- Question Icon -->
-                          <div class="flex-shrink-0 w-6 h-6 sm:w-6 sm:h-6 rounded-full bg-[#c9a961] flex items-center justify-center">
-                              <span class="text-black text-sm sm:text-sm">?</span>
-                          </div>
-                          <!-- Question Text -->
-                          <div class="flex-1">
-                              <p class="text-white text-sm sm:text-base lg:text-lg font-normal leading-relaxed">
-                                  Học xong có được giới thiệu việc làm không?
-                              </p>
-                          </div>
-                          <!-- Chevron Icon -->
-                          <div class="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center transition-transform duration-300">
-                              <i data-lucide="chevron-down" class="w-full h-full text-white"></i>
-                          </div>
-                      </div>
-                      <!-- Answer (hidden by default) -->
-                      <div class="faq-answer hidden mt-4 pt-4 border-t border-white/10">
-                          <p class="text-white/80 text-sm sm:text-base leading-relaxed pl-6 sm:pl-10">
-                              Có, sau khi hoàn thành khóa học, chúng tôi sẽ hỗ trợ giới thiệu việc làm tại các salon đối tác. Học viên xuất sắc sẽ được ưu tiên giới thiệu đến các salon lớn và uy tín. Chúng tôi có mạng lưới đối tác rộng khắp và cam kết hỗ trợ học viên tìm được công việc phù hợp.
-                          </p>
-                      </div>
-                  </div>
+    <!-- Contact Box Section with White Space -->
+    <div class="relative w-full bg-white pt-[1000px] sm:pt-[800px] lg:pt-[400px] pb-80 sm:pb-40 lg:pb-20">
+        <div class="w-full container mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Contact Box: White/Yellow Container -->
+            <div class="container max-w-[1000px] rounded-[24px] sm:rounded-[32px] p-12  shadow-2xl absolute -top-20 sm:-top-[135px] lg:-top-[145px] left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] z-20"
+                style="background: linear-gradient(to bottom, #FFFFFF 16%, #FCF7E3 36%, #F4DB89 100%);">
+                <div class="flex flex-col lg:flex-row">
 
-                  <!-- FAQ Item 3 -->
-                  <div class="faq-item-accordion group py-4 sm:py-4 border-b border-white/20 last:border-b-0 cursor-pointer transition-all duration-300" data-answer="Video bài giảng sẽ được lưu trữ trọn đời trong tài khoản học viên của bạn. Bạn có thể xem lại bất cứ lúc nào, ở bất cứ đâu. Ngoài ra, chúng tôi cũng cung cấp tài liệu PDF và hình ảnh minh họa để bạn có thể tải về và tham khảo offline.">
-                      <div class="flex items-center gap-4">
-                          <!-- Question Icon -->
-                          <div class="flex-shrink-0 w-6 h-6 sm:w-6 sm:h-6 rounded-full bg-[#c9a961] flex items-center justify-center">
-                              <span class="text-black text-sm sm:text-sm">?</span>
-                          </div>
-                          <!-- Question Text -->
-                          <div class="flex-1">
-                              <p class="text-white text-sm sm:text-base lg:text-lg font-normal leading-relaxed">
-                                  Thời gian lưu trữ video là bao lâu?
-                              </p>
-                          </div>
-                          <!-- Chevron Icon -->
-                          <div class="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center transition-transform duration-300">
-                              <i data-lucide="chevron-down" class="w-full h-full text-white"></i>
-                          </div>
-                      </div>
-                      <!-- Answer (hidden by default) -->
-                      <div class="faq-answer hidden mt-4 pt-4 border-t border-white/10">
-                          <p class="text-white/80 text-sm sm:text-base leading-relaxed pl-6 sm:pl-10">
-                              Video bài giảng sẽ được lưu trữ trọn đời trong tài khoản học viên của bạn. Bạn có thể xem lại bất cứ lúc nào, ở bất cứ đâu. Ngoài ra, chúng tôi cũng cung cấp tài liệu PDF và hình ảnh minh họa để bạn có thể tải về và tham khảo offline.
-                          </p>
-                      </div>
-                  </div>
+                    <!-- Left: Contact Information -->
+                    <div class="w-full lg:max-w-[350px] px-6">
+                        <h2
+                            class="font-fz-poppins text-[#090707] text-[24px] font-bold mb-6 pb-4 relative inline-block">
+                            <span>Contact Information</span>
+                            <span class="absolute bottom-0 left-0 w-full h-1 rounded-full"
+                                style="background-color: var(--primary);"></span>
+                        </h2>
 
-                  <!-- FAQ Item 4 -->
-                  <div class="faq-item-accordion group py-4 sm:py-4 border-b border-white/20 cursor-pointer transition-all duration-300" data-answer="Bạn có thể đặt lịch học qua website, hotline hoặc đến trực tiếp tại trung tâm. Quy trình: 1) Chọn khóa học phù hợp, 2) Điền form đăng ký, 3) Thanh toán học phí, 4) Nhận xác nhận và lịch học. Liên hệ: Hotline 0900.xxx.xxx hoặc email info@lushnail.com. Đội ngũ tư vấn sẽ hỗ trợ bạn 24/7.">
-                      <div class="flex items-center gap-4">
-                          <!-- Question Icon -->
-                          <div class="flex-shrink-0 w-6 h-6 sm:w-6 sm:h-6 rounded-full bg-[#c9a961] flex items-center justify-center">
-                              <span class="text-black text-sm sm:text-sm">?</span>
-                          </div>
-                          <!-- Question Text -->
-                          <div class="flex-1">
-                              <p class="text-white text-sm sm:text-base lg:text-lg font-normal leading-relaxed">
-                                  Quy trình đặt lịch như nào và liên hệ với ai
-                              </p>
-                          </div>
-                          <!-- Chevron Icon -->
-                          <div class="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 flex items-center justify-center transition-transform duration-300">
-                              <i data-lucide="chevron-down" class="w-full h-full text-white"></i>
-                          </div>
-                      </div>
-                      <!-- Answer (hidden by default) -->
-                      <div class="faq-answer hidden mt-4 pt-4 border-t border-white/10">
-                          <p class="text-white/80 text-sm sm:text-base leading-relaxed pl-6 sm:pl-10">
-                              Bạn có thể đặt lịch học qua website, hotline hoặc đến trực tiếp tại trung tâm. Quy trình: 1) Chọn khóa học phù hợp, 2) Điền form đăng ký, 3) Thanh toán học phí, 4) Nhận xác nhận và lịch học. Liên hệ: Hotline 0900.xxx.xxx hoặc email info@lushnail.com. Đội ngũ tư vấn sẽ hỗ trợ bạn 24/7.
-                          </p>
-                      </div>
-                  </div>
+                        <div class="space-y-4">
+                            <!-- Địa chỉ -->
+                            <div class="flex items-start gap-3 align-center">
+                                <div
+                                    class="w-8 h-8 bg-black rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i data-lucide="map-pin" class="w-4 h-4 text-[#DDB657]"></i>
+                                </div>
+                                <div>
+                                    <p class="font-fz-poppins font-bold text-[#090707] text-[14px] sm:text-[15px] mb-1">
+                                        Address</p>
+                                    <p
+                                        class="font-fz-poppins text-[#666666] text-[14px] sm:text-[15px] leading-relaxed">
+                                        Số 33 Đường số 3, Phường 10, Quận Gò Vấp - Cityland Park Hill
+                                    </p>
+                                </div>
+                            </div>
 
-              </div>
-          </div>
+                            <!-- Số điện thoại -->
+                            <div class="flex items-start gap-3 align-center">
+                                <div
+                                    class="w-8 h-8 bg-black rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i data-lucide="phone" class="w-4 h-4 text-[#DDB657]"></i>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="font-fz-poppins font-bold text-[#090707] text-[14px] sm:text-[15px] mb-1">
+                                        Phone Number</p>
+                                    <a href="tel:0987654321" class="font-fz-poppins text-[#666666] text-[14px] sm:text-[15px] mb-1">
+                                        098 765 4321
+                                    </a>
+                                 
+                                </div>
+                            </div>
 
-          <!-- Right Column: Image with semi-circular shape (40%) -->
-          <div class=" flex items-center justify-center lg:justify-end relative">
-              <div class="relative w-full max-w-[307px]">
-                  <!-- Image with custom border radius using Tailwind -->
-                  <div class="relative overflow-hidden">
-                      <img 
-                          src="assets/images/image.png" 
-                          alt="Nail art hands" 
-                          class="w-full h-auto object-cover "
-                          loading="lazy"
-                      />
-                  </div>
-              </div>
-          </div>
+                            <!-- Email hỗ trợ -->
+                            <div class="flex items-start gap-3 align-center">
+                                <div
+                                    class="w-8 h-8 bg-black rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <i data-lucide="mail" class="w-4 h-4 text-[#DDB657]"></i>
+                                </div>
+                                <div>
+                                    <p class="font-fz-poppins font-bold text-[#090707] text-[14px] sm:text-[15px] mb-1">
+                                        Support Email</p>
+                                    <p class="font-fz-poppins text-[#666666] text-[14px] sm:text-[15px]">
+                                        hoangthimail998hy@gmail.com
+                                    </p>
+                                </div>
+                            </div>
 
-      </div>
-  </div>
+                            <!-- Social Media -->
+                            <div class="pt-4">
+                                <h3
+                                    class="font-fz-poppins text-[#090707] text-[24px] font-bold mb-4 pb-4 relative inline-block">
+                                    <span>Follow Us</span>
+                                    <span class="absolute bottom-0 left-0 w-full h-1 rounded-full"
+                                        style="background-color: var(--primary);"></span>
+                                </h3>
+                                <div class="flex items-center gap-3">
+                                    <!-- Facebook -->
+                                    <a href="#"
+                                        class="w-10 h-10 bg-[#1877F2] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                                        <i data-lucide="facebook" class="w-5 h-5 text-white"></i>
+                                    </a>
+                                    <!-- Instagram -->
+                                    <a href="#"
+                                        class="w-10 h-10 bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCB045] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                                        <i data-lucide="instagram" class="w-5 h-5 text-white"></i>
+                                    </a>
+                                    <!-- Twitter -->
+                                    <a href="#"
+                                        class="w-10 h-10 bg-black rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                                        <i data-lucide="twitter" class="w-5 h-5 text-white"></i>
+                                    </a>
+                                    <!-- YouTube -->
+                                    <a href="#"
+                                        class="w-10 h-10 bg-[#FF0000] rounded-full flex items-center justify-center hover:opacity-80 transition-opacity">
+                                        <i data-lucide="youtube" class="w-5 h-5 text-white"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Contact Form -->
+                    <div class="w-full mt-8 lg:mt-0 lg:ml-16">
+                        <h2
+                            class="font-fz-poppins text-[#090707] text-[24px] sm:text-[28px] lg:text-[32px] font-bold mb-6 pb-4 relative inline-block">
+                            <span>Send Support Message</span>
+                            <span class="absolute bottom-0 left-0 w-full h-1 rounded-full"
+                                style="background-color: var(--primary);"></span>
+                        </h2>
+
+                        <form method="POST" class="space-y-4" id="contactForm">
+                            <!-- Full name and Phone/Zalo in one row -->
+                            <div class="flex flex-col sm:flex-row gap-4">
+                                <!-- Full name -->
+                                <input type="text" id="fullName" name="fullName" required class="input flex-1 h-[38px]"
+                                    placeholder="Full Name" />
+
+                                <!-- Phone/Zalo -->
+                                <input type="tel" id="phoneZalo" name="phoneZalo" required class="input flex-1 h-[38px]"
+                                    placeholder="Phone/Zalo" />
+                            </div>
+
+                            <!-- Email -->
+                            <input type="email" id="email" name="email" required class="input h-[38px]" placeholder="Email" />
+
+                            <!-- Ghi chú -->
+                            <textarea id="notes" name="notes" rows="6" class="textarea"
+                                placeholder="Notes"></textarea>
+
+                            <!-- Submit Button -->
+                            <button type="submit"
+                                class="btn btn-primary">
+                                <span class="uppercase">SEND</span>
+                                <i data-lucide="arrow-right"
+                                    class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-
-<script>
-// FAQ Accordion functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const faqItems = document.querySelectorAll('.faq-item-accordion');
-  
-  faqItems.forEach(item => {
-      const chevron = item.querySelector('i[data-lucide="chevron-down"]');
-      const answer = item.querySelector('.faq-answer');
-      
-      item.addEventListener('click', function() {
-          const isOpen = !answer.classList.contains('hidden');
-          
-          // Close all other items
-          faqItems.forEach(otherItem => {
-              if (otherItem !== item) {
-                  const otherAnswer = otherItem.querySelector('.faq-answer');
-                  const otherChevron = otherItem.querySelector('i[data-lucide="chevron-down"]');
-                  otherAnswer.classList.add('hidden');
-                  otherItem.classList.remove('active');
-                  if (otherChevron) {
-                      otherChevron.style.transform = 'rotate(0deg)';
-                  }
-              }
-          });
-          
-          // Toggle current item
-          if (isOpen) {
-              answer.classList.add('hidden');
-              item.classList.remove('active');
-              if (chevron) {
-                  chevron.style.transform = 'rotate(0deg)';
-              }
-          } else {
-              answer.classList.remove('hidden');
-              item.classList.add('active');
-              if (chevron) {
-                  chevron.style.transform = 'rotate(180deg)';
-              }
-          }
-      });
-  });
-  
-  // Initialize Lucide icons
-  if (typeof lucide !== 'undefined') {
-      lucide.createIcons();
-  }
-});
-</script>
-
-<style>
-.faq-item-accordion.active .faq-answer {
-  animation: fadeInDown 0.3s ease-out;
-}
-
-@keyframes fadeInDown {
-  from {
-      opacity: 0;
-      transform: translateY(-10px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
-}
-</style>

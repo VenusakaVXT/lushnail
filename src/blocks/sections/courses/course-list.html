@@ -7,345 +7,370 @@
                 KHÓA HỌC TẠI TRUNG TÂM
             </h2>
            
-            <!-- Course Cards Grid -->
-            <div id="course-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">
+            <!-- Course Cards Slider -->
+            <div class="relative w-full">
+                <div class="blaze-slider bslider-3 w-full relative" id="course-cards-slider">
+                    <div class="blaze-container relative">
+                        <!-- Navigation Buttons -->
+                        <button class="blaze-prev hidden sm:flex" aria-label="Previous">
+                            <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                        </button>
+                        <button class="blaze-next hidden sm:flex" aria-label="Next">
+                            <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                        </button>
+
+                        <!-- Pagination -->
+                        
+
+                        <div class="blaze-track-container" style="overflow: hidden;">
+                            <div class="blaze-track">
                 
-                <!-- Course Card 1: Khóa Học Cơ Bản -->
-                <div class="item-box-course-cat flex-1 bg-white rounded-2xl shadow-lg border border-gray-100 relative">
-                    <div class="absolute top-4 right-0 bg-black text-white text-xs font-semibold px-3 py-1.5 rounded-l-lg z-10">
-                        Save 50%
-                    </div>
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex-1">
-                            <div class="w-full h-[120px] mb-4 rounded-t-[10px] overflow-hidden relative">
-                                <img src="https://m.media-amazon.com/images/I/51YC56BJ0WL._SL1024_.jpg" alt="Khóa Học Cơ Bản" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-content px-4 sm:px-6 pb-4 sm:pb-6">
-                        <!-- Features -->
-                        <div class="space-y-3 mb-6">
-                            <div>
-                                <h3 class="text-xl sm:text-2xl font-bold m-0 text-[#8A9904]  line-clamp-2">
-                                    Khóa Học Cơ Bản - Chương 1: Nhập môn
-                                </h3>
-                                <p class="text-[#666666] text-sm m-0">
-                                    Lộ trình: 4 tuần học (38 giờ)
-                                </p>
-                            </div>
-
-                            <div class="list-disc bg-gradient-to-r from-[#FFF] via-[#DDB657] to-[#FFF] p-[2px]">
-                            </div>
-
-                            <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                </div>
-                                <span>Thời lượng: 4 tuần (32 giờ)</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                </div>
-                                <span>Lịch học: Theo học viên</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                </div>
-                                <span>Cấp độ: Cơ bản - Nâng cao</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                </div>
-                                <span>Thời lượng: 4 tuần (32 giờ)</span>
-                            </div>
-                        </div>
-
-                        <!-- Pricing -->
-                        <div class="mb-6">
-                            <div class="flex items-baseline gap-3 mb-4 border-t border-gray-300 pt-4">
-                                <span class="text-2xl sm:text-3xl font-bold text-[#090707]">16.000.000₫</span>
-                                <span class="text-lg text-[#999999] line-through">31.000.000₫</span>
-                            </div>
-                            <div class="bg-[#FFF9F2] rounded-lg p-4 mb-4">
-                                <!-- Header -->
-                                <div class="text-center mb-3">
-                                    <div class="flex items-center justify-center gap-2">
-                                        <i data-lucide="gift" class="w-5 h-5 text-[#DDB657]"></i>
-                                        <h4 class="text-base sm:text-lg font-bold text-[#DDB657] mb-0">Quà tặng đặc biệt</h4>
-                                    </div>
-                                    <i class="text-sm italic text-black">
-                                        (*) cho 10 thành viên đăng ký đầu tiên
-                                    </i>
-                                </div>
-
-                                <!-- Divider -->
-                                <hr class="border-t border-gray-300 mb-3">
-
-                                <!-- Benefits List -->
-                                <div class="flex flex-wrap justify-center gap-2 sm:gap-2 text-sm mb-3">
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                            <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                <!-- Course Card 1: Khóa Học Cơ Bản -->
+                                <div class="blaze-slide">
+                                    <div class="item-box-course-cat flex-1 bg-white rounded-2xl  border border-gray-100 relative h-full">
+                                        <div class="absolute top-4 right-0 bg-black text-white text-xs font-semibold px-3 py-1.5 rounded-l-lg z-10">
+                                            Save 50%
                                         </div>
-                                        <span>Bộ cọ cơ bản</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                            <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                        <div class="flex items-start justify-between mb-4">
+                                            <div class="flex-1">
+                                                <div class="w-full h-[120px] mb-4 rounded-t-[10px] overflow-hidden relative">
+                                                    <img src="https://m.media-amazon.com/images/I/51YC56BJ0WL._SL1024_.jpg" alt="Khóa Học Cơ Bản" class="w-full h-full object-cover">
+                                                </div>
+                                            </div>
                                         </div>
-                                        <span>Giáo trình PDF</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                            <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                        <div class="box-content px-4 sm:px-6 pb-4 sm:pb-6">
+                                            <!-- Features -->
+                                            <div class="space-y-3 mb-6">
+                                                <div>
+                                                    <h3 class="text-xl sm:text-2xl font-bold m-0 text-[#8A9904] line-clamp-2">
+                                                        Khóa Học Cơ Bản - Chương 1: Nhập môn
+                                                    </h3>
+                                                    <p class="text-[#666666] text-sm m-0">
+                                                        Lộ trình: 4 tuần học (38 giờ)
+                                                    </p>
+                                                </div>
+
+                                                <div class="list-disc bg-gradient-to-r from-[#FFF] via-[#DDB657] to-[#FFF] p-[2px]">
+                                                </div>
+
+                                                <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                    </div>
+                                                    <span>Thời lượng: 4 tuần (32 giờ)</span>
+                                                </div>
+                                                <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                    </div>
+                                                    <span>Lịch học: Theo học viên</span>
+                                                </div>
+                                                <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                    </div>
+                                                    <span>Cấp độ: Cơ bản - Nâng cao</span>
+                                                </div>
+                                                <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                    </div>
+                                                    <span>Thời lượng: 4 tuần (32 giờ)</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- Pricing -->
+                                            <div class="mb-6">
+                                                <div class="flex items-baseline gap-3 mb-4 border-t border-gray-300 pt-4">
+                                                    <span class="text-2xl sm:text-3xl font-bold text-[#090707]">16.000.000₫</span>
+                                                    <span class="text-lg text-[#999999] line-through">31.000.000₫</span>
+                                                </div>
+                                                <div class="bg-[#FFF9F2] rounded-lg p-4 mb-4">
+                                                    <!-- Header -->
+                                                    <div class="text-center mb-3">
+                                                        <div class="flex items-center justify-center gap-2">
+                                                            <i data-lucide="gift" class="w-5 h-5 text-[#DDB657]"></i>
+                                                            <h4 class="text-base sm:text-lg font-bold text-[#DDB657] mb-0">Quà tặng đặc biệt</h4>
+                                                        </div>
+                                                        <i class="text-sm italic text-black">
+                                                            (*) cho 10 thành viên đăng ký đầu tiên
+                                                        </i>
+                                                    </div>
+
+                                                    <!-- Divider -->
+                                                    <hr class="border-t border-gray-300 mb-3">
+
+                                                    <!-- Benefits List -->
+                                                    <div class="flex flex-wrap justify-center gap-2 sm:gap-2 text-sm mb-3">
+                                                        <div class="flex items-center gap-2">
+                                                            <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                            </div>
+                                                            <span>Bộ cọ cơ bản</span>
+                                                        </div>
+                                                        <div class="flex items-center gap-2">
+                                                            <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                            </div>
+                                                            <span>Giáo trình PDF</span>
+                                                        </div>
+                                                        <div class="flex items-center gap-2">
+                                                            <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                            </div>
+                                                            <span>Tư vấn trọn đời</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <hr class="border-t border-gray-300 mb-3">
+                                                </div>
+                                            </div>
+
+                                            <!-- CTA Buttons -->
+                                            <div class="flex flex-col sm:flex-row gap-3">
+                                                <a href="single-course.html" class="btn btn-outline w-full order-2 sm:order-1">
+                                                    Xem Chi Tiết
+                                                </a>
+                                                <a href="single-course.html" class="btn btn-primary w-full order-1 sm:order-2">
+                                                    Đăng Ký Ngay
+                                                </a>
+                                            </div>
                                         </div>
-                                        <span>Tư vấn trọn đời</span>
                                     </div>
                                 </div>
 
-                                <hr class="border-t border-gray-300 mb-3">
-                            </div>
-                        </div>
+                                <!-- Course Card 2: Khóa Học Nâng Cao -->
+                                <div class="blaze-slide">
+                                    <div class="item-box-course-cat flex-1 bg-white rounded-2xl  border border-gray-100 relative h-full">
+                                        <div class="absolute top-4 right-0 bg-black text-white text-xs font-semibold px-3 py-1.5 rounded-l-lg z-10">
+                                            Save 50%
+                                        </div>
+                                        <div class="flex items-start justify-between mb-4">
+                                            <div class="flex-1">
+                                                <div class="w-full h-[120px] mb-4 rounded-t-[10px] overflow-hidden relative">
+                                                    <img src="https://m.media-amazon.com/images/I/7159sUj7TNL._SL1500_.jpg" alt="Khóa Học Nâng Cao" class="w-full h-full object-cover">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="box-content px-4 sm:px-6 pb-4 sm:pb-6">
+                                            <!-- Features -->
+                                            <div class="space-y-3 mb-6">
+                                                <div>
+                                                    <h3 class="text-xl sm:text-2xl font-bold m-0 text-[#8A9904] line-clamp-2">
+                                                        Khóa Học Nâng Cao
+                                                    </h3>
+                                                    <p class="text-[#666666] text-sm m-0">
+                                                        Lộ trình: 4 tuần học (38 giờ)
+                                                    </p>
+                                                </div>
 
-                        <!-- CTA Buttons -->
-                        <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="single-course.html" class="btn btn-outline w-full order-2 sm:order-1">
-                                Xem Chi Tiết
-                            </a>
-                            <a href="single-course.html" class="btn btn-primary w-full order-1 sm:order-2">
-                                Đăng Ký Ngay
-                            </a>
+                                                <div class="list-disc bg-gradient-to-r from-[#FFF] via-[#DDB657] to-[#FFF] p-[2px]">
+                                                </div>
+
+                                                <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                    </div>
+                                                    <span>Thời lượng: 4 tuần (32 giờ)</span>
+                                                </div>
+                                                <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                    </div>
+                                                    <span>Lịch học: Theo học viên</span>
+                                                </div>
+                                                <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                    </div>
+                                                    <span>Cấp độ: Cơ bản - Nâng cao</span>
+                                                </div>
+                                                <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                    </div>
+                                                    <span>Thời lượng: 4 tuần (32 giờ)</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- Pricing -->
+                                            <div class="mb-6">
+                                                <div class="flex items-baseline gap-3 mb-4 border-t border-gray-300 pt-4">
+                                                    <span class="text-2xl sm:text-3xl font-bold text-[#090707]">16.000.000₫</span>
+                                                    <span class="text-lg text-[#999999] line-through">31.000.000₫</span>
+                                                </div>
+                                                <div class="bg-[#FFF9F2] rounded-lg p-4 mb-4">
+                                                    <!-- Header -->
+                                                    <div class="text-center mb-3">
+                                                        <div class="flex items-center justify-center gap-2">
+                                                            <i data-lucide="gift" class="w-5 h-5 text-[#DDB657]"></i>
+                                                            <h4 class="text-base sm:text-lg font-bold text-[#DDB657] mb-0">Quà tặng đặc biệt</h4>
+                                                        </div>
+                                                        <i class="text-sm italic text-black">
+                                                            (*) cho 10 thành viên đăng ký đầu tiên
+                                                        </i>
+                                                    </div>
+
+                                                    <!-- Divider -->
+                                                    <hr class="border-t border-gray-300 mb-3">
+
+                                                    <!-- Benefits List -->
+                                                    <div class="flex flex-wrap justify-center gap-2 sm:gap-2 text-sm mb-3">
+                                                        <div class="flex items-center gap-2">
+                                                            <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                            </div>
+                                                            <span>Bộ cọ cơ bản</span>
+                                                        </div>
+                                                        <div class="flex items-center gap-2">
+                                                            <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                            </div>
+                                                            <span>Giáo trình PDF</span>
+                                                        </div>
+                                                        <div class="flex items-center gap-2">
+                                                            <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                            </div>
+                                                            <span>Tư vấn trọn đời</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <hr class="border-t border-gray-300 mb-3">
+                                                </div>
+                                            </div>
+
+                                            <!-- CTA Buttons -->
+                                            <div class="flex flex-col sm:flex-row gap-3">
+                                                <a href="single-course.html" class="btn btn-outline w-full order-2 sm:order-1">
+                                                    Xem Chi Tiết
+                                                </a>
+                                                <a href="single-course.html" class="btn btn-primary w-full order-1 sm:order-2">
+                                                    Đăng Ký Ngay
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Course Card 3: Khóa Học Định Cư Mỹ -->
+                                <div class="blaze-slide">
+                                    <div class="item-box-course-cat flex-1 bg-white rounded-2xl  border border-gray-100 relative h-full">
+                                        <div class="absolute top-4 right-0 bg-black text-white text-xs font-semibold px-3 py-1.5 rounded-l-lg z-10">
+                                            Save 50%
+                                        </div>
+                                        <div class="flex items-start justify-between mb-4">
+                                            <div class="flex-1">
+                                                <div class="w-full h-[120px] mb-4 rounded-t-[10px] overflow-hidden relative">
+                                                    <img src="https://m.media-amazon.com/images/I/71vPZFCTi8L._SL1500_.jpg" alt="Khóa Học Định Cư Mỹ" class="w-full h-full object-cover">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="box-content px-4 sm:px-6 pb-4 sm:pb-6">
+                                            <!-- Features -->
+                                            <div class="space-y-3 mb-6">
+                                                <div>
+                                                    <h3 class="text-xl sm:text-2xl font-bold m-0 text-[#8A9904] line-clamp-2">
+                                                        Khóa Học Định Cư Mỹ
+                                                    </h3>
+                                                    <p class="text-[#666666] text-sm m-0">
+                                                        Lộ trình: 4 tuần học (38 giờ)
+                                                    </p>
+                                                </div>
+
+                                                <div class="list-disc bg-gradient-to-r from-[#FFF] via-[#DDB657] to-[#FFF] p-[2px]">
+                                                </div>
+
+                                                <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                    </div>
+                                                    <span>Thời lượng: 4 tuần (32 giờ)</span>
+                                                </div>
+                                                <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                    </div>
+                                                    <span>Lịch học: Theo học viên</span>
+                                                </div>
+                                                <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                    </div>
+                                                    <span>Cấp độ: Cơ bản - Nâng cao</span>
+                                                </div>
+                                                <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                    </div>
+                                                    <span>Thời lượng: 4 tuần (32 giờ)</span>
+                                                </div>
+                                            </div>
+
+                                            <!-- Pricing -->
+                                            <div class="mb-6">
+                                                <div class="flex items-baseline gap-3 mb-4 border-t border-gray-300 pt-4">
+                                                    <span class="text-2xl sm:text-3xl font-bold text-[#090707]">16.000.000₫</span>
+                                                    <span class="text-lg text-[#999999] line-through">31.000.000₫</span>
+                                                </div>
+                                                <div class="bg-[#FFF9F2] rounded-lg p-4 mb-4">
+                                                    <!-- Header -->
+                                                    <div class="text-center mb-3">
+                                                        <div class="flex items-center justify-center gap-2">
+                                                            <i data-lucide="gift" class="w-5 h-5 text-[#DDB657]"></i>
+                                                            <h4 class="text-base sm:text-lg font-bold text-[#DDB657] mb-0">Quà tặng đặc biệt</h4>
+                                                        </div>
+                                                        <i class="text-sm italic text-black">
+                                                            (*) cho 10 thành viên đăng ký đầu tiên
+                                                        </i>
+                                                    </div>
+
+                                                    <!-- Divider -->
+                                                    <hr class="border-t border-gray-300 mb-3">
+
+                                                    <!-- Benefits List -->
+                                                    <div class="flex flex-wrap justify-center gap-2 sm:gap-2 text-sm mb-3">
+                                                        <div class="flex items-center gap-2">
+                                                            <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                            </div>
+                                                            <span>Bộ cọ cơ bản</span>
+                                                        </div>
+                                                        <div class="flex items-center gap-2">
+                                                            <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                            </div>
+                                                            <span>Giáo trình PDF</span>
+                                                        </div>
+                                                        <div class="flex items-center gap-2">
+                                                            <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                            </div>
+                                                            <span>Tư vấn trọn đời</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <hr class="border-t border-gray-300 mb-3">
+                                                </div>
+                                            </div>
+
+                                            <!-- CTA Buttons -->
+                                            <div class="flex flex-col sm:flex-row gap-3">
+                                                <a href="single-course.html" class="btn btn-outline w-full order-2 sm:order-1">
+                                                    Xem Chi Tiết
+                                                </a>
+                                                <a href="single-course.html" class="btn btn-primary w-full order-1 sm:order-2">
+                                                    Đăng Ký Ngay
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Course Card 2: Khóa Học Nâng Cao -->
-                <div class="item-box-course-cat flex-1 bg-white rounded-2xl shadow-lg border border-gray-100 relative">
-                    <div class="absolute top-4 right-0 bg-black text-white text-xs font-semibold px-3 py-1.5 rounded-l-lg z-10">
-                        Save 50%
-                    </div>
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex-1">
-                            <div class="w-full h-[120px] mb-4 rounded-t-[10px] overflow-hidden relative">
-                                <img src="https://m.media-amazon.com/images/I/7159sUj7TNL._SL1500_.jpg" alt="Khóa Học Nâng Cao" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-content px-4 sm:px-6 pb-4 sm:pb-6">
-                        <!-- Features -->
-                        <div class="space-y-3 mb-6">
-                            <div>
-                                <h3 class="text-xl sm:text-2xl font-bold m-0 text-[#8A9904]  line-clamp-2">
-                                    Khóa Học Nâng Cao
-                                </h3>
-                                <p class="text-[#666666] text-sm m-0">
-                                    Lộ trình: 4 tuần học (38 giờ)
-                                </p>
-                            </div>
-
-                            <div class="list-disc bg-gradient-to-r from-[#FFF] via-[#DDB657] to-[#FFF] p-[2px]">
-                            </div>
-
-                            <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                </div>
-                                <span>Thời lượng: 4 tuần (32 giờ)</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                </div>
-                                <span>Lịch học: Theo học viên</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                </div>
-                                <span>Cấp độ: Cơ bản - Nâng cao</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                </div>
-                                <span>Thời lượng: 4 tuần (32 giờ)</span>
-                            </div>
-                        </div>
-
-                        <!-- Pricing -->
-                        <div class="mb-6">
-                            <div class="flex items-baseline gap-3 mb-4 border-t border-gray-300 pt-4">
-                                <span class="text-2xl sm:text-3xl font-bold text-[#090707]">16.000.000₫</span>
-                                <span class="text-lg text-[#999999] line-through">31.000.000₫</span>
-                            </div>
-                            <div class="bg-[#FFF9F2] rounded-lg p-4 mb-4">
-                                <!-- Header -->
-                                <div class="text-center mb-3">
-                                    <div class="flex items-center justify-center gap-2">
-                                        <i data-lucide="gift" class="w-5 h-5 text-[#DDB657]"></i>
-                                        <h4 class="text-base sm:text-lg font-bold text-[#DDB657] mb-0">Quà tặng đặc biệt</h4>
-                                    </div>
-                                    <i class="text-sm italic text-black">
-                                        (*) cho 10 thành viên đăng ký đầu tiên
-                                    </i>
-                                </div>
-
-                                <!-- Divider -->
-                                <hr class="border-t border-gray-300 mb-3">
-
-                                <!-- Benefits List -->
-                                <div class="flex flex-wrap justify-center gap-2 sm:gap-2 text-sm mb-3">
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                            <i data-lucide="gift" class="w-4 h-4 text-white"></i>
-                                        </div>
-                                        <span>Bộ cọ cơ bản</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                            <i data-lucide="gift" class="w-4 h-4 text-white"></i>
-                                        </div>
-                                        <span>Giáo trình PDF</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                            <i data-lucide="gift" class="w-4 h-4 text-white"></i>
-                                        </div>
-                                        <span>Tư vấn trọn đời</span>
-                                    </div>
-                                </div>
-
-                                <hr class="border-t border-gray-300 mb-3">
-                            </div>
-                        </div>
-
-                        <!-- CTA Buttons -->
-                        <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="single-course.html" class="btn btn-outline w-full order-2 sm:order-1">
-                                Xem Chi Tiết
-                            </a>
-                            <a href="single-course.html" class="btn btn-primary w-full order-1 sm:order-2">
-                                Đăng Ký Ngay
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Course Card 3: Khóa Học Định Cư Mỹ -->
-                <div class="item-box-course-cat flex-1 bg-white rounded-2xl shadow-lg border border-gray-100 relative">
-                    <div class="absolute top-4 right-0 bg-black text-white text-xs font-semibold px-3 py-1.5 rounded-l-lg z-10">
-                        Save 50%
-                    </div>
-                    <div class="flex items-start justify-between mb-4">
-                        <div class="flex-1">
-                            <div class="w-full h-[120px] mb-4 rounded-t-[10px] overflow-hidden relative">
-                                <img src="https://m.media-amazon.com/images/I/71vPZFCTi8L._SL1500_.jpg" alt="Khóa Học Định Cư Mỹ" class="w-full h-full object-cover">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-content px-4 sm:px-6 pb-4 sm:pb-6">
-                        <!-- Features -->
-                        <div class="space-y-3 mb-6">
-                            <div>
-                                <h3 class="text-xl sm:text-2xl font-bold m-0 text-[#8A9904]  line-clamp-2">
-                                    Khóa Học Định Cư Mỹ
-                                </h3>
-                                <p class="text-[#666666] text-sm m-0">
-                                    Lộ trình: 4 tuần học (38 giờ)
-                                </p>
-                            </div>
-
-                            <div class="list-disc bg-gradient-to-r from-[#FFF] via-[#DDB657] to-[#FFF] p-[2px]">
-                            </div>
-
-                            <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                </div>
-                                <span>Thời lượng: 4 tuần (32 giờ)</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                </div>
-                                <span>Lịch học: Theo học viên</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                </div>
-                                <span>Cấp độ: Cơ bản - Nâng cao</span>
-                            </div>
-                            <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                    <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                </div>
-                                <span>Thời lượng: 4 tuần (32 giờ)</span>
-                            </div>
-                        </div>
-
-                        <!-- Pricing -->
-                        <div class="mb-6">
-                            <div class="flex items-baseline gap-3 mb-4 border-t border-gray-300 pt-4">
-                                <span class="text-2xl sm:text-3xl font-bold text-[#090707]">16.000.000₫</span>
-                                <span class="text-lg text-[#999999] line-through">31.000.000₫</span>
-                            </div>
-                            <div class="bg-[#FFF9F2] rounded-lg p-4 mb-4">
-                                <!-- Header -->
-                                <div class="text-center mb-3">
-                                    <div class="flex items-center justify-center gap-2">
-                                        <i data-lucide="gift" class="w-5 h-5 text-[#DDB657]"></i>
-                                        <h4 class="text-base sm:text-lg font-bold text-[#DDB657] mb-0">Quà tặng đặc biệt</h4>
-                                    </div>
-                                    <i class="text-sm italic text-black">
-                                        (*) cho 10 thành viên đăng ký đầu tiên
-                                    </i>
-                                </div>
-
-                                <!-- Divider -->
-                                <hr class="border-t border-gray-300 mb-3">
-
-                                <!-- Benefits List -->
-                                <div class="flex flex-wrap justify-center gap-2 sm:gap-2 text-sm mb-3">
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                            <i data-lucide="gift" class="w-4 h-4 text-white"></i>
-                                        </div>
-                                        <span>Bộ cọ cơ bản</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                            <i data-lucide="gift" class="w-4 h-4 text-white"></i>
-                                        </div>
-                                        <span>Giáo trình PDF</span>
-                                    </div>
-                                    <div class="flex items-center gap-2">
-                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                            <i data-lucide="gift" class="w-4 h-4 text-white"></i>
-                                        </div>
-                                        <span>Tư vấn trọn đời</span>
-                                    </div>
-                                </div>
-
-                                <hr class="border-t border-gray-300 mb-3">
-                            </div>
-                        </div>
-
-                        <!-- CTA Buttons -->
-                        <div class="flex flex-col sm:flex-row gap-3">
-                            <a href="single-course.html" class="btn btn-outline w-full order-2 sm:order-1">
-                                Xem Chi Tiết
-                            </a>
-                            <a href="single-course.html" class="btn btn-primary w-full order-1 sm:order-2">
-                                Đăng Ký Ngay
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
 
             <!-- Online Course Section -->
@@ -354,237 +379,368 @@
                     KHÓA HỌC ONLINE
                 </h2>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 w-full">
-                    <div class="item-box-course-cat flex-1 bg-white rounded-2xl shadow-lg border border-gray-100">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="flex-1">
-                                <div class="w-full h-[120px] mb-4 rounded-t-[10px] overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=200&auto=format&fit=crop"
-                                        alt="Khóa học Online" class="w-full h-full object-cover">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box-content px-4 sm:px-6 pb-4 sm:pb-6">
-                            <!-- Features -->
-                            <div class="space-y-3 mb-6">
-                                <div>
-                                    <h3 class="text-xl sm:text-2xl font-bold m-0 text-[#8A9904]  line-clamp-2">
-                                        Khóa học Online
-                                    </h3>
-                                    <p class="text-[#666666] text-sm m-0">
-                                        Tại tất cả các cơ sở trên toàn quốc
-                                    </p>
-                                </div>
+                <div class="relative w-full">
+                    <div class="blaze-slider bslider-3 w-full relative" id="online-courses-slider">
+                        <div class="blaze-container relative">
+                            <!-- Navigation Buttons -->
+                            <button class="blaze-prev hidden sm:flex" aria-label="Previous">
+                                <i data-lucide="chevron-left" class="w-6 h-6"></i>
+                            </button>
+                            <button class="blaze-next hidden sm:flex" aria-label="Next">
+                                <i data-lucide="chevron-right" class="w-6 h-6"></i>
+                            </button>
 
-                                <div class="list-disc bg-gradient-to-r from-[#FFF] via-[#DDB657] to-[#FFF] p-[2px]">
-                                </div>
+                            <!-- Pagination -->
+                            
 
-                                <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                    </div>
-                                    <span>Thời lượng: 4 tuần (32 giờ)</span>
-                                </div>
-                                <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                    </div>
-                                    <span>Lịch học: Theo học viên</span>
-                                </div>
-                                <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                    </div>
-                                    <span>Cấp độ: Cơ bản - Nâng cao</span>
-                                </div>
-                                <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                    </div>
-                                    <span>Chứng chỉ quốc tế</span>
-                                </div>
-                            </div>
-
-                            <!-- Pricing -->
-                            <div class="mb-6">
-                                <div class="flex items-baseline gap-3 mb-4 border-t border-gray-300 pt-4">
-                                    <span class="text-2xl sm:text-3xl font-bold text-[#090707]">16.000.000₫</span>
-                                    <span class="text-lg text-[#999999] line-through">31.000.000₫</span>
-                                </div>
-                                <div class="bg-[#FFF9F2] rounded-lg p-4 mb-4">
-                                    <!-- Header -->
-                                    <div class="text-center mb-3">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <i data-lucide="gift" class="w-5 h-5 text-[#DDB657]"></i>
-                                            <h4 class="text-base sm:text-lg font-bold text-[#DDB657] mb-0">Quà tặng đặc biệt</h4>
-                                        </div>
-                                        <i class="text-sm italic text-black">
-                                            (*) cho 10 thành viên đăng ký đầu tiên
-                                        </i>
-                                    </div>
-
-                                    <!-- Divider -->
-                                    <hr class="border-t border-gray-300 mb-3">
-
-                                    <!-- Benefits List -->
-                                    <div class="flex flex-wrap justify-center gap-2 sm:gap-2 text-sm mb-3">
-                                        <div class="flex items-center gap-2">
-                                            <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                                <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                            <div class="blaze-track-container" style="overflow: hidden;">
+                                <div class="blaze-track">
+                                    <div class="blaze-slide">
+                                        <div class="item-box-course-cat flex-1 bg-white rounded-2xl  border border-gray-100 h-full">
+                                            <div class="flex items-start justify-between mb-4">
+                                                <div class="flex-1">
+                                                    <div class="w-full h-[120px] mb-4 rounded-t-[10px] overflow-hidden">
+                                                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=200&auto=format&fit=crop"
+                                                            alt="Khóa học Online" class="w-full h-full object-cover">
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <span>Bộ cọ cơ bản</span>
-                                        </div>
-                                        <div class="flex items-center gap-2">
-                                            <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                                <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                            <div class="box-content px-4 sm:px-6 pb-4 sm:pb-6">
+                                                <!-- Features -->
+                                                <div class="space-y-3 mb-6">
+                                                    <div>
+                                                        <h3 class="text-xl sm:text-2xl font-bold m-0 text-[#8A9904] line-clamp-2">
+                                                            Khóa học Online
+                                                        </h3>
+                                                        <p class="text-[#666666] text-sm m-0">
+                                                            Tại tất cả các cơ sở trên toàn quốc
+                                                        </p>
+                                                    </div>
+
+                                                    <div class="list-disc bg-gradient-to-r from-[#FFF] via-[#DDB657] to-[#FFF] p-[2px]">
+                                                    </div>
+
+                                                    <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                            <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                        </div>
+                                                        <span>Thời lượng: 4 tuần (32 giờ)</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                            <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                        </div>
+                                                        <span>Lịch học: Theo học viên</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                            <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                        </div>
+                                                        <span>Cấp độ: Cơ bản - Nâng cao</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                            <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                        </div>
+                                                        <span>Chứng chỉ quốc tế</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Pricing -->
+                                                <div class="mb-6">
+                                                    <div class="flex items-baseline gap-3 mb-4 border-t border-gray-300 pt-4">
+                                                        <span class="text-2xl sm:text-3xl font-bold text-[#090707]">16.000.000₫</span>
+                                                        <span class="text-lg text-[#999999] line-through">31.000.000₫</span>
+                                                    </div>
+                                                    <div class="bg-[#FFF9F2] rounded-lg p-4 mb-4">
+                                                        <!-- Header -->
+                                                        <div class="text-center mb-3">
+                                                            <div class="flex items-center justify-center gap-2">
+                                                                <i data-lucide="gift" class="w-5 h-5 text-[#DDB657]"></i>
+                                                                <h4 class="text-base sm:text-lg font-bold text-[#DDB657] mb-0">Quà tặng đặc biệt</h4>
+                                                            </div>
+                                                            <i class="text-sm italic text-black">
+                                                                (*) cho 10 thành viên đăng ký đầu tiên
+                                                            </i>
+                                                        </div>
+
+                                                        <!-- Divider -->
+                                                        <hr class="border-t border-gray-300 mb-3">
+
+                                                        <!-- Benefits List -->
+                                                        <div class="flex flex-wrap justify-center gap-2 sm:gap-2 text-sm mb-3">
+                                                            <div class="flex items-center gap-2">
+                                                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                    <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                                </div>
+                                                                <span>Bộ cọ cơ bản</span>
+                                                            </div>
+                                                            <div class="flex items-center gap-2">
+                                                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                    <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                                </div>
+                                                                <span>Giáo trình PDF</span>
+                                                            </div>
+                                                            <div class="flex items-center gap-2">
+                                                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                    <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                                </div>
+                                                                <span>Tư vấn trọn đời</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <hr class="border-t border-gray-300 mb-3">
+                                                    </div>
+                                                </div>
+
+                                                <!-- CTA Buttons -->
+                                                <div class="flex flex-col sm:flex-row gap-3">
+                                                    <a href="single-course.html" class="btn btn-outline w-full order-2 sm:order-1">
+                                                        Xem Chi Tiết
+                                                    </a>
+                                                    <a href="single-course.html" class="btn btn-primary w-full order-1 sm:order-2">
+                                                        Đăng Ký Ngay
+                                                    </a>
+                                                </div>
                                             </div>
-                                            <span>Giáo trình PDF</span>
-                                        </div>
-                                        <div class="flex items-center gap-2">
-                                            <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                                <i data-lucide="gift" class="w-4 h-4 text-white"></i>
-                                            </div>
-                                            <span>Tư vấn trọn đời</span>
                                         </div>
                                     </div>
-
-                                    <hr class="border-t border-gray-300 mb-3">
-                                </div>
-                            </div>
-
-                            <!-- CTA Buttons -->
-                            <div class="flex flex-col sm:flex-row gap-3">
-                                <a href="single-course.html" class="btn btn-outline w-full order-2 sm:order-1">
-                                    Xem Chi Tiết
-                                </a>
-                                <a href="single-course.html" class="btn btn-primary w-full order-1 sm:order-2">
-                                    Đăng Ký Ngay
-                                </a>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Online Course Card 2 -->
-                    <div class="item-box-course-cat flex-1 bg-white rounded-2xl shadow-lg border border-gray-100">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="flex-1">
-                                <div class="w-full h-[120px] mb-4 rounded-t-[10px] overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=200&auto=format&fit=crop"
-                                        alt="Khóa học Online" class="w-full h-full object-cover">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box-content px-4 sm:px-6 pb-4 sm:pb-6">
-                            <!-- Features -->
-                            <div class="space-y-3 mb-6">
-                                <div>
-                                    <h3 class="text-xl sm:text-2xl font-bold m-0 text-[#8A9904]  line-clamp-2">
-                                        Khóa học Online
-                                    </h3>
-                                    <p class="text-[#666666] text-sm m-0">
-                                        Tại tất cả các cơ sở trên toàn quốc
-                                    </p>
-                                </div>
-
-                                <div class="list-disc bg-gradient-to-r from-[#FFF] via-[#DDB657] to-[#FFF] p-[2px]">
-                                </div>
-
-                                <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                    </div>
-                                    <span>Thời lượng: 4 tuần (32 giờ)</span>
-                                </div>
-                                <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                    </div>
-                                    <span>Lịch học: Theo học viên</span>
-                                </div>
-                                <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                    </div>
-                                    <span>Cấp độ: Cơ bản - Nâng cao</span>
-                                </div>
-                                <div class="flex items-center gap-3 text-sm text-[#333333]">
-                                    <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                        <i data-lucide="check" class="w-3 h-3 text-white"></i>
-                                    </div>
-                                    <span>Chứng chỉ quốc tế</span>
-                                </div>
-                            </div>
-
-                            <!-- Pricing -->
-                            <div class="mb-6">
-                                <div class="flex items-baseline gap-3 mb-4 border-t border-gray-300 pt-4">
-                                    <span class="text-2xl sm:text-3xl font-bold text-[#090707]">16.000.000₫</span>
-                                    <span class="text-lg text-[#999999] line-through">31.000.000₫</span>
-                                </div>
-                                <div class="bg-[#FFF9F2] rounded-lg p-4 mb-4">
-                                    <!-- Header -->
-                                    <div class="text-center mb-3">
-                                        <div class="flex items-center justify-center gap-2">
-                                            <i data-lucide="gift" class="w-5 h-5 text-[#DDB657]"></i>
-                                            <h4 class="text-base sm:text-lg font-bold text-[#DDB657] mb-0">Quà tặng đặc biệt</h4>
-                                        </div>
-                                        <i class="text-sm italic text-black">
-                                            (*) cho 10 thành viên đăng ký đầu tiên
-                                        </i>
-                                    </div>
-
-                                    <!-- Divider -->
-                                    <hr class="border-t border-gray-300 mb-3">
-
-                                    <!-- Benefits List -->
-                                    <div class="flex flex-wrap justify-center gap-2 sm:gap-2 text-sm mb-3">
-                                        <div class="flex items-center gap-2">
-                                            <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                                <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                    <div class="blaze-slide">
+                                        <div class="item-box-course-cat flex-1 bg-white rounded-2xl  border border-gray-100 h-full">
+                                            <div class="flex items-start justify-between mb-4">
+                                                <div class="flex-1">
+                                                    <div class="w-full h-[120px] mb-4 rounded-t-[10px] overflow-hidden">
+                                                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=200&auto=format&fit=crop"
+                                                            alt="Khóa học Online" class="w-full h-full object-cover">
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <span>Bộ cọ cơ bản</span>
-                                        </div>
-                                        <div class="flex items-center gap-2">
-                                            <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                                <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                            <div class="box-content px-4 sm:px-6 pb-4 sm:pb-6">
+                                                <!-- Features -->
+                                                <div class="space-y-3 mb-6">
+                                                    <div>
+                                                        <h3 class="text-xl sm:text-2xl font-bold m-0 text-[#8A9904] line-clamp-2">
+                                                            Khóa học Online
+                                                        </h3>
+                                                        <p class="text-[#666666] text-sm m-0">
+                                                            Tại tất cả các cơ sở trên toàn quốc
+                                                        </p>
+                                                    </div>
+
+                                                    <div class="list-disc bg-gradient-to-r from-[#FFF] via-[#DDB657] to-[#FFF] p-[2px]">
+                                                    </div>
+
+                                                    <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                            <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                        </div>
+                                                        <span>Thời lượng: 4 tuần (32 giờ)</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                            <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                        </div>
+                                                        <span>Lịch học: Theo học viên</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                            <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                        </div>
+                                                        <span>Cấp độ: Cơ bản - Nâng cao</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                            <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                        </div>
+                                                        <span>Chứng chỉ quốc tế</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Pricing -->
+                                                <div class="mb-6">
+                                                    <div class="flex items-baseline gap-3 mb-4 border-t border-gray-300 pt-4">
+                                                        <span class="text-2xl sm:text-3xl font-bold text-[#090707]">16.000.000₫</span>
+                                                        <span class="text-lg text-[#999999] line-through">31.000.000₫</span>
+                                                    </div>
+                                                    <div class="bg-[#FFF9F2] rounded-lg p-4 mb-4">
+                                                        <!-- Header -->
+                                                        <div class="text-center mb-3">
+                                                            <div class="flex items-center justify-center gap-2">
+                                                                <i data-lucide="gift" class="w-5 h-5 text-[#DDB657]"></i>
+                                                                <h4 class="text-base sm:text-lg font-bold text-[#DDB657] mb-0">Quà tặng đặc biệt</h4>
+                                                            </div>
+                                                            <i class="text-sm italic text-black">
+                                                                (*) cho 10 thành viên đăng ký đầu tiên
+                                                            </i>
+                                                        </div>
+
+                                                        <!-- Divider -->
+                                                        <hr class="border-t border-gray-300 mb-3">
+
+                                                        <!-- Benefits List -->
+                                                        <div class="flex flex-wrap justify-center gap-2 sm:gap-2 text-sm mb-3">
+                                                            <div class="flex items-center gap-2">
+                                                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                    <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                                </div>
+                                                                <span>Bộ cọ cơ bản</span>
+                                                            </div>
+                                                            <div class="flex items-center gap-2">
+                                                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                    <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                                </div>
+                                                                <span>Giáo trình PDF</span>
+                                                            </div>
+                                                            <div class="flex items-center gap-2">
+                                                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                    <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                                </div>
+                                                                <span>Tư vấn trọn đời</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <hr class="border-t border-gray-300 mb-3">
+                                                    </div>
+                                                </div>
+
+                                                <!-- CTA Buttons -->
+                                                <div class="flex flex-col sm:flex-row gap-3">
+                                                    <a href="single-course.html" class="btn btn-outline w-full order-2 sm:order-1">
+                                                        Xem Chi Tiết
+                                                    </a>
+                                                    <a href="single-course.html" class="btn btn-primary w-full order-1 sm:order-2">
+                                                        Đăng Ký Ngay
+                                                    </a>
+                                                </div>
                                             </div>
-                                            <span>Giáo trình PDF</span>
-                                        </div>
-                                        <div class="flex items-center gap-2">
-                                            <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
-                                                <i data-lucide="gift" class="w-4 h-4 text-white"></i>
-                                            </div>
-                                            <span>Tư vấn trọn đời</span>
                                         </div>
                                     </div>
+                    <!-- Online Course Card 2 -->
+                                    <div class="blaze-slide">
+                                        <div class="item-box-course-cat flex-1 bg-white rounded-2xl  border border-gray-100 h-full">
+                                            <div class="flex items-start justify-between mb-4">
+                                                <div class="flex-1">
+                                                    <div class="w-full h-[120px] mb-4 rounded-t-[10px] overflow-hidden">
+                                                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=200&auto=format&fit=crop"
+                                                            alt="Khóa học Online" class="w-full h-full object-cover">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box-content px-4 sm:px-6 pb-4 sm:pb-6">
+                                                <!-- Features -->
+                                                <div class="space-y-3 mb-6">
+                                                    <div>
+                                                        <h3 class="text-xl sm:text-2xl font-bold m-0 text-[#8A9904] line-clamp-2">
+                                                            Khóa học Online
+                                                        </h3>
+                                                        <p class="text-[#666666] text-sm m-0">
+                                                            Tại tất cả các cơ sở trên toàn quốc
+                                                        </p>
+                                                    </div>
 
-                                    <hr class="border-t border-gray-300 mb-3">
-                                </div>
-                            </div>
+                                                    <div class="list-disc bg-gradient-to-r from-[#FFF] via-[#DDB657] to-[#FFF] p-[2px]">
+                                                    </div>
 
-                            <!-- CTA Buttons -->
-                            <div class="flex flex-col sm:flex-row gap-3">
-                                <a href="single-course.html" class="btn btn-outline w-full order-2 sm:order-1">
-                                    Xem Chi Tiết
-                                </a>
-                                <a href="single-course.html" class="btn btn-primary w-full order-1 sm:order-2">
-                                    Đăng Ký Ngay
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                                                    <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                            <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                        </div>
+                                                        <span>Thời lượng: 4 tuần (32 giờ)</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                            <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                        </div>
+                                                        <span>Lịch học: Theo học viên</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                            <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                        </div>
+                                                        <span>Cấp độ: Cơ bản - Nâng cao</span>
+                                                    </div>
+                                                    <div class="flex items-center gap-3 text-sm text-[#333333]">
+                                                        <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                            <i data-lucide="check" class="w-3 h-3 text-white"></i>
+                                                        </div>
+                                                        <span>Chứng chỉ quốc tế</span>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Pricing -->
+                                                <div class="mb-6">
+                                                    <div class="flex items-baseline gap-3 mb-4 border-t border-gray-300 pt-4">
+                                                        <span class="text-2xl sm:text-3xl font-bold text-[#090707]">16.000.000₫</span>
+                                                        <span class="text-lg text-[#999999] line-through">31.000.000₫</span>
+                                                    </div>
+                                                    <div class="bg-[#FFF9F2] rounded-lg p-4 mb-4">
+                                                        <!-- Header -->
+                                                        <div class="text-center mb-3">
+                                                            <div class="flex items-center justify-center gap-2">
+                                                                <i data-lucide="gift" class="w-5 h-5 text-[#DDB657]"></i>
+                                                                <h4 class="text-base sm:text-lg font-bold text-[#DDB657] mb-0">Quà tặng đặc biệt</h4>
+                                                            </div>
+                                                            <i class="text-sm italic text-black">
+                                                                (*) cho 10 thành viên đăng ký đầu tiên
+                                                            </i>
+                                                        </div>
+
+                                                        <!-- Divider -->
+                                                        <hr class="border-t border-gray-300 mb-3">
+
+                                                        <!-- Benefits List -->
+                                                        <div class="flex flex-wrap justify-center gap-2 sm:gap-2 text-sm mb-3">
+                                                            <div class="flex items-center gap-2">
+                                                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                    <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                                </div>
+                                                                <span>Bộ cọ cơ bản</span>
+                                                            </div>
+                                                            <div class="flex items-center gap-2">
+                                                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                    <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                                </div>
+                                                                <span>Giáo trình PDF</span>
+                                                            </div>
+                                                            <div class="flex items-center gap-2">
+                                                                <div class="w-5 h-5 rounded-full bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                                                                    <i data-lucide="gift" class="w-4 h-4 text-white"></i>
+                                                                </div>
+                                                                <span>Tư vấn trọn đời</span>
+                                                            </div>
+                                                        </div>
+
+                                                        <hr class="border-t border-gray-300 mb-3">
+                                                    </div>
+                                                </div>
+
+                                                <!-- CTA Buttons -->
+                                                <div class="flex flex-col sm:flex-row gap-3">
+                                                    <a href="single-course.html" class="btn btn-outline w-full order-2 sm:order-1">
+                                                        Xem Chi Tiết
+                                                    </a>
+                                                    <a href="single-course.html" class="btn btn-primary w-full order-1 sm:order-2">
+                                                        Đăng Ký Ngay
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
 
                     <!-- Online Course Card 3 -->
-                    <div class="item-box-course-cat flex-1 bg-white rounded-2xl shadow-lg border border-gray-100">
-                        <div class="flex items-start justify-between mb-4">
-                            <div class="flex-1">
-                                <div class="w-full h-[120px] mb-4 rounded-t-[10px] overflow-hidden">
-                                    <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=200&auto=format&fit=crop"
-                                        alt="Khóa học Online" class="w-full h-full object-cover">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="box-content px-4 sm:px-6 pb-4 sm:pb-6">
+                                    <div class="blaze-slide">
+                                        <div class="item-box-course-cat flex-1 bg-white rounded-2xl  border border-gray-100 h-full">
+                                            <div class="flex items-start justify-between mb-4">
+                                                <div class="flex-1">
+                                                    <div class="w-full h-[120px] mb-4 rounded-t-[10px] overflow-hidden">
+                                                        <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=200&auto=format&fit=crop"
+                                                            alt="Khóa học Online" class="w-full h-full object-cover">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="box-content px-4 sm:px-6 pb-4 sm:pb-6">
                             <!-- Features -->
                             <div class="space-y-3 mb-6">
                                 <div>
@@ -680,6 +836,10 @@
                                 <a href="single-course.html" class="btn btn-primary w-full order-1 sm:order-2">
                                     Đăng Ký Ngay
                                 </a>
+                            </div>
+                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

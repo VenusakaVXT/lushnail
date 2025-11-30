@@ -1,28 +1,71 @@
 <!-- About Us Hero Section -->
-<section class="bg-white flex flex-col items-start relative w-full noise-overlay" data-name="about-hero">
-    <div class="flex flex-col md:flex-row relative w-full">
-        <!-- Left Column: Background Image with Text and Button -->
-        <div class="relative flex items-center justify-center min-h-[400px] sm:min-h-[450px] md:h-[450px] lg:h-[517px] w-full md:w-[75%] bg-cover bg-center bg-no-repeat"
-            style="background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/design-mode-images/71ba49cf7dd12aa15aff5db67f2128427396c3fa-sxy0azUh1CItWAQG9f8vxnw3VwIGuv.jpg');">
-            <div class="absolute inset-0 backdrop-blur-[7.5px] bg-[#AE873E1A]"></div>
-
-            <div
-                class="relative z-10 flex flex-col gap-4 sm:gap-5 md:gap-8 lg:gap-[60px] text-white max-w-[700px] w-full px-4 sm:px-6 md:px-8 lg:pl-0 lg:pr-16 py-8 sm:py-10 md:py-0">
-                <div class="flex flex-col gap-3 sm:gap-3 md:gap-4">
-                    <h1 class="title-section text-white">Về Lush Nail</h1>
-                    <p
-                        class="text-[13px] sm:text-[13px] md:text-[14px] lg:text-[16px] leading-[22px] sm:leading-[22px] md:leading-[24px] text-white/90 break-words md:break-normal">
-                        Thương hiệu hàng đầu về sản phẩm nail, dịch vụ làm móng chuyên nghiệp và đào tạo nghề nail tại
-                        Việt Nam
-                    </p>
+<section class="bg-white flex flex-col items-start relative w-full py-12 sm:py-16 lg:py-20" data-name="about-hero">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12 items-center">
+            
+            <!-- Left Column: Image -->
+            <div class="w-full lg:w-1/2 relative max-w-[420px]">
+                <div class="relative   overflow-hidden">
+                    <img src="/assets/images/Group-30278.png"
+                        alt="Lush Nail Academy" class="w-full h-auto object-cover" />
                 </div>
             </div>
-        </div>
 
-        <!-- Right Column: Image Only -->
-        <div class="relative w-full md:w-[25%] h-[300px] sm:h-[350px] md:h-[450px] lg:h-[517px]">
-            <img src="https://eternal-cosmetics.com/cdn/shop/files/B07R7DCKSX.PT03_1000x1000.jpg?v=1690466833"
-                alt="Nail Art" class="object-cover w-full h-full" />
+            <!-- Right Column: Content -->
+            <div class="w-full lg:w-1/2 flex flex-col gap-4">
+                <!-- Main Heading -->
+                <h1 class="title-section">
+                    XIN CHÀO!
+                </h1>
+
+                <!-- Introductory Paragraphs -->
+                <div class="flex flex-col gap-4">
+                    <p class="text-base">
+                        Chào mừng bạn đến với Lush Nail Academy – nơi bạn có thể khám phá toàn bộ các khóa học nail online và offline về Nail Thiết Kế, Nail Box và Nail Định Cư chuẩn US-UK.
+                    </p>
+                    <p class="text-base">
+                        Tại đây, bạn dễ dàng tìm hiểu lộ trình học, xem sản phẩm học viên và lựa chọn khóa học phù hợp để bắt đầu hành trình trở thành kỹ thuật viên nail chuyên nghiệp.
+                    </p>
+                </div>
+
+                <!-- Feature Boxes -->
+                <div class="flex flex-col sm:flex-row gap-4 lg:gap-6 bg-gradient-to-b from-[#FFFFFF]/10 to-[#F4DB89]/10 p-4">
+                    <!-- Feature 1: Tận tâm -->
+                    <div class="flex items-start gap-3 sm:gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-b from-[#FFFFFF]/50 to-[#F4DB89]/50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="heart" class="w-6 h-6 text-pink-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-base mb-0">Tận tâm</h3>
+                            <p class="text-[14px] sm:text-[15px] text-[#666666] leading-relaxed">
+                                Phục vụ bằng cả trái tim trong từng chi tiết nhỏ.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2: Sáng tạo -->
+                    <div class="flex items-start gap-3 sm:gap-4">
+                        <div class="w-12 h-12 bg-gradient-to-b from-[#FFFFFF]/50 to-[#F4DB89]/50 rounded-full flex items-center justify-center flex-shrink-0">
+                            <i data-lucide="lightbulb" class="w-6 h-6 text-yellow-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-base mb-0">Sáng tạo</h3>
+                            <p class="text-[14px] sm:text-[15px] text-[#666666] leading-relaxed">
+                                Luôn cập nhật xu hướng nghệ thuật mới nhất.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action Button -->
+                <div class="pt-2">
+                    <a href="#courses" class="btn btn-primary inline-flex items-center gap-2">
+                        <span class="uppercase">TÌM HIỂU THÊM</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
