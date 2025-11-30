@@ -7,11 +7,14 @@ log-out
 shopping-bag
 menu
 x
-log-in
 user-plus
+log-in
 facebook
 instagram
 youtube
+minus
+plus
+trash-2
 play
 home
 heart
@@ -31,9 +34,6 @@ check
 send
 twitter
 chevron-right
-minus
-plus
-trash-2
 chevron-left
 download
 alert-triangle

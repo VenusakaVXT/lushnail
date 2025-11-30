@@ -1,7 +1,7 @@
 <!-- Navbar mobile -->
 <div id="mobile-navbar" class="header-navbar-mobile">
   <div class="container flex items-center justify-between w-full">
-  
+
     <!-- Logo - Left -->
     <div class="flex-shrink-0">
       <a href="/" class="header-logo-link">
@@ -12,13 +12,14 @@
     <!-- Icons - Right -->
     <div class="header-navbar-mobile-icons flex items-center gap-1 ml-auto">
       <!-- Search Button -->
-      <button id="mobile-search-toggle" class="header-icon-button hover:text-[#ae873e] transition-colors" aria-label="Search">
+      <button id="mobile-search-toggle" class="header-icon-button hover:text-white transition-colors"
+        aria-label="Search">
         <i data-lucide="search" class="header-icon"></i>
       </button>
       <!-- User Profile Button -->
       <!-- <div class="relative flex items-center">
         <button id="user-toggle-mobile"
-          class="header-icon-button hover:text-[#ae873e] transition-colors flex items-center justify-center"
+          class="header-icon-button hover:text-white transition-colors flex items-center justify-center"
           aria-label="User Profile">
           <i data-lucide="user" class="header-icon"></i>
         </button>
@@ -44,15 +45,15 @@
         </div>
       </div> -->
       <!-- Shopping Bag Button -->
-      <a href="/cart.html"
-        class="header-icon-button hover:text-[#ae873e] transition-colors flex items-center justify-center"
+      <button id="mobile-cart-toggle"
+        class="header-icon-button hover:text-white transition-colors flex items-center justify-center"
         aria-label="Shopping Cart">
         <i data-lucide="shopping-bag" class="header-icon"></i>
-      </a>
+      </button>
       <div class="header-topbar-lang relative" style="overflow: visible;">
         <button id="language-toggle-topbar" class="header-topbar-language-button" aria-label="Change Language">
           <i data-lucide="languages" class="header-topbar-language-icon "></i>
-        
+
         </button>
         <div id="language-dropdown-topbar"
           class="absolute right-0 top-full mt-2 bg-white rounded-lg shadow-lg border border-gray-200 py-2 min-w-[150px] z-[10001] hidden">
@@ -68,13 +69,13 @@
             <span class="text-sm">🇺🇸</span>
             <span class="text-sm">English</span>
           </button>
-          
+
         </div>
       </div>
-        <!-- Hamburger Menu - Left -->
-    <button id="mobile-menu-toggle" class="header-navbar-mobile-toggle" aria-label="Toggle mobile menu">
-      <i data-lucide="menu" class="header-navbar-mobile-icon" id="menu-icon"></i>
-    </button>
+      <!-- Hamburger Menu - Left -->
+      <button id="mobile-menu-toggle" class="header-navbar-mobile-toggle" aria-label="Toggle mobile menu">
+        <i data-lucide="menu" class="header-navbar-mobile-icon" id="menu-icon"></i>
+      </button>
     </div>
   </div>
 
@@ -114,24 +115,20 @@
         </div>
 
         <!-- Login and Register Buttons Section -->
-        <div class="header-mobile-drawer-section px-4 py-4 space-y-2">
-          <div class="flex gap-3 justify-center">
-            <a href="/login.html"
-            class="btn btn-outline">
-              <i data-lucide="log-in" class="w-5 h-5"></i>
-              <span>Đăng Nhập</span>
-            </a>
-            <a href="/register.html"
-              class="btn btn-outline">
+        <div class="header-mobile-drawer-section  space-y-2">
+          <!-- Login and Register Buttons Section -->
+          <div class="header-mobile-drawer-section px-4 py-4 space-y-3">
+            <a href="/register.html" class="btn btn-primary gap-2">
               <i data-lucide="user-plus" class="w-5 h-5"></i>
-              <span>Tạo Tài Khoản</span>
+              <span>Tạo tài khoản</span>
+            </a>
+            <a href="/login.html"
+              class="btn w-full flex items-center justify-center gap-2 bg-gray-200 text-[#000] py-3 px-4 font-medium hover:bg-gray-300 transition-all">
+              <i data-lucide="log-in" class="w-5 h-5"></i>
+              <span>Đăng nhập</span>
             </a>
           </div>
-          <a href="/cart.html"
-            class="btn btn-primary gap-2">
-            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
-            <span>Xem Giỏ Hàng</span>
-          </a>
+
         </div>
 
         <!-- Social Media Section -->
@@ -161,6 +158,146 @@
               </a>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div id="cart-drawer" class="header-mobile-drawer">
+    <!-- Drawer Overlay -->
+    <div id="cart-drawer-overlay" class="header-mobile-drawer-overlay"></div>
+
+    <!-- Drawer Content -->
+    <div class="header-mobile-drawer-content">
+      <!-- Drawer Header with Close Button -->
+      <div class="header-mobile-drawer-header flex justify-between items-center">
+        <h3 class="text-[#333] text-xl font-semibold mb-0">Giỏ hàng</h3>
+        <button id="cart-drawer-close" class="header-mobile-drawer-close" aria-label="Close cart">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <!-- Drawer Body -->
+      <div class="header-mobile-drawer-body">
+        <!-- Cart Items Section -->
+        <div id="cart-items" class="header-mobile-drawer-section flex-1 overflow-y-auto">
+          <!-- Empty Cart State -->
+          <div id="cart-empty" class="hidden flex flex-col items-center justify-center py-12 px-4">
+            <i data-lucide="shopping-bag" class="w-16 h-16 text-gray-300 mb-4"></i>
+            <p class="text-gray-500 text-sm text-center mb-2">Giỏ hàng của bạn đang trống</p>
+            <a href="/products.html" class="btn btn-primary mt-4">
+              Tiếp tục mua sắm
+            </a>
+          </div>
+
+          <!-- Cart Items List (will be populated dynamically) -->
+          <div id="cart-items-list">
+            <!-- Cart Item 1 -->
+            <div class="flex items-start gap-3 p-4 border-b border-gray-200">
+              <label class="flex items-start pt-1 cursor-pointer">
+                <input type="checkbox" class="cart-item-checkbox w-4 h-4 border-2 border-gray-300 rounded checked:bg-primary checked:border-primary focus:ring-primary focus:ring-2" 
+                  style="accent-color: #ae873e;" data-price="350000" data-quantity="2" checked>
+              </label>
+              <div class="w-16 h-16 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=200&q=80&fit=crop&crop=center&auto=format" alt="Sơn móng tay cao cấp" class="w-full h-full object-cover">
+              </div>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-[#333] text-[14px] font-medium mb-1 line-clamp-1">Sơn móng tay cao cấp</h3>
+                <div class="flex items-center justify-between">
+                  <span class="text-primary font-bold text-[16px]">350.000đ</span>
+                  <div class="flex items-center gap-2">
+                    <button class="w-7 h-7 flex items-center justify-center border border-gray-300 rounded hover:bg-gray-100 transition-colors">
+                      <i data-lucide="minus" class="w-4 h-4"></i>
+                    </button>
+                    <span class="text-[14px] w-4 text-center font-medium cart-item-quantity" data-quantity="2">2</span>
+                    <button class="w-7 h-7 flex items-center justify-center border border-gray-300 rounded hover:bg-gray-100 transition-colors">
+                      <i data-lucide="plus" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <button class="text-gray-400 hover:text-red-500 transition-colors flex-shrink-0 border border-gray-300 rounded p-1.5 hover:border-red-500">
+                <i data-lucide="trash-2" class="w-5 h-5"></i>
+              </button>
+            </div>
+
+            <!-- Cart Item 2 -->
+            <div class="flex items-start gap-3 p-4 border-b border-gray-200">
+              <label class="flex items-start pt-1 cursor-pointer">
+                <input type="checkbox" class="cart-item-checkbox w-4 h-4 border-2 border-gray-300 rounded checked:bg-primary checked:border-primary focus:ring-primary focus:ring-2" 
+                  style="accent-color: #ae873e;" data-price="850000" data-quantity="1" checked>
+              </label>
+              <div class="w-16 h-16 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=200&q=80&fit=crop&crop=center&auto=format" alt="Bộ dụng cụ làm nail" class="w-full h-full object-cover">
+              </div>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-[#333] text-[14px] font-medium mb-1 line-clamp-1">Bộ dụng cụ làm nail chuyên nghiệp</h3>
+        
+                <div class="flex items-center justify-between">
+                  <span class="text-primary font-bold text-[16px]">850.000đ</span>
+                  <div class="flex items-center gap-2">
+                    <button class="w-7 h-7 flex items-center justify-center border border-gray-300 rounded hover:bg-gray-100 transition-colors">
+                      <i data-lucide="minus" class="w-4 h-4"></i>
+                    </button>
+                    <span class="text-[14px] w-4 text-center font-medium cart-item-quantity" data-quantity="1">1</span>
+                    <button class="w-7 h-7 flex items-center justify-center border border-gray-300 rounded hover:bg-gray-100 transition-colors">
+                      <i data-lucide="plus" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <button class="text-gray-400 hover:text-red-500 transition-colors flex-shrink-0 border border-gray-300 rounded p-1.5 hover:border-red-500">
+                <i data-lucide="trash-2" class="w-5 h-5"></i>
+              </button>
+            </div>
+
+            <!-- Cart Item 3 -->
+            <div class="flex items-start gap-3 p-4 border-b border-gray-200">
+              <label class="flex items-start pt-1 cursor-pointer">
+                <input type="checkbox" class="cart-item-checkbox w-4 h-4 border-2 border-gray-300 rounded checked:bg-primary checked:border-primary focus:ring-primary focus:ring-2" 
+                  style="accent-color: #ae873e;" data-price="420000" data-quantity="1" checked>
+              </label>
+              <div class="w-16 h-16 bg-gray-200 rounded-lg flex-shrink-0 overflow-hidden">
+                <img src="https://images.unsplash.com/photo-1608248543803-ba4f8d552e09?w=200&q=80&fit=crop&crop=center&auto=format" alt="Gel polish" class="w-full h-full object-cover">
+              </div>
+              <div class="flex-1 min-w-0">
+                <h3 class="text-[#333] text-[14px] font-medium mb-1 line-clamp-1">Gel Polish cao cấp</h3>
+              
+                <div class="flex items-center justify-between">
+                  <span class="text-primary font-bold text-[16px]">420.000đ</span>
+                  <div class="flex items-center gap-2">
+                    <button class="w-7 h-7 flex items-center justify-center border border-gray-300 rounded hover:bg-gray-100 transition-colors">
+                      <i data-lucide="minus" class="w-4 h-4"></i>
+                    </button>
+                    <span class="text-[14px] w-4 text-center font-medium cart-item-quantity" data-quantity="1">1</span>
+                    <button class="w-7 h-7 flex items-center justify-center border border-gray-300 rounded hover:bg-gray-100 transition-colors">
+                      <i data-lucide="plus" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <button class="text-gray-400 hover:text-red-500 transition-colors flex-shrink-0 border border-gray-300 rounded p-1.5 hover:border-red-500">
+                <i data-lucide="trash-2" class="w-5 h-5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cart Footer with Total and Checkout -->
+        <div id="cart-footer" class="header-mobile-drawer-section border-t border-gray-200 p-4 bg-white">
+          <label class="flex items-center gap-2 cursor-pointer mb-4">
+            <input type="checkbox" id="cart-select-all"
+              class="cart-item-checkbox w-4 h-4 border-2 border-gray-300 rounded checked:bg-primary checked:border-primary focus:ring-primary focus:ring-2"
+              style="accent-color: #ae873e;">
+            <span class="text-[14px] font-medium">Chọn tất cả</span>
+          </label>
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-[#333] text-[16px] font-medium">Tổng cộng:</span>
+            <span id="cart-total" class="text-primary font-bold text-[20px]">0đ</span>
+          </div>
+          <a href="/cart.html" class="btn btn-primary w-full text-center">
+            Thanh toán
+          </a>
         </div>
       </div>
     </div>

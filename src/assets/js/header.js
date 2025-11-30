@@ -258,6 +258,157 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Cart Drawer Logic
+    const cartDrawer = document.getElementById("cart-drawer");
+    const cartDrawerOverlay = document.getElementById("cart-drawer-overlay");
+    const mobileCartToggle = document.getElementById("mobile-cart-toggle");
+    const cartEmpty = document.getElementById("cart-empty");
+    const cartItemsList = document.getElementById("cart-items-list");
+    const cartFooter = document.getElementById("cart-footer");
+
+    // Function to open cart drawer
+    const openCartDrawer = () => {
+        if (cartDrawer) {
+            updateHeaderHeight(); // Update height before opening
+            cartDrawer.classList.add("active");
+            document.body.style.overflow = "hidden"; // Prevent body scroll
+            // Load cart items (you can implement cart loading logic here)
+            loadCartItems();
+        }
+    };
+
+    // Function to close cart drawer
+    const closeCartDrawer = () => {
+        if (cartDrawer) {
+            cartDrawer.classList.remove("active");
+            document.body.style.overflow = ""; // Restore body scroll
+        }
+    };
+
+    // Function to load cart items (placeholder - implement your cart logic)
+    const loadCartItems = () => {
+        // This is a placeholder function
+        // You should implement your actual cart loading logic here
+        // For example: fetch from localStorage, API, etc.
+        
+        // Example: Check if cart has items
+        // For demo purposes, showing items. Replace with actual cart check
+        const hasItems = cartItemsList && cartItemsList.children.length > 0;
+        
+        if (hasItems) {
+            cartEmpty?.classList.add("hidden");
+            cartItemsList?.classList.remove("hidden");
+            cartFooter?.classList.remove("hidden");
+            // Calculate and update total
+            updateCartTotal();
+            updateSelectAllState();
+        } else {
+            cartEmpty?.classList.remove("hidden");
+            cartItemsList?.classList.add("hidden");
+            cartFooter?.classList.add("hidden");
+        }
+    };
+
+    // Function to update cart total based on selected items
+    const updateCartTotal = () => {
+        const cartTotalElement = document.getElementById("cart-total");
+        const cartItemCheckboxes = document.querySelectorAll('.cart-item-checkbox:checked');
+        
+        let total = 0;
+        cartItemCheckboxes.forEach(checkbox => {
+            const price = parseFloat(checkbox.getAttribute('data-price')) || 0;
+            const quantity = parseInt(checkbox.getAttribute('data-quantity')) || 1;
+            total += price * quantity;
+        });
+        
+        if (cartTotalElement) {
+            cartTotalElement.textContent = new Intl.NumberFormat('vi-VN', {
+                style: 'currency',
+                currency: 'VND'
+            }).format(total).replace('₫', 'đ');
+        }
+    };
+
+    // Function to update "Select All" checkbox state
+    const updateSelectAllState = () => {
+        const selectAllCheckbox = document.getElementById("cart-select-all");
+        const cartItemCheckboxes = document.querySelectorAll('.cart-item-checkbox');
+        const checkedCheckboxes = document.querySelectorAll('.cart-item-checkbox:checked');
+        
+        if (selectAllCheckbox && cartItemCheckboxes.length > 0) {
+            selectAllCheckbox.checked = checkedCheckboxes.length === cartItemCheckboxes.length;
+            selectAllCheckbox.indeterminate = checkedCheckboxes.length > 0 && checkedCheckboxes.length < cartItemCheckboxes.length;
+        }
+    };
+
+    // Handle "Select All" checkbox
+    const cartSelectAll = document.getElementById("cart-select-all");
+    if (cartSelectAll) {
+        cartSelectAll.addEventListener("change", (e) => {
+            const cartItemCheckboxes = document.querySelectorAll('.cart-item-checkbox');
+            cartItemCheckboxes.forEach(checkbox => {
+                checkbox.checked = e.target.checked;
+            });
+            updateCartTotal();
+        });
+    }
+
+    // Handle individual item checkboxes
+    document.addEventListener("change", (e) => {
+        if (e.target.classList.contains('cart-item-checkbox')) {
+            // Update quantity from the displayed quantity
+            const quantityElement = e.target.closest('.flex').querySelector('.cart-item-quantity');
+            if (quantityElement) {
+                const quantity = parseInt(quantityElement.textContent.trim()) || 1;
+                e.target.setAttribute('data-quantity', quantity);
+            }
+            updateCartTotal();
+            updateSelectAllState();
+        }
+    });
+
+    // Open cart drawer on cart button click
+    if (mobileCartToggle) {
+        mobileCartToggle.addEventListener("click", (e) => {
+            e.stopPropagation();
+            openCartDrawer();
+        });
+    }
+
+    // Close cart drawer on close button click
+    const cartDrawerClose = document.getElementById("cart-drawer-close");
+    if (cartDrawerClose) {
+        cartDrawerClose.addEventListener("click", (e) => {
+            e.stopPropagation();
+            closeCartDrawer();
+        });
+    }
+
+    // Close cart drawer on overlay click
+    if (cartDrawerOverlay) {
+        cartDrawerOverlay.addEventListener("click", (e) => {
+            e.stopPropagation();
+            closeCartDrawer();
+        });
+    }
+
+    // Prevent cart drawer content click from closing drawer
+    if (cartDrawer) {
+        const cartDrawerContent = cartDrawer.querySelector(".header-mobile-drawer-content");
+        if (cartDrawerContent) {
+            cartDrawerContent.addEventListener("click", (e) => {
+                e.stopPropagation();
+            });
+        }
+    }
+
+    // Close cart drawer on Escape key
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && cartDrawer && cartDrawer.classList.contains("active")) {
+            closeCartDrawer();
+        }
+    });
+
     // Language Switcher Logic
     const languageToggle = document.getElementById("language-toggle");
     const languageDropdown = document.getElementById("language-dropdown");
