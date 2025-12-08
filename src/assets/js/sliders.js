@@ -221,6 +221,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Setup autoplay resume for feedback slider after drag ends
     setupAutoplayResume('.bslider-feedback');
+
+    // Products Hero Slider - 2 products visible, scrollable carousel
+    initSlider('.products-hero-slider', {
+        all: {
+            enableAutoplay: false,
+            stopAutoplayOnInteraction: true,
+            enablePagination: false,
+            draggable: true,
+            loop: true,
+            transitionDuration: 400,
+            transitionTimingFunction: 'ease-in-out',
+            slideGap: '16px',
+            slidesToShow: 1,
+            slidesToScroll: 1
+        },
+        '(min-width: 640px)': {
+            slidesToShow: 2,
+            slidesToScroll: 1
+        }
+    });
 });
 
 // Setup autoplay resume after drag ends for sliders with autoplay enabled

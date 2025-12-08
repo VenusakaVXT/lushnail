@@ -21,7 +21,6 @@
                         <span class="text-[#030213] text-[14px]">Duration: <span class="font-medium">4 weeks (38
                                 hours)</span></span>
                     </div>
-
                     <!-- Format -->
                     <div class="flex items-center gap-2">
                         <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor"
@@ -53,23 +52,15 @@
         <div class="container flex flex-col lg:flex-row gap-6 lg:gap-8 px-4  w-full mx-auto">
             <!-- Column 1: Video/Image -->
             <div class="flex-1 lg:w-[60%]">
-                <div class="relative rounded-[16px] overflow-hidden aspect-[4/3] group course-video-thumbnail cursor-pointer" 
-                     data-video-url="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                     data-video-title="BASIC COURSE PROGRAM">
-                    <img src="https://m.media-amazon.com/images/I/51YC56BJ0WL._SL1024_.jpg" alt="Course Video Thumbnail"
-                        class="w-full h-full object-cover" loading="eager"
-                        onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';">
-
-                    <!-- Play Button Overlay -->
-                    <div class="absolute inset-0 flex items-center justify-center cursor-pointer course-video-play-overlay">
-                        <div
-                            class=" w-16 h-16 sm:w-20 sm:h-20 bg-black rounded-full flex items-center justify-center hover:bg-black/90 transition-all group-hover:scale-110 shadow-lg">
-                            <svg class="w-10 h-10 sm:w-10 sm:h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M8 5v14l11-7z" />
-                            </svg>
-                        </div>
-                    </div>
-                </div>
+                <video 
+                    class="relative rounded-[16px] overflow-hidden aspect-[4/3] w-full h-full object-cover"
+                    src="https://www.w3schools.com/html/mov_bbb.mp4"
+                    controls
+                    poster="https://m.media-amazon.com/images/I/51YC56BJ0WL._SL1024_.jpg"
+                    title="BASIC COURSE PROGRAM"
+                >
+                    Your browser does not support the video tag.
+                </video>
             </div>
 
             <!-- Column 2: Enrollment Sidebar -->

@@ -1,40 +1,243 @@
 <!-- Products Hero Section -->
-<section class="relative w-full overflow-hidden" data-name="products-hero">
-  <!-- Background Banner -->
-  <div class="relative w-full">
-    <img src="/assets/images/Rectangle10236.png" 
-         alt="Products Hero Banner" 
-         class="w-full h-auto object-cover" />
-  </div>
+<section class="relative w-full overflow-hidden bg-cover bg-center bg-no-repeat" data-name="products-hero"
+  style="background-image: url('/assets/images/Rectangle10236.png'); min-height: 600px;">
+  <!-- Overlay for better text readability -->
+  <div class="absolute inset-0 bg-black/30"></div>
 
-  <!-- Content Overlay -->
-  <div class="absolute inset-0 flex items-center justify-center z-10">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col items-center text-center gap-4  justify-center max-w-4xl mx-auto">
+  <!-- Main Content -->
+  <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 xl:gap-12 items-center">
+
+      <!-- Left Content -->
+      <div class="flex flex-col gap-4 sm:gap-5 text-white">
         <!-- Headline -->
-      
+        <p class="text-white text-xs sm:text-sm uppercase tracking-wider opacity-90">
+          Elevate the beauty of your hands
+        </p>
 
         <!-- Main Title with Golden Gradient -->
         <h1 class="title-section text-primary">
-          PRODUCT COLLECTION
+          Premium Nail Art
         </h1>
 
         <!-- Description -->
-        <p class="text-white text-base sm:text-lg  max-w-[700px]">
-          Discover the world of nail art with unique designs, high quality, and the latest trends
+        <p class="text-white text-sm sm:text-base max-w-[600px] leading-relaxed opacity-90">
+          Slip into a high-fashion nail art line blending Swarovski stones, metallic charms, and finishing touches that
+          perfect every stroke.
         </p>
 
         <!-- CTA Buttons -->
-        <div class="flex flex-col sm:flex-row gap-4 items-center justify-center mt-4">
-          <!-- Primary Button -->
-       
-          <!-- Secondary Button -->
-          <a href="#products"  class="btn btn-primary">
-            SHOP TOOLS
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-1">
+          <a href="#products" class="btn btn-primary px-6 sm:px-8 py-3 text-sm sm:text-base font-medium">
+            SHOP NOW
           </a>
+
         </div>
 
-      
+        <!-- Social Proof -->
+        <div class="flex items-center gap-3 sm:gap-4 mt-2">
+          <!-- Avatars -->
+          <div class="flex -space-x-2">
+            <div
+              class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-gradient-to-br from-yellow-400 to-yellow-600">
+            </div>
+            <div
+              class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-gradient-to-br from-pink-400 to-pink-600">
+            </div>
+            <div
+              class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-gradient-to-br from-purple-400 to-purple-600">
+            </div>
+            <div
+              class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-gradient-to-br from-blue-400 to-blue-600">
+            </div>
+            <div
+              class="w-9 h-9 sm:w-10 sm:h-10 rounded-full border-2 border-white bg-primary flex items-center justify-center text-black font-bold text-lg">
+              +
+            </div>
+          </div>
+          <!-- Review Text -->
+          <p class="text-white text-xs sm:text-sm">
+            <span class="font-semibold">250+</span> reviews from over <span class="font-semibold">50</span> delighted
+            clients
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Content - Product Carousel -->
+      <div class="relative min-w-[50vw] overflow-hidden">
+        <!-- Product Carousel -->
+        <div class="blaze-slider products-hero-slider relative" id="products-hero-slider">
+          <div class="blaze-container relative">
+            <div class="blaze-track-container rounded-2xl mb-6 h-[360px] sm:h-[400px] lg:h-[500px]"
+              style="overflow: visible !important;">
+              <div class="blaze-track flex gap-6 px-3 h-full items-center">
+                <!-- Product Slide 1 -->
+                <div class="blaze-slide max-w-[250px]">
+                  <div class="product-card">
+                    <div class="product-card__image">
+                      <img src="/assets/images/products/product6.png" alt="Modern Trend Collection"
+                        class="w-full h-full object-cover">
+                      <div class="badge badge-primary">
+                        <img src="assets/images/discount.png" alt="Discount" class="w-3 h-3">
+                        Save 50%
+                      </div>
+                    </div>
+                    <div class="product-card__body">
+                      <h3 class="product-card__title">Modern Trend Collection</h3>
+                      <div class="product-card__price-wrapper">
+                        <span class="product-card__price">891.000₫</span>
+                        <span class="product-card__price-original">1.566.000₫</span>
+                      </div>
+                      <button class="btn btn-primary w-full mt-2 btn-sm sm:btn-md">
+                        Xem ngay
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product Slide 2 -->
+                <div class="blaze-slide max-w-[250px]">
+                  <div class="product-card">
+                    <div class="product-card__image">
+                      <img src="/assets/images/products/product6.png" alt="Modern Trend Collection"
+                        class="w-full h-full object-cover">
+                      <div class="badge badge-primary">
+                        <img src="assets/images/discount.png" alt="Discount" class="w-3 h-3">
+                        Save 50%
+                      </div>
+                    </div>
+                    <div class="product-card__body">
+                      <h3 class="product-card__title">Modern Trend Collection</h3>
+                      <div class="product-card__price-wrapper">
+                        <span class="product-card__price">891.000₫</span>
+                        <span class="product-card__price-original">1.566.000₫</span>
+                      </div>
+                      <button class="btn btn-primary w-full mt-2 btn-sm sm:btn-md">
+                        Xem ngay
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product Slide 3 -->
+                <div class="blaze-slide max-w-[250px]">
+                  <div class="product-card">
+                    <div class="product-card__image">
+                      <img src="/assets/images/products/product6.png" alt="Modern Trend Collection"
+                        class="w-full h-full object-cover">
+                      <div class="badge badge-primary">
+                        <img src="assets/images/discount.png" alt="Discount" class="w-3 h-3">
+                        Save 50%
+                      </div>
+                    </div>
+                    <div class="product-card__body">
+                      <h3 class="product-card__title">Modern Trend Collection</h3>
+                      <div class="product-card__price-wrapper">
+                        <span class="product-card__price">891.000₫</span>
+                        <span class="product-card__price-original">1.566.000₫</span>
+                      </div>
+                      <button class="btn btn-primary w-full mt-2 btn-sm sm:btn-md">
+                        Xem ngay
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <!-- Product Slide 1 -->
+                <div class="blaze-slide max-w-[250px]">
+                  <div class="product-card">
+                    <div class="product-card__image">
+                      <img src="/assets/images/products/product6.png" alt="Modern Trend Collection"
+                        class="w-full h-full object-cover">
+                      <div class="badge badge-primary">
+                        <img src="assets/images/discount.png" alt="Discount" class="w-3 h-3">
+                        Save 50%
+                      </div>
+                    </div>
+                    <div class="product-card__body">
+                      <h3 class="product-card__title">Modern Trend Collection</h3>
+                      <div class="product-card__price-wrapper">
+                        <span class="product-card__price">891.000₫</span>
+                        <span class="product-card__price-original">1.566.000₫</span>
+                      </div>
+                      <button class="btn btn-primary w-full mt-2 btn-sm sm:btn-md">
+                        Xem ngay
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product Slide 2 -->
+                <div class="blaze-slide max-w-[250px]">
+                  <div class="product-card">
+                    <div class="product-card__image">
+                      <img src="/assets/images/products/product6.png" alt="Modern Trend Collection"
+                        class="w-full h-full object-cover">
+                      <div class="badge badge-primary">
+                        <img src="assets/images/discount.png" alt="Discount" class="w-3 h-3">
+                        Save 50%
+                      </div>
+                    </div>
+                    <div class="product-card__body">
+                      <h3 class="product-card__title">Modern Trend Collection</h3>
+                      <div class="product-card__price-wrapper">
+                        <span class="product-card__price">891.000₫</span>
+                        <span class="product-card__price-original">1.566.000₫</span>
+                      </div>
+                      <button class="btn btn-primary w-full mt-2 btn-sm sm:btn-md">
+                        Xem ngay
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Product Slide 3 -->
+                <div class="blaze-slide max-w-[250px]">
+                  <div class="product-card">
+                    <div class="product-card__image">
+                      <img src="/assets/images/products/product6.png" alt="Modern Trend Collection"
+                        class="w-full h-full object-cover">
+                      <div class="badge badge-primary">
+                        <img src="assets/images/discount.png" alt="Discount" class="w-3 h-3">
+                        Save 50%
+                      </div>
+                    </div>
+                    <div class="product-card__body">
+                      <h3 class="product-card__title">Modern Trend Collection</h3>
+                      <div class="product-card__price-wrapper">
+                        <span class="product-card__price">891.000₫</span>
+                        <span class="product-card__price-original">1.566.000₫</span>
+                      </div>
+                      <button class="btn btn-primary w-full mt-2 btn-sm sm:btn-md">
+                        Xem ngay
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+
+              </div>
+            </div>
+            <div>
+              
+            </div>
+
+            <!-- Navigation Arrows -->
+            <div class="absolute bottom-0 left-0 flex items-center px-4">
+              <button
+                class="blaze-prev w-12 h-12 bg-[#d8b24c] text-black shadow-xl flex items-center justify-center transition-colors duration-200 hover:bg-[#b1872f] rounded-sm ml-2"
+                aria-label="Previous">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+              </button>
+            </div>
+            <div class="absolute bottom-0 left-[80px] flex items-center">
+              <button
+                class="blaze-next w-12 h-12 bg-[#d8b24c] text-black shadow-xl flex items-center justify-center transition-colors duration-200 hover:bg-[#b1872f] rounded-sm mr-2"
+                aria-label="Next">
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

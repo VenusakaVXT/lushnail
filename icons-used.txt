@@ -78,8 +78,8 @@ eye
 credit-card
 wallet
 rotate-ccw
-palette
-gem
+pen
+layers
 chevron-up
 link
 headphones
