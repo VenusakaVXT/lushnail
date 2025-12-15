@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     initMostPopularNailGallery();
     initReviewSlider();
     initReviewSlider2();
+    // initFeedbackSlider(); // Removed - now using BlazeSlider
     initFeedbackGalleryModal();
     // initFeedbackImagesSlider(); // Removed - now using BlazeSlider
 });
@@ -736,6 +737,7 @@ function initReviewSlider2() {
         baseTranslate = getCurrentTranslate();
         track.style.transition = 'none';
         track.style.cursor = 'grabbing';
+        track.classList.add('dragging');
     });
 
     track.addEventListener('touchmove', (e) => {
@@ -750,6 +752,7 @@ function initReviewSlider2() {
         isDragging = false;
         track.style.transition = 'transform 0.5s ease-in-out';
         track.style.cursor = 'grab';
+        track.classList.remove('dragging');
 
         const moved = currentX - startX;
         const threshold = 30; // Minimum distance to trigger slide
@@ -831,6 +834,7 @@ function initReviewSlider2() {
         baseTranslate = getCurrentTranslate();
         track.style.transition = 'none';
         track.style.cursor = 'grabbing';
+        track.classList.add('dragging');
     });
 
     track.addEventListener('mousemove', (e) => {
@@ -922,6 +926,7 @@ function initReviewSlider2() {
             isDragging = false;
             track.style.transition = 'transform 0.5s ease-in-out';
             track.style.cursor = 'grab';
+            track.classList.remove('dragging');
             // Snap back to current position
             updateSlider();
             setTimeout(() => startAutoPlay(), 5000); // Resume after 5 seconds
@@ -1127,4 +1132,501 @@ function initFeedbackGalleryModal() {
             closeModal();
         }
     });
+}
+
+// Feedback Slider - Based on course slider logic
+function initFeedbackSlider() {
+    const slider = document.getElementById('feedback-images-slider');
+    if (!slider) return;
+
+    const track = slider.querySelector('.course-content-track');
+    const prevBtn = slider.querySelector('.course-prev-btn');
+    const nextBtn = slider.querySelector('.course-next-btn');
+    const courseItems = slider.querySelectorAll('.course-item');
+    
+    // Find pagination elements
+    let paginationContainer = null;
+    let sliderParent = slider.parentElement;
+    
+    if (sliderParent) {
+        paginationContainer = sliderParent.querySelector('.course-pagination');
+    }
+    
+    if (!paginationContainer && sliderParent && sliderParent.parentElement) {
+        paginationContainer = sliderParent.parentElement.querySelector('.course-pagination');
+    }
+    
+    if (!paginationContainer) {
+        const container = slider.closest('.container');
+        if (container) {
+            paginationContainer = container.querySelector('.course-pagination');
+        }
+    }
+    
+    const prevBtnPagination = paginationContainer ? paginationContainer.querySelector('.course-prev-btn-pagination') : null;
+    const nextBtnPagination = paginationContainer ? paginationContainer.querySelector('.course-next-btn-pagination') : null;
+    const dotsContainer = paginationContainer ? paginationContainer.querySelector('.course-dots-container') : null;
+
+    if (!track || !prevBtn || !nextBtn || courseItems.length === 0) return;
+
+    const totalItems = courseItems.length;
+    
+    // Calculate itemsPerView based on screen size
+    function getItemsPerView() {
+        return window.innerWidth < 640 ? 2 : 4; // 2 items on mobile, 4 items on desktop
+    }
+    
+    // Calculate items to scroll based on screen size
+    function getItemsToScroll() {
+        return window.innerWidth < 640 ? 2 : 1; // Scroll 2 items on mobile, 1 item on desktop
+    }
+    
+    let itemsPerView = getItemsPerView();
+    
+    function getCloneCount() {
+        return getItemsPerView();
+    }
+    
+    let cloneCount = getCloneCount();
+    let currentIndex = cloneCount; // Start at first real item (after cloned start items)
+    let autoPlayInterval = null;
+    let isPaused = false;
+    let isTransitioning = false;
+    let isDragging = false;
+    let paginationDots = [];
+
+    // Create pagination dots dynamically
+    // Number of dots = number of slides (totalItems / itemsPerView)
+    function createPaginationDots() {
+        if (!dotsContainer) return;
+        dotsContainer.innerHTML = '';
+        paginationDots = [];
+        
+        // Calculate number of slides based on current itemsPerView
+        const currentItemsPerView = getItemsPerView();
+        const numberOfSlides = Math.ceil(totalItems / currentItemsPerView);
+        
+        for (let i = 0; i < numberOfSlides; i++) {
+            const dot = document.createElement('button');
+            dot.className = `course-dot w-2 h-2 rounded-full transition-all duration-300 ${i === 0 ? 'active' : 'bg-gray-300'}`;
+            dot.setAttribute('data-index', i);
+            dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+            dotsContainer.appendChild(dot);
+            paginationDots.push(dot);
+        }
+    }
+
+    createPaginationDots();
+    
+    if (dotsContainer) {
+        const createdDots = dotsContainer.querySelectorAll('.course-dot');
+        if (createdDots.length > 0) {
+            paginationDots = Array.from(createdDots);
+        }
+    }
+
+    // Duplicate items multiple times for infinite scroll
+    function setupClones() {
+        const existingClones = track.querySelectorAll('[data-clone]');
+        existingClones.forEach(clone => clone.remove());
+        
+        const duplicateCount = 3;
+        
+        // Clone all items to the beginning (duplicate set 1)
+        Array.from(courseItems).forEach((item, index) => {
+            const clone = item.cloneNode(true);
+            clone.setAttribute('data-clone', 'start');
+            clone.setAttribute('data-set', '1');
+            track.insertBefore(clone, track.firstChild);
+        });
+        
+        // Clone all items to the end (duplicate set 2)
+        Array.from(courseItems).forEach((item, index) => {
+            const clone = item.cloneNode(true);
+            clone.setAttribute('data-clone', 'end');
+            clone.setAttribute('data-set', '2');
+            track.appendChild(clone);
+        });
+        
+        cloneCount = totalItems;
+        currentIndex = cloneCount;
+    }
+    
+    setupClones();
+
+    let allItems = track.querySelectorAll('.course-item');
+    
+    function getMaxIndex() {
+        const currentItemsPerView = getItemsPerView();
+        return cloneCount + totalItems - currentItemsPerView;
+    }
+    
+    let maxIndex = getMaxIndex();
+
+    function getItemWidth() {
+        if (allItems.length === 0) return 0;
+        const firstItem = allItems[0];
+        return firstItem.offsetWidth;
+    }
+
+    function getGap() {
+        const trackStyle = window.getComputedStyle(track);
+        return parseFloat(trackStyle.gap) || 16;
+    }
+
+    function updateSlider(skipTransition = false) {
+        if (allItems.length === 0) return;
+        
+        const itemWidth = getItemWidth();
+        const gap = getGap();
+        const translateX = -currentIndex * (itemWidth + gap);
+        
+        if (skipTransition) {
+            track.style.transition = 'none';
+            track.style.transform = `translateX(${translateX}px)`;
+            void track.offsetHeight;
+            requestAnimationFrame(() => {
+                track.style.transition = 'transform 0.5s ease-in-out';
+            });
+        } else {
+            track.style.transform = `translateX(${translateX}px)`;
+        }
+    }
+
+    function updatePagination() {
+        if (paginationDots.length === 0) return;
+        
+        const realIndex = currentIndex - cloneCount;
+        const currentItemsPerView = getItemsPerView();
+        // Calculate which slide we're on (0-based)
+        const currentSlide = Math.floor(realIndex / currentItemsPerView);
+        // Number of slides
+        const numberOfSlides = Math.ceil(totalItems / currentItemsPerView);
+        // Active dot index (wrap around if needed)
+        const activeDotIndex = currentSlide % numberOfSlides;
+        
+        paginationDots.forEach((dot, index) => {
+            if (index === activeDotIndex) {
+                dot.classList.remove('bg-gray-300');
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+                dot.classList.add('bg-gray-300');
+            }
+        });
+    }
+
+    function goToNext() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        
+        itemsPerView = getItemsPerView();
+        const itemsToScroll = getItemsToScroll();
+        
+        currentIndex += itemsToScroll;
+        
+        const endOfOriginalSet = cloneCount + totalItems;
+        const startOfDuplicateSet2 = endOfOriginalSet;
+        const endOfDuplicateSet2 = cloneCount + totalItems * 2;
+        
+        if (currentIndex >= startOfDuplicateSet2) {
+            const overshoot = currentIndex - startOfDuplicateSet2;
+            
+            if (currentIndex >= endOfDuplicateSet2 - itemsPerView) {
+                updateSlider();
+                const handleTransitionEnd = (e) => {
+                    if (e.propertyName !== 'transform') return;
+                    track.removeEventListener('transitionend', handleTransitionEnd);
+                    requestAnimationFrame(() => {
+                        const equivalentIndex = cloneCount + (overshoot % totalItems);
+                        currentIndex = equivalentIndex;
+                        updateSlider(true);
+                        isTransitioning = false;
+                        updatePagination();
+                    });
+                };
+                track.addEventListener('transitionend', handleTransitionEnd, { once: true });
+            } else {
+                updateSlider();
+                const handleTransitionEnd = (e) => {
+                    if (e.propertyName !== 'transform') return;
+                    track.removeEventListener('transitionend', handleTransitionEnd);
+                    isTransitioning = false;
+                };
+                track.addEventListener('transitionend', handleTransitionEnd, { once: true });
+            }
+        } else {
+            updateSlider();
+            const handleTransitionEnd = (e) => {
+                if (e.propertyName !== 'transform') return;
+                track.removeEventListener('transitionend', handleTransitionEnd);
+                isTransitioning = false;
+            };
+            track.addEventListener('transitionend', handleTransitionEnd, { once: true });
+        }
+        updatePagination();
+    }
+
+    function goToPrev() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        
+        itemsPerView = getItemsPerView();
+        const itemsToScroll = getItemsToScroll();
+        
+        currentIndex -= itemsToScroll;
+        
+        if (currentIndex < cloneCount) {
+            const overshoot = cloneCount - currentIndex;
+            
+            if (currentIndex < itemsPerView) {
+                updateSlider();
+                const handleTransitionEnd = (e) => {
+                    if (e.propertyName !== 'transform') return;
+                    track.removeEventListener('transitionend', handleTransitionEnd);
+                    requestAnimationFrame(() => {
+                        const equivalentIndex = cloneCount + totalItems - (overshoot % totalItems);
+                        currentIndex = equivalentIndex;
+                        updateSlider(true);
+                        isTransitioning = false;
+                        updatePagination();
+                    });
+                };
+                track.addEventListener('transitionend', handleTransitionEnd, { once: true });
+            } else {
+                updateSlider();
+                const handleTransitionEnd = (e) => {
+                    if (e.propertyName !== 'transform') return;
+                    track.removeEventListener('transitionend', handleTransitionEnd);
+                    isTransitioning = false;
+                };
+                track.addEventListener('transitionend', handleTransitionEnd, { once: true });
+            }
+        } else {
+            updateSlider();
+            const handleTransitionEnd = (e) => {
+                if (e.propertyName !== 'transform') return;
+                track.removeEventListener('transitionend', handleTransitionEnd);
+                isTransitioning = false;
+            };
+            track.addEventListener('transitionend', handleTransitionEnd, { once: true });
+        }
+        updatePagination();
+    }
+
+    function startAutoPlay() {
+        if (autoPlayInterval) return;
+        autoPlayInterval = setInterval(() => {
+            if (!isPaused && !isDragging) {
+                goToNext();
+            }
+        }, 3000);
+    }
+
+    function stopAutoPlay() {
+        if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
+        }
+    }
+
+    // Previous button
+    prevBtn.addEventListener('click', () => {
+        stopAutoPlay();
+        goToPrev();
+        setTimeout(() => startAutoPlay(), 5000);
+    });
+
+    // Next button
+    nextBtn.addEventListener('click', () => {
+        stopAutoPlay();
+        goToNext();
+        setTimeout(() => startAutoPlay(), 5000);
+    });
+
+    // Pagination buttons
+    if (prevBtnPagination) {
+        prevBtnPagination.addEventListener('click', () => {
+            stopAutoPlay();
+            goToPrev();
+            setTimeout(() => startAutoPlay(), 5000);
+        });
+    }
+
+    if (nextBtnPagination) {
+        nextBtnPagination.addEventListener('click', () => {
+            stopAutoPlay();
+            goToNext();
+            setTimeout(() => startAutoPlay(), 5000);
+        });
+    }
+
+    // Pagination dots
+    function attachDotListeners() {
+        if (paginationDots.length === 0) return;
+        
+        paginationDots.forEach((dot, index) => {
+            const newDot = dot.cloneNode(true);
+            dot.parentNode.replaceChild(newDot, dot);
+            paginationDots[index] = newDot;
+            
+            newDot.addEventListener('click', () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                stopAutoPlay();
+                
+                // Calculate target index: each dot represents a slide
+                // Slide index * itemsPerView = item index
+                const currentItemsPerView = getItemsPerView();
+                const targetItemIndex = index * currentItemsPerView;
+                const targetIndex = cloneCount + targetItemIndex;
+                
+                // Make sure targetIndex doesn't exceed maxIndex
+                const maxTargetIndex = cloneCount + totalItems - currentItemsPerView;
+                currentIndex = Math.min(targetIndex, maxTargetIndex);
+                
+                updateSlider();
+                updatePagination();
+                
+                setTimeout(() => {
+                    isTransitioning = false;
+                    startAutoPlay();
+                }, 500);
+            });
+        });
+    }
+    
+    attachDotListeners();
+
+    // Pause on hover
+    slider.addEventListener('mouseenter', () => {
+        isPaused = true;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+        isPaused = false;
+    });
+
+    // Touch/Swipe functionality
+    let startX = 0;
+    let currentX = 0;
+    let baseTranslate = 0;
+    let dragOffset = 0;
+
+    function updateDragPosition() {
+        if (!isDragging) return;
+        
+        const itemWidth = getItemWidth();
+        const gap = getGap();
+        baseTranslate = -currentIndex * (itemWidth + gap);
+        dragOffset = currentX - startX;
+        track.style.transform = `translateX(${baseTranslate + dragOffset}px)`;
+    }
+
+    track.addEventListener('touchstart', (e) => {
+        stopAutoPlay();
+        isDragging = true;
+        startX = e.touches[0].clientX;
+        currentX = startX;
+        track.style.transition = 'none';
+    });
+
+    track.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        currentX = e.touches[0].clientX;
+        updateDragPosition();
+    });
+
+    track.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        track.style.transition = 'transform 0.5s ease-in-out';
+        
+        const itemWidth = getItemWidth();
+        const gap = getGap();
+        const threshold = (itemWidth + gap) / 3;
+        
+        if (Math.abs(dragOffset) > threshold) {
+            if (dragOffset > 0) {
+                goToPrev();
+            } else {
+                goToNext();
+            }
+        } else {
+            updateSlider();
+        }
+        
+        setTimeout(() => startAutoPlay(), 2000);
+    });
+
+    // Mouse drag functionality
+    track.addEventListener('mousedown', (e) => {
+        stopAutoPlay();
+        isDragging = true;
+        startX = e.clientX;
+        currentX = startX;
+        track.style.transition = 'none';
+        e.preventDefault();
+    });
+
+    document.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        currentX = e.clientX;
+        updateDragPosition();
+    });
+
+    document.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        track.style.transition = 'transform 0.5s ease-in-out';
+        track.classList.remove('dragging');
+        
+        const itemWidth = getItemWidth();
+        const gap = getGap();
+        const threshold = (itemWidth + gap) / 3;
+        
+        if (Math.abs(dragOffset) > threshold) {
+            if (dragOffset > 0) {
+                goToPrev();
+            } else {
+                goToNext();
+            }
+        } else {
+            updateSlider();
+        }
+        
+        setTimeout(() => startAutoPlay(), 2000);
+    });
+
+    // Handle window resize
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            const newItemsPerView = getItemsPerView();
+            if (newItemsPerView !== itemsPerView) {
+                itemsPerView = newItemsPerView;
+                setupClones();
+                allItems = track.querySelectorAll('.course-item');
+                maxIndex = getMaxIndex();
+                currentIndex = cloneCount;
+                // Recreate pagination dots with new count
+                createPaginationDots();
+                attachDotListeners();
+                updateSlider(true);
+                updatePagination();
+            } else {
+                itemsPerView = newItemsPerView;
+                maxIndex = getMaxIndex();
+                updateSlider(true);
+            }
+        }, 250);
+    });
+
+    // Initialize slider position
+    updateSlider(true);
+    updatePagination();
+    
+    // Start autoplay
+    startAutoPlay();
 }

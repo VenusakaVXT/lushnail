@@ -461,21 +461,9 @@
     }
 }
 
-@media (min-width: 1023px) and (max-width: 1360px) {
+@media (min-width: 1023px) {
     .bslider-feedback.blaze-slider {
         --slides-to-show: 4;
-    }
-}
-
-@media (min-width: 1360px) and (max-width: 1590px) {
-    .bslider-feedback.blaze-slider {
-        --slides-to-show: 5;
-    }
-}
-
-@media (min-width: 1590px) {
-    .bslider-feedback.blaze-slider {
-        --slides-to-show: 6;
     }
 }
 

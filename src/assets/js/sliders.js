@@ -207,15 +207,15 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         '(min-width: 1023px) and (max-width: 1360px)': {
             slidesToShow: 4,
-            slidesToScroll: 4
+            slidesToScroll: 1
         },
         '(min-width: 1360px) and (max-width: 1590px)': {
-            slidesToShow: 5,
-            slidesToScroll: 5
+            slidesToShow: 4,
+            slidesToScroll: 1
         },
         '(min-width: 1590px)': {
-            slidesToShow: 6,
-            slidesToScroll: 6
+            slidesToShow: 4,
+            slidesToScroll: 1
         }
     });
 

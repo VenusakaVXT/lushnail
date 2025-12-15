@@ -446,6 +446,32 @@ ease; */
 .review-content-track {
     display: flex;
     will-change: transform;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: pan-y pinch-zoom;
+    transition: transform 0.5s ease-in-out;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.review-content-track:active {
+    cursor: grabbing;
+}
+
+.review-content-track.dragging {
+    cursor: grabbing;
+    transition: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.review-content-wrapper {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
 }
 
 .review-item {
@@ -485,4 +511,11 @@ ease; */
 .review-profile-item.active {
     transform: scale(1.1);
     z-index: 10;
+}
+
+/* ========================================================================
+   Feedback Slider Pagination Dot Styles
+   ======================================================================== */
+.course-dot.active {
+    background: #000;
 }
