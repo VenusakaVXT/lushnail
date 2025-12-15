@@ -267,19 +267,19 @@ ease; */
 .nail-image-item.active {
     flex: 0.6 1 0;
     z-index: 10;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); */
     opacity: 1;
 }
 
 .nail-image-item.active .nail-image {
-    transform: scale(1.05);
+    /* transform: scale(1.05); */
 }
 
 /* Hover effect: hovered item becomes active (60%) */
 .nail-image-item:hover {
     flex: 0.6 1 0 !important;
     z-index: 10;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); */
     opacity: 1;
 }
 

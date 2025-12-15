@@ -378,3 +378,73 @@
     background: linear-gradient(to bottom, #F4DB89, #DDB657);
     margin-top: 2px;
 }
+
+/* ========================================================================
+   Most Popular Nail Section Styles
+   ======================================================================== */
+   .most-popular-nail-gallery {
+    @apply flex items-stretch gap-2 sm:gap-3 lg:gap-4;
+    width: 100%;
+}
+
+.nail-image-item {
+    @apply relative overflow-hidden rounded-lg cursor-pointer;
+    flex: 0.1 1 0;
+    min-width: 0;
+    height: 400px;
+    opacity: 0.7;
+    transition: flex-grow 0.5s cubic-bezier(0.4, 0, 0.2, 1), flex-basis 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+}
+
+@media (max-width: 639px) {
+    .nail-image-item {
+        height: 200px;
+    }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+    .nail-image-item {
+        height: 350px;
+    }
+}
+
+.nail-image {
+    @apply w-full h-full object-cover;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Active item styling - takes 60% of screen */
+.nail-image-item.active {
+    flex: 0.6 1 0;
+    z-index: 10;
+    /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); */
+    opacity: 1;
+}
+
+.nail-image-item.active .nail-image {
+    /* transform: scale(1.05); */
+}
+
+/* Hover effect: hovered item becomes active (60%) */
+.nail-image-item:hover {
+    flex: 0.6 1 0 !important;
+    z-index: 10;
+    /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); */
+    opacity: 1;
+}
+
+.nail-image-item:hover .nail-image {
+    transform: scale(1.05);
+}
+
+/* When hovering on gallery, shrink non-hovered and non-active items to 10% */
+.most-popular-nail-gallery:hover .nail-image-item:not(:hover):not(.active) {
+    flex: 0.1 1 0 !important;
+    opacity: 0.7 !important;
+}
+
+/* When hovering on a non-active item, shrink the active item */
+.most-popular-nail-gallery:has(.nail-image-item:not(.active):hover) .nail-image-item.active:not(:hover) {
+    flex: 0.1 1 0 !important;
+    opacity: 0.7 !important;
+}

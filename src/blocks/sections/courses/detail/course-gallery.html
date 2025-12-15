@@ -11,108 +11,49 @@
             </p>
         </div>
 
-        <!-- Gallery Grid - 4 Images -->
-        <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 course-gallery-grid">
-            <!-- Gallery Item 1 -->
-            <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer course-gallery-item" data-image-index="0">
-                <img 
-                    src="https://m.media-amazon.com/images/I/51YC56BJ0WL._SL1024_.jpg" 
+        <!-- Nail Images Gallery -->
+        <div class="most-popular-nail-gallery">
+            <!-- Image 1 -->
+            <div class="nail-image-item active course-gallery-item" data-image-index="0">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&auto=format&fit=crop"
                     alt="Nail course - Image 1"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
-                />
+                    class="nail-image"
+                    data-fallback="assets/images/noimage1.png">
             </div>
 
-            <!-- Gallery Item 2 -->
-            <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer course-gallery-item" data-image-index="1">
-                <img 
-                    src="https://m.media-amazon.com/images/I/7159sUj7TNL._SL1500_.jpg" 
+            <!-- Image 2 -->
+            <div class="nail-image-item course-gallery-item" data-image-index="1">
+                <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600&auto=format&fit=crop"
                     alt="Nail course - Image 2"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
-                />
+                    class="nail-image"
+                    data-fallback="assets/images/noimage1.png">
             </div>
 
-            <!-- Gallery Item 3 -->
-            <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer course-gallery-item" data-image-index="2">
-                <img 
-                    src="https://m.media-amazon.com/images/I/71vPZFCTi8L._SL1500_.jpg" 
+            <!-- Image 3 -->
+            <div class="nail-image-item course-gallery-item" data-image-index="2">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&auto=format&fit=crop"
                     alt="Nail course - Image 3"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
-                />
+                    class="nail-image"
+                    data-fallback="assets/images/noimage1.png">
             </div>
 
-            <!-- Gallery Item 4 - With Overlay showing remaining count -->
-            <div class="group relative overflow-hidden rounded-2xl aspect-square cursor-pointer course-gallery-item" data-image-index="3">
-                <img 
-                    src="https://m.media-amazon.com/images/I/71jqxWepZvL._SL1500_.jpg" 
-                    alt="View more course images"
-                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
-                />
-                <!-- Dark Overlay with Text -->
-                <div class="absolute inset-0 bg-black/60 flex items-center justify-center pointer-events-none">
-                    <p class="text-white font-fz-poppins text-[16px] sm:text-[18px] md:text-[20px]" id="gallery-more-count">
-                        +0 More Images
-                    </p>
-                </div>
+            <!-- Image 4 -->
+            <div class="nail-image-item course-gallery-item" data-image-index="3">
+                <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600&auto=format&fit=crop"
+                    alt="Nail course - Image 4"
+                    class="nail-image"
+                    data-fallback="assets/images/noimage1.png">
             </div>
 
-            <!-- Hidden Gallery Items (for modal, not displayed in grid) -->
-            <div class="hidden course-gallery-item" data-image-index="4">
-                <img 
-                    src="https://m.media-amazon.com/images/I/51YC56BJ0WL._SL1024_.jpg" 
+            <!-- Image 5 -->
+            <div class="nail-image-item course-gallery-item" data-image-index="4">
+                <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&auto=format&fit=crop"
                     alt="Nail course - Image 5"
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
-                />
-            </div>
-            <div class="hidden course-gallery-item" data-image-index="5">
-                <img 
-                    src="https://m.media-amazon.com/images/I/7159sUj7TNL._SL1500_.jpg" 
-                    alt="Nail course - Image 6"
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
-                />
-            </div>
-            <div class="hidden course-gallery-item" data-image-index="6">
-                <img 
-                    src="https://m.media-amazon.com/images/I/71vPZFCTi8L._SL1500_.jpg" 
-                    alt="Nail course - Image 7"
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
-                />
-            </div>
-            <div class="hidden course-gallery-item" data-image-index="7">
-                <img 
-                    src="https://m.media-amazon.com/images/I/71jqxWepZvL._SL1500_.jpg" 
-                    alt="Nail course - Image 8"
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
-                />
-            </div>
-            <div class="hidden course-gallery-item" data-image-index="8">
-                <img 
-                    src="https://m.media-amazon.com/images/I/51YC56BJ0WL._SL1024_.jpg" 
-                    alt="Nail course - Image 9"
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
-                />
-            </div>
-            <div class="hidden course-gallery-item" data-image-index="9">
-                <img 
-                    src="https://m.media-amazon.com/images/I/7159sUj7TNL._SL1500_.jpg" 
-                    alt="Nail course - Image 10"
-                    loading="lazy"
-                    onerror="this.onerror=null; this.src='assets/images/placeholder.jpg';"
-                />
+                    class="nail-image"
+                    data-fallback="assets/images/noimage1.png">
             </div>
         </div>
+
     </div>
 </section>
 

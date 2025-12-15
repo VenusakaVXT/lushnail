@@ -33,13 +33,14 @@ map-pin
 check
 send
 twitter
+mail
+phone
 chevron-right
 chevron-left
 download
 alert-triangle
 share-2
 settings
-mail
 info
 terminal
 code
@@ -51,7 +52,6 @@ zap
 bell
 upload
 edit
-phone
 message-circle
 pause
 image
@@ -71,6 +71,7 @@ more-horizontal
 server
 table
 circle
+map
 gift
 package
 truck

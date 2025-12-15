@@ -445,8 +445,8 @@
 
 /* Feedback slider - Auto-scrolling image gallery */
 .bslider-feedback.blaze-slider {
-    --slides-to-show: 1;
-    --slide-gap: 16px;
+    --slides-to-show: 2;
+    --slide-gap: 12px;
 }
 
 @media (min-width: 500px) and (max-width: 768px) {
@@ -479,8 +479,59 @@
     }
 }
 
-/* Hide navigation buttons for feedback slider */
-.blaze-slider.bslider-feedback .blaze-prev,
-.blaze-slider.bslider-feedback .blaze-next {
+/* Feedback slider navigation buttons - Show on desktop */
+.feedback-images-slider .blaze-slider.bslider-feedback .blaze-prev,
+.feedback-images-slider .blaze-slider.bslider-feedback .blaze-next {
     display: none;
+}
+
+@media (min-width: 640px) {
+    .feedback-images-slider .blaze-slider.bslider-feedback .blaze-prev,
+    .feedback-images-slider .blaze-slider.bslider-feedback .blaze-next {
+        display: flex;
+    }
+}
+
+.feedback-images-slider .blaze-slider.bslider-feedback .blaze-prev {
+    left: 1rem;
+}
+
+.feedback-images-slider .blaze-slider.bslider-feedback .blaze-next {
+    right: 1rem;
+}
+
+/* Feedback slider pagination styles */
+.feedback-images-slider .blaze-slider.bslider-feedback .blaze-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 12px;
+    margin-top: 20px;
+    margin-bottom: 16px;
+    padding: 0;
+}
+
+.feedback-images-slider .blaze-slider.bslider-feedback .blaze-pagination button {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    background-color: #d1d5db;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.feedback-images-slider .blaze-slider.bslider-feedback .blaze-pagination button:hover {
+    background-color: #9ca3af;
+}
+
+.feedback-images-slider .blaze-slider.bslider-feedback .blaze-pagination button.active {
+    background-color: #ae873e;
+    width: 24px;
+    border-radius: 4px;
 }

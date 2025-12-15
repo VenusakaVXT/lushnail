@@ -147,3 +147,6 @@
     background: linear-gradient(to bottom, #F4DB89, #DDB657);
     margin-top: 2px;
 }
+.course-dot.active {
+    background: #ae873e;
+}

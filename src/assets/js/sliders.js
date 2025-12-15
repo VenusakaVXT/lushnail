@@ -187,15 +187,15 @@ document.addEventListener('DOMContentLoaded', function () {
             enableAutoplay: true,
             autoplayInterval: 3000,
             stopAutoplayOnInteraction: true,
-            enablePagination: false,
+            enablePagination: true,
             draggable: true,
             loop: true,
             loopRepeats: -1,
             transitionDuration: 500,
             transitionTimingFunction: 'ease-in-out',
-            slideGap: '16px',
-            slidesToShow: 1,
-            slidesToScroll: 1
+            slideGap: '12px',
+            slidesToShow: 2,
+            slidesToScroll: 2
         },
         '(min-width: 500px) and (max-width: 768px)': {
             slidesToShow: 2,

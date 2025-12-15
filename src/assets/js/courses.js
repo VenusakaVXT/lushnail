@@ -337,7 +337,536 @@ document.addEventListener('DOMContentLoaded', function () {
   setTimeout(function () {
     setupImageSliderPagination();
   }, 1000);
+
+  // Initialize Course Sliders (similar to review-2.php)
+  initCourseSlider('course-cards-slider');
+  initCourseSlider('online-courses-slider');
 });
+
+// Course Slider Functionality (similar to review-2.php)
+function initCourseSlider(sliderId) {
+  const slider = document.getElementById(sliderId);
+  if (!slider) return;
+
+  const track = slider.querySelector('.course-content-track');
+  const prevBtn = slider.querySelector('.course-prev-btn');
+  const nextBtn = slider.querySelector('.course-next-btn');
+  const courseItems = slider.querySelectorAll('.course-item');
+  
+  // Find pagination elements - they are outside the slider container, in the same parent container
+  // The pagination is a sibling of the slider, both inside a container div
+  // Try multiple ways to find the pagination container
+  let paginationContainer = null;
+  let sliderParent = slider.parentElement;
+  
+  // First try: find in immediate parent
+  if (sliderParent) {
+    paginationContainer = sliderParent.querySelector('.course-pagination');
+  }
+  
+  // Second try: find in parent's parent (if pagination is in a different level)
+  if (!paginationContainer && sliderParent && sliderParent.parentElement) {
+    paginationContainer = sliderParent.parentElement.querySelector('.course-pagination');
+  }
+  
+  // Third try: find by going up to container and then searching
+  if (!paginationContainer) {
+    const container = slider.closest('.container');
+    if (container) {
+      paginationContainer = container.querySelector('.course-pagination');
+    }
+  }
+  
+  const prevBtnPagination = paginationContainer ? paginationContainer.querySelector('.course-prev-btn-pagination') : null;
+  const nextBtnPagination = paginationContainer ? paginationContainer.querySelector('.course-next-btn-pagination') : null;
+  const dotsContainer = paginationContainer ? paginationContainer.querySelector('.course-dots-container') : null;
+  
+  // Debug logging
+  if (!paginationContainer) {
+    console.warn('Pagination container not found for slider:', sliderId);
+  } else if (!dotsContainer) {
+    console.warn('Dots container not found in pagination container for slider:', sliderId);
+  }
+
+  if (!track || !prevBtn || !nextBtn || courseItems.length === 0) return;
+
+  const totalItems = courseItems.length;
+  
+  // Calculate itemsPerView based on screen size
+  function getItemsPerView() {
+    return window.innerWidth < 640 ? 1 : 3; // 1 item on mobile, 3 items on desktop
+  }
+  
+  let itemsPerView = getItemsPerView();
+  
+  // Clone count should match itemsPerView for optimal loop
+  // This ensures we have enough cloned items to show when looping
+  function getCloneCount() {
+    return getItemsPerView();
+  }
+  
+  let cloneCount = getCloneCount();
+  let currentIndex = cloneCount; // Start at first real item (after cloned start items)
+  let autoPlayInterval = null;
+  let isPaused = false;
+  let isTransitioning = false;
+  let isDragging = false;
+  let paginationDots = [];
+
+  // Create pagination dots dynamically
+  function createPaginationDots() {
+    if (!dotsContainer) {
+      console.warn('Dots container not found for slider:', sliderId);
+      return;
+    }
+    dotsContainer.innerHTML = '';
+    paginationDots = [];
+    for (let i = 0; i < totalItems; i++) {
+      const dot = document.createElement('button');
+      dot.className = `course-dot w-2 h-2 rounded-full transition-all duration-300 ${i === 0 ? 'active' : 'bg-gray-300'}`;
+      dot.setAttribute('data-index', i);
+      dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+      dotsContainer.appendChild(dot);
+      paginationDots.push(dot);
+    }
+  }
+
+  createPaginationDots();
+  
+  // Re-query dots after creation to ensure they're found
+  if (dotsContainer) {
+    const createdDots = dotsContainer.querySelectorAll('.course-dot');
+    if (createdDots.length > 0) {
+      paginationDots = Array.from(createdDots);
+    }
+  }
+
+  // Duplicate items multiple times for infinite scroll (like Swiper, Glide.js)
+  // This allows continuous scrolling without visible jumps
+  function setupClones() {
+    // Remove existing clones first
+    const existingClones = track.querySelectorAll('[data-clone]');
+    existingClones.forEach(clone => clone.remove());
+    
+    // Duplicate items 3 times: original + 2 duplicates
+    // This gives us enough items to scroll infinitely
+    const duplicateCount = 3; // Total: original + 2 duplicates = 3 sets
+    
+    // Clone all items to the beginning (duplicate set 1)
+    Array.from(courseItems).forEach((item, index) => {
+      const clone = item.cloneNode(true);
+      clone.setAttribute('data-clone', 'start');
+      clone.setAttribute('data-set', '1');
+      track.insertBefore(clone, track.firstChild);
+    });
+    
+    // Clone all items to the end (duplicate set 2)
+    Array.from(courseItems).forEach((item, index) => {
+      const clone = item.cloneNode(true);
+      clone.setAttribute('data-clone', 'end');
+      clone.setAttribute('data-set', '2');
+      track.appendChild(clone);
+    });
+    
+    // Start at the beginning of the original set
+    // Structure: [Duplicate Set 1] [Original Set] [Duplicate Set 2]
+    cloneCount = totalItems; // Number of cloned items at start
+    currentIndex = cloneCount; // Start at first item of original set
+  }
+  
+  // Initial clone setup
+  setupClones();
+
+  // Update courseItems after cloning
+  let allItems = track.querySelectorAll('.course-item');
+  
+  // Calculate maxIndex - now we have duplicate sets, so we can scroll further
+  function getMaxIndex() {
+    const currentItemsPerView = getItemsPerView();
+    // We have: [Duplicate Set 1] [Original Set] [Duplicate Set 2]
+    // Total items in track = cloneCount (start) + totalItems (original) + totalItems (end) = cloneCount + totalItems * 2
+    // Max index should allow scrolling into duplicate set 2, but not too far
+    // Allow scrolling to the end of original set + a bit into duplicate set 2
+    return cloneCount + totalItems - currentItemsPerView;
+  }
+  
+  let maxIndex = getMaxIndex();
+
+  function getItemWidth() {
+    if (allItems.length === 0) return 0;
+    const firstItem = allItems[0];
+    return firstItem.offsetWidth;
+  }
+
+  function getGap() {
+    const trackStyle = window.getComputedStyle(track);
+    return parseFloat(trackStyle.gap) || 16;
+  }
+
+  function updateSlider(skipTransition = false) {
+    if (allItems.length === 0) return;
+    
+    const itemWidth = getItemWidth();
+    const gap = getGap();
+    const translateX = -currentIndex * (itemWidth + gap);
+    
+    if (skipTransition) {
+      track.style.transition = 'none';
+      track.style.transform = `translateX(${translateX}px)`;
+      void track.offsetHeight;
+      requestAnimationFrame(() => {
+        track.style.transition = 'transform 0.5s ease-in-out';
+      });
+    } else {
+      track.style.transform = `translateX(${translateX}px)`;
+    }
+  }
+
+  function updatePagination() {
+    if (paginationDots.length === 0) return;
+    
+    const realIndex = currentIndex - cloneCount;
+    const activeDotIndex = realIndex % totalItems;
+    
+    paginationDots.forEach((dot, index) => {
+      if (index === activeDotIndex) {
+        dot.classList.remove('bg-gray-300');
+        dot.classList.add('active');
+      } else {
+        dot.classList.remove('active');
+        dot.classList.add('bg-gray-300');
+      }
+    });
+  }
+
+  function goToNext() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    
+    itemsPerView = getItemsPerView();
+    
+    currentIndex++;
+    
+    // Structure: [Duplicate Set 1] [Original Set] [Duplicate Set 2]
+    // cloneCount = totalItems (duplicate set 1)
+    // Original set: cloneCount to cloneCount + totalItems - 1
+    // Duplicate set 2: cloneCount + totalItems to cloneCount + totalItems * 2 - 1
+    const endOfOriginalSet = cloneCount + totalItems;
+    const startOfDuplicateSet2 = endOfOriginalSet;
+    const endOfDuplicateSet2 = cloneCount + totalItems * 2;
+    
+    // Check if we've scrolled into duplicate set 2
+    if (currentIndex >= startOfDuplicateSet2) {
+      // We've scrolled into duplicate set 2
+      const overshoot = currentIndex - startOfDuplicateSet2;
+      
+      // Only jump when we're at the end of duplicate set 2 or close to it
+      // This ensures we can scroll through all items in original set
+      if (currentIndex >= endOfDuplicateSet2 - itemsPerView) {
+        // We're near the end of duplicate set 2, jump back to equivalent position in original set
+        updateSlider(); // Scroll into duplicate set 2 with transition
+        const handleTransitionEnd = (e) => {
+          if (e.propertyName !== 'transform') return;
+          track.removeEventListener('transitionend', handleTransitionEnd);
+          requestAnimationFrame(() => {
+            // Jump to equivalent position in original set (seamless)
+            // Map overshoot back to original set position
+            const equivalentIndex = cloneCount + (overshoot % totalItems);
+            currentIndex = equivalentIndex;
+            updateSlider(true); // No transition for jump
+            isTransitioning = false;
+            updatePagination();
+          });
+        };
+        track.addEventListener('transitionend', handleTransitionEnd, { once: true });
+      } else {
+        // Still within duplicate set 2, continue scrolling
+        updateSlider();
+        const handleTransitionEnd = (e) => {
+          if (e.propertyName !== 'transform') return;
+          track.removeEventListener('transitionend', handleTransitionEnd);
+          isTransitioning = false;
+        };
+        track.addEventListener('transitionend', handleTransitionEnd, { once: true });
+      }
+    } else {
+      // Normal scrolling within original set
+      updateSlider();
+      const handleTransitionEnd = (e) => {
+        if (e.propertyName !== 'transform') return;
+        track.removeEventListener('transitionend', handleTransitionEnd);
+        isTransitioning = false;
+      };
+      track.addEventListener('transitionend', handleTransitionEnd, { once: true });
+    }
+    updatePagination();
+  }
+
+  function goToPrev() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    
+    itemsPerView = getItemsPerView();
+    
+    currentIndex--;
+    
+    // Structure: [Duplicate Set 1] [Original Set] [Duplicate Set 2]
+    // cloneCount = totalItems (duplicate set 1)
+    // Check if we've scrolled into duplicate set 1
+    if (currentIndex < cloneCount) {
+      // We've scrolled into duplicate set 1
+      const overshoot = cloneCount - currentIndex;
+      
+      // Only jump when we're at the beginning of duplicate set 1 or close to it
+      // This ensures we can scroll through all items in original set
+      if (currentIndex < itemsPerView) {
+        // We're near the beginning of duplicate set 1, jump to equivalent position in original set
+        updateSlider(); // Scroll into duplicate set 1 with transition
+        const handleTransitionEnd = (e) => {
+          if (e.propertyName !== 'transform') return;
+          track.removeEventListener('transitionend', handleTransitionEnd);
+          requestAnimationFrame(() => {
+            // Jump to equivalent position in original set (seamless)
+            // Map overshoot back to original set position
+            const equivalentIndex = cloneCount + totalItems - (overshoot % totalItems);
+            currentIndex = equivalentIndex;
+            updateSlider(true); // No transition for jump
+            isTransitioning = false;
+            updatePagination();
+          });
+        };
+        track.addEventListener('transitionend', handleTransitionEnd, { once: true });
+      } else {
+        // Still within duplicate set 1, continue scrolling
+        updateSlider();
+        const handleTransitionEnd = (e) => {
+          if (e.propertyName !== 'transform') return;
+          track.removeEventListener('transitionend', handleTransitionEnd);
+          isTransitioning = false;
+        };
+        track.addEventListener('transitionend', handleTransitionEnd, { once: true });
+      }
+    } else {
+      // Normal scrolling within original set
+      updateSlider();
+      const handleTransitionEnd = (e) => {
+        if (e.propertyName !== 'transform') return;
+        track.removeEventListener('transitionend', handleTransitionEnd);
+        isTransitioning = false;
+      };
+      track.addEventListener('transitionend', handleTransitionEnd, { once: true });
+    }
+    updatePagination();
+  }
+
+  function startAutoPlay() {
+    if (autoPlayInterval) return;
+    autoPlayInterval = setInterval(() => {
+      if (!isPaused && !isDragging) {
+        goToNext();
+      }
+    }, 3000); // Auto play every 3 seconds
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayInterval) {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = null;
+    }
+  }
+
+  // Previous button
+  prevBtn.addEventListener('click', () => {
+    stopAutoPlay();
+    goToPrev();
+    setTimeout(() => startAutoPlay(), 5000);
+  });
+
+  // Next button
+  nextBtn.addEventListener('click', () => {
+    stopAutoPlay();
+    goToNext();
+    setTimeout(() => startAutoPlay(), 5000);
+  });
+
+  // Pagination buttons
+  if (prevBtnPagination) {
+    prevBtnPagination.addEventListener('click', () => {
+      stopAutoPlay();
+      goToPrev();
+      setTimeout(() => startAutoPlay(), 5000);
+    });
+  }
+
+  if (nextBtnPagination) {
+    nextBtnPagination.addEventListener('click', () => {
+      stopAutoPlay();
+      goToNext();
+      setTimeout(() => startAutoPlay(), 5000);
+    });
+  }
+
+  // Pagination dots - attach event listeners
+  function attachDotListeners() {
+    if (paginationDots.length === 0) return;
+    
+    paginationDots.forEach((dot, index) => {
+      // Remove existing listeners by cloning
+      const newDot = dot.cloneNode(true);
+      dot.parentNode.replaceChild(newDot, dot);
+      paginationDots[index] = newDot;
+      
+      newDot.addEventListener('click', () => {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        stopAutoPlay();
+        
+        const targetIndex = cloneCount + index;
+        currentIndex = targetIndex;
+        updateSlider();
+        updatePagination();
+        
+        setTimeout(() => {
+          isTransitioning = false;
+          startAutoPlay();
+        }, 500);
+      });
+    });
+  }
+  
+  // Attach dot listeners after dots are created
+  attachDotListeners();
+
+  // Pause on hover
+  slider.addEventListener('mouseenter', () => {
+    isPaused = true;
+  });
+
+  slider.addEventListener('mouseleave', () => {
+    isPaused = false;
+  });
+
+  // Touch/Swipe functionality
+  let startX = 0;
+  let currentX = 0;
+  let baseTranslate = 0;
+  let dragOffset = 0;
+
+  function updateDragPosition() {
+    if (!isDragging) return;
+    
+    const itemWidth = getItemWidth();
+    const gap = getGap();
+    baseTranslate = -currentIndex * (itemWidth + gap);
+    dragOffset = currentX - startX;
+    track.style.transform = `translateX(${baseTranslate + dragOffset}px)`;
+  }
+
+  track.addEventListener('touchstart', (e) => {
+    stopAutoPlay();
+    isDragging = true;
+    startX = e.touches[0].clientX;
+    currentX = startX;
+    track.style.transition = 'none';
+  });
+
+  track.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    currentX = e.touches[0].clientX;
+    updateDragPosition();
+  });
+
+  track.addEventListener('touchend', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    track.style.transition = 'transform 0.5s ease-in-out';
+    
+    const itemWidth = getItemWidth();
+    const gap = getGap();
+    const threshold = (itemWidth + gap) / 3;
+    
+    if (Math.abs(dragOffset) > threshold) {
+      if (dragOffset > 0) {
+        goToPrev();
+      } else {
+        goToNext();
+      }
+    } else {
+      updateSlider();
+    }
+    
+    setTimeout(() => startAutoPlay(), 2000);
+  });
+
+  // Mouse drag functionality
+  track.addEventListener('mousedown', (e) => {
+    stopAutoPlay();
+    isDragging = true;
+    startX = e.clientX;
+    currentX = startX;
+    track.style.transition = 'none';
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    currentX = e.clientX;
+    updateDragPosition();
+  });
+
+  document.addEventListener('mouseup', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    track.style.transition = 'transform 0.5s ease-in-out';
+    
+    const itemWidth = getItemWidth();
+    const gap = getGap();
+    const threshold = (itemWidth + gap) / 3;
+    
+    if (Math.abs(dragOffset) > threshold) {
+      if (dragOffset > 0) {
+        goToPrev();
+      } else {
+        goToNext();
+      }
+    } else {
+      updateSlider();
+    }
+    
+    setTimeout(() => startAutoPlay(), 2000);
+  });
+
+  // Handle window resize
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      const newItemsPerView = getItemsPerView();
+      if (newItemsPerView !== itemsPerView) {
+        // Screen size changed, need to re-setup clones
+        itemsPerView = newItemsPerView;
+        setupClones();
+        // Update allItems reference after cloning
+        allItems = track.querySelectorAll('.course-item');
+        maxIndex = getMaxIndex();
+        currentIndex = cloneCount;
+        updateSlider(true);
+      } else {
+        // Just recalculate maxIndex
+        itemsPerView = newItemsPerView;
+        maxIndex = getMaxIndex();
+        updateSlider(true);
+      }
+    }, 250);
+  });
+
+  // Initialize slider position
+  updateSlider(true);
+  updatePagination();
+  
+  // Start autoplay
+  startAutoPlay();
+}
 
 // Add CSS styles via style tag
 const style = document.createElement('style');

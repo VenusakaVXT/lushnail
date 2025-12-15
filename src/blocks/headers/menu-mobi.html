@@ -1,9 +1,16 @@
 <!-- Navbar mobile -->
 <div id="mobile-navbar" class="header-navbar-mobile">
-  <div class="container flex items-center justify-between w-full">
+  <div class="container flex items-center justify-between w-full relative">
 
-    <!-- Logo - Left -->
+    <!-- Hamburger Menu - Left -->
     <div class="flex-shrink-0">
+      <button id="mobile-menu-toggle" class="header-navbar-mobile-toggle" aria-label="Toggle mobile menu">
+        <i data-lucide="menu" class="header-navbar-mobile-icon" id="menu-icon"></i>
+      </button>
+    </div>
+
+    <!-- Logo - Center -->
+    <div class="absolute left-1/2 transform -translate-x-1/2">
       <a href="/" class="header-logo-link">
         <img src="/assets/images/LOGO_GOLD.png" alt="Lush Nail Logo" class="header-logo">
       </a>
@@ -71,10 +78,6 @@
 
         </div>
       </div>
-      <!-- Hamburger Menu - Left -->
-      <button id="mobile-menu-toggle" class="header-navbar-mobile-toggle" aria-label="Toggle mobile menu">
-        <i data-lucide="menu" class="header-navbar-mobile-icon" id="menu-icon"></i>
-      </button>
     </div>
   </div>
 
