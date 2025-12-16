@@ -203,11 +203,12 @@ document.addEventListener('DOMContentLoaded', function () {
         if (container) {
           container.querySelectorAll('.modal-size-option').forEach(opt => {
             opt.classList.remove('active', 'border-[#ae873e]');
-            opt.classList.add('border-transparent');
+            opt.classList.add('border-[#ececf0]');
+            opt.classList.remove('border-transparent');
           });
 
           this.classList.add('active', 'border-[#ae873e]');
-          this.classList.remove('border-transparent');
+          this.classList.remove('border-[#ececf0]', 'border-transparent');
 
           // Update selected size name in modal
           const sizeName = this.textContent.trim();
