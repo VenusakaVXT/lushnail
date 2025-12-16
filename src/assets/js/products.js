@@ -139,8 +139,26 @@ document.addEventListener('DOMContentLoaded', function () {
     if (quantityInput && totalPriceEl && unitPriceEl) {
       const quantity = parseInt(quantityInput.value) || 1;
       const unitPriceText = unitPriceEl.textContent.trim();
-      // Extract price number (remove currency symbols and spaces)
-      const unitPrice = parseFloat(unitPriceText.replace(/[^\d.,]/g, '').replace(',', '.')) || 0;
+      // Extract price number (remove currency symbols, spaces, and dots - dots are thousands separators in VN)
+      // Remove all non-digit characters except for potential decimal comma
+      let priceStr = unitPriceText.replace(/[^\d,]/g, '');
+      // If there's a comma, it might be decimal separator, otherwise remove all commas
+      // For VN format: "891.000₫" -> remove dots, no decimal -> 891000
+      // For format with comma as decimal: "891,50" -> keep comma -> 891.50
+      if (priceStr.includes(',')) {
+        // Check if comma is decimal separator (usually 1-2 digits after comma)
+        const parts = priceStr.split(',');
+        if (parts.length === 2 && parts[1].length <= 2) {
+          // Decimal separator
+          priceStr = parts[0] + '.' + parts[1];
+        } else {
+          // Thousands separator, remove it
+          priceStr = priceStr.replace(/,/g, '');
+        }
+      }
+      // Remove all dots (thousands separators in VN format)
+      priceStr = priceStr.replace(/\./g, '');
+      const unitPrice = parseFloat(priceStr) || 0;
       const total = quantity * unitPrice;
       totalPriceEl.textContent = total.toLocaleString('vi-VN') + '₫';
     }
@@ -246,7 +264,23 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Confirm Add to Cart Button
+  // Add to Cart Button (Thêm vào giỏ hàng)
+  const addToCartBtn = document.getElementById('add-to-cart-btn');
+  if (addToCartBtn) {
+    addToCartBtn.addEventListener('click', function () {
+      const quantity = addToCartModal?.querySelector('.modal-quantity-input')?.value || 1;
+      const pattern = addToCartModal?.querySelector('.modal-design-option.active p')?.textContent || 'Mẫu 1';
+      const size = addToCartModal?.querySelector('.modal-size-option.active')?.textContent.trim() || 'M';
+
+      if (window.fastNotice) {
+        window.fastNotice.success(`Đã thêm ${quantity} sản phẩm "${pattern}" - Size ${size} vào giỏ hàng!`);
+      }
+
+      // Don't close modal, allow user to continue shopping or proceed to checkout
+    });
+  }
+
+  // Confirm Add to Cart Button (Thanh Toán)
   const confirmAddToCartBtn = document.getElementById('confirm-add-to-cart');
   if (confirmAddToCartBtn) {
     confirmAddToCartBtn.addEventListener('click', function () {
@@ -262,6 +296,9 @@ document.addEventListener('DOMContentLoaded', function () {
       if (window.jModal) {
         window.jModal.close('#add-to-cart-modal');
       }
+
+      // Redirect to checkout page (you can change this URL)
+      // window.location.href = '/checkout.html';
     });
   }
 

@@ -1,27 +1,24 @@
 <!-- Add to Cart Modal -->
 <div id="add-to-cart-modal"
-    class="jmodal fixed inset-0 z-[101] hidden items-center justify-center bg-black/50 backdrop-blur-sm"
+    class="jmodal fixed inset-0 z-[999999] hidden items-center justify-center bg-black/50 backdrop-blur-sm"
     data-modal="add-to-cart">
-    <div class="jmodal-content bg-white rounded-[24px] max-w-[600px] w-full mx-4 max-h-[90vh] overflow-y-auto">
-        <div
-            class="sticky top-0 bg-white border-b border-[#ececf0] px-6 py-4 flex items-center justify-between rounded-t-[24px]">
-            <h3 class="text-[20px] text-[#090707]">
-                Thêm Vào Giỏ Hàng
-            </h3>
+    <div class="jmodal-content bg-white rounded-[10px] max-w-[600px] w-full mx-4 max-h-[90vh] overflow-y-auto">
+        <div class="sticky top-0 bg-white border-b border-[#ececf0]  flex items-center justify-between ">
             <button
-                class="w-8 h-8 rounded-full hover:bg-[#FFF9F2] transition-all duration-300 flex items-center justify-center"
-                data-jmodal-close>
-                <i data-lucide="x" class="w-5 h-5 text-[#666666]"></i>
-            </button>
+            class="absolute top-2 right-2 w-8 h-8 rounded-full hover:bg-[#FFF9F2] transition-all duration-300 flex items-center justify-center bg-white border border-[#ececf0] shadow-sm hover:shadow-md"
+            data-jmodal-close>
+            <i data-lucide="x" class="w-5 h-5 text-[#666666]"></i>
+                   
+    </button>
         </div>
 
-        <div class="p-6">
+        <div class="p-4 sm:p-4">
             <!-- Product Info -->
             <div class="flex gap-4 mb-6 pb-6 border-b border-[#ececf0]">
                 <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/a7a0680da5e932a11e91e64788ab77b687b9b4bd-mz5X78GBTU9vaBm8ZjMKE1tZmrNrqF.png"
-                    alt="Product" class="w-24 h-24 object-cover rounded-lg" />
+                    alt="Product" class="w-20 h-20 object-cover rounded-lg" />
                 <div class="flex-1">
-                    <h4 class="text-[16px] text-[#090707] mb-2">
+                    <h4 class="text-[16px] text-[#090707] mb-1">
                         Hot Trend Design Collection
                     </h4>
                     <p class="text-[#ae873e] text-[18px] mb-1">
@@ -41,31 +38,33 @@
                 <label class="block text-[#090707] text-[15px] mb-3">
                     Chọn Mẫu Nail
                 </label>
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3" id="modal-design-patterns">
+                <div class="overflow-x-auto pb-2 -mx-2 px-2" style="scrollbar-width: thin;">
+                    <div class="flex gap-3 min-w-max" id="modal-design-patterns">
                     <button
-                        class="modal-design-option active border-2 border-[#ae873e] rounded-lg p-3 bg-white hover:bg-[#FFF9F2] transition-all duration-300">
+                        class="modal-design-option active border-2 border-[#ae873e] rounded-lg p-1 sm:p-2 bg-white hover:bg-[#FFF9F2] transition-all duration-300 flex-shrink-0 w-[80px] sm:w-[90px]">
                         <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=150&auto=format&fit=crop"
                             alt="Pattern 1" class="w-full aspect-square object-cover rounded mb-2" />
                         <p class="text-[12px] text-[#333] font-medium text-center">Mẫu 1</p>
                     </button>
                     <button
-                        class="modal-design-option border-2 border-transparent hover:border-[#ae873e]/50 rounded-lg p-3 bg-white hover:bg-[#FFF9F2] transition-all duration-300">
+                        class="modal-design-option border-2 border-transparent hover:border-[#ae873e]/50 rounded-lg p-1 sm:p-2 bg-white hover:bg-[#FFF9F2] transition-all duration-300 flex-shrink-0 w-[80px] sm:w-[90px]">
                         <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=150&auto=format&fit=crop"
                             alt="Pattern 2" class="w-full aspect-square object-cover rounded mb-2" />
                         <p class="text-[12px] text-[#333] font-medium text-center">Mẫu 2</p>
                     </button>
                     <button
-                        class="modal-design-option border-2 border-transparent hover:border-[#ae873e]/50 rounded-lg p-3 bg-white hover:bg-[#FFF9F2] transition-all duration-300">
+                        class="modal-design-option border-2 border-transparent hover:border-[#ae873e]/50 rounded-lg p-1 sm:p-2 bg-white hover:bg-[#FFF9F2] transition-all duration-300 flex-shrink-0 w-[80px] sm:w-[90px]">
                         <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=150&auto=format&fit=crop"
                             alt="Pattern 3" class="w-full aspect-square object-cover rounded mb-2" />
                         <p class="text-[12px] text-[#333] font-medium text-center">Mẫu 3</p>
                     </button>
                     <button
-                        class="modal-design-option border-2 border-transparent hover:border-[#ae873e]/50 rounded-lg p-3 bg-white hover:bg-[#FFF9F2] transition-all duration-300">
+                        class="modal-design-option border-2 border-transparent hover:border-[#ae873e]/50 rounded-lg p-1 sm:p-2 bg-white hover:bg-[#FFF9F2] transition-all duration-300 flex-shrink-0 w-[80px] sm:w-[90px]">
                         <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=150&auto=format&fit=crop"
                             alt="Pattern 4" class="w-full aspect-square object-cover rounded mb-2" />
                         <p class="text-[12px] text-[#333] font-medium text-center">Mẫu 4</p>
                     </button>
+                    </div>
                 </div>
             </div>
 
@@ -74,23 +73,25 @@
                 <label class="block text-[#090707] text-[15px] mb-3">
                     Chọn Kích Thước
                 </label>
-                <div class="flex flex-wrap gap-3" id="modal-size-options">
+                <div class="overflow-x-auto pb-2 -mx-2 px-2" style="scrollbar-width: thin;">
+                    <div class="flex gap-3 min-w-max" id="modal-size-options">
                     <button
-                        class="modal-size-option active border-2 border-[#ae873e] rounded-lg px-4 py-2 bg-white hover:bg-[#FFF9F2] transition-all duration-300 text-[14px] font-medium text-[#090707]">
+                        class="modal-size-option active border-2 border-[#ae873e] rounded-lg px-4 py-2 bg-white hover:bg-[#FFF9F2] transition-all duration-300 text-[14px] font-medium text-[#090707] flex-shrink-0">
                         S
                     </button>
                     <button
-                        class="modal-size-option border-2 border-transparent hover:border-[#ae873e]/50 rounded-lg px-4 py-2 bg-white hover:bg-[#FFF9F2] transition-all duration-300 text-[14px] font-medium text-[#090707]">
+                        class="modal-size-option border-2 border-[#ececf0] hover:border-[#ae873e]/50 rounded-lg px-4 py-2 bg-white hover:bg-[#FFF9F2] transition-all duration-300 text-[14px] font-medium text-[#090707] flex-shrink-0">
                         M
                     </button>
                     <button
-                        class="modal-size-option border-2 border-transparent hover:border-[#ae873e]/50 rounded-lg px-4 py-2 bg-white hover:bg-[#FFF9F2] transition-all duration-300 text-[14px] font-medium text-[#090707]">
+                        class="modal-size-option border-2 border-[#ececf0] hover:border-[#ae873e]/50 rounded-lg px-4 py-2 bg-white hover:bg-[#FFF9F2] transition-all duration-300 text-[14px] font-medium text-[#090707] flex-shrink-0">
                         L
                     </button>
                     <button
-                        class="modal-size-option border-2 border-transparent hover:border-[#ae873e]/50 rounded-lg px-4 py-2 bg-white hover:bg-[#FFF9F2] transition-all duration-300 text-[14px] font-medium text-[#090707]">
+                        class="modal-size-option border-2 border-[#ececf0] hover:border-[#ae873e]/50 rounded-lg px-4 py-2 bg-white hover:bg-[#FFF9F2] transition-all duration-300 text-[14px] font-medium text-[#090707] flex-shrink-0">
                         XL
                     </button>
+                    </div>
                 </div>
             </div>
 
@@ -118,7 +119,7 @@
                 <label class="block text-[#090707] text-[15px] mb-3">
                     Ghi Chú Đến Cửa Hàng <span class="text-[#999999] font-normal text-[13px]">(Tùy chọn)</span>
                 </label>
-                <textarea id="store-note" rows="4" placeholder="Nhập ghi chú của bạn..." class="textarea"></textarea>
+                <textarea id="store-note" rows="2" placeholder="Nhập ghi chú của bạn..." class="textarea"></textarea>
             </div>
 
             <!-- Total Price -->
@@ -129,19 +130,18 @@
                         $27
                     </span>
                 </div>
-                <p class="text-[#999999] text-[12px]">
-                    (Đã bao gồm VAT)
-                </p>
+
             </div>
 
             <!-- Action Buttons -->
             <div class="flex flex-col justify-end sm:flex-row gap-3">
-                <button id="confirm-add-to-cart" class="btn btn-secondary">
-                    Xác Nhận Thêm Vào Giỏ
+                <button id="add-to-cart-btn" class="btn btn-outline">
+                    Thêm Vào Giỏ Hàng
                 </button>
-                <button class="btn btn-outline-muted" data-jmodal-close>
-                    Hủy
+                <button id="checkout-now-btn" class="btn btn-primary">
+                    Thanh Toán
                 </button>
+             
             </div>
         </div>
     </div>

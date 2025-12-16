@@ -157,16 +157,54 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateModalTotalPrice() {
     const quantityInput = document.querySelector('.modal-quantity-input');
     const totalPriceEl = document.getElementById('modal-total-price');
+    const unitPriceEl = document.querySelector('.flex-1 .text-\\[\\#ae873e\\]');
 
     if (quantityInput && totalPriceEl) {
       const quantity = parseInt(quantityInput.value) || 1;
-      const unitPrice = 27; // Price per unit
+      let unitPrice = 0;
+      
+      if (unitPriceEl) {
+        const unitPriceText = unitPriceEl.textContent.trim();
+        // Extract price number (remove currency symbols, spaces, and dots - dots are thousands separators in VN)
+        let priceStr = unitPriceText.replace(/[^\d,]/g, '');
+        // Remove all dots (thousands separators in VN format)
+        priceStr = priceStr.replace(/\./g, '');
+        // If there's a comma, check if it's decimal separator
+        if (priceStr.includes(',')) {
+          const parts = priceStr.split(',');
+          if (parts.length === 2 && parts[1].length <= 2) {
+            priceStr = parts[0] + '.' + parts[1];
+          } else {
+            priceStr = priceStr.replace(/,/g, '');
+          }
+        }
+        unitPrice = parseFloat(priceStr) || 0;
+      } else {
+        unitPrice = 27; // Fallback price per unit
+      }
+      
       const total = quantity * unitPrice;
-      totalPriceEl.textContent = `$${total}`;
+      totalPriceEl.textContent = total.toLocaleString('vi-VN') + '₫';
     }
   }
 
-  // Confirm Add to Cart - Close modal using jModal
+  // Add to Cart Button (Thêm vào giỏ hàng)
+  const addToCartBtn = document.getElementById('add-to-cart-btn');
+  if (addToCartBtn) {
+    addToCartBtn.addEventListener('click', function () {
+      const quantity = document.querySelector('.modal-quantity-input')?.value || 1;
+      const pattern = document.querySelector('.modal-design-option.active p')?.textContent || 'Mẫu 1';
+      const size = document.querySelector('.modal-size-option.active')?.textContent.trim() || 'M';
+
+      if (window.fastNotice) {
+        window.fastNotice.success(`Đã thêm ${quantity} sản phẩm "${pattern}" - Size ${size} vào giỏ hàng!`);
+      }
+
+      // Don't close modal, allow user to continue shopping or proceed to checkout
+    });
+  }
+
+  // Confirm Add to Cart - Close modal using jModal (Thanh Toán)
   const confirmAddToCartBtn = document.getElementById('confirm-add-to-cart');
   if (confirmAddToCartBtn) {
     confirmAddToCartBtn.addEventListener('click', function () {
@@ -185,6 +223,9 @@ document.addEventListener('DOMContentLoaded', function () {
           window.jModal.close(modalId);
         }
       }
+
+      // Redirect to checkout page (you can change this URL)
+      // window.location.href = '/checkout.html';
     });
   }
 
@@ -387,4 +428,5 @@ document.addEventListener('DOMContentLoaded', function () {
 // `;
 
 // document.head.appendChild(style);
+
 
