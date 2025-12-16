@@ -121,6 +121,30 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // Size Selection
+  const sizeOptions = document.querySelectorAll('.modal-size-option');
+  sizeOptions.forEach(option => {
+    option.addEventListener('click', function () {
+      const container = this.closest('#modal-size-options');
+      if (container) {
+        container.querySelectorAll('.modal-size-option').forEach(opt => {
+          opt.classList.remove('active', 'border-[#ae873e]');
+          opt.classList.add('border-transparent');
+        });
+
+        this.classList.add('active', 'border-[#ae873e]');
+        this.classList.remove('border-transparent');
+
+        // Update selected size name in modal
+        const sizeName = this.textContent.trim();
+        const sizeNameEl = document.getElementById('selected-size-name');
+        if (sizeNameEl) {
+          sizeNameEl.textContent = sizeName;
+        }
+      }
+    });
+  });
+
   // Add to Cart Modal - Initialize with jModal
   if (window.jModal) {
     window.jModal.init('#add-to-cart-modal', {
@@ -148,9 +172,10 @@ document.addEventListener('DOMContentLoaded', function () {
     confirmAddToCartBtn.addEventListener('click', function () {
       const quantity = document.querySelector('.modal-quantity-input')?.value || 1;
       const pattern = document.querySelector('.modal-design-option.active p')?.textContent || 'Mẫu 1';
+      const size = document.querySelector('.modal-size-option.active')?.textContent.trim() || 'M';
 
       if (window.fastNotice) {
-        window.fastNotice.success(`Đã thêm ${quantity} sản phẩm "${pattern}" vào giỏ hàng!`);
+        window.fastNotice.success(`Đã thêm ${quantity} sản phẩm "${pattern}" - Size ${size} vào giỏ hàng!`);
       }
 
       // Close modal using jModal

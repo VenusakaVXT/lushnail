@@ -1,5 +1,10 @@
 /* Product Page Specific Styles */
 
+/* Load More Products - Hide products initially */
+.product-card-hidden {
+  display: none;
+}
+
 /* Quantity Input - Hide native spinner but keep buttons visible */
 .quantity-input::-webkit-inner-spin-button,
 .quantity-input::-webkit-outer-spin-button {

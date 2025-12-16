@@ -73,6 +73,261 @@ document.addEventListener('DOMContentLoaded', function () {
   //   });
   // });
 
+  // Initialize Add to Cart Modal
+  const addToCartModal = document.getElementById('add-to-cart-modal');
+  if (addToCartModal && window.jModal) {
+    window.jModal.init('#add-to-cart-modal', {
+      closeOnBackdrop: true,
+      closeOnEscape: true,
+      preventScroll: true
+    });
+  }
+
+  // Initialize Quantity Selector for Modal
+  function initModalQuantitySelector() {
+    const quantityContainer = addToCartModal?.querySelector('.flex.items-center.gap-3');
+    if (!quantityContainer) return;
+
+    const decreaseBtn = quantityContainer.querySelector('.modal-quantity-btn.decrease');
+    const increaseBtn = quantityContainer.querySelector('.modal-quantity-btn.increase');
+    const quantityInput = quantityContainer.querySelector('.modal-quantity-input');
+
+    if (!quantityInput) return;
+
+    const min = parseInt(quantityInput.getAttribute('min')) || 1;
+    const max = parseInt(quantityInput.getAttribute('max')) || 99;
+
+    function updateQuantity(value) {
+      let newValue = parseInt(value) || min;
+      if (newValue < min) newValue = min;
+      if (newValue > max) newValue = max;
+      quantityInput.value = newValue;
+      updateModalTotalPrice();
+    }
+
+    if (decreaseBtn) {
+      decreaseBtn.addEventListener('click', function () {
+        let currentValue = parseInt(quantityInput.value) || min;
+        if (currentValue > min) {
+          updateQuantity(currentValue - 1);
+        }
+      });
+    }
+
+    if (increaseBtn) {
+      increaseBtn.addEventListener('click', function () {
+        let currentValue = parseInt(quantityInput.value) || min;
+        if (currentValue < max) {
+          updateQuantity(currentValue + 1);
+        }
+      });
+    }
+
+    quantityInput.addEventListener('change', function () {
+      updateQuantity(this.value);
+    });
+  }
+
+  // Update Modal Total Price
+  function updateModalTotalPrice() {
+    if (!addToCartModal) return;
+    
+    const quantityInput = addToCartModal.querySelector('.modal-quantity-input');
+    const totalPriceEl = document.getElementById('modal-total-price');
+    const unitPriceEl = addToCartModal.querySelector('.flex-1 .text-\\[\\#ae873e\\]');
+
+    if (quantityInput && totalPriceEl && unitPriceEl) {
+      const quantity = parseInt(quantityInput.value) || 1;
+      const unitPriceText = unitPriceEl.textContent.trim();
+      // Extract price number (remove currency symbols and spaces)
+      const unitPrice = parseFloat(unitPriceText.replace(/[^\d.,]/g, '').replace(',', '.')) || 0;
+      const total = quantity * unitPrice;
+      totalPriceEl.textContent = total.toLocaleString('vi-VN') + '₫';
+    }
+  }
+
+  // Initialize Design Pattern Selection
+  function initModalDesignPatterns() {
+    const designOptions = addToCartModal?.querySelectorAll('.modal-design-option');
+    if (!designOptions) return;
+
+    designOptions.forEach(option => {
+      option.addEventListener('click', function () {
+        const container = this.closest('#modal-design-patterns');
+        if (container) {
+          container.querySelectorAll('.modal-design-option').forEach(opt => {
+            opt.classList.remove('active', 'border-[#ae873e]');
+            opt.classList.add('border-transparent');
+          });
+
+          this.classList.add('active', 'border-[#ae873e]');
+          this.classList.remove('border-transparent');
+
+          // Update selected pattern name in modal
+          const patternName = this.querySelector('p')?.textContent;
+          const patternNameEl = document.getElementById('selected-pattern-name');
+          if (patternNameEl && patternName) {
+            patternNameEl.textContent = patternName;
+          }
+        }
+      });
+    });
+  }
+
+  // Initialize Size Selection
+  function initModalSizeOptions() {
+    const sizeOptions = addToCartModal?.querySelectorAll('.modal-size-option');
+    if (!sizeOptions) return;
+
+    sizeOptions.forEach(option => {
+      option.addEventListener('click', function () {
+        const container = this.closest('#modal-size-options');
+        if (container) {
+          container.querySelectorAll('.modal-size-option').forEach(opt => {
+            opt.classList.remove('active', 'border-[#ae873e]');
+            opt.classList.add('border-transparent');
+          });
+
+          this.classList.add('active', 'border-[#ae873e]');
+          this.classList.remove('border-transparent');
+
+          // Update selected size name in modal
+          const sizeName = this.textContent.trim();
+          const sizeNameEl = document.getElementById('selected-size-name');
+          if (sizeNameEl && sizeName) {
+            sizeNameEl.textContent = sizeName;
+          }
+        }
+      });
+    });
+  }
+
+  // Handle Buy Now Button Click - Update Modal with Product Info
+  const buyNowButtons = document.querySelectorAll('.buy-now-btn');
+  buyNowButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      const productName = this.getAttribute('data-product-name');
+      const productPrice = this.getAttribute('data-product-price');
+      const productImage = this.getAttribute('data-product-image');
+
+      // Update modal product info
+      if (addToCartModal) {
+        const modalProductImg = addToCartModal.querySelector('.flex.gap-4 img');
+        const modalProductName = addToCartModal.querySelector('.flex-1 h4');
+        const modalProductPrice = addToCartModal.querySelector('.flex-1 .text-\\[\\#ae873e\\]');
+
+        if (modalProductImg && productImage) {
+          modalProductImg.src = productImage;
+          modalProductImg.alt = productName || 'Product';
+        }
+        if (modalProductName && productName) {
+          modalProductName.textContent = productName;
+        }
+        if (modalProductPrice && productPrice) {
+          modalProductPrice.textContent = productPrice;
+        }
+
+        // Reset quantity to 1
+        const quantityInput = addToCartModal.querySelector('.modal-quantity-input');
+        if (quantityInput) {
+          quantityInput.value = 1;
+        }
+
+        // Update total price
+        updateModalTotalPrice();
+
+        // Reinitialize icons after modal opens
+        setTimeout(() => {
+          if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+          }
+        }, 100);
+      }
+    });
+  });
+
+  // Confirm Add to Cart Button
+  const confirmAddToCartBtn = document.getElementById('confirm-add-to-cart');
+  if (confirmAddToCartBtn) {
+    confirmAddToCartBtn.addEventListener('click', function () {
+      const quantity = addToCartModal?.querySelector('.modal-quantity-input')?.value || 1;
+      const pattern = addToCartModal?.querySelector('.modal-design-option.active p')?.textContent || 'Mẫu 1';
+      const size = addToCartModal?.querySelector('.modal-size-option.active')?.textContent.trim() || 'M';
+
+      if (window.fastNotice) {
+        window.fastNotice.success(`Đã thêm ${quantity} sản phẩm "${pattern}" - Size ${size} vào giỏ hàng!`);
+      }
+
+      // Close modal using jModal
+      if (window.jModal) {
+        window.jModal.close('#add-to-cart-modal');
+      }
+    });
+  }
+
+  // Initialize modal functionality when modal is available
+  if (addToCartModal) {
+    initModalQuantitySelector();
+    initModalDesignPatterns();
+    initModalSizeOptions();
+  }
+
+  // Load More Products Functionality
+  const loadMoreBtn = document.getElementById('load-more-products-btn');
+  const productsGrid = document.getElementById('products-grid');
+
+  if (loadMoreBtn && productsGrid) {
+    const allProducts = productsGrid.querySelectorAll('.product-card');
+    const initialDisplayCount = 12; // Show 12 products initially
+    const productsPerLoad = 8; // Load 8 products per click
+
+    // Hide button if there are 12 or fewer products
+    if (allProducts.length <= initialDisplayCount) {
+      loadMoreBtn.style.display = 'none';
+    } else {
+      // Show button if there are more than 12 products
+      loadMoreBtn.style.display = 'inline-block';
+    }
+
+    // Function to show more products (8 at a time)
+    function loadMoreProducts() {
+      const hiddenProducts = productsGrid.querySelectorAll('.product-card-hidden');
+      
+      if (hiddenProducts.length > 0) {
+        // Get products to show (max 8)
+        const productsToShow = Array.from(hiddenProducts).slice(0, productsPerLoad);
+
+        productsToShow.forEach((product, index) => {
+          setTimeout(() => {
+            product.classList.remove('product-card-hidden');
+            // Add fade-in animation
+            product.style.opacity = '0';
+            product.style.transform = 'translateY(20px)';
+            setTimeout(() => {
+              product.style.transition = 'opacity 0.5s ease-out, transform 0.5s ease-out';
+              product.style.opacity = '1';
+              product.style.transform = 'translateY(0)';
+            }, 10);
+          }, index * 50); // Stagger animation
+        });
+
+        // Check if there are more products to load
+        setTimeout(() => {
+          const remainingHidden = productsGrid.querySelectorAll('.product-card-hidden');
+          if (remainingHidden.length === 0) {
+            loadMoreBtn.style.display = 'none';
+          }
+        }, productsToShow.length * 50 + 500);
+      } else {
+        // No more products to load, hide button
+        loadMoreBtn.style.display = 'none';
+      }
+    }
+
+    // Add click event listener
+    loadMoreBtn.addEventListener('click', loadMoreProducts);
+  }
+
   // Products Transition Section Parallax Animation
   const transitionSection = document.querySelector('[data-name="products-transition-section"]');
   if (transitionSection) {
